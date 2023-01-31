@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using DG.Tweening;
 using UnityEngine;
 
 namespace ET
@@ -41,6 +42,8 @@ namespace ET
 			CodeLoader.Instance.CodeMode = this.CodeMode;
 			Options.Instance.Develop = 1;
 			Options.Instance.LogLevel = 0;
+			
+			DOTween.Init(true,true, LogBehaviour.Verbose);
 		}
 
 		private void Start()

@@ -48,7 +48,14 @@ namespace ET
                         await SceneFactory.Create(Game.Scene, startConfig.Id, startConfig.InstanceId, startConfig.Zone, startConfig.Name,
                             startConfig.Type, startConfig);
                     }
-
+                    // StartZoneConfig startZoneConfig = StartZoneConfigCategory.Instance.Get(1);
+                    // if (startZoneConfig.DBConnection == "")
+                    // {
+                    //     throw new Exception($"zone: {1} not found mongo connect string");
+                    // }
+                    //
+                    // Game.Scene.AddComponent<DBManagerComponent>();
+                    // Game.Scene.AddComponent<DBComponent, string, string, int>(startZoneConfig.DBConnection,startZoneConfig.DBName,1);
                     break;
                 }
                 case AppType.Watcher:

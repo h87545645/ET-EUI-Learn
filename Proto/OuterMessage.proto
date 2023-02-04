@@ -1,6 +1,22 @@
 syntax = "proto3";
 package ET;
 
+//ResponseType A2C_LoginAccountResponse
+message C2A_LoginAccountRequest // IRequest
+{
+	int32 RpcId       = 90;
+	string Account = 1;
+	string Password = 2;
+}
+
+message A2C_LoginAccountResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+
 //ResponseType M2C_TestResponse
 message C2M_TestRequest // IActorLocationRequest
 {

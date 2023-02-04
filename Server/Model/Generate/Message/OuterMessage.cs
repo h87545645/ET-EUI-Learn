@@ -3,6 +3,37 @@ using ProtoBuf;
 using System.Collections.Generic;
 namespace ET
 {
+	[ResponseType(nameof(A2C_LoginAccountResponse))]
+	[Message(OuterOpcode.C2A_LoginAccountRequest)]
+	[ProtoContract]
+	public partial class C2A_LoginAccountRequest: Object, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public string Account { get; set; }
+
+		[ProtoMember(2)]
+		public string Password { get; set; }
+
+	}
+
+	[Message(OuterOpcode.A2C_LoginAccountResponse)]
+	[ProtoContract]
+	public partial class A2C_LoginAccountResponse: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
 	[ResponseType(nameof(M2C_TestResponse))]
 	[Message(OuterOpcode.C2M_TestRequest)]
 	[ProtoContract]

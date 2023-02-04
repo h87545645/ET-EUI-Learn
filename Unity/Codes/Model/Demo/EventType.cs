@@ -78,6 +78,12 @@ namespace ET
         {
             public Scene ZoneScene;
         }
+        
+        public struct AlertError
+        {
+            public Scene ZoneScene;
+            public string Info;
+        }
 
         public struct LoadingBegin
         {

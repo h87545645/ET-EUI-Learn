@@ -26,8 +26,24 @@ namespace ET
                     //查看响应码状态 
                     if (a2cAccount.Error != ErrorCode.ERR_Success)
                     {
-                        Log.Error(a2cAccount.Error.ToString());
+                        // Log.Error(a2cAccount.Error.ToString());
+                        string errString = "";
+                        switch (a2cAccount.Error)
+                        {
+                            case ErrorCode.ERR_AccountOrPasswordIsNull:
+                                errString = "账号不能为空";
+                                break;
+                            case ErrorCode.ERR_PasswordError:
+                                errString = "账号或密码不正确";
+                                break;
+                            case ErrorCode.ERR_AccountIsBlack:
+                                errString = "账号被冻结";
+                                break;
+   
+                        }
                         //TODO alter login err dialog
+                        Game.EventSystem.PublishAsync(new EventType.AlertError() {ZoneScene = zoneScene , Info = errString}).Coroutine();
+                        // zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
                         return;
                     }
                 }

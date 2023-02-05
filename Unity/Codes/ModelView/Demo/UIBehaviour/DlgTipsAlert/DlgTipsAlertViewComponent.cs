@@ -58,17 +58,36 @@ namespace ET
      		}
      	}
 
+		public TMPro.TextMeshProUGUI E_MessageTextMeshProUGUI
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_MessageTextMeshProUGUI == null )
+     			{
+		    		this.m_E_MessageTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"E_Message");
+     			}
+     			return this.m_E_MessageTextMeshProUGUI;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_EGBackGroundRectTransform = null;
 			this.m_E_ConfirmButton = null;
 			this.m_E_ConfirmImage = null;
+			this.m_E_MessageTextMeshProUGUI = null;
 			this.uiTransform = null;
 		}
 
 		private UnityEngine.RectTransform m_EGBackGroundRectTransform = null;
 		private UnityEngine.UI.Button m_E_ConfirmButton = null;
 		private UnityEngine.UI.Image m_E_ConfirmImage = null;
+		private TMPro.TextMeshProUGUI m_E_MessageTextMeshProUGUI = null;
 		public Transform uiTransform = null;
 	}
 }

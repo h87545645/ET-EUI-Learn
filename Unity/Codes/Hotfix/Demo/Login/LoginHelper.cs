@@ -1,5 +1,4 @@
 using System;
-using LitJson;
 using UnityEngine;
 
 namespace ET
@@ -42,7 +41,7 @@ namespace ET
    
                         }
                         //TODO alter login err dialog
-                        Game.EventSystem.PublishAsync(new EventType.AlertError() {ZoneScene = zoneScene , Info = errString}).Coroutine();
+                        Game.EventSystem.Publish(new EventType.AlertError() {ZoneScene = zoneScene , Info = errString});
                         // zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
                         return;
                     }

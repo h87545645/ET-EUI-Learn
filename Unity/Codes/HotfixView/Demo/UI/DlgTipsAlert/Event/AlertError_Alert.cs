@@ -1,11 +1,16 @@
 ﻿namespace ET
 {
-    public class AlertError_Alert : AEventAsync<EventType.AlertError>
+    [FriendClass(typeof(ShowWindowData))]
+    [FriendClass(typeof(WindowData))]
+    public class AlertError_Alert : AEvent<EventType.AlertError>
     {
-        protected override async ETTask Run(EventType.AlertError args)
+        protected override void Run(EventType.AlertError args)
         {
             // args.ZoneScene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
-            await args.ZoneScene.GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_TipsAlert);
+            ShowWindowData data = new ShowWindowData();
+            data.contextData = new WindowData();
+            (data.contextData as WindowData).Message = args.Info;
+            args.ZoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_TipsAlert ,data);
         }
     }
 }

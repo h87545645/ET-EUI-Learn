@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace ET
 {
+	[FriendClass(typeof(WindowData))]
 	[FriendClass(typeof(DlgTipsAlert))]
 	public static  class DlgTipsAlertSystem
 	{
@@ -17,6 +18,9 @@ namespace ET
 
 		public static void ShowWindow(this DlgTipsAlert self, Entity contextData = null)
 		{
+			string mes = (contextData as WindowData).Message;
+			Log.Debug((contextData as WindowData).Message);
+			self.View.E_MessageTextMeshProUGUI.SetText(mes);
 		}
 
 		public static void OnConfirmClickHandler(this DlgTipsAlert self)

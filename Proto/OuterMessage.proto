@@ -16,6 +16,38 @@ message A2C_LoginAccountResponse // IResponse
 	string Message = 92;
 }
 
+//ResponseType G2C_StartMatchResponse
+message C2G_StartMatchRequest // IRequest
+{
+	int32 RpcId = 90;
+
+}
+
+message G2C_StartMatchResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+}
+
+//ResponseType G2C_StartMatchResponse
+message C2G_StartMatchRequest // IRequest
+{
+	int32 RpcId = 90;
+
+}
+
+message G2C_StartMatchResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+}
+
+
+//demo follow
 
 //ResponseType M2C_TestResponse
 message C2M_TestRequest // IActorLocationRequest

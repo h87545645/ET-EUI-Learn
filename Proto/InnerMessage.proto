@@ -1,6 +1,26 @@
 syntax = "proto3";
 package ET;
 
+//ResponseType M2G_PlayerEnterMatchResponse
+message G2M_PlayerEnterMatchRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    long PlayerID = 1;
+    long UserID = 2;
+    long SessionID = 3;
+}
+
+message M2G_PlayerEnterMatchResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+}
+
+
+//demo follow
+
 //ResponseType ObjectQueryResponse
 message ObjectQueryRequest // IActorRequest
 {

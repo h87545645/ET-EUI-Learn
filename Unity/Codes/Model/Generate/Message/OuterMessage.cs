@@ -34,7 +34,7 @@ namespace ET
 
 	}
 
-	[ResponseType(nameof(A2C_LoginAccountResponse))]
+	[ResponseType(nameof(G2C_StartMatchResponse))]
 	[Message(OuterOpcode.C2G_StartMatchRequest)]
 	[ProtoContract]
 	public partial class C2G_StartMatchRequest: Object, IRequest

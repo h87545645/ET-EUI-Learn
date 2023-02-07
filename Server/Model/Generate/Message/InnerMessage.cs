@@ -3,6 +3,41 @@ using ProtoBuf;
 using System.Collections.Generic;
 namespace ET
 {
+	[ResponseType(nameof(M2G_PlayerEnterMatchResponse))]
+	[Message(InnerOpcode.G2M_PlayerEnterMatchRequest)]
+	[ProtoContract]
+	public partial class G2M_PlayerEnterMatchRequest: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerID { get; set; }
+
+		[ProtoMember(2)]
+		public long UserID { get; set; }
+
+		[ProtoMember(3)]
+		public long SessionID { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2G_PlayerEnterMatchResponse)]
+	[ProtoContract]
+	public partial class M2G_PlayerEnterMatchResponse: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
+//demo follow
 	[ResponseType(nameof(ObjectQueryResponse))]
 	[Message(InnerOpcode.ObjectQueryRequest)]
 	[ProtoContract]

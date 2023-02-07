@@ -31,20 +31,7 @@ message G2C_StartMatchResponse // IResponse
 
 }
 
-//ResponseType G2C_StartMatchResponse
-message C2G_StartMatchRequest // IRequest
-{
-	int32 RpcId = 90;
 
-}
-
-message G2C_StartMatchResponse // IResponse
-{
-	int32 RpcId = 90;
-	int32 Error = 91;
-	string Message = 92;
-
-}
 
 
 //demo follow

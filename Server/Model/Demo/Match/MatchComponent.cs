@@ -5,6 +5,8 @@ namespace ET
     /// <summary>
     /// 匹配组件，匹配逻辑在MatchComponentSystem扩展
     /// </summary>
+    // [ChildType(typeof(DBComponent))]
+    [ComponentOf(typeof(Scene))]
     public class MatchComponent :  Entity, IAwake, IDestroy
     {
         //游戏中匹配对象列表

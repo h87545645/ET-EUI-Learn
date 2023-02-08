@@ -12,6 +12,5 @@ namespace  ET
         public string Password { get; set; }//密码
         public int AccountType { get; set; }//状态
         public long CreateTime { get; set; }//创建日期
-        public long Coin { get; set; }//玩家金币
     }
 }

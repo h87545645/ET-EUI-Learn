@@ -8,7 +8,8 @@ namespace ET
     /// 匹配对象管理组件
     /// </summary>
     [ComponentOf(typeof(Scene))]
-    public class MatcherComponent : Entity,IAwake<Matcher>,IDestroy
+    [ChildType(typeof(Matcher))]
+    public class MatcherComponent : Entity,IAwake,IDestroy
     {
         public readonly Dictionary<long, Matcher> matchers = new Dictionary<long, Matcher>();
 

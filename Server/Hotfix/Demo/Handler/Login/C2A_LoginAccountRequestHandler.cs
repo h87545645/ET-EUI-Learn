@@ -31,7 +31,7 @@ namespace ET
             
             
             Account account = null;
-            UserInfo user = null;
+            PlayerInfo player = null;
             //如果获取到的数据为空则证明没有该用户
             if (accounts == null || accounts.Count == 0)
             {
@@ -51,25 +51,25 @@ namespace ET
                 //新建用户信息
 
                 
-                user = session.AddChild<UserInfo>();
-                // user = session.AddChildWithId<UserInfo>(account.Id);
-                user.AccountId = account.Id;
-                user.Coin = 0;
-                user.Wins = 0;
-                user.Loses = 0;
-                user.NickName = account.AccountName;
+                player = session.AddChild<PlayerInfo>();
+                // player = session.AddChildWithId<PlayerInfo>(account.Id);
+                player.AccountId = account.Id;
+                player.Coin = 0;
+                player.Wins = 0;
+                player.Loses = 0;
+                player.NickName = account.AccountName;
                 
                 //存到数据库
-                await DBManagerComponent.Instance.GetZoneDB(2).Save<UserInfo>(user);
+                await DBManagerComponent.Instance.GetZoneDB(2).Save<PlayerInfo>(player);
             }
             else
             {
                 //如果存在账号走这里
                 account = accounts[0];
                 session.AddChild(account);
-                var users = await DBManagerComponent.Instance.GetZoneDB(2)
-                        .Query<UserInfo>(d => d.AccountId.Equals(account.Id));
-                session.AddChild(users[0]);
+                var players = await DBManagerComponent.Instance.GetZoneDB(2)
+                        .Query<PlayerInfo>(d => d.AccountId.Equals(account.Id));
+                session.AddChild(players[0]);
                 
                 //判断账号处于冻结还是正常
                 if (account.AccountType == (int)AccountType.Black)
@@ -90,6 +90,8 @@ namespace ET
                     return;
                 }
             }
+
+            response.AccountId = account.Id;
             //如果可以走到这里就代表成功了
             account.Dispose();
             reply();

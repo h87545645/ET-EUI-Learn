@@ -8,7 +8,7 @@ namespace ET
     /// 匹配房间管理组件，逻辑在MatchRoomComponentSystem扩展
     /// </summary>
     [ComponentOf(typeof(Scene))]
-    public class MatchRoomComponent : Entity,IAwake
+    public class MatchRoomComponent : Entity,IAwake,IDestroy
     {
         //所有房间列表
         public readonly Dictionary<long, Room> rooms = new Dictionary<long, Room>();
@@ -29,24 +29,11 @@ namespace ET
         public int GameRoomCount { get { return gameRooms.Count; } }
 
         //等待中房间数
-        public int ReadyRoomCount { get { return readyRooms.Where(p => p.Value.Count < 3).Count(); } }
+        public int ReadyRoomCount { get { return readyRooms.Where(p => p.Value.Count < 2).Count(); } }
 
         //空闲房间数
         public int IdleRoomCount { get { return idleRooms.Count; } }
 
-        public override void Dispose()
-        {
-            if (this.IsDisposed)
-            {
-                return;
-            }
 
-            base.Dispose();
-
-            foreach (var room in this.rooms.Values)
-            {
-                room.Dispose();
-            }
-        }
     }
 }

@@ -38,8 +38,21 @@ namespace ET
 
             Game.Scene.AddComponent<DBManagerComponent>();
             
-            //添加匹配组件
+
+            //以下是frog game服务端自定义全局组件
+
+            //GateGlobalComponent
+            // Game.Scene.AddComponent<UserComponent>();
+            // Game.Scene.AddComponent<LandlordsGateSessionKeyComponent>();
+
+            //MapGlobalComponent
+            Game.Scene.AddComponent<RoomComponent>();
+
+            //MatchGlobalComponent
+            // Game.Scene.AddComponent<AllotMapComponent>();
             Game.Scene.AddComponent<MatchComponent>();
+            Game.Scene.AddComponent<MatcherComponent>();
+            Game.Scene.AddComponent<MatchRoomComponent>();
 
             switch (Game.Options.AppType)
             {

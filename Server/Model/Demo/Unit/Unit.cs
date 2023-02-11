@@ -6,6 +6,15 @@ namespace ET
 {
     public sealed class Unit: Entity, IAwake<int>
     {
+        
+        //用户ID（唯一）
+        public long UserID { get; private set; }
+        //玩家所在房间ID
+        public long RoomID { get; set; }
+        
+        //是否离线
+        public bool isOffline { get; set; }
+        
         public int ConfigId; //配置表id
 
         [BsonIgnore]

@@ -18,6 +18,40 @@ message M2G_PlayerEnterMatchResponse // IResponse
 
 }
 
+//ResponseType M2M_CreateRoomResponse
+message M2M_CreateRoomRequest // IActorRequest
+{
+    int32 RpcId = 90;
+
+}
+
+message M2M_CreateRoomResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+    long RoomID = 1;
+}
+
+//ResponseType M2G_PlayerEnterRoomResponse
+message G2M_PlayerEnterRoomRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 91;
+    long PlayerID = 1;
+    long UserID = 2;
+    long SessionID = 3;
+}
+
+message M2G_PlayerEnterRoomResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+    long GamerID = 1;
+}
+
+
 
 //demo follow
 
@@ -150,6 +184,7 @@ message R2G_GetLoginKey // IActorRequest
 {
 	int32 RpcId = 90;
 	string Account = 1;
+	long AccountId = 2;
 }
 
 message G2R_GetLoginKey // IActorResponse

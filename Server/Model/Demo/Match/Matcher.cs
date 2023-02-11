@@ -7,6 +7,8 @@ namespace ET
     /// <summary>
     /// 匹配对象
     /// </summary>
+    
+    [ChildType(typeof(Scene))]
     public sealed class Matcher : Entity ,IAwake<long> , IDestroy
     {
         //用户ID（唯一）
@@ -16,8 +18,9 @@ namespace ET
         public long PlayerID { get; set; }
 
         //客户端与网关服务器的SessionID
-        public long GateSessionID { get; set; }
+        public Session session { get; set; }
 
+        // public long gateId { get; set; }
    
     }
 }

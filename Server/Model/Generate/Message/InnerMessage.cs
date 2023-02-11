@@ -37,6 +37,74 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(M2M_CreateRoomResponse))]
+	[Message(InnerOpcode.M2M_CreateRoomRequest)]
+	[ProtoContract]
+	public partial class M2M_CreateRoomRequest: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2M_CreateRoomResponse)]
+	[ProtoContract]
+	public partial class M2M_CreateRoomResponse: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long RoomID { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2G_PlayerEnterRoomResponse))]
+	[Message(InnerOpcode.G2M_PlayerEnterRoomRequest)]
+	[ProtoContract]
+	public partial class G2M_PlayerEnterRoomRequest: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerID { get; set; }
+
+		[ProtoMember(2)]
+		public long UserID { get; set; }
+
+		[ProtoMember(3)]
+		public long SessionID { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2G_PlayerEnterRoomResponse)]
+	[ProtoContract]
+	public partial class M2G_PlayerEnterRoomResponse: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long GamerID { get; set; }
+
+	}
+
 //demo follow
 	[ResponseType(nameof(ObjectQueryResponse))]
 	[Message(InnerOpcode.ObjectQueryRequest)]
@@ -309,6 +377,9 @@ namespace ET
 
 		[ProtoMember(1)]
 		public string Account { get; set; }
+
+		[ProtoMember(2)]
+		public long AccountId { get; set; }
 
 	}
 

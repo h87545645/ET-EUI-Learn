@@ -2,11 +2,15 @@
 {
     public static class TransferHelper
     {
-        public static async ETTask Transfer(Unit unit, long sceneInstanceId, string sceneName)
+        public static async ETTask Transfer(Unit unit, long sceneInstanceId, string sceneName , bool robot = false)
         {
-            // 通知客户端开始切场景
-            M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = sceneInstanceId, SceneName = sceneName};
-            MessageHelper.SendToClient(unit, m2CStartSceneChange);
+            if (!robot)
+            {
+                // 通知客户端开始切场景
+                M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = sceneInstanceId, SceneName = sceneName , MyId = unit.Id};
+                MessageHelper.SendToClient(unit, m2CStartSceneChange);
+            }
+    
             
             M2M_UnitTransferRequest request = new M2M_UnitTransferRequest();
             request.Unit = unit;

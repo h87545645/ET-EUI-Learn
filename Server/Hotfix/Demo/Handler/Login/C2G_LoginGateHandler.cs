@@ -10,7 +10,7 @@ namespace ET
 		protected override async ETTask Run(Session session, C2G_LoginGate request, G2C_LoginGate response, Action reply)
 		{
 			Scene scene = session.DomainScene();
-			string account = scene.GetComponent<GateSessionKeyComponent>().Get(request.Key);
+			Tuple<long,string> account = scene.GetComponent<GateSessionKeyComponent>().Get(request.Key);
 			if (account == null)
 			{
 				response.Error = ErrorCore.ERR_ConnectGateKeyError;
@@ -22,7 +22,7 @@ namespace ET
 			session.RemoveComponent<SessionAcceptTimeoutComponent>();
 
 			PlayerComponent playerComponent = scene.GetComponent<PlayerComponent>();
-			Player player = playerComponent.AddChild<Player, string>(account);
+			Player player = playerComponent.AddChild<Player, string ,long>(account.Item2,account.Item1);
 			playerComponent.Add(player);
 			session.AddComponent<SessionPlayerComponent>().PlayerId = player.Id;
 			session.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);

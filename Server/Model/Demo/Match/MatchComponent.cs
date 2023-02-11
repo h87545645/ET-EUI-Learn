@@ -7,7 +7,8 @@ namespace ET
     /// </summary>
     // [ChildType(typeof(DBComponent))]
     [ComponentOf(typeof(Scene))]
-    public class MatchComponent :  Entity, IAwake, IDestroy
+    [ChildType(typeof(Room))]
+    public class MatchComponent :  Entity, IAwake, IDestroy ,IUpdate
     {
         //游戏中匹配对象列表
         public readonly Dictionary<long, long> Playing = new Dictionary<long, long>();

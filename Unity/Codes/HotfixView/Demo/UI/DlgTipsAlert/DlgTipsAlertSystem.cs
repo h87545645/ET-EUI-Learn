@@ -25,7 +25,8 @@ namespace ET
 
 		public static void OnConfirmClickHandler(this DlgTipsAlert self)
 		{
-			Log.Debug("confrim click");
+			Game.Scene.CurrentScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_TipsAlert);
+			// args.ZoneScene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
 		}
 
 	}

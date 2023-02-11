@@ -2,8 +2,11 @@
 {
 
 
-	public sealed class Player : Entity, IAwake<string>
+	public sealed class Player : Entity, IAwake<string , long>
 	{
+		
+		//用户ID（唯一）
+        public long UserID { get;  set; }
 		public string Account { get; set; }
 		
 		public long UnitId { get; set; }

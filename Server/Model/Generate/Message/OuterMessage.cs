@@ -32,6 +32,9 @@ namespace ET
 		[ProtoMember(92)]
 		public string Message { get; set; }
 
+		[ProtoMember(93)]
+		public long AccountId { get; set; }
+
 	}
 
 	[ResponseType(nameof(G2C_StartMatchResponse))]
@@ -41,6 +44,9 @@ namespace ET
 	{
 		[ProtoMember(90)]
 		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public bool RobotMatch { get; set; }
 
 	}
 
@@ -56,6 +62,39 @@ namespace ET
 
 		[ProtoMember(92)]
 		public string Message { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_)]
+	[ProtoContract]
+	public partial class M2C_: Object, IActorMessage
+	{
+		[ProtoMember(1)]
+		public int Error { get; set; }
+
+		[ProtoMember(2)]
+		public long Id { get; set; }
+
+		[ProtoMember(3)]
+		public float X { get; set; }
+
+		[ProtoMember(4)]
+		public float Y { get; set; }
+
+		[ProtoMember(5)]
+		public float Z { get; set; }
+
+		[ProtoMember(6)]
+		public float A { get; set; }
+
+		[ProtoMember(7)]
+		public float B { get; set; }
+
+		[ProtoMember(8)]
+		public float C { get; set; }
+
+		[ProtoMember(9)]
+		public float W { get; set; }
 
 	}
 
@@ -248,6 +287,10 @@ namespace ET
 		[ProtoMember(2)]
 		public string SceneName { get; set; }
 
+// 自己unitId
+		[ProtoMember(3)]
+		public long MyId { get; set; }
+
 	}
 
 	[Message(OuterOpcode.M2C_RemoveUnits)]
@@ -424,6 +467,9 @@ namespace ET
 
 		[ProtoMember(2)]
 		public string Password { get; set; }
+
+		[ProtoMember(3)]
+		public long AccountId { get; set; }
 
 	}
 

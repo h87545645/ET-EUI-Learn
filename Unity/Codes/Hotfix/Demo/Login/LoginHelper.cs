@@ -63,7 +63,7 @@ namespace ET
                     session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint("127.0.0.1:10002"));
                     {
                         //客户端向目标发送登录请求(Client to Realm)，监听并等待接收目标的回复消息
-                        r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
+                        r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password , AccountId = a2cAccount.AccountId});
                     }
                 }
                 finally

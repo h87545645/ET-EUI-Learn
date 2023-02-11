@@ -14,12 +14,15 @@ message A2C_LoginAccountResponse // IResponse
 	int32 RpcId = 90;
 	int32 Error = 91;
 	string Message = 92;
+	long AccountId = 93;
 }
 
 //ResponseType G2C_StartMatchResponse
 message C2G_StartMatchRequest // IRequest
 {
 	int32 RpcId = 90;
+    
+    bool RobotMatch = 91;
 
 }
 
@@ -30,6 +33,23 @@ message G2C_StartMatchResponse // IResponse
 	string Message = 92;
 
 }
+
+
+message M2C_ // IActorMessage
+{
+	int32 Error = 1;
+
+	int64 Id = 2;
+	float X = 3;
+	float Y = 4;
+	float Z = 5;
+
+	float A = 6;
+	float B = 7;
+	float C = 8;
+	float W = 9;
+}
+
 
 
 
@@ -123,6 +143,8 @@ message M2C_StartSceneChange // IActorMessage
 {
 	int64 SceneInstanceId = 1;
 	string SceneName = 2;	
+	// 自己unitId
+    int64 MyId = 3;
 }
 
 message M2C_RemoveUnits // IActorMessage
@@ -213,6 +235,7 @@ message C2R_Login // IRequest
 	int32 RpcId = 90;
 	string  Account = 1;  // 帐号
 	string  Password = 2;  // 密码
+	long AccountId = 3;
 }
 
 message R2C_Login // IResponse

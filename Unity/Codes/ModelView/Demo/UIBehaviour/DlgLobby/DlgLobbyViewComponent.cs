@@ -58,6 +58,40 @@ namespace ET
      		}
      	}
 
+		public UnityEngine.UI.Button E_MatchTestButton
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_MatchTestButton == null )
+     			{
+		    		this.m_E_MatchTestButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"EGBackGround/E_MatchTest");
+     			}
+     			return this.m_E_MatchTestButton;
+     		}
+     	}
+
+		public UnityEngine.UI.Image E_MatchTestImage
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_MatchTestImage == null )
+     			{
+		    		this.m_E_MatchTestImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"EGBackGround/E_MatchTest");
+     			}
+     			return this.m_E_MatchTestImage;
+     		}
+     	}
+
 		public UnityEngine.UI.Button E_FastMatchButtonButton
      	{
      		get
@@ -165,6 +199,8 @@ namespace ET
 			this.m_EGBackGroundRectTransform = null;
 			this.m_E_EnterMapButton = null;
 			this.m_E_EnterMapImage = null;
+			this.m_E_MatchTestButton = null;
+			this.m_E_MatchTestImage = null;
 			this.m_E_FastMatchButtonButton = null;
 			this.m_E_ContinueButtonButton = null;
 			this.m_E_RecordRankButtonButton = null;
@@ -177,6 +213,8 @@ namespace ET
 		private UnityEngine.RectTransform m_EGBackGroundRectTransform = null;
 		private UnityEngine.UI.Button m_E_EnterMapButton = null;
 		private UnityEngine.UI.Image m_E_EnterMapImage = null;
+		private UnityEngine.UI.Button m_E_MatchTestButton = null;
+		private UnityEngine.UI.Image m_E_MatchTestImage = null;
 		private UnityEngine.UI.Button m_E_FastMatchButtonButton = null;
 		private UnityEngine.UI.Button m_E_ContinueButtonButton = null;
 		private UnityEngine.UI.Button m_E_RecordRankButtonButton = null;

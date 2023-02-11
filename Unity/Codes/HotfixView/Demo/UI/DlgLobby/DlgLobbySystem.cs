@@ -20,6 +20,12 @@ namespace ET
 		  {
 			  self.OnStartMatch().Coroutine();
 		  }));
+		  
+		  //机器人测试
+		  self.View.E_MatchTestButton.AddListener((() =>
+		  {
+			  self.OnRobotStartMatch().Coroutine();
+		  }));
 		}
 
 		public static void ShowWindow(this DlgLobby self, Entity contextData = null)
@@ -35,6 +41,15 @@ namespace ET
 		public static async ETTask OnStartMatch(this DlgLobby self)
 		{
 			await MatchHelper.StartMatchAsync(self.ZoneScene());
+		}
+		
+		public static async ETTask OnRobotStartMatch(this DlgLobby self)
+		{
+			// await MatchHelper.StartMatchAsync(self.ZoneScene());
+			G2C_StartMatchResponse g2CStartMatch = await self.ZoneScene().GetComponent<SessionComponent>().Session.Call(new C2G_StartMatchRequest()
+			{
+				RobotMatch = true
+			}) as G2C_StartMatchResponse;
 		}
 	}
 }

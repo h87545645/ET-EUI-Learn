@@ -3,7 +3,7 @@
     /// <summary>
     /// 用户信息
     /// </summary>
-    public class UserInfo : Entity, IAwake
+    public class PlayerInfo : Entity, IAwake
     {
         public long AccountId { get; set; }
         //昵称

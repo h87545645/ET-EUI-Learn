@@ -1,11 +1,32 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-using ETModel;
+﻿
 
-namespace ETHotfix
+using System.Linq;
+
+namespace ET
 {
+    [FriendClass(typeof(MatchRoomComponent))]
     public static class MatchRoomComponentSystem
     {
+        
+        public class MatchRoomComponentDestroySystem: DestroySystem<MatchRoomComponent>
+        {
+            public override void Destroy(MatchRoomComponent self)
+            {
+                if (self.IsDisposed)
+                {
+                    return;
+                }
+
+                self.Dispose();
+
+                foreach (var room in self.rooms.Values)
+                {
+                    room.Dispose();
+                }
+            }
+        }
+        
+        
         /// <summary>
         /// 添加匹配房间
         /// </summary>

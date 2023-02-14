@@ -5,23 +5,25 @@ namespace ET.Server
 {
     public static class TransferHelper
     {
-        public static async ETTask TransferAtFrameFinish(Unit unit, long sceneInstanceId, string sceneName)
+        public static async ETTask TransferAtFrameFinish(Unit unit, long sceneInstanceId, string sceneName, bool robot = false)
         {
             await Game.WaitFrameFinish();
 
-            await TransferHelper.Transfer(unit, sceneInstanceId, sceneName);
+            await TransferHelper.Transfer(unit, sceneInstanceId, sceneName , robot);
         }
         
 
-        public static async ETTask Transfer(Unit unit, long sceneInstanceId, string sceneName)
+        public static async ETTask Transfer(Unit unit, long sceneInstanceId, string sceneName, bool robot = false)
         {
             // location加锁
             long unitId = unit.Id;
             long unitInstanceId = unit.InstanceId;
             
+           
             M2M_UnitTransferRequest request = new M2M_UnitTransferRequest() {Entitys = new List<byte[]>()};
             request.OldInstanceId = unitInstanceId;
             request.Unit = unit.ToBson();
+            request.robot = robot;
             foreach (Entity entity in unit.Components.Values)
             {
                 if (entity is ITransfer)
@@ -33,6 +35,7 @@ namespace ET.Server
             
             await LocationProxyComponent.Instance.Lock(unitId, unitInstanceId);
             await ActorMessageSenderComponent.Instance.Call(sceneInstanceId, request);
+   
         }
     }
 }

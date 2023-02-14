@@ -26,9 +26,13 @@ namespace ET.Server
 			
 			unit.AddComponent<MailBoxComponent>();
 
-			// 通知客户端开始切场景
-			M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name};
-			MessageHelper.SendToClient(unit, m2CStartSceneChange);
+			if (!request.robot)
+			{
+				// 通知客户端开始切场景
+				M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name};
+				MessageHelper.SendToClient(unit, m2CStartSceneChange);
+			}
+	
 			
 			// 通知客户端创建My Unit
 			M2C_CreateMyUnit m2CCreateUnits = new M2C_CreateMyUnit();

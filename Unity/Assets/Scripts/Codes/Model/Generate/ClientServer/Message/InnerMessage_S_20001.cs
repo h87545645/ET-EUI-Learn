@@ -4,6 +4,110 @@ using System.Collections.Generic;
 namespace ET
 {
 // using
+	[ResponseType(nameof(M2G_PlayerEnterMatchResponse))]
+	[Message(InnerMessage.G2M_PlayerEnterMatchRequest)]
+	[ProtoContract]
+	public partial class G2M_PlayerEnterMatchRequest: ProtoObject, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerID { get; set; }
+
+		[ProtoMember(2)]
+		public long UserID { get; set; }
+
+		[ProtoMember(3)]
+		public long SessionID { get; set; }
+
+	}
+
+	[Message(InnerMessage.M2G_PlayerEnterMatchResponse)]
+	[ProtoContract]
+	public partial class M2G_PlayerEnterMatchResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2M_CreateRoomResponse))]
+	[Message(InnerMessage.M2M_CreateRoomRequest)]
+	[ProtoContract]
+	public partial class M2M_CreateRoomRequest: ProtoObject, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(InnerMessage.M2M_CreateRoomResponse)]
+	[ProtoContract]
+	public partial class M2M_CreateRoomResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long RoomID { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2G_PlayerEnterRoomResponse))]
+	[Message(InnerMessage.G2M_PlayerEnterRoomRequest)]
+	[ProtoContract]
+	public partial class G2M_PlayerEnterRoomRequest: ProtoObject, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerID { get; set; }
+
+		[ProtoMember(2)]
+		public long UserID { get; set; }
+
+		[ProtoMember(3)]
+		public long SessionID { get; set; }
+
+	}
+
+	[Message(InnerMessage.M2G_PlayerEnterRoomResponse)]
+	[ProtoContract]
+	public partial class M2G_PlayerEnterRoomResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long GamerID { get; set; }
+
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//demo follow
 	[ResponseType(nameof(ObjectQueryResponse))]
 	[Message(InnerMessage.ObjectQueryRequest)]
 	[ProtoContract]
@@ -276,6 +380,9 @@ namespace ET
 		[ProtoMember(2)]
 		public string Account { get; set; }
 
+		[ProtoMember(3)]
+		public long AccountId { get; set; }
+
 	}
 
 	[Message(InnerMessage.G2R_GetLoginKey)]
@@ -343,6 +450,9 @@ namespace ET
 		[ProtoMember(4)]
 		public List<byte[]> Entitys { get; set; }
 
+		[ProtoMember(5)]
+		public bool robot { get; set; }
+
 	}
 
 	[Message(InnerMessage.M2M_UnitTransferResponse)]
@@ -362,28 +472,34 @@ namespace ET
 
 	public static class InnerMessage
 	{
-		 public const ushort ObjectQueryRequest = 20002;
-		 public const ushort M2A_Reload = 20003;
-		 public const ushort A2M_Reload = 20004;
-		 public const ushort G2G_LockRequest = 20005;
-		 public const ushort G2G_LockResponse = 20006;
-		 public const ushort G2G_LockReleaseRequest = 20007;
-		 public const ushort G2G_LockReleaseResponse = 20008;
-		 public const ushort ObjectAddRequest = 20009;
-		 public const ushort ObjectAddResponse = 20010;
-		 public const ushort ObjectLockRequest = 20011;
-		 public const ushort ObjectLockResponse = 20012;
-		 public const ushort ObjectUnLockRequest = 20013;
-		 public const ushort ObjectUnLockResponse = 20014;
-		 public const ushort ObjectRemoveRequest = 20015;
-		 public const ushort ObjectRemoveResponse = 20016;
-		 public const ushort ObjectGetRequest = 20017;
-		 public const ushort ObjectGetResponse = 20018;
-		 public const ushort R2G_GetLoginKey = 20019;
-		 public const ushort G2R_GetLoginKey = 20020;
-		 public const ushort G2M_SessionDisconnect = 20021;
-		 public const ushort ObjectQueryResponse = 20022;
-		 public const ushort M2M_UnitTransferRequest = 20023;
-		 public const ushort M2M_UnitTransferResponse = 20024;
+		 public const ushort G2M_PlayerEnterMatchRequest = 20002;
+		 public const ushort M2G_PlayerEnterMatchResponse = 20003;
+		 public const ushort M2M_CreateRoomRequest = 20004;
+		 public const ushort M2M_CreateRoomResponse = 20005;
+		 public const ushort G2M_PlayerEnterRoomRequest = 20006;
+		 public const ushort M2G_PlayerEnterRoomResponse = 20007;
+		 public const ushort ObjectQueryRequest = 20008;
+		 public const ushort M2A_Reload = 20009;
+		 public const ushort A2M_Reload = 20010;
+		 public const ushort G2G_LockRequest = 20011;
+		 public const ushort G2G_LockResponse = 20012;
+		 public const ushort G2G_LockReleaseRequest = 20013;
+		 public const ushort G2G_LockReleaseResponse = 20014;
+		 public const ushort ObjectAddRequest = 20015;
+		 public const ushort ObjectAddResponse = 20016;
+		 public const ushort ObjectLockRequest = 20017;
+		 public const ushort ObjectLockResponse = 20018;
+		 public const ushort ObjectUnLockRequest = 20019;
+		 public const ushort ObjectUnLockResponse = 20020;
+		 public const ushort ObjectRemoveRequest = 20021;
+		 public const ushort ObjectRemoveResponse = 20022;
+		 public const ushort ObjectGetRequest = 20023;
+		 public const ushort ObjectGetResponse = 20024;
+		 public const ushort R2G_GetLoginKey = 20025;
+		 public const ushort G2R_GetLoginKey = 20026;
+		 public const ushort G2M_SessionDisconnect = 20027;
+		 public const ushort ObjectQueryResponse = 20028;
+		 public const ushort M2M_UnitTransferRequest = 20029;
+		 public const ushort M2M_UnitTransferResponse = 20030;
 	}
 }

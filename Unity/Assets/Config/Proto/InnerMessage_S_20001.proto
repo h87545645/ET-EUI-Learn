@@ -3,6 +3,68 @@ syntax = "proto3";
 
 package ET;
 
+
+//ResponseType M2G_PlayerEnterMatchResponse
+message G2M_PlayerEnterMatchRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    long PlayerID = 1;
+    long UserID = 2;
+    long SessionID = 3;
+}
+
+message M2G_PlayerEnterMatchResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+
+}
+
+//ResponseType M2M_CreateRoomResponse
+message M2M_CreateRoomRequest // IActorRequest
+{
+    int32 RpcId = 90;
+
+}
+
+message M2M_CreateRoomResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+    long RoomID = 1;
+}
+
+//ResponseType M2G_PlayerEnterRoomResponse
+message G2M_PlayerEnterRoomRequest // IActorRequest
+{
+    int32 RpcId = 90;
+    int64 ActorId = 91;
+    long PlayerID = 1;
+    long UserID = 2;
+    long SessionID = 3;
+}
+
+message M2G_PlayerEnterRoomResponse // IResponse
+{
+    int32 RpcId = 90;
+    int32 Error = 91;
+    string Message = 92;
+    long GamerID = 1;
+}
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//demo follow
+
 //ResponseType ObjectQueryResponse
 message ObjectQueryRequest // IActorRequest
 {
@@ -131,6 +193,7 @@ message R2G_GetLoginKey // IActorRequest
 {
 	int32 RpcId = 1;
 	string Account = 2;
+	long AccountId = 3;
 }
 
 message G2R_GetLoginKey // IActorResponse
@@ -162,6 +225,7 @@ message M2M_UnitTransferRequest // IActorRequest
 	int64 OldInstanceId = 2;
 	bytes Unit = 3;
 	repeated bytes Entitys = 4;
+	bool robot = 5;
 }
 
 message M2M_UnitTransferResponse // IActorResponse

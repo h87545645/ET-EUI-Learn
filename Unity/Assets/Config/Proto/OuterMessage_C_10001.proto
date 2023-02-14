@@ -1,6 +1,60 @@
 syntax = "proto3";
 package ET;
 
+//ResponseType A2C_LoginAccountResponse
+message C2A_LoginAccountRequest // IRequest
+{
+	int32 RpcId       = 90;
+	string Account = 1;
+	string Password = 2;
+}
+
+message A2C_LoginAccountResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+	long AccountId = 93;
+}
+
+//ResponseType G2C_StartMatchResponse
+message C2G_StartMatchRequest // IRequest
+{
+	int32 RpcId = 90;
+    
+    bool RobotMatch = 91;
+
+}
+
+message G2C_StartMatchResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+}
+
+//ResponseType G2C_PlayerExitMatchResponse
+message C2G_PlayerExitMatchRequest // IRequest
+{
+	int32 RpcId = 90;
+}
+
+message G2C_PlayerExitMatchResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+    int64 ActorId = 93;
+    int64 UserID = 94;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//demo follow
+
+
+
 message HttpGetRouterResponse
 {
 	repeated string Realms = 1;

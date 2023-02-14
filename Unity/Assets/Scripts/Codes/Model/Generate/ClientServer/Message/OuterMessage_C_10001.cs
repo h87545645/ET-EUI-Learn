@@ -3,6 +3,101 @@ using ProtoBuf;
 using System.Collections.Generic;
 namespace ET
 {
+	[ResponseType(nameof(A2C_LoginAccountResponse))]
+	[Message(OuterMessage.C2A_LoginAccountRequest)]
+	[ProtoContract]
+	public partial class C2A_LoginAccountRequest: ProtoObject, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public string Account { get; set; }
+
+		[ProtoMember(2)]
+		public string Password { get; set; }
+
+	}
+
+	[Message(OuterMessage.A2C_LoginAccountResponse)]
+	[ProtoContract]
+	public partial class A2C_LoginAccountResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(93)]
+		public long AccountId { get; set; }
+
+	}
+
+	[ResponseType(nameof(G2C_StartMatchResponse))]
+	[Message(OuterMessage.C2G_StartMatchRequest)]
+	[ProtoContract]
+	public partial class C2G_StartMatchRequest: ProtoObject, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public bool RobotMatch { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_StartMatchResponse)]
+	[ProtoContract]
+	public partial class G2C_StartMatchResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
+	[ResponseType(nameof(G2C_PlayerExitMatchResponse))]
+	[Message(OuterMessage.C2G_PlayerExitMatchRequest)]
+	[ProtoContract]
+	public partial class C2G_PlayerExitMatchRequest: ProtoObject, IRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_PlayerExitMatchResponse)]
+	[ProtoContract]
+	public partial class G2C_PlayerExitMatchResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(93)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(94)]
+		public long UserID { get; set; }
+
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//demo follow
 	[Message(OuterMessage.HttpGetRouterResponse)]
 	[ProtoContract]
 	public partial class HttpGetRouterResponse: ProtoObject
@@ -481,39 +576,45 @@ namespace ET
 
 	public static class OuterMessage
 	{
-		 public const ushort HttpGetRouterResponse = 10002;
-		 public const ushort RouterSync = 10003;
-		 public const ushort C2M_TestRequest = 10004;
-		 public const ushort M2C_TestResponse = 10005;
-		 public const ushort Actor_TransferRequest = 10006;
-		 public const ushort Actor_TransferResponse = 10007;
-		 public const ushort C2G_EnterMap = 10008;
-		 public const ushort G2C_EnterMap = 10009;
-		 public const ushort MoveInfo = 10010;
-		 public const ushort UnitInfo = 10011;
-		 public const ushort M2C_CreateUnits = 10012;
-		 public const ushort M2C_CreateMyUnit = 10013;
-		 public const ushort M2C_StartSceneChange = 10014;
-		 public const ushort M2C_RemoveUnits = 10015;
-		 public const ushort C2M_PathfindingResult = 10016;
-		 public const ushort C2M_Stop = 10017;
-		 public const ushort M2C_PathfindingResult = 10018;
-		 public const ushort M2C_Stop = 10019;
-		 public const ushort C2G_Ping = 10020;
-		 public const ushort G2C_Ping = 10021;
-		 public const ushort G2C_Test = 10022;
-		 public const ushort C2M_Reload = 10023;
-		 public const ushort M2C_Reload = 10024;
-		 public const ushort C2R_Login = 10025;
-		 public const ushort R2C_Login = 10026;
-		 public const ushort C2G_LoginGate = 10027;
-		 public const ushort G2C_LoginGate = 10028;
-		 public const ushort G2C_TestHotfixMessage = 10029;
-		 public const ushort C2M_TestRobotCase = 10030;
-		 public const ushort M2C_TestRobotCase = 10031;
-		 public const ushort C2M_TransferMap = 10032;
-		 public const ushort M2C_TransferMap = 10033;
-		 public const ushort C2G_Benchmark = 10034;
-		 public const ushort G2C_Benchmark = 10035;
+		 public const ushort C2A_LoginAccountRequest = 10002;
+		 public const ushort A2C_LoginAccountResponse = 10003;
+		 public const ushort C2G_StartMatchRequest = 10004;
+		 public const ushort G2C_StartMatchResponse = 10005;
+		 public const ushort C2G_PlayerExitMatchRequest = 10006;
+		 public const ushort G2C_PlayerExitMatchResponse = 10007;
+		 public const ushort HttpGetRouterResponse = 10008;
+		 public const ushort RouterSync = 10009;
+		 public const ushort C2M_TestRequest = 10010;
+		 public const ushort M2C_TestResponse = 10011;
+		 public const ushort Actor_TransferRequest = 10012;
+		 public const ushort Actor_TransferResponse = 10013;
+		 public const ushort C2G_EnterMap = 10014;
+		 public const ushort G2C_EnterMap = 10015;
+		 public const ushort MoveInfo = 10016;
+		 public const ushort UnitInfo = 10017;
+		 public const ushort M2C_CreateUnits = 10018;
+		 public const ushort M2C_CreateMyUnit = 10019;
+		 public const ushort M2C_StartSceneChange = 10020;
+		 public const ushort M2C_RemoveUnits = 10021;
+		 public const ushort C2M_PathfindingResult = 10022;
+		 public const ushort C2M_Stop = 10023;
+		 public const ushort M2C_PathfindingResult = 10024;
+		 public const ushort M2C_Stop = 10025;
+		 public const ushort C2G_Ping = 10026;
+		 public const ushort G2C_Ping = 10027;
+		 public const ushort G2C_Test = 10028;
+		 public const ushort C2M_Reload = 10029;
+		 public const ushort M2C_Reload = 10030;
+		 public const ushort C2R_Login = 10031;
+		 public const ushort R2C_Login = 10032;
+		 public const ushort C2G_LoginGate = 10033;
+		 public const ushort G2C_LoginGate = 10034;
+		 public const ushort G2C_TestHotfixMessage = 10035;
+		 public const ushort C2M_TestRobotCase = 10036;
+		 public const ushort M2C_TestRobotCase = 10037;
+		 public const ushort C2M_TransferMap = 10038;
+		 public const ushort M2C_TransferMap = 10039;
+		 public const ushort C2G_Benchmark = 10040;
+		 public const ushort G2C_Benchmark = 10041;
 	}
 }

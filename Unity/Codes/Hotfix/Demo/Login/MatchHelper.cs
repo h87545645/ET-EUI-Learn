@@ -22,5 +22,20 @@ namespace ET
                 Log.Error(e);
             }	
         }
+        
+        public static async ETTask ExitMatchAsync(Scene zoneScene)
+        {
+            try
+            {
+                G2C_PlayerExitMatchResponse g2CPlayerExitMatch = await zoneScene.GetComponent<SessionComponent>().
+                        Session.Call(new C2G_PlayerExitMatchRequest()) as G2C_PlayerExitMatchResponse;
+                await ETTask.CompletedTask;
+
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }	
+        }
     }
 }

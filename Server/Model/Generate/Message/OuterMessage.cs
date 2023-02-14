@@ -65,36 +65,34 @@ namespace ET
 
 	}
 
-	[Message(OuterOpcode.M2C_)]
+	[ResponseType(nameof(G2C_PlayerExitMatchResponse))]
+	[Message(OuterOpcode.C2G_PlayerExitMatchRequest)]
 	[ProtoContract]
-	public partial class M2C_: Object, IActorMessage
+	public partial class C2G_PlayerExitMatchRequest: Object, IRequest
 	{
-		[ProtoMember(1)]
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(OuterOpcode.G2C_PlayerExitMatchResponse)]
+	[ProtoContract]
+	public partial class G2C_PlayerExitMatchResponse: Object, IResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
 		public int Error { get; set; }
 
-		[ProtoMember(2)]
-		public long Id { get; set; }
+		[ProtoMember(92)]
+		public string Message { get; set; }
 
-		[ProtoMember(3)]
-		public float X { get; set; }
+		[ProtoMember(93)]
+		public long ActorId { get; set; }
 
-		[ProtoMember(4)]
-		public float Y { get; set; }
-
-		[ProtoMember(5)]
-		public float Z { get; set; }
-
-		[ProtoMember(6)]
-		public float A { get; set; }
-
-		[ProtoMember(7)]
-		public float B { get; set; }
-
-		[ProtoMember(8)]
-		public float C { get; set; }
-
-		[ProtoMember(9)]
-		public float W { get; set; }
+		[ProtoMember(94)]
+		public long UserID { get; set; }
 
 	}
 

@@ -43,6 +43,11 @@ namespace ET
 			await MatchHelper.StartMatchAsync(self.ZoneScene());
 		}
 		
+		public static async ETTask OnExitMatch(this DlgLobby self)
+		{
+			await MatchHelper.ExitMatchAsync(self.ZoneScene());
+		}
+		
 		public static async ETTask OnRobotStartMatch(this DlgLobby self)
 		{
 			// await MatchHelper.StartMatchAsync(self.ZoneScene());

@@ -34,23 +34,20 @@ message G2C_StartMatchResponse // IResponse
 
 }
 
-
-message M2C_ // IActorMessage
+//ResponseType G2C_PlayerExitMatchResponse
+message C2G_PlayerExitMatchRequest // IRequest
 {
-	int32 Error = 1;
-
-	int64 Id = 2;
-	float X = 3;
-	float Y = 4;
-	float Z = 5;
-
-	float A = 6;
-	float B = 7;
-	float C = 8;
-	float W = 9;
+	int32 RpcId = 90;
 }
 
-
+message G2C_PlayerExitMatchResponse // IResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+    int64 ActorId = 93;
+    int64 UserID = 94;
+}
 
 
 

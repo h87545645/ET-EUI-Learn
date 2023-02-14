@@ -12,6 +12,7 @@ namespace ET
         
         // 这里配置逻辑层的错误码
         // 110000 - 200000是抛异常的错误
+        public const int ERR_ExitMatchError = 100001;
         // 200001以上不抛异常
         public const int ERR_SceneTypeError = 200001;
         public const int ERR_AccountOrPasswordIsNull = 200002;

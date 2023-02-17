@@ -8,13 +8,13 @@ namespace ET
 	[ProtoContract]
 	public partial class C2A_LoginAccountRequest: ProtoObject, IRequest
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
-		[ProtoMember(1)]
+		[ProtoMember(2)]
 		public string Account { get; set; }
 
-		[ProtoMember(2)]
+		[ProtoMember(3)]
 		public string Password { get; set; }
 
 	}
@@ -23,16 +23,16 @@ namespace ET
 	[ProtoContract]
 	public partial class A2C_LoginAccountResponse: ProtoObject, IResponse
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
-		[ProtoMember(91)]
+		[ProtoMember(2)]
 		public int Error { get; set; }
 
-		[ProtoMember(92)]
+		[ProtoMember(3)]
 		public string Message { get; set; }
 
-		[ProtoMember(93)]
+		[ProtoMember(4)]
 		public long AccountId { get; set; }
 
 	}
@@ -42,10 +42,10 @@ namespace ET
 	[ProtoContract]
 	public partial class C2G_StartMatchRequest: ProtoObject, IRequest
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
-		[ProtoMember(91)]
+		[ProtoMember(2)]
 		public bool RobotMatch { get; set; }
 
 	}
@@ -54,13 +54,13 @@ namespace ET
 	[ProtoContract]
 	public partial class G2C_StartMatchResponse: ProtoObject, IResponse
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
-		[ProtoMember(91)]
+		[ProtoMember(2)]
 		public int Error { get; set; }
 
-		[ProtoMember(92)]
+		[ProtoMember(3)]
 		public string Message { get; set; }
 
 	}
@@ -70,7 +70,7 @@ namespace ET
 	[ProtoContract]
 	public partial class C2G_PlayerExitMatchRequest: ProtoObject, IRequest
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
 	}
@@ -79,19 +79,19 @@ namespace ET
 	[ProtoContract]
 	public partial class G2C_PlayerExitMatchResponse: ProtoObject, IResponse
 	{
-		[ProtoMember(90)]
+		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
-		[ProtoMember(91)]
+		[ProtoMember(2)]
 		public int Error { get; set; }
 
-		[ProtoMember(92)]
+		[ProtoMember(3)]
 		public string Message { get; set; }
 
-		[ProtoMember(93)]
+		[ProtoMember(4)]
 		public long ActorId { get; set; }
 
-		[ProtoMember(94)]
+		[ProtoMember(5)]
 		public long UserID { get; set; }
 
 	}

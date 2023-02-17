@@ -1,6 +1,6 @@
-﻿namespace ET.Server;
-
-[FriendOf(typeof(Room))]
+﻿namespace ET.Server
+{
+    [FriendOf(typeof(Room))]
     public static class RoomSystem
     {
         
@@ -144,3 +144,5 @@
             }
         }
     }
+}
+

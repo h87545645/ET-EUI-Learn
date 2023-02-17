@@ -4,49 +4,49 @@ package ET;
 //ResponseType A2C_LoginAccountResponse
 message C2A_LoginAccountRequest // IRequest
 {
-	int32 RpcId       = 90;
-	string Account = 1;
-	string Password = 2;
+	int32 RpcId       = 1;
+	string Account = 2;
+	string Password = 3;
 }
 
 message A2C_LoginAccountResponse // IResponse
 {
-	int32 RpcId = 90;
-	int32 Error = 91;
-	string Message = 92;
-	long AccountId = 93;
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	long AccountId = 4;
 }
 
 //ResponseType G2C_StartMatchResponse
 message C2G_StartMatchRequest // IRequest
 {
-	int32 RpcId = 90;
+	int32 RpcId = 1;
     
-    bool RobotMatch = 91;
+    bool RobotMatch = 2;
 
 }
 
 message G2C_StartMatchResponse // IResponse
 {
-	int32 RpcId = 90;
-	int32 Error = 91;
-	string Message = 92;
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
 
 }
 
 //ResponseType G2C_PlayerExitMatchResponse
 message C2G_PlayerExitMatchRequest // IRequest
 {
-	int32 RpcId = 90;
+	int32 RpcId = 1;
 }
 
 message G2C_PlayerExitMatchResponse // IResponse
 {
-	int32 RpcId = 90;
-	int32 Error = 91;
-	string Message = 92;
-    int64 ActorId = 93;
-    int64 UserID = 94;
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+    int64 ActorId = 4;
+    int64 UserID = 5;
 }
 
 

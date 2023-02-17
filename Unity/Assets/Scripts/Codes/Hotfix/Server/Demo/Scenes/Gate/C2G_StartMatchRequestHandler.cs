@@ -1,7 +1,6 @@
-﻿namespace ET.Server;
-
-  
-[MessageHandler(SceneType.Gate)]
+﻿namespace ET.Server
+{
+    [MessageHandler(SceneType.Gate)]
 [FriendOf(typeof(MatchComponent))]
 public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G2C_StartMatchResponse>
 {
@@ -108,3 +107,6 @@ public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G
         
     }
 }
+}
+
+  

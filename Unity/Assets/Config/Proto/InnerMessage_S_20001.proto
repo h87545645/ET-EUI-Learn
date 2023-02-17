@@ -7,54 +7,68 @@ package ET;
 //ResponseType M2G_PlayerEnterMatchResponse
 message G2M_PlayerEnterMatchRequest // IActorRequest
 {
-    int32 RpcId = 90;
-    long PlayerID = 1;
-    long UserID = 2;
-    long SessionID = 3;
+    int32 RpcId = 1;
+    long PlayerID = 2;
+    long UserID = 3;
+    long SessionID = 4;
 }
 
 message M2G_PlayerEnterMatchResponse // IResponse
 {
-    int32 RpcId = 90;
-    int32 Error = 91;
-    string Message = 92;
+    int32 RpcId = 1;
+    int32 Error = 2;
+    string Message = 3;
 
 }
 
 //ResponseType M2M_CreateRoomResponse
 message M2M_CreateRoomRequest // IActorRequest
 {
-    int32 RpcId = 90;
+    int32 RpcId = 1;
 
 }
 
 message M2M_CreateRoomResponse // IResponse
 {
-    int32 RpcId = 90;
-    int32 Error = 91;
-    string Message = 92;
-    long RoomID = 1;
+    int32 RpcId = 1;
+    int32 Error = 2;
+    string Message = 3;
+    long RoomID = 4;
 }
 
 //ResponseType M2G_PlayerEnterRoomResponse
 message G2M_PlayerEnterRoomRequest // IActorRequest
 {
-    int32 RpcId = 90;
-    int64 ActorId = 91;
-    long PlayerID = 1;
-    long UserID = 2;
-    long SessionID = 3;
+    int32 RpcId = 1;
+    int64 ActorId = 2;
+    long PlayerID = 3;
+    long UserID = 4;
+    long SessionID = 5;
 }
 
 message M2G_PlayerEnterRoomResponse // IResponse
 {
-    int32 RpcId = 90;
-    int32 Error = 91;
-    string Message = 92;
-    long GamerID = 1;
+    int32 RpcId = 1;
+    int32 Error = 2;
+    string Message = 3;
+    long GamerID = 4;
 }
 
+//ResponseType A2R_LoginAccountResponse
+message R2A_LoginAccountRequest // IActorRequest
+{
+	int32 RpcId       = 1;
+	string Account = 2;
+	string Password = 3;
+}
 
+message A2R_LoginAccountResponse // IActorResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	long AccountId = 4;
+}
 
 
 

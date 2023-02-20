@@ -28,5 +28,19 @@
 	    public const int AOIPct = AOI * 10 + 3;
 	    public const int AOIFinalAdd = AOI * 10 + 4;
 	    public const int AOIFinalPct = AOI * 10 + 5;
+	    
+	    
+	    //frog numeric
+	    public const int jumpVaryX = 1200;
+	    public const int jumpStaticX = 200;
+	    public const int jumpVaryY = 2000;
+	    public const int jumpStaticY = 200;
+	    
+	    public const int jumpChargeTime = 200;
+	    public const int JumpMaxChargeTime = 1;
+	    
+	    //game dialog 
+	    // public const int DialogSpeed = 1;
+	    // public const int DialogInterval = 100;
     }
 }

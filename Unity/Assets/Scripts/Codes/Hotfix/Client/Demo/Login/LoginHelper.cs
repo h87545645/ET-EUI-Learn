@@ -99,13 +99,13 @@ namespace ET.Client
                 // StartSceneConfig accountConfig = ET.StartSceneConfigCategory.Instance.Account;
                 // String accountAddressString = accountConfig.InnerIPOutPort.ToString();
                 //获取session对话，即为与目标进行连接
-                IPEndPoint accountAddress = NetworkHelper.ToIPEndPoint("127.0.0.1:30006");
-                 
-                A2C_LoginAccountResponse a2cAccount;
-                using (Session acountSession = await RouterHelper.CreateRouterSession(clientScene,accountAddress))
-                {
-                    a2cAccount = (A2C_LoginAccountResponse) await acountSession.Call(new C2A_LoginAccountRequest() { Account = account, Password = password });
-                }
+                // IPEndPoint accountAddress = NetworkHelper.ToIPEndPoint("127.0.0.1:30006");
+                //  
+                // A2C_LoginAccountResponse a2cAccount;
+                // using (Session acountSession = await RouterHelper.CreateRouterSession(clientScene,accountAddress))
+                // {
+                //     a2cAccount = (A2C_LoginAccountResponse) await acountSession.Call(new C2A_LoginAccountRequest() { Account = account, Password = password });
+                // }
 
                 // 创建一个gate Session,并且保存到SessionComponent中
                 Session gateSession = await RouterHelper.CreateRouterSession(clientScene, NetworkHelper.ToIPEndPoint(r2CLogin.Address));

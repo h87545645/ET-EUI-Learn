@@ -29,6 +29,7 @@ namespace ET.Client
             {
                 return GlobalComponent.Instance.OtherRoot;
             }
+            
 
             Log.Error("uiroot type is error: " + type.ToString());
             return null;

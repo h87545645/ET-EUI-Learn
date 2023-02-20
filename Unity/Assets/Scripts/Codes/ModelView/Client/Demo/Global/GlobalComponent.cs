@@ -17,5 +17,7 @@ namespace ET.Client
         public Transform FixedRoot{ get; set; }
         public Transform PoolRoot{ get; set; }
         public Transform OtherRoot{ get; set; }
+        
+        public Transform I18NRoot{ get; set; }
     }
 }

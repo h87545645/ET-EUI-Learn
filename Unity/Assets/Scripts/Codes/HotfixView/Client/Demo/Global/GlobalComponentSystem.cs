@@ -17,6 +17,7 @@ namespace ET.Client
             self.FixedRoot = GameObject.Find("Global/UIRoot/FixedRoot").transform;
             self.OtherRoot = GameObject.Find("Global/UIRoot/OtherRoot").transform;
             self.PoolRoot =  GameObject.Find("Global/PoolRoot").transform;
+            self.I18NRoot = GameObject.Find("Global/UIRoot/I18NRoot").transform;
         }
     }
 }

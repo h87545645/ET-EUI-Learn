@@ -66,5 +66,9 @@ namespace ET
                 return $"{this.GetType().Name} ({this.Id})";
             }
         }
+        
+        
+        //frog model
+        
     }
 }

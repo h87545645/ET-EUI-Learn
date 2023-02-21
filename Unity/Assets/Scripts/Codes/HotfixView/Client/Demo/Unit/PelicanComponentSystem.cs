@@ -6,6 +6,7 @@ using Random = System.Random;
 namespace ET.Client
 {
     [FriendOf(typeof(PelicanComponent))]
+    [FriendOf(typeof(I18NComponent))]
     public static class PelicanComponentSystem
     {
         [ObjectSystem]
@@ -69,30 +70,31 @@ namespace ET.Client
         {
             self.animController.FinishSpeak();
             self.dialogCompoent.FinishedDialog();
-            if (_calllback != null)
-            {
-                _calllback();
-                _calllback = null;
-            }
+            // if (_calllback != null)
+            // {
+            //     _calllback();
+            //     _calllback = null;
+            // }
+            EventSystem.Instance.Publish(self.DomainScene(), new EventType.ChangeRotation() {});
         }
 
         public static void RandomSpeak(this PelicanComponent self)
         {
             Random rd = new Random();
             int randomIndex = rd.Next(20);
-            // string text = GameMgr.GetInstance().langMgr.getValue("^game_random"+randomIndex);
+            string text = self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^game_random"+randomIndex);
             // self.slefSpeak(text);
         }
         
-        public static void GuideSpeak(this PelicanComponent self,Action callback)
+        public static void GuideSpeak(this PelicanComponent self)
         {
 
             try
             {
-                _calllback = callback;
+                // self.PelicanCallBack += callback;
                 for (int i = 1; i <= 3; i++)
                 {
-                    string str = GameMgr.GetInstance().langMgr.getValue("^game_guide"+i);
+                    string str = self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^game_guide"+i);
                     Speak(self,str);
                 }
             }
@@ -118,7 +120,7 @@ namespace ET.Client
             self.animController.Fly();
             self.transform.DOMove(pos,time);
             await TimerComponent.Instance.WaitAsync(time);
-            animController.FlyEnd();
+            self.animController.FlyEnd();
             self.isFlying = false;
             if (action != null)
             {

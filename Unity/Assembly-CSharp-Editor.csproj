@@ -865,6 +865,10 @@
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
     </ProjectReference>
+    <ProjectReference Include="I18N.csproj">
+      <Project>{35791ee7-9021-6845-8e43-7a9a992d1f32}</Project>
+      <Name>I18N</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -14,9 +14,11 @@ namespace ET.Client
 
         public bool isFlying = false;
     
-        // private delegate void PelicanCallBack();
+        // public delegate void PelicanCallBack();
+        //
+        // private PelicanCallBack _hotfixCallback;
 
-        // private Action _calllback;
+        // public Action callBack;
 
         public bool isVisible;
     }

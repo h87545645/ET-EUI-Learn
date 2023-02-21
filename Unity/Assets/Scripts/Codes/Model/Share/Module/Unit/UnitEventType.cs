@@ -59,5 +59,11 @@ namespace ET
             public Unit Unit;
 
         }
+        
+        public struct FrogGuideSpeakEnd
+        {
+            // public Unit Unit;
+
+        }
     }
 }

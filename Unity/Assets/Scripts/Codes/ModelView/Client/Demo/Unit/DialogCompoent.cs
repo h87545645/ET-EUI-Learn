@@ -5,7 +5,7 @@ using UnityEngine.PlayerLoop;
 
 namespace ET.Client
 {
-    [ComponentOf(typeof(Dialog))]
+    [ComponentOf(typeof(Unit))]
     public class DialogCompoent : Entity,IAwake,IUpdate
     {
         public GameObject dialogGo;

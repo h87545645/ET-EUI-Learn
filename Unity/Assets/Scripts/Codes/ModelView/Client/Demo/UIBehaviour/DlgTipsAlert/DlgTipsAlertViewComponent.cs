@@ -69,7 +69,7 @@ namespace ET.Client
      			}
      			if( this.m_E_MessageTextMeshProUGUI == null )
      			{
-		    		this.m_E_MessageTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"E_Message");
+		    		this.m_E_MessageTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EGBackGround/E_Message");
      			}
      			return this.m_E_MessageTextMeshProUGUI;
      		}

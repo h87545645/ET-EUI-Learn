@@ -19,6 +19,14 @@ namespace ET.Server
 
             Root.Instance.Scene.AddComponent<NavmeshComponent>();
 
+            /*
+            * @Author: TimTian
+            * @Description: 增加DBManagerComponent组件
+            * @Date: 2023年02月25日 星期六 15:02:52
+            * @Modify:
+            */
+            Root.Instance.Scene.AddComponent<DBManagerComponent>();
+
             StartProcessConfig processConfig = StartProcessConfigCategory.Instance.Get(Options.Instance.Process);
             switch (Options.Instance.AppType)
             {

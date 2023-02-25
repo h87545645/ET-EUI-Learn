@@ -138,6 +138,17 @@ namespace ET.Client
             self.FlyTo(nearPos, action).Coroutine();
         }
         
+        
+        public static async ETTask OnCameraMove(this PelicanComponent self, Transform trans)
+        {
+            await TimerComponent.Instance.WaitAsync(5000); 
+            if ( !self.isVisible)
+            {
+                self.FlyToPlayer(trans);
+            }
+
+        }
+        
     }
 }
 

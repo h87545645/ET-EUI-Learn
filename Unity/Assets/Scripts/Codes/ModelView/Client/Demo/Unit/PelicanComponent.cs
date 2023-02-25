@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using System;
 
+
 namespace ET.Client
 {
+    [ComponentOf(typeof(Unit))]
     public class PelicanComponent: Entity, IAwake
     {
+        public Pelican pelican;
+        
+        
+        
         public Transform transform;
         public SpriteRenderer pelicanRenderer;
         public PelicanAnimComponent animController;

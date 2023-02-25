@@ -5,17 +5,17 @@ namespace ET.Client
     [ComponentOf(typeof(Scene))]
     public class FrogGameComponent: Entity, IAwake , IUpdate
     {
-        public FragGameCameraCtrl fragGameCameraCtrl;
-
-        public FragHero fragHero;
+        // public FragGameCameraCtrl fragGameCameraCtrl;
+        //
+        // public FragHero fragHero;
 
         public Pelican pelican;
 
         public Light2D globalLight;
 
-        public FragGameCompleted completedPanel;
-
-        public FragInputCtrl inputCtrl;
+        // public FragGameCompleted completedPanel;
+        //
+        // public FragInputCtrl inputCtrl;
 
         // private long _totalPlayTime = 0;
 

@@ -4,6 +4,10 @@ namespace ET.Client
 {
     [FriendOf(typeof(FrogGameComponent))]
     [FriendOf(typeof(I18NComponent))]
+    [FriendOf(typeof(PelicanComponent))]
+    [FriendOf(typeof(UnitComponent))]
+    [FriendOf(typeof(FrogComponent))]
+    [FriendOf(typeof(DialogCompoent))]
     public static class FrogGameComponentSystem
     {
         [ObjectSystem]
@@ -22,16 +26,21 @@ namespace ET.Client
         
         public static async ETTask OnCameraMove(this FrogGameComponent self, int index)
         {
+       
             // _curLevelTime = 0;
             // _levelLongStay = false;
             if (self._isCompleted)
             {
                 return;
             }
+       
             await TimerComponent.Instance.WaitAsync(5000); 
-            if ( !self.pelican.isVisible && !self._isCompleted)
+            UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
+            Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
+            Unit player = UnitHelper.GetMyUnitFromClientScene(self.DomainScene());
+            if ( !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
             {
-                self.pelican.FlyToPlayer(self.fragHero.heroRigidbody2D.transform);
+                pelican.GetComponent<PelicanComponent>().FlyToPlayer(player.GetComponent<FrogComponent>().heroRigidbody2D.transform);
             }
             // StartCoroutine(UnityUtils.DelayFuc(() =>
             // {
@@ -46,7 +55,7 @@ namespace ET.Client
             {
                 case 6:
                 {
-                    self.fragHero.OnLight(true);
+                    player.GetComponent<FrogComponent>().OnLight(true);
                     self.globalLight.intensity = 0.2f;
                     break;
                 }
@@ -62,7 +71,7 @@ namespace ET.Client
                 }
                 default:
                 {
-                    self.fragHero.OnLight(false);
+                    player.GetComponent<FrogComponent>().OnLight(false);
                     break;
                 }
             }
@@ -73,20 +82,22 @@ namespace ET.Client
         {
             if (!self._isCompleted)
             {
-                self.inputCtrl.EnableInput(false);
-                self.FragGameRecord.GetInstance().history.jumpCnt = self.FragGameRecord.GetInstance().reocrd.jumpCnt;
-                self.FragGameRecord.GetInstance().history.playerTotalTime =  self.FragGameRecord.GetInstance().reocrd.playerTotalTime;
-                self._isCompleted = true;
-                self.fragHero.RemoveListener();
-                self.pelican.FlyToPlayer(self.fragHero.heroRigidbody2D.transform);
+                // self.inputCtrl.EnableInput(false);
+                // self.FragGameRecord.GetInstance().history.jumpCnt = self.FragGameRecord.GetInstance().reocrd.jumpCnt;
+                // self.FragGameRecord.GetInstance().history.playerTotalTime =  self.FragGameRecord.GetInstance().reocrd.playerTotalTime;
+                // self._isCompleted = true;
+                // self.fragHero.RemoveListener();
+                // self.pelican.FlyToPlayer(self.fragHero.heroRigidbody2D.transform);
             }
         }
 
         public static async ETTask OnPelicanFlyToPlayer(this FrogGameComponent self)
         {
-            self.pelican.Speak(self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^game_completed_speak"));
+            UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
+            Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
+            pelican.GetComponent<DialogCompoent>().Speak(self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^game_completed_speak"));
             await TimerComponent.Instance.WaitAsync(3000); 
-            self.completedPanel.OnFadeIn();
+            self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogRecord);
             // StartCoroutine(UnityUtils.DelayFuc(() =>
             // {
             //     completedPanel.OnFadeIn();

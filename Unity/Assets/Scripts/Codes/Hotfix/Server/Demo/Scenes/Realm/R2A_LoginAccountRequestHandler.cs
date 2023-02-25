@@ -27,7 +27,7 @@ namespace ET.Server
             //查询数据库 使用DBManagerComponent
             //DBManagerComponent挂载在Game.Scene全局下
             //这里的GetZoneDB里面的2代表的是2服 这里就写死了  代表ET2数据库的那个id 配表里可以找到
-            var accounts = await DBManagerComponent.Instance.GetZoneDB(2)
+            var accounts = await DBManagerComponent.Instance.GetZoneDB(1)
                     .Query<Account>(d => d.AccountName.Equals(request.Account.Trim()));
             
             
@@ -47,7 +47,7 @@ namespace ET.Server
                 account.AccountType = (int)AccountType.General;
                 
                 //存到数据库
-                await DBManagerComponent.Instance.GetZoneDB(2).Save<Account>(account);
+                await DBManagerComponent.Instance.GetZoneDB(1).Save<Account>(account);
                 
                 //新建用户信息
 
@@ -61,14 +61,14 @@ namespace ET.Server
                 player.NickName = account.AccountName;
                 
                 //存到数据库
-                await DBManagerComponent.Instance.GetZoneDB(2).Save<PlayerInfo>(player);
+                await DBManagerComponent.Instance.GetZoneDB(1).Save<PlayerInfo>(player);
             }
             else
             {
                 //如果存在账号走这里
                 account = accounts[0];
                 scene.AddChild(account);
-                var players = await DBManagerComponent.Instance.GetZoneDB(2)
+                var players = await DBManagerComponent.Instance.GetZoneDB(1)
                         .Query<PlayerInfo>(d => d.AccountId.Equals(account.Id));
                 scene.AddChild(players[0]);
                 

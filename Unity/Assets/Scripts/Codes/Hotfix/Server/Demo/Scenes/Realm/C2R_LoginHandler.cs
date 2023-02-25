@@ -36,9 +36,9 @@ namespace ET.Server
                 
 				}
 
-				// response.Message = errString;
-				// response.Error = A2RLoginAccountResponse.Error;
-				// return;
+				response.Message = errString;
+				response.Error = A2RLoginAccountResponse.Error;
+				return;
 			}
 			
 			// 随机分配一个Gate

@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameLang: 0
-  _languageFile: {fileID: 0}
+  _languageFile: {fileID: 4900000, guid: a07c4f8f1f32ddf459e9307f7bfe189a, type: 3}
   _useCustomFonts: 0
   _langFonts: []
 --- !u!1 &1114695592

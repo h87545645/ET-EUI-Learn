@@ -738,6 +738,9 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:\U3D\U3D_engine\Unity 2021.2.7f1c1\Editor\2021.3.16f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>

@@ -2,6 +2,7 @@
 
 namespace ET.Client
 {
+	[FriendOf(typeof(UnitComponent))]
     public static class UnitFactory
     {
         public static Unit Create(Scene currentScene, UnitInfo unitInfo)
@@ -9,6 +10,16 @@ namespace ET.Client
 	        UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
 	        Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
 	        unitComponent.Add(unit);
+	        /*
+			*@Author: TimTian
+			*@Description:
+			*@Date: 2023年02月25日 星期六 13:02:26
+			*@Modify:
+			*/
+	        if (unit.Type == UnitType.NPC)
+	        {
+		        unitComponent.PelicanUnitId = unit.Id;
+	        }
 	        
 	        unit.Position = unitInfo.Position;
 	        unit.Forward = unitInfo.Forward;
@@ -33,6 +44,9 @@ namespace ET.Client
 	        unit.AddComponent<ObjectWait>();
 
 	        unit.AddComponent<XunLuoPathComponent>();
+
+	     
+	       
 	        
 	        EventSystem.Instance.Publish(unit.DomainScene(), new EventType.AfterUnitCreate() {Unit = unit});
             return unit;

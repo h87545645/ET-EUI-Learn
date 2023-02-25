@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using TMPro;
 
 namespace Honeti
 {
@@ -37,7 +38,15 @@ namespace Honeti
         /// <summary>
         /// Korean
         /// </summary>
-        KO = 6
+        KO = 6,
+        /// <summary>
+        /// Simple Chinese
+        /// </summary>
+        SCN = 7,
+        /// <summary>
+        /// Traditional Chinese
+        /// </summary>
+        TCN = 8 
     }
 
     /// <summary>
@@ -398,7 +407,7 @@ namespace Honeti
         /// <summary>
         /// Font
         /// </summary>
-        public Font font;
+        public TMP_FontAsset font;
         /// <summary>
         /// True, when components should use custom line spacing.
         /// </summary>
@@ -423,7 +432,7 @@ namespace Honeti
         /// <summary>
         /// Custom alignment value.
         /// </summary>
-        public TextAlignment alignment = TextAlignment.Left;
+        public TextAlignmentOptions alignment = TextAlignmentOptions.Left;
 
         #endregion
     }

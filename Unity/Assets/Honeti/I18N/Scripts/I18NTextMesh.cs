@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 namespace Honeti
 {
     public class I18NTextMesh : MonoBehaviour
     {
         private string _key = "";
-        private TextMesh _text;
+        private TextMeshProUGUI _text;
         private MeshRenderer _renderer;
         private bool _initialized = false;
         private bool _isValidKey = false;
-        private Font _defaultFont;
+        private TMP_FontAsset _defaultFont;
         private float _defaultLineSpacing;
-        private int _defaultFontSize;
-        private TextAlignment _defaultAlignment;
+        private float _defaultFontSize;
+        private TMPro.TextAlignmentOptions _defaultAlignment;
 
         [SerializeField]
         private bool _dontOverwrite = false;
 
         [SerializeField]
-        private string[] _params;
+        public string[] _params;
 
         void OnEnable()
         {
@@ -78,7 +79,7 @@ namespace Honeti
         /// </summary>
         private void _init()
         {
-            _text = GetComponent<TextMesh>();
+            _text = GetComponent<TextMeshProUGUI>();
             _renderer = GetComponent<MeshRenderer>();
             _defaultFont = _text.font;
             _defaultLineSpacing = _text.lineSpacing;

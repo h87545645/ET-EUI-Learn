@@ -15,4 +15,30 @@ namespace ET
             scrollDir(dir);
         }
     }
+    
+    public struct ScrollRectDirectionEvent
+    {
+        public int dir;
+    } 
+    
+    public struct GameFinishEvent
+    {
+        // public long instandId;
+    }
+    
+    public struct FrogLanded
+    {
+
+    }
+    
+    public struct FrogCollisionEnter2D
+    {
+        public bool isUp;
+        public bool isLeft;
+    }
+    
+    public struct FrogGameCameraChange
+    {
+        public int Index;
+    }
 }

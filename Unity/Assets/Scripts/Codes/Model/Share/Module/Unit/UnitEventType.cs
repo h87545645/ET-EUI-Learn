@@ -32,8 +32,6 @@ namespace ET
         
         public struct FrogDirection
         {
-            public Unit Unit;
-
             public bool force;
 
             public ET.FrogDirection dir;

@@ -33,6 +33,16 @@ namespace ET.Server
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     scene.AddComponent<PlayerComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
+                    /*
+                    * @Author: TimTian
+                    * @Description:增加匹配组件
+                    * @Date: 2023年02月26日 星期日 11:02:22
+                    * @Modify:
+                    */
+                    scene.AddComponent<MatchComponent>();
+                    scene.AddComponent<MatcherComponent>();
+                    scene.AddComponent<MatchRoomComponent>();
+                    scene.AddComponent<RoomComponent>();
                     break;
                 case SceneType.Map:
                     scene.AddComponent<UnitComponent>();

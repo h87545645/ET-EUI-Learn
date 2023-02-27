@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using ET.Client;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -41,6 +39,7 @@ namespace ET
                 {
                     _lastDir = dir;
                     Mono2ETEventManager.OnScrollRectDir(dir);
+                    EventSystem.Instance.Publish(Root.Instance.Scene, new ScrollRectDirectionEvent(){dir = dir});
                     // DlgFragGameMainUIViewComponent.ScrollRectDirEvent.inv
                     // EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = _fragHore.unit , force = false, dir = ET.FrogDirection.None});
                     // EventCenter.PostEvent<Game_Direction,bool>(Game_Event.FragGameDirection, dir,false);
@@ -54,7 +53,8 @@ namespace ET
             base.OnEndDrag(eventData);
             // EventCenter.PostEvent<Game_Direction,bool>(Game_Event.FragGameDirection, Game_Direction.None,false);
             // EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = _fragHore.unit , force = false, dir = ET.FrogDirection.None});
-            Mono2ETEventManager.OnScrollRectDir(0);
+            // Mono2ETEventManager.OnScrollRectDir(0);
+            EventSystem.Instance.Publish(Root.Instance.Scene, new ScrollRectDirectionEvent(){dir = 0});
         }
 
         public void resetDir()

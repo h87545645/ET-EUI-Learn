@@ -18,7 +18,7 @@ namespace ET.Client
         
         public Animator guideAnim;
         public Animator fragAnim;
-        
+        public float chargeTime = 0;
         
         
         

@@ -7,6 +7,7 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, EventType.SceneChangeStart args)
         {
+            scene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Lobby);
             Scene currentScene = scene.CurrentScene();
             
             // 加载场景资源

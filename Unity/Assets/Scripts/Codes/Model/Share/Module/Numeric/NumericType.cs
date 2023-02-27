@@ -36,7 +36,7 @@
 	    public const int jumpVaryY = 2000;
 	    public const int jumpStaticY = 200;
 	    
-	    public const int jumpChargeTime = 200;
+	    // public const int jumpChargeTime = 200;
 	    public const int JumpMaxChargeTime = 1;
 	    
 	    //game dialog 

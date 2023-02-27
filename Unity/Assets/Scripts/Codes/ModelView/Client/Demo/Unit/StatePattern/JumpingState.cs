@@ -15,13 +15,9 @@ public class JumpingState : IBaseState
 
     private float _jumpDelay = 0; 
     
-    public JumpingState(FrogComponent frag, double chargeTime = double.NaN)
+    public JumpingState(FrogComponent frag, double chargeTime = 0)
     {
         NumericComponent numer = frag.unit.GetComponent<NumericComponent>();
-        if (chargeTime == double.NaN)
-        {
-            chargeTime = numer.GetAsFloat(NumericType.jumpChargeTime);
-        }
         _jumpDelay = 0;
         _fragHore = frag;
         _fragHore.fragAnim.SetTrigger("jump-up");

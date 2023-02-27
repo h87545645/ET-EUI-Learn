@@ -20,7 +20,7 @@ namespace ET.Client
 			self.View.E_MenuButtonButton.AddListener(self.OnMenuClickHandler);
 			
 
-			Mono2ETEventManager.scrollDir += self.OnDirDragHandler;
+			// Mono2ETEventManager.scrollDir += self.OnDirDragHandler;
 
 		}
 
@@ -92,10 +92,10 @@ namespace ET.Client
 			self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogMenu);
 		}
 		
-		public static void OnDirDragHandler(this DlgFragGameMainUI self , int dir)
-		{
-			EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = null , force = false, dir = (ET.FrogDirection)dir});
-		}
+		// public static void OnDirDragHandler(this DlgFragGameMainUI self , int dir)
+		// {
+		// 	EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = null , force = false, dir = (ET.FrogDirection)dir});
+		// }
 		
 
 	}

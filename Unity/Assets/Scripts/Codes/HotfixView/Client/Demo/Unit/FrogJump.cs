@@ -23,7 +23,8 @@ namespace ET.Client
             }
 
             frogComponent.IsReady = false;
-            frogComponent.unit.GetComponent<NumericComponent>().Set(NumericType.jumpChargeTime ,chargeTime);
+            frogComponent.chargeTime = chargeTime;
+            // frogComponent.unit.GetComponent<NumericComponent>().Set(NumericType.jumpChargeTime ,chargeTime);
             // frogComponent.chargeTime = chargeTime;
             frogComponent.fragAnim.SetBool("walk", false);
             frogComponent.SetHeroineState(new JumpingState(frogComponent, chargeTime));

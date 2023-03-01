@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,4 +47,10 @@ MonoBehaviour:
   data:
   - key: Skeleton
     gameObject: {fileID: 1248987324363926, guid: 9e27b0bdab1ad7242a009899d15c0e67,
+      type: 3}
+  - key: Frog
+    gameObject: {fileID: 2840524767378351745, guid: 85e455bd8b6851948a95d5e406de4ccb,
+      type: 3}
+  - key: Pelican
+    gameObject: {fileID: 1935529105840952402, guid: 4d091cab94429ac42898787e6a30700c,
       type: 3}

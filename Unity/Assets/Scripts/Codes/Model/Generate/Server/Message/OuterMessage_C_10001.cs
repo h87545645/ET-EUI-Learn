@@ -266,7 +266,7 @@ namespace ET
 	public partial class M2C_CreateMyUnit: ProtoObject, IActorMessage
 	{
 		[ProtoMember(1)]
-		public UnitInfo Unit { get; set; }
+		public List<UnitInfo> Units { get; set; }
 
 	}
 

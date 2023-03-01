@@ -136,7 +136,7 @@ message M2C_CreateUnits // IActorMessage
 
 message M2C_CreateMyUnit // IActorMessage
 {
-	UnitInfo Unit = 1;
+	repeated UnitInfo Units = 1;
 }
 
 message M2C_StartSceneChange // IActorMessage

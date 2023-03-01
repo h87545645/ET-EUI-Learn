@@ -10,15 +10,15 @@ namespace ET.Server
 			await ETTask.CompletedTask;
 
 			string currentMap = unit.DomainScene().Name;
-			string toMap = null;
-			if (currentMap == "Map1")
-			{
-				toMap = "Map2";
-			}
-			else
-			{
-				toMap = "Map1";
-			}
+			string toMap = "FragGameMap";
+			// if (currentMap == "Map1")
+			// {
+			// 	toMap = "Map2";
+			// }
+			// else
+			// {
+			// 	toMap = "Map1";
+			// }
 
 			StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(unit.DomainScene().Zone, toMap);
 			

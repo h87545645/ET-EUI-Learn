@@ -26,7 +26,7 @@ namespace ET.Client
             {
 		        
             }
-            GameObject prefab = bundleGameObject.Get<GameObject>("Skeleton");
+            GameObject prefab = bundleGameObject.Get<GameObject>("Frog");
 	        
             GameObject go = UnityEngine.Object.Instantiate(prefab, GlobalComponent.Instance.Unit, true);
             go.transform.position = unit.Position;

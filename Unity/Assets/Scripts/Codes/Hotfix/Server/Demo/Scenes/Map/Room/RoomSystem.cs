@@ -1,8 +1,19 @@
-﻿namespace ET.Server
+﻿using Unity.Mathematics;
+
+namespace ET.Server
 {
     [FriendOf(typeof(Room))]
     public static class RoomSystem
     {
+        
+        [ObjectSystem]
+        public class RoomAwakeSystem : AwakeSystem<Room>
+        {
+            protected override void Awake(Room self)
+            {
+                self.playerDefaultPos = new float3[]{new float3(-20,0,0),new float3(20,0,0)};
+            }
+        }
         
         public class RoomDestroySystem: DestroySystem<Room>
         {

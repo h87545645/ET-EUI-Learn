@@ -22,8 +22,17 @@ namespace ET.Client
                 // 等待CreateMyUnit的消息
                 Wait_CreateMyUnit waitCreateMyUnit = await clientScene.GetComponent<ObjectWait>().Wait<Wait_CreateMyUnit>();
                 M2C_CreateMyUnit m2CCreateMyUnit = waitCreateMyUnit.Message;
-                Unit unit = UnitFactory.Create(currentScene, m2CCreateMyUnit.Unit);
-                unitComponent.Add(unit);
+                foreach (UnitInfo unitInfo in m2CCreateMyUnit.Units)
+                {
+                    if (unitComponent.Get(unitInfo.UnitId) != null)
+                    {
+                        continue;
+                    }
+                    Unit unit = UnitFactory.Create(currentScene, unitInfo);
+                    unitComponent.Add(unit);
+                }
+                // Unit unit = UnitFactory.Create(currentScene, m2CCreateMyUnit.Unit);
+                // unitComponent.Add(unit);
             
                 clientScene.RemoveComponent<AIComponent>();
             

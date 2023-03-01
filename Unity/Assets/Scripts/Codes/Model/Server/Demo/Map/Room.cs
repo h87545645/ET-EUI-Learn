@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 
 namespace ET
 {
@@ -21,8 +22,10 @@ namespace ET
     public sealed class Room : Entity,IAwake,IDestroy
     {
         public readonly Dictionary<long, int> seats = new Dictionary<long, int>();
-        public readonly Unit[] units = new Unit[2];
+        public  Unit[] units = new Unit[2];
 
+        public  float3[] playerDefaultPos = new float3[2];
+        
         //房间状态
         public RoomState State { get; set; } = RoomState.Idle;
 

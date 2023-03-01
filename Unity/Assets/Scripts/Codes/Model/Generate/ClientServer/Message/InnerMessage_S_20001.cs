@@ -467,6 +467,15 @@ namespace ET
 
 	}
 
+	[Message(InnerMessage.UnitComp)]
+	[ProtoContract]
+	public partial class UnitComp: ProtoObject
+	{
+		[ProtoMember(1)]
+		public List<byte[]> Entitys { get; set; }
+
+	}
+
 	[ResponseType(nameof(M2M_UnitTransferResponse))]
 	[Message(InnerMessage.M2M_UnitTransferRequest)]
 	[ProtoContract]
@@ -482,10 +491,16 @@ namespace ET
 		public byte[] Unit { get; set; }
 
 		[ProtoMember(4)]
-		public List<byte[]> Entitys { get; set; }
+		public bool robot { get; set; }
 
 		[ProtoMember(5)]
-		public bool robot { get; set; }
+		public byte[] Room { get; set; }
+
+		[ProtoMember(6)]
+		public List<UnitComp> unitComp { get; set; }
+
+		[ProtoMember(7)]
+		public List<byte[]> Entitys { get; set; }
 
 	}
 
@@ -535,7 +550,8 @@ namespace ET
 		 public const ushort G2R_GetLoginKey = 20028;
 		 public const ushort G2M_SessionDisconnect = 20029;
 		 public const ushort ObjectQueryResponse = 20030;
-		 public const ushort M2M_UnitTransferRequest = 20031;
-		 public const ushort M2M_UnitTransferResponse = 20032;
+		 public const ushort UnitComp = 20031;
+		 public const ushort M2M_UnitTransferRequest = 20032;
+		 public const ushort M2M_UnitTransferResponse = 20033;
 	}
 }

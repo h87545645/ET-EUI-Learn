@@ -3,9 +3,10 @@
 namespace ET.Server
 {
     [FriendOf(typeof(GateMapComponent))]
+    [FriendOf(typeof(RoomComponent))]
     public static class EnterMapHelper
     {
-        public static async ETTask<Unit> EnterMap(Player player , Session session, Unit unit = null)
+        public static async ETTask<Unit> EnterMap(Player player , Session session, Unit unit = null , Room room = null,bool robot = false)
         {
             // Player player = session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
 
@@ -22,15 +23,23 @@ namespace ET.Server
                 {
                     unit = UnitFactory.Create(scene, player.Id, UnitType.Player);
                     unit.AddComponent<UnitGateComponent, long>(session.InstanceId);
+                    unit.UserID = player.UserID;
+                    // romm room = session.DomainScene().GetComponent<RoomComponent>();
+                    room.Add(unit);
                 }
 
-                StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "Map1");
+                if (robot)
+                {
+                    return null;
+                }
+
+                StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "FragGameMap");
                 // response.MyId = player.Id;
                 // reply();
            
                 // 开始传送
                 // TransferHelper.TransferAtFrameFinish(unit, startSceneConfig.InstanceId, startSceneConfig.Name).Coroutine();
-                await TransferHelper.TransferAtFrameFinish(unit, startSceneConfig.InstanceId, startSceneConfig.Name , player.UserID == 010101);
+                await TransferHelper.TransferAtFrameFinish(unit, startSceneConfig.InstanceId, startSceneConfig.Name , room);
                 
             }
             catch (Exception e)

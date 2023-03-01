@@ -11,5 +11,7 @@
         public long UserID { get;  set; }
         //是否正在匹配中
         public bool IsMatching { get; set; }
+        
+        public long RoomId { get; set; }
     }
 }

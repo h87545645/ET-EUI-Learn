@@ -232,14 +232,21 @@ message ObjectQueryResponse // IActorResponse
 	bytes Entity = 4;
 }
 
+message UnitComp
+{
+	repeated bytes Entitys = 1;
+}
+
 //ResponseType M2M_UnitTransferResponse
 message M2M_UnitTransferRequest // IActorRequest
 {
 	int32 RpcId = 1;
 	int64 OldInstanceId = 2;
 	bytes Unit = 3;
-	repeated bytes Entitys = 4;
-	bool robot = 5;
+	bool robot = 4;
+	bytes Room = 5;
+	repeated UnitComp unitComp = 6;
+	repeated bytes Entitys = 7;
 }
 
 message M2M_UnitTransferResponse // IActorResponse

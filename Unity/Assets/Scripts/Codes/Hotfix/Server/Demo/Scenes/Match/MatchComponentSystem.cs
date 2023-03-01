@@ -102,10 +102,7 @@ namespace ET
             // room.AddComponent<OrderControllerComponent>();
             // room.AddComponent<GameControllerComponent, RoomConfig>(RoomHelper.GetConfig(RoomLevel.Lv100));
             // await room.AddComponent<MailBoxComponent>().AddLocation();
-            Room room = self.DomainScene().GetComponent<RoomComponent>().AddChild<Room>();
-
-
-            
+      
             // StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "Map1");
             // M2M_CreateRoomResponse createRoomRE = await ActorMessageSenderComponent.Instance.Call(startSceneConfig.InstanceId, new M2M_CreateRoomRequest()) as M2M_CreateRoomResponse;
             
@@ -113,9 +110,11 @@ namespace ET
             // Room room = self.AddChildWithId<Room>(createRoomRE.RoomID);
             
             // Game.Scene.GetComponent<MatchRoomComponent>().Add
+            
+            
+            Room room = self.DomainScene().GetComponent<RoomComponent>().AddChild<Room>();
+            self.DomainScene().GetComponent<RoomComponent>().Add(room);
             self.DomainScene().GetComponent<MatchRoomComponent>().Add(room);
-            
-            
             //解锁
             self.CreateRoomLock = false;
         }
@@ -163,14 +162,14 @@ namespace ET
             {
                 player = session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
             }
-
-             
-            Unit unit = await EnterMapHelper.EnterMap(player,session);
+            
+            player.RoomId = room.InstanceId;
+            await EnterMapHelper.EnterMap(player,session,null,room , matcher.UserID == 010101);
             
             
             //
             // Gamer gamer = GamerFactory.Create(matcher.PlayerID, matcher.UserID, m2gPlayerEnterRoomRequest.GamerID);
-            room.Add(unit);
+            // room.Add(unit);
             // session?.Dispose();
 
             //向玩家发送匹配成功消息

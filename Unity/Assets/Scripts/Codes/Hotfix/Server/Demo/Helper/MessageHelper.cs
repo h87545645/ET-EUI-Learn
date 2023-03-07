@@ -31,6 +31,22 @@ namespace ET.Server
             }
         }
         
+        public static void FrogBroadcast(Unit unit, IActorMessage message)
+        {
+            //找到除玩家之外的其他玩家
+            Dictionary<long,Unit> units = unit.DomainScene().GetComponent<UnitComponent>().GetAll();
+            
+            // Dictionary<long, AOIEntity> dict = unit.GetBeSeePlayers();
+            // 网络底层做了优化，同一个消息不会多次序列化
+            foreach (Unit u in units.Values)
+            {
+                if (u.Id != unit.Id)
+                {
+                    ActorMessageSenderComponent.Instance.Send(u.GetComponent<UnitGateComponent>().GateSessionActorId, message);
+                }
+            }
+        }
+        
         public static void SendToClient(Unit unit, IActorMessage message)
         {
             SendActor(unit.GetComponent<UnitGateComponent>().GateSessionActorId, message);

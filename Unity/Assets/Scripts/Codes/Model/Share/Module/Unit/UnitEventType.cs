@@ -22,16 +22,17 @@ namespace ET
         
         public struct FrogEnterCharge
         {
-            public Unit Unit;
+            public long unitId;
         }
         
         public struct FrogCancelCharge
         {
-            public Unit Unit;
+            public long unitId;
         }
         
         public struct FrogDirection
         {
+            public long unitId;
             public bool force;
 
             public ET.FrogDirection dir;
@@ -39,8 +40,7 @@ namespace ET
         
         public struct FrogJump
         {
-            public Unit Unit;
-
+            public long unitId;
             public float chargeTime;
         }
         

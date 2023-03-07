@@ -50,6 +50,42 @@ message G2C_PlayerExitMatchResponse // IResponse
 }
 
 
+
+message C2M_FrogOpera // IActorLocationMessage
+{
+	int32 RpcId = 1;
+	int32 opera = 2;
+	int32 chargeTime = 3;
+	bool force = 4;
+    int32 dir = 5;
+}
+
+message M2C_FrogOpera // IActorMessage
+{
+	int64 Id = 1;
+	int32 opera = 2;
+    int32 chargeTime = 3;
+    bool force = 4;
+    int32 dir = 5;
+}
+
+
+
+message C2M_FrogSyncPosition // IActorLocationMessage
+{
+	int32 RpcId = 1;
+	Unity.Mathematics.float3 Position = 2;
+}
+
+message M2C_FrogSyncPosition // IActorMessage
+{
+	int64 Id = 1;
+    Unity.Mathematics.float3 Position = 2;
+}
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //demo follow
 
@@ -143,6 +179,7 @@ message M2C_StartSceneChange // IActorMessage
 {
 	int64 SceneInstanceId = 1;
 	string SceneName = 2;	
+	int64 MyId = 3;
 }
 
 message M2C_RemoveUnits // IActorMessage

@@ -1,5 +1,7 @@
 ﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace ET.Client
 {
@@ -17,11 +19,11 @@ namespace ET.Client
         }
         
         [ObjectSystem]
-        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent>
+        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent , GameObject , float3>
         {
-            protected override void Awake(FrogComponent self)
+            protected override void Awake(FrogComponent self , GameObject go , float3 position)
             {
-                self.Awake();
+                self.Awake(go , position);
             }
         }
         
@@ -35,11 +37,29 @@ namespace ET.Client
         }
         
 
-        public static void Awake(this FrogComponent self)
+        public static void Awake(this FrogComponent self ,  GameObject go ,float3 position)
         {
+            self.GameObject = go;
+           
+            if ( self.Parent.InstanceId == UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene()).InstanceId)
+            {
+                // EventSystem.Instance.Publish(Root.Instance.Scene, new FrogEnableCamera() {go = go,enable = true});
+                go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.InstanceId;
+                // go.GetComponent<FrogGameCameraCtrl>();
+            }
+            self.heroRenderer = self.GameObject.transform.Find("FrogMove").GetComponent<SpriteRenderer>();
+            self.heroRigidbody2D = self.GameObject.GetComponentInChildren<Rigidbody2D>();
+            self.heroRigidbody2D.transform.position = new Vector3(x: position.x, y: position.y, z: position.z);
+            self.collider2D = self.GameObject.GetComponentInChildren<BoxCollider2D>();
+            self.light = self.GameObject.GetComponentInChildren<Light2D>();
+            self.groundCheck = self.GameObject.transform.Find("FrogMove/groundCheck");
+            self.grond = LayerMask.GetMask("platfrom");
+            self.guideAnim = self.GameObject.transform.Find("frog_guide").GetComponent<Animator>();
+            self.fragAnim = self.GameObject.transform.Find("FrogMove").GetComponent<Animator>();
+            
+            
             self._state = new StandingState(self);
             self.IsReady = true;
-        
             //get frag last position record
             // self.LastPosition = FragGameRecord.GetInstance().reocrd.playerPosition;
         }

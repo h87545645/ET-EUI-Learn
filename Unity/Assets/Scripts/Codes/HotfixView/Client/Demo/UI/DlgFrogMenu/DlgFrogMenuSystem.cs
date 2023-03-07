@@ -12,7 +12,7 @@ namespace ET.Client
 
 		public static void RegisterUIEvent(this DlgFrogMenu self)
 		{
-			 self.View.E_BackButtonButton.AddListener(self.OnCloseClickHandler);
+			 self.View.E_CloseButtonButton.AddListener(self.OnCloseClickHandler);
 			 self.View.E_BackButtonButton.AddListener(self.OnBackLobbyClickHandler);
 			 self.View.E_ExitButtonButton.AddListener(self.OnExitClickHandler);
 		}

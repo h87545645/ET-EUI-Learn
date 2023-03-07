@@ -40,5 +40,14 @@ namespace ET
     public struct FrogGameCameraChange
     {
         public int Index;
+
+        public long UnitId;
+    }
+    
+    public struct FrogEnableCamera
+    {
+        public GameObject go;
+
+        public bool enable;
     }
 }

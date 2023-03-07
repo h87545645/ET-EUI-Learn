@@ -5,12 +5,12 @@ namespace ET.Client
     public static class SceneChangeHelper
     {
         // 场景切换协程
-        public static async ETTask SceneChangeTo(Scene clientScene, string sceneName, long sceneInstanceId)
+        public static async ETTask SceneChangeTo(Scene clientScene, string sceneName, long sceneInstanceId,long myId)
         {
             try
             {
                 clientScene.RemoveComponent<AIComponent>();
-            
+                clientScene.GetComponent<PlayerComponent>().MyId = myId;
                 CurrentScenesComponent currentScenesComponent = clientScene.GetComponent<CurrentScenesComponent>();
                 currentScenesComponent.Scene?.Dispose(); // 删除之前的CurrentScene，创建新的
                 Scene currentScene = SceneFactory.CreateCurrentScene(sceneInstanceId, clientScene.Zone, sceneName, currentScenesComponent);

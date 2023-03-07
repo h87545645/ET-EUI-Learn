@@ -8,8 +8,23 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, EventType.FrogJump args)
         {
-            Unit unit = args.Unit;
-            FrogComponent frogComponent = unit.GetComponent<FrogComponent>();
+            Unit player = null;
+            // unitId for other player
+            if (args.unitId != 0 && args.unitId != null)
+            {
+                player = scene.GetComponent<UnitComponent>().Get(args.unitId);
+            }
+            else
+            {
+                player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+                //如果是自己还需要发给服务器
+                C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
+                c2MFrogOpera.opera = (int)FrogOpera.Jump;
+                c2MFrogOpera.chargeTime = (int)args.chargeTime;
+                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
+            }
+            // Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+            FrogComponent frogComponent = player.GetComponent<FrogComponent>();
             if (frogComponent == null)
             {
                 return;

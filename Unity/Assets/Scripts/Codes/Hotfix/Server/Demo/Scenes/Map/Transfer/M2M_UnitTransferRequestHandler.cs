@@ -59,7 +59,7 @@ namespace ET.Server
 				{
 					myUnit = unit;
 					// 通知客户端开始切场景
-					M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name};
+					M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name,MyId = unit.PlayerId};
 					MessageHelper.SendToClient(myUnit, m2CStartSceneChange);
 				}
 			}

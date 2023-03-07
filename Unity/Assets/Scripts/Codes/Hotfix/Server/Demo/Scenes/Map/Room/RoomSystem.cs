@@ -11,7 +11,7 @@ namespace ET.Server
         {
             protected override void Awake(Room self)
             {
-                self.playerDefaultPos = new float3[]{new float3(-20,0,0),new float3(20,0,0)};
+                self.playerDefaultPos = new float3[]{new float3(-1,1f,0),new float3(2,1f,0)};
             }
         }
         

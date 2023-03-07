@@ -33,7 +33,7 @@
 	    //frog numeric
 	    public const int jumpVaryX = 1200;
 	    public const int jumpStaticX = 200;
-	    public const int jumpVaryY = 2000;
+	    public const int jumpVaryY = 3000;
 	    public const int jumpStaticY = 200;
 	    
 	    // public const int jumpChargeTime = 200;

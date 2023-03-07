@@ -96,6 +96,72 @@ namespace ET
 
 	}
 
+	[Message(OuterMessage.C2M_FrogOpera)]
+	[ProtoContract]
+	public partial class C2M_FrogOpera: ProtoObject, IActorLocationMessage
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int opera { get; set; }
+
+		[ProtoMember(3)]
+		public int chargeTime { get; set; }
+
+		[ProtoMember(4)]
+		public bool force { get; set; }
+
+		[ProtoMember(5)]
+		public int dir { get; set; }
+
+	}
+
+	[Message(OuterMessage.M2C_FrogOpera)]
+	[ProtoContract]
+	public partial class M2C_FrogOpera: ProtoObject, IActorMessage
+	{
+		[ProtoMember(1)]
+		public long Id { get; set; }
+
+		[ProtoMember(2)]
+		public int opera { get; set; }
+
+		[ProtoMember(3)]
+		public int chargeTime { get; set; }
+
+		[ProtoMember(4)]
+		public bool force { get; set; }
+
+		[ProtoMember(5)]
+		public int dir { get; set; }
+
+	}
+
+	[Message(OuterMessage.C2M_FrogSyncPosition)]
+	[ProtoContract]
+	public partial class C2M_FrogSyncPosition: ProtoObject, IActorLocationMessage
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public Unity.Mathematics.float3 Position { get; set; }
+
+	}
+
+	[Message(OuterMessage.M2C_FrogSyncPosition)]
+	[ProtoContract]
+	public partial class M2C_FrogSyncPosition: ProtoObject, IActorMessage
+	{
+		[ProtoMember(1)]
+		public long Id { get; set; }
+
+		[ProtoMember(2)]
+		public Unity.Mathematics.float3 Position { get; set; }
+
+	}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //demo follow
 	[Message(OuterMessage.HttpGetRouterResponse)]
@@ -279,6 +345,9 @@ namespace ET
 
 		[ProtoMember(2)]
 		public string SceneName { get; set; }
+
+		[ProtoMember(3)]
+		public long MyId { get; set; }
 
 	}
 
@@ -582,39 +651,43 @@ namespace ET
 		 public const ushort G2C_StartMatchResponse = 10005;
 		 public const ushort C2G_PlayerExitMatchRequest = 10006;
 		 public const ushort G2C_PlayerExitMatchResponse = 10007;
-		 public const ushort HttpGetRouterResponse = 10008;
-		 public const ushort RouterSync = 10009;
-		 public const ushort C2M_TestRequest = 10010;
-		 public const ushort M2C_TestResponse = 10011;
-		 public const ushort Actor_TransferRequest = 10012;
-		 public const ushort Actor_TransferResponse = 10013;
-		 public const ushort C2G_EnterMap = 10014;
-		 public const ushort G2C_EnterMap = 10015;
-		 public const ushort MoveInfo = 10016;
-		 public const ushort UnitInfo = 10017;
-		 public const ushort M2C_CreateUnits = 10018;
-		 public const ushort M2C_CreateMyUnit = 10019;
-		 public const ushort M2C_StartSceneChange = 10020;
-		 public const ushort M2C_RemoveUnits = 10021;
-		 public const ushort C2M_PathfindingResult = 10022;
-		 public const ushort C2M_Stop = 10023;
-		 public const ushort M2C_PathfindingResult = 10024;
-		 public const ushort M2C_Stop = 10025;
-		 public const ushort C2G_Ping = 10026;
-		 public const ushort G2C_Ping = 10027;
-		 public const ushort G2C_Test = 10028;
-		 public const ushort C2M_Reload = 10029;
-		 public const ushort M2C_Reload = 10030;
-		 public const ushort C2R_Login = 10031;
-		 public const ushort R2C_Login = 10032;
-		 public const ushort C2G_LoginGate = 10033;
-		 public const ushort G2C_LoginGate = 10034;
-		 public const ushort G2C_TestHotfixMessage = 10035;
-		 public const ushort C2M_TestRobotCase = 10036;
-		 public const ushort M2C_TestRobotCase = 10037;
-		 public const ushort C2M_TransferMap = 10038;
-		 public const ushort M2C_TransferMap = 10039;
-		 public const ushort C2G_Benchmark = 10040;
-		 public const ushort G2C_Benchmark = 10041;
+		 public const ushort C2M_FrogOpera = 10008;
+		 public const ushort M2C_FrogOpera = 10009;
+		 public const ushort C2M_FrogSyncPosition = 10010;
+		 public const ushort M2C_FrogSyncPosition = 10011;
+		 public const ushort HttpGetRouterResponse = 10012;
+		 public const ushort RouterSync = 10013;
+		 public const ushort C2M_TestRequest = 10014;
+		 public const ushort M2C_TestResponse = 10015;
+		 public const ushort Actor_TransferRequest = 10016;
+		 public const ushort Actor_TransferResponse = 10017;
+		 public const ushort C2G_EnterMap = 10018;
+		 public const ushort G2C_EnterMap = 10019;
+		 public const ushort MoveInfo = 10020;
+		 public const ushort UnitInfo = 10021;
+		 public const ushort M2C_CreateUnits = 10022;
+		 public const ushort M2C_CreateMyUnit = 10023;
+		 public const ushort M2C_StartSceneChange = 10024;
+		 public const ushort M2C_RemoveUnits = 10025;
+		 public const ushort C2M_PathfindingResult = 10026;
+		 public const ushort C2M_Stop = 10027;
+		 public const ushort M2C_PathfindingResult = 10028;
+		 public const ushort M2C_Stop = 10029;
+		 public const ushort C2G_Ping = 10030;
+		 public const ushort G2C_Ping = 10031;
+		 public const ushort G2C_Test = 10032;
+		 public const ushort C2M_Reload = 10033;
+		 public const ushort M2C_Reload = 10034;
+		 public const ushort C2R_Login = 10035;
+		 public const ushort R2C_Login = 10036;
+		 public const ushort C2G_LoginGate = 10037;
+		 public const ushort G2C_LoginGate = 10038;
+		 public const ushort G2C_TestHotfixMessage = 10039;
+		 public const ushort C2M_TestRobotCase = 10040;
+		 public const ushort M2C_TestRobotCase = 10041;
+		 public const ushort C2M_TransferMap = 10042;
+		 public const ushort M2C_TransferMap = 10043;
+		 public const ushort C2G_Benchmark = 10044;
+		 public const ushort G2C_Benchmark = 10045;
 	}
 }

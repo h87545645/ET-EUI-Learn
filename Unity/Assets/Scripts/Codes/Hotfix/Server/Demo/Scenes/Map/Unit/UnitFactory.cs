@@ -17,9 +17,12 @@ namespace ET.Server
                     unit.Position = new float3(-10, 0, -10);
 			
                     NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
-                    numericComponent.Set(NumericType.Speed, 6f); // 速度是6米每秒
-                    numericComponent.Set(NumericType.AOI, 15000); // 视野15米
-                    
+                    // numericComponent.Set(NumericType.Speed, 6f); // 速度是6米每秒
+                    // numericComponent.Set(NumericType.AOI, 15000); // 视野15米
+                    numericComponent.Set(NumericType.jumpVaryX, 1200); // frog jump x
+                    numericComponent.Set(NumericType.jumpStaticX, 1200); //frog jump min x
+                    numericComponent.Set(NumericType.jumpVaryY, 3000);
+                    numericComponent.Set(NumericType.jumpStaticY, 200);
                     unitComponent.Add(unit);
                     // 加入aoi
                     unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);

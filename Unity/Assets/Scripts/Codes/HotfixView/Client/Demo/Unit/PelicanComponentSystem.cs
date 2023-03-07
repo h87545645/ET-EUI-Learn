@@ -10,11 +10,14 @@ namespace ET.Client
     public static class PelicanComponentSystem
     {
         [ObjectSystem]
-        public class PelicanComponentAwakeSystem : AwakeSystem<PelicanComponent>
+        public class PelicanComponentAwakeSystem : AwakeSystem<PelicanComponent,GameObject>
         {
-            protected override void Awake(PelicanComponent self)
+            protected override void Awake(PelicanComponent self , GameObject go)
             {
-                // self.Awake();
+                self.GameObject = go;
+                self.pelicanRenderer = self.GameObject.GetComponent<SpriteRenderer>();
+                self.animController = self.GameObject.GetComponent<PelicanAnimComponent>();
+                
             }
             
         }
@@ -108,17 +111,17 @@ namespace ET.Client
         
         public static void LookAt(this PelicanComponent self,Vector3 pos)
         {
-            self.pelicanRenderer.flipX = pos.x < self.transform.position.x ? true : false;
+            self.pelicanRenderer.flipX = pos.x < self.GameObject.transform.position.x ? true : false;
         }
     
         public static async ETTask FlyTo(this PelicanComponent self,Vector3 pos , Action action = null)
         {
             self.isFlying = true;
             LookAt(self,pos);
-            float dis = Vector3.Distance(pos,self.transform.position);
+            float dis = Vector3.Distance(pos,self.GameObject.transform.position);
             long time = (long)(dis / self.flySpeed);
             self.animController.Fly();
-            self.transform.DOMove(pos,time);
+            self.GameObject.transform.DOMove(pos,time);
             await TimerComponent.Instance.WaitAsync(time);
             self.animController.FlyEnd();
             self.isFlying = false;
@@ -133,7 +136,7 @@ namespace ET.Client
             Vector3 nearPos = GetNearestPos(self,target);
             if (self.isFlying)
             {
-                self.transform.DOKill();
+                self.GameObject.transform.DOKill();
             }
             self.FlyTo(nearPos, action).Coroutine();
         }

@@ -11,7 +11,7 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, ScrollRectDirectionEvent args)
         {
-            EventSystem.Instance.Publish(scene.DomainScene(), new EventType.FrogDirection() { force = false, dir = (ET.FrogDirection)args.dir});
+            EventSystem.Instance.Publish(scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene(), new EventType.FrogDirection() { force = false, dir = (ET.FrogDirection)args.dir});
         }
     }
 }

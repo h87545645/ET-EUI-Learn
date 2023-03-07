@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 namespace ET.Client
 {
     [ComponentOf(typeof(Unit))]
-    public class FrogComponent: Entity, IAwake, IDestroy , IUpdate
+    public class FrogComponent: Entity, IAwake<GameObject , float3>, IDestroy , IUpdate
     {
         public Unit unit;
         public GameObject GameObject { get; set; }

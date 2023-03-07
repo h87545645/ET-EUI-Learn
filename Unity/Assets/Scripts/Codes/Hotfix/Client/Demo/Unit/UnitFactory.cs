@@ -43,7 +43,7 @@ namespace ET.Client
 
 	        unit.AddComponent<ObjectWait>();
 
-	        unit.AddComponent<XunLuoPathComponent>();
+	        // unit.AddComponent<XunLuoPathComponent>();
 
 	     
 	       

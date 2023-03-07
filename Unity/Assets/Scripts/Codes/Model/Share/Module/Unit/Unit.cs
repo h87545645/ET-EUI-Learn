@@ -11,6 +11,8 @@ namespace ET
         
         //用户ID（唯一）
         public long UserID { get;  set; }
+        //player id
+        public long PlayerId { get;  set; }
         //玩家所在房间ID
         public long RoomID { get; set; }
         

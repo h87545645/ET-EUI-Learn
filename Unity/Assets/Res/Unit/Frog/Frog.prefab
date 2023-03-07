@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2840524765753855540}
   - component: {fileID: 2840524765753855541}
   - component: {fileID: 2133076652673482518}
-  - component: {fileID: 2107365347486551316}
+  - component: {fileID: 6999145619708474543}
   m_Layer: 0
-  m_Name: frog-idle-4
+  m_Name: FrogMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d98e2b2d3c0875439fca342d40f5597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2107365347486551316
+--- !u!114 &6999145619708474543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenHeight: 14
+  Bridge: {fileID: 7155659736513734114}
   currentCameraIndex: 0
-  enable: 0
 --- !u!1 &2840524766415603422
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2840524766415603421}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,6 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2840524766612056616}
+  - component: {fileID: 7155659736513734114}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -402,3 +403,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7155659736513734114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840524767378351745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054811c19b70f9f4e8fe010367b8b055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CustomTag: Frog
+  BelongToUnitId: 0

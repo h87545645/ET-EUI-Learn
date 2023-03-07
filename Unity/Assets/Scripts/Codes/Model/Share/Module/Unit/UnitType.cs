@@ -24,4 +24,12 @@
         Walking = 5,
         Jumping = 6,
     }
+    
+    public enum FrogOpera: byte
+    {
+        Charge = 1,
+        ChargeCancle = 2,
+        Jump = 3,
+        Direction = 4,
+    }
 }

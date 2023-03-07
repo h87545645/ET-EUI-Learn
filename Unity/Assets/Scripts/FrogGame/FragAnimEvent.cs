@@ -98,7 +98,7 @@ public class FragAnimEvent : MonoBehaviour
                 //     // var direction = transform.InverseTransformPoint(collision.contacts[0].point);
                 //     int flag = fragHero.heroRenderer.flipX  ? -1 : 1;
                 //     fragHero.heroRigidbody2D.velocity = new Vector2(fragHero.chargeTime * 5 * flag,fragHero.heroRigidbody2D.velocity.y);
-                // }
+                // } 
                 // else
                 // {
                 //     Game_Direction dir = isLeft  ? Game_Direction.Right : Game_Direction.Left;

@@ -17,15 +17,15 @@ public class JumpingState : IBaseState
     
     public JumpingState(FrogComponent frag, double chargeTime = 0)
     {
-        NumericComponent numer = frag.unit.GetComponent<NumericComponent>();
+        NumericComponent numer = frag.GetParent<Unit>().GetComponent<NumericComponent>();
         _jumpDelay = 0;
         _fragHore = frag;
         _fragHore.fragAnim.SetTrigger("jump-up");
         _fragHore.fragAnim.SetBool("standing", false);
         _fragHore.heroRigidbody2D.constraints = RigidbodyConstraints2D.None;
         _fragHore.heroRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        float chargeValueY =  (float)(numer.GetAsFloat(NumericType.jumpVaryY) * Math.Max(chargeTime - 0.2 , 0) + numer.GetAsFloat(NumericType.jumpStaticY)); 
-        float chargeValueX = (float)(numer.GetAsFloat(NumericType.jumpVaryX) * chargeTime)+ numer.GetAsFloat(NumericType.jumpStaticX);
+        float chargeValueY =  (float)(numer.GetAsInt(NumericType.jumpVaryY) * Math.Max(chargeTime - 0.2 , 0) + numer.GetAsInt(NumericType.jumpStaticY)); 
+        float chargeValueX = (float)(numer.GetAsInt(NumericType.jumpVaryX) * chargeTime)+ numer.GetAsInt(NumericType.jumpStaticX);
         float yValue = Mathf.Clamp(chargeValueY, 500,1900);
         float xValue = Mathf.Clamp(chargeValueX, 500, 900);
         // chargeValue = Mathf.Clamp(chargeValue, 500,1800);

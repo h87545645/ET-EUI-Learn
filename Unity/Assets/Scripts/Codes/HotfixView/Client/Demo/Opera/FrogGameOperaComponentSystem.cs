@@ -10,7 +10,8 @@ namespace ET.Client
         {
             protected override void Awake(FrogGameOperaComponent self)
             {
-                
+                Log.Debug("FrogGameOperaComponentAwakeSystem");
+                self.inputEnable = true;
             }
         }
 

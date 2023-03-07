@@ -24,6 +24,7 @@ namespace ET.Server
                     unit = UnitFactory.Create(scene, player.Id, UnitType.Player);
                     unit.AddComponent<UnitGateComponent, long>(session.InstanceId);
                     unit.UserID = player.UserID;
+                    unit.PlayerId = player.Id;
                     // romm room = session.DomainScene().GetComponent<RoomComponent>();
                     room.Add(unit);
                 }

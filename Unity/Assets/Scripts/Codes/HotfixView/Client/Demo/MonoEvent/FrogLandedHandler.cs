@@ -16,20 +16,20 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, FrogLanded args)
         {
-            // EventSystem.Instance.Publish(scene.DomainScene(), new EventType.FrogDirection() { force = false, dir = (ET.FrogDirection)args.dir});
-            Unit player = UnitHelper.GetMyUnitFromClientScene(scene.DomainScene());
+            Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));
             player.GetComponent<FrogComponent>().direction = ET.FrogDirection.None;
             // fragHero.direction = Game_Direction.None;
             await TimerComponent.Instance.WaitAsync(50);
             Log.Debug("frag ready");
-            // fragHero.IsReady = true;
+
+            player.GetComponent<FrogComponent>().IsReady = true;
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 ET.FrogDirection direction = Input.GetKey(KeyCode.LeftArrow) ? ET.FrogDirection.Left :  ET.FrogDirection.Right;
                 // fragHero.SetHeroineState(new WalkingState(fragHero));
                 // fragHero.fragAnim.SetBool("walk", true);
                 Debug.Log("landing over to walk dir : " +direction);
-                EventSystem.Instance.Publish(scene.DomainScene(), new EventType.FrogDirection() { force = false, dir = direction});
+                EventSystem.Instance.Publish(player.DomainScene(), new EventType.FrogDirection() { force = false, dir = direction});
                 // EventCenter.PostEvent<Game_Direction,bool>(Game_Event.FragGameDirection, direction,false);
             }
             else

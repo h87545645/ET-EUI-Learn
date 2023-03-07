@@ -37,7 +37,7 @@ namespace ET.Client
             await TimerComponent.Instance.WaitAsync(5000); 
             UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
             Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
-            Unit player = UnitHelper.GetMyUnitFromClientScene(self.DomainScene());
+            Unit player = UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene());
             if ( !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
             {
                 pelican.GetComponent<PelicanComponent>().FlyToPlayer(player.GetComponent<FrogComponent>().heroRigidbody2D.transform);

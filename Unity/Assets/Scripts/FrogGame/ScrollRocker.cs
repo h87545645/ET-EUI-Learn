@@ -38,7 +38,7 @@ namespace ET
                 if (_lastDir != dir)
                 {
                     _lastDir = dir;
-                    Mono2ETEventManager.OnScrollRectDir(dir);
+                    // Mono2ETEventManager.OnScrollRectDir(dir);
                     EventSystem.Instance.Publish(Root.Instance.Scene, new ScrollRectDirectionEvent(){dir = dir});
                     // DlgFragGameMainUIViewComponent.ScrollRectDirEvent.inv
                     // EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = _fragHore.unit , force = false, dir = ET.FrogDirection.None});
@@ -51,6 +51,7 @@ namespace ET
         public override void OnEndDrag(PointerEventData eventData)
         {
             base.OnEndDrag(eventData);
+            _lastDir = 0;
             // EventCenter.PostEvent<Game_Direction,bool>(Game_Event.FragGameDirection, Game_Direction.None,false);
             // EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = _fragHore.unit , force = false, dir = ET.FrogDirection.None});
             // Mono2ETEventManager.OnScrollRectDir(0);

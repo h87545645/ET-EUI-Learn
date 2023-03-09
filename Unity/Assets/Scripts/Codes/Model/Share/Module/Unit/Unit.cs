@@ -16,6 +16,9 @@ namespace ET
         //玩家所在房间ID
         public long RoomID { get; set; }
         
+        //玩家昵称
+        public string PlayerName{ get;  set; }
+        
         //是否离线
         public bool isOffline { get; set; }
         public int ConfigId { get; set; } //配置表id

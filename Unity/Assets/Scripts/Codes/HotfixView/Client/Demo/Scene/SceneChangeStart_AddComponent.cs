@@ -15,6 +15,8 @@ namespace ET.Client
             // 切换到map场景
 
             await SceneManager.LoadSceneAsync(currentScene.Name);
+            
+            scene.AddComponent<FrogGameComponent>();
 			
 
             currentScene.AddComponent<FrogGameOperaComponent>();

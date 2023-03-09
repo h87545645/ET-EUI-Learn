@@ -18,6 +18,7 @@ public class FragGameCameraCtrl : MonoBehaviour
 
     private void Start()
     {
+        // GameObject go = GameObject.FindWithTag("FrogLight");
         this.OnBecameInvisible();
     }
 

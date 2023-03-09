@@ -14,8 +14,8 @@ public class ChargeState : IBaseState
     {
         _fragHore = frag;
         //chargeTime = .0f;
-        _fragHore.fragAnim.SetTrigger("power");
         _fragHore.fragAnim.SetBool("standing", false);
+        _fragHore.fragAnim.SetTrigger("power");
         Debug.Log("------------------------FragHore in ChargeState~!(��������״̬��)");
     }
 

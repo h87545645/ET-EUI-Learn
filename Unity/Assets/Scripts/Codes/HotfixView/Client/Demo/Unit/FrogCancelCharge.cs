@@ -3,6 +3,7 @@
 namespace ET.Client
 {
     [Event(SceneType.Current)]
+    [FriendOf(typeof(FrogComponent))]
     public class FrogCancelCharge: AEvent<EventType.FrogCancelCharge>
     {
         protected override async ETTask Run(Scene scene, EventType.FrogCancelCharge args)
@@ -31,6 +32,7 @@ namespace ET.Client
             {
                 return;
             }
+            frogComponent.fragAnim.ResetTrigger("power");
             frogComponent.SetHeroineState(new StandingState(frogComponent));
             await ETTask.CompletedTask;
         }

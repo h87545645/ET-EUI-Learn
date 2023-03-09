@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.Rendering.Universal;
+
 namespace ET.Client
 {
     [FriendOf(typeof(FrogGameComponent))]
@@ -15,7 +17,8 @@ namespace ET.Client
         {
             protected override void Awake(FrogGameComponent self)
             {
-                // self.Awake();
+                self.globalLight = GameObject.FindWithTag("FrogLight").GetComponent<Light2D>();
+                
             }
             
         }
@@ -34,14 +37,7 @@ namespace ET.Client
                 return;
             }
        
-            await TimerComponent.Instance.WaitAsync(5000); 
-            UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
-            Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
-            Unit player = UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene());
-            if ( !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
-            {
-                pelican.GetComponent<PelicanComponent>().FlyToPlayer(player.GetComponent<FrogComponent>().heroRigidbody2D.transform);
-            }
+          
             // StartCoroutine(UnityUtils.DelayFuc(() =>
             // {
             //     if ( !pelican.isVisible && !_isCompleted)
@@ -50,7 +46,7 @@ namespace ET.Client
             //     }
             // }, 5));
 
-       
+            Unit player = UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene());
             switch (index)
             {
                 case 6:
@@ -74,6 +70,15 @@ namespace ET.Client
                     player.GetComponent<FrogComponent>().OnLight(false);
                     break;
                 }
+            }
+            
+            await TimerComponent.Instance.WaitAsync(5000); 
+            UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
+            Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
+            
+            if (pelican != null && !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
+            {
+                pelican.GetComponent<PelicanComponent>().FlyToPlayer(player.GetComponent<FrogComponent>().heroRigidbody2D.transform);
             }
         }
         

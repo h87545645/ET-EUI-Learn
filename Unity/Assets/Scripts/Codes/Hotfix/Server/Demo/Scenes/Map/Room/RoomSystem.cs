@@ -1,5 +1,6 @@
 ﻿using Unity.Mathematics;
 
+
 namespace ET.Server
 {
     [FriendOf(typeof(Room))]
@@ -38,6 +39,19 @@ namespace ET.Server
                 }
 
                 self.State = RoomState.Idle;
+                self.GameTime = 0;
+            }
+        }
+        
+        [ObjectSystem]
+        public class RoomUpdateSystem : UpdateSystem<Room>
+        {
+            protected override void Update(Room self)
+            {
+                if (self.State == RoomState.Game)
+                {
+                    self.GameTime += TimeInfo.Instance.DeltaTime;
+                }
             }
         }
         

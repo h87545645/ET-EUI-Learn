@@ -26,6 +26,8 @@ namespace ET
 
         public long FrameTime;
 
+        public long DeltaTime;
+
         public TimeInfo()
         {
             this.dt1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -35,6 +37,7 @@ namespace ET
 
         public void Update()
         {
+            this.DeltaTime = this.ClientNow() - this.FrameTime;
             this.FrameTime = this.ClientNow();
         }
         

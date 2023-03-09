@@ -83,6 +83,18 @@ message M2C_FrogSyncPosition // IActorMessage
     Unity.Mathematics.float3 Position = 2;
 }
 
+message C2M_FrogGameOver // IActorLocationMessage
+{
+	int32 RpcId = 1;
+	int64 PlayerId = 2;
+}
+
+message M2C_FrogGameOver // IActorMessage
+{
+	int64 WinPlayerId = 1;
+    int64 GameTime = 2;
+}
+
 
 
 

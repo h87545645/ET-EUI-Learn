@@ -165,8 +165,9 @@ namespace ET
             
             player.RoomId = room.InstanceId;
             await EnterMapHelper.EnterMap(player,session,null,room , matcher.UserID == 010101);
-            
-            
+            room.State = RoomState.Game;
+
+
             //
             // Gamer gamer = GamerFactory.Create(matcher.PlayerID, matcher.UserID, m2gPlayerEnterRoomRequest.GamerID);
             // room.Add(unit);

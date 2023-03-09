@@ -7,7 +7,16 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, FrogGameCameraChange args)
         {
-            EventSystem.Instance.Publish(scene.DomainScene(), new EventType.FrogCameraMove() {Index = args.Index});
+            Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
+            if (curScene.GetComponent<FrogGameComponent>() != null)
+            {
+                await curScene.GetComponent<FrogGameComponent>().OnCameraMove(args.Index);
+            }
+            else
+            {
+                await ETTask.CompletedTask;
+            }
+           
         }
     }
 }

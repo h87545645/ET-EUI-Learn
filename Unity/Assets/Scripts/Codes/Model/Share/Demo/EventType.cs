@@ -40,15 +40,15 @@
             public string Info;
         }
         
-        public struct FrogCameraMove
-        {
-            public int Index;
-        }
+        // public struct FrogCameraMove
+        // {
+        //     public int Index;
+        // }
         
-        public struct FrogGameFinished
-        {
-        
-        }
+        // public struct FrogGameFinished
+        // {
+        //
+        // }
         
         public struct FrogPelicanFlyToPlayer
         {

@@ -1,4 +1,5 @@
-﻿using UnityEngine.Rendering.Universal;
+﻿using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace ET.Client
 {
@@ -8,8 +9,9 @@ namespace ET.Client
         // public FragGameCameraCtrl fragGameCameraCtrl;
         //
         // public FragHero fragHero;
+        
 
-        public Pelican pelican;
+        // public Pelican pelican;
 
         public Light2D globalLight;
 

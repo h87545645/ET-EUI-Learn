@@ -20,6 +20,7 @@ public class JumpingState : IBaseState
         NumericComponent numer = frag.GetParent<Unit>().GetComponent<NumericComponent>();
         _jumpDelay = 0;
         _fragHore = frag;
+        _fragHore.fragAnim.ResetTrigger("power");
         _fragHore.fragAnim.SetTrigger("jump-up");
         _fragHore.fragAnim.SetBool("standing", false);
         _fragHore.heroRigidbody2D.constraints = RigidbodyConstraints2D.None;

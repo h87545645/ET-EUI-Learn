@@ -51,7 +51,8 @@ namespace ET.Client
             self.heroRigidbody2D = self.GameObject.GetComponentInChildren<Rigidbody2D>();
             self.heroRigidbody2D.transform.position = new Vector3(x: position.x, y: position.y, z: position.z);
             self.collider2D = self.GameObject.GetComponentInChildren<BoxCollider2D>();
-            self.light = self.GameObject.GetComponentInChildren<Light2D>();
+            self.light = self.GameObject.GetComponentInChildren(typeof(Light2D)) as Light2D;
+            self.light.gameObject.SetActive(false);
             self.groundCheck = self.GameObject.transform.Find("FrogMove/groundCheck");
             self.grond = LayerMask.GetMask("platfrom");
             self.guideAnim = self.GameObject.transform.Find("frog_guide").GetComponent<Animator>();

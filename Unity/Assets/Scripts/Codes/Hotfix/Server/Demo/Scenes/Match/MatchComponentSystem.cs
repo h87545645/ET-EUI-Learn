@@ -104,6 +104,23 @@ namespace ET
             //玩家加入房间，移除匹配队列
             self.Playing[matcher.UserID] = room.Id;
             self.MatchSuccessQueue.Enqueue(matcher);
+            
+            Player player = null;
+            //测试机器人匹配
+            if (matcher.UserID == 010101)
+            {
+                player = matcher.session.DomainScene().GetComponent<PlayerComponent>().Get(matcher.PlayerID);
+            }
+            else
+            {
+                player = matcher.session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
+            }
+            GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
+            gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+            Scene scene = gateMapComponent.Scene;
+            
+            Unit gamer = UnitFactory.Create(scene,matcher.PlayerID, UnitType.Player);
+            await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
             // Session session = matcher.GateSessionID;
             //向房间服务器发送玩家进入请求
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "FragGameMap");
@@ -116,13 +133,7 @@ namespace ET
                         RoomID = room.Id
                     }) as M2G_PlayerEnterRoomResponse;
             
-            Player player = matcher.session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
-            GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
-            gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
-            Scene scene = gateMapComponent.Scene;
             
-            Unit gamer = UnitFactory.Create(scene,matcher.PlayerID, UnitType.Player);
-            await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
             gamer.AddComponent<MailBoxComponent>();
             room.Add(gamer);
             room.State = RoomState.Game;

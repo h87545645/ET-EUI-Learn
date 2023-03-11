@@ -112,11 +112,18 @@ namespace ET
                     {
                         PlayerID = matcher.PlayerID,
                         UserID = matcher.UserID,
-                        SessionID = matcher.GateSessionID,
+                        SessionID = matcher.session.InstanceId,
                         RoomID = room.Id
                     }) as M2G_PlayerEnterRoomResponse;
-            Unit gamer = UnitFactory.Create(self.DomainScene(),matcher.PlayerID, UnitType.Player);
+            
+            Player player = matcher.session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
+            GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
+            gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+            Scene scene = gateMapComponent.Scene;
+            
+            Unit gamer = UnitFactory.Create(scene,matcher.PlayerID, UnitType.Player);
             await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
+            gamer.AddComponent<MailBoxComponent>();
             room.Add(gamer);
             room.State = RoomState.Game;
             

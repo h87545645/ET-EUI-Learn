@@ -39,12 +39,12 @@ namespace ET.Server
                         room.State = RoomState.Game;
                         // 通知客户端切换场景创建unit
                         M2C_CreateMyUnit m2CCreateUnits = new M2C_CreateMyUnit(){Units = new List<UnitInfo>()};
-                        UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+                        // UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
                         for (int i = 0; i < room.units.Length; i++)
                         {
                             Unit unit = room.units[i];
-                            unitComponent.AddChild(unit);
-                            unitComponent.Add(unit);
+                            // unitComponent.AddChild(unit);
+                            // unitComponent.Add(unit);
          
 
                             UnitInfo info = UnitHelper.CreateUnitInfo(unit);

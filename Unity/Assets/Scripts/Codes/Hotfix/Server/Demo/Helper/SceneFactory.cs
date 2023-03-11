@@ -39,6 +39,7 @@ namespace ET.Server
                     * @Date: 2023年02月26日 星期日 11:02:22
                     * @Modify:
                     */
+                    scene.AddComponent<UnitComponent>();
                     scene.AddComponent<MatchComponent>();
                     scene.AddComponent<MatcherComponent>();
                     scene.AddComponent<MatchRoomComponent>();

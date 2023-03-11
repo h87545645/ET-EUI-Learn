@@ -18,5 +18,11 @@
 
         //金币
         public long Coin { get; set; }
+        
+        //最佳完成时间
+        public long BestTime { get; set; }
+        
+        //最佳跳跃次数
+        public long BestJumpCnt { get; set; }
     }
 }

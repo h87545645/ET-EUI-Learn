@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -22,6 +23,9 @@ namespace ET.Client
                 c2MFrogOpera.opera = (int)FrogOpera.Jump;
                 c2MFrogOpera.chargeTime = (int)args.chargeTime;
                 player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
+                
+                // C2M_PathfindingResult msg = new C2M_PathfindingResult() { Position = new float3(0,0,0) };
+                // player.ClientScene().GetComponent<SessionComponent>().Session.Send(msg);
             }
             // Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
             FrogComponent frogComponent = player.GetComponent<FrogComponent>();

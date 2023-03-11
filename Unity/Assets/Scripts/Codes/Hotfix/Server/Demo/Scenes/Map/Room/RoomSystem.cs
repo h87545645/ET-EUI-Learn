@@ -159,7 +159,7 @@ namespace ET.Server
         {
             foreach (Unit unit in self.units)
             {
-                if (unit == null || unit.isOffline)
+                if (unit == null || unit.isOffline || unit.isRobot)
                 {
                     continue;
                 }

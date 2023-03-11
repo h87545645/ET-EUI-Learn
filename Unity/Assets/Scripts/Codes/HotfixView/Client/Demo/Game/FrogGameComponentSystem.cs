@@ -87,10 +87,11 @@ namespace ET.Client
         {
             if (!self._isCompleted)
             {
+                self._isCompleted = true;
+
                 // self.inputCtrl.EnableInput(false);
                 // self.FragGameRecord.GetInstance().history.jumpCnt = self.FragGameRecord.GetInstance().reocrd.jumpCnt;
                 // self.FragGameRecord.GetInstance().history.playerTotalTime =  self.FragGameRecord.GetInstance().reocrd.playerTotalTime;
-                // self._isCompleted = true;
                 // self.fragHero.RemoveListener();
                 // self.pelican.FlyToPlayer(self.fragHero.heroRigidbody2D.transform);
             }

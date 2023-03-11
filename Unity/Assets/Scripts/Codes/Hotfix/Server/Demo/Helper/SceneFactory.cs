@@ -42,11 +42,12 @@ namespace ET.Server
                     scene.AddComponent<MatchComponent>();
                     scene.AddComponent<MatcherComponent>();
                     scene.AddComponent<MatchRoomComponent>();
-                    scene.AddComponent<RoomComponent>();
+                    // scene.AddComponent<RoomComponent>();
                     break;
                 case SceneType.Map:
                     scene.AddComponent<UnitComponent>();
                     scene.AddComponent<AOIManagerComponent>();
+                    scene.AddComponent<RoomComponent>();
                     break;
                 case SceneType.Location:
                     scene.AddComponent<LocationComponent>();

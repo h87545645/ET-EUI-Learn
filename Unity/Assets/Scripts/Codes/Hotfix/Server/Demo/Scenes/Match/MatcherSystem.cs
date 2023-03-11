@@ -25,7 +25,7 @@ namespace ET
                 
                 self.UserID = 0;
                 self.PlayerID = 0;
-                self.session = null;
+                self.GateSessionID = 0;
             }
         }
         

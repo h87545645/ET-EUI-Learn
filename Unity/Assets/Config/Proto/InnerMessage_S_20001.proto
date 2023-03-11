@@ -11,6 +11,7 @@ message G2M_PlayerEnterMatchRequest // IActorRequest
     long PlayerID = 2;
     long UserID = 3;
     long SessionID = 4;
+
 }
 
 message M2G_PlayerEnterMatchResponse // IResponse
@@ -21,14 +22,14 @@ message M2G_PlayerEnterMatchResponse // IResponse
 
 }
 
-//ResponseType M2M_CreateRoomResponse
-message M2M_CreateRoomRequest // IActorRequest
+//ResponseType M2G_CreateRoomResponse
+message G2M_CreateRoomRequest // IActorRequest
 {
     int32 RpcId = 1;
 
 }
 
-message M2M_CreateRoomResponse // IResponse
+message M2G_CreateRoomResponse // IResponse
 {
     int32 RpcId = 1;
     int32 Error = 2;
@@ -44,6 +45,7 @@ message G2M_PlayerEnterRoomRequest // IActorRequest
     long PlayerID = 3;
     long UserID = 4;
     long SessionID = 5;
+    long RoomID = 6;
 }
 
 message M2G_PlayerEnterRoomResponse // IResponse

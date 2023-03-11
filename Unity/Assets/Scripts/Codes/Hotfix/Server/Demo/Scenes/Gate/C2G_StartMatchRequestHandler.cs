@@ -24,6 +24,12 @@ public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G
             player = session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
         }
         
+
+        // 在Gate上动态创建一个Map Scene，把Unit从DB中加载放进来，然后传送到真正的Map中，这样登陆跟传送的逻辑就完全一样了
+        GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
+        gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+        
+        
         //向匹配服务器发送匹配请求
         // StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "Map1");
         // M2G_PlayerEnterMatchResponse m2gPlayerEnterMatch = (M2G_PlayerEnterMatchResponse) await ActorMessageSenderComponent.Instance.Call(
@@ -94,7 +100,7 @@ public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G
             //加入匹配队列
             Matcher matcher = session.DomainScene().GetComponent<MatcherComponent>().AddChild<Matcher, long>(player.UserID);
             matcher.PlayerID = player.Id;
-            matcher.session = session;
+            matcher.GateSessionID = session.InstanceId;
             session.DomainScene().GetComponent<MatcherComponent>().Add(matcher);
             Log.Info($"玩家{player.UserID}加入匹配队列");
         }

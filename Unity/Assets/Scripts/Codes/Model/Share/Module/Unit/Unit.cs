@@ -21,6 +21,9 @@ namespace ET
         
         //是否离线
         public bool isOffline { get; set; }
+        
+        //机器人
+        public bool isRobot { get; set; }
         public int ConfigId { get; set; } //配置表id
 
         [BsonIgnore]

@@ -72,7 +72,7 @@ namespace ET
         /// 创建房间
         /// </summary>
         /// <param name="self"></param>
-        public static  void CreateRoom(this MatchComponent self)
+        public static async void CreateRoom(this MatchComponent self)
         {
             if (self.CreateRoomLock)
             {
@@ -81,39 +81,13 @@ namespace ET
 
             //消息加锁，避免因为延迟重复发多次创建消息
             self.CreateRoomLock = true;
-
-            //发送创建房间消息
-            // IPEndPoint mapIPEndPoint = Game.Scene.GetComponent<AllotMapComponent>().GetAddress().GetComponent<InnerConfig>().IPEndPoint;
-            // Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(mapIPEndPoint);
-            // MP2MH_CreateRoom_Ack createRoomRE = await mapSession.Call(new MH2MP_CreateRoom_Req()) as MP2MH_CreateRoom_Ack;
-            //
-            // Room room = ComponentFactory.CreateWithId<Room>(createRoomRE.RoomID);
-            // Game.Scene.GetComponent<MatchRoomComponent>().Add(room);
-
-       
             
+            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "FragGameMap");
+            M2G_CreateRoomResponse m2GCreateRoom = (M2G_CreateRoomResponse) await ActorMessageSenderComponent.Instance.Call(
+                startSceneConfig.InstanceId, new G2M_CreateRoomRequest());
             
-            //TODO 这里不和m2通信了
-            
-            //创建房间
-            // Room room = ComponentFactory.Create<Room>();
-            // room.AddComponent<DeckComponent>();
-            // room.AddComponent<DeskCardsCacheComponent>();
-            // room.AddComponent<OrderControllerComponent>();
-            // room.AddComponent<GameControllerComponent, RoomConfig>(RoomHelper.GetConfig(RoomLevel.Lv100));
-            // await room.AddComponent<MailBoxComponent>().AddLocation();
-      
-            // StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "Map1");
-            // M2M_CreateRoomResponse createRoomRE = await ActorMessageSenderComponent.Instance.Call(startSceneConfig.InstanceId, new M2M_CreateRoomRequest()) as M2M_CreateRoomResponse;
-            
-            // Room room = ComponentFactory.CreateWithId<Room>(createRoomRE.RoomID);
-            // Room room = self.AddChildWithId<Room>(createRoomRE.RoomID);
-            
-            // Game.Scene.GetComponent<MatchRoomComponent>().Add
-            
-            
-            Room room = self.DomainScene().GetComponent<RoomComponent>().AddChild<Room>();
-            self.DomainScene().GetComponent<RoomComponent>().Add(room);
+            Room room = self.DomainScene().GetComponent<MatchRoomComponent>().AddChildWithId<Room>(m2GCreateRoom.RoomID);
+            // self.DomainScene().GetComponent<RoomComponent>().Add(room);
             self.DomainScene().GetComponent<MatchRoomComponent>().Add(room);
             //解锁
             self.CreateRoomLock = false;
@@ -130,18 +104,27 @@ namespace ET
             //玩家加入房间，移除匹配队列
             self.Playing[matcher.UserID] = room.Id;
             self.MatchSuccessQueue.Enqueue(matcher);
-
+            // Session session = matcher.GateSessionID;
             //向房间服务器发送玩家进入请求
-            // StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "Map1");
-            // M2G_PlayerEnterRoomResponse m2gPlayerEnterRoomRequest = await ActorMessageSenderComponent.Instance.Call
-            //         (startSceneConfig.InstanceId,new G2M_PlayerEnterRoomRequest()
-            //         {
-            //             PlayerID = matcher.PlayerID,
-            //             UserID = matcher.UserID,
-            //             SessionID = matcher.GateSessionID
-            //         }) as M2G_PlayerEnterRoomResponse;
-            // zoneScene.GetComponent<PlayerComponent>().MyId = g2CEnterMap.MyId;
+            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "FragGameMap");
+            M2G_PlayerEnterRoomResponse m2gPlayerEnterRoom = await ActorMessageSenderComponent.Instance.Call
+                    (startSceneConfig.InstanceId,new G2M_PlayerEnterRoomRequest()
+                    {
+                        PlayerID = matcher.PlayerID,
+                        UserID = matcher.UserID,
+                        SessionID = matcher.GateSessionID,
+                        RoomID = room.Id
+                    }) as M2G_PlayerEnterRoomResponse;
+            Unit gamer = UnitFactory.Create(self.DomainScene(),matcher.PlayerID, UnitType.Player);
+            await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
+            room.Add(gamer);
+            room.State = RoomState.Game;
             
+            // 在Gate上动态创建一个Map Scene，把Unit从DB中加载放进来，然后传送到真正的Map中，这样登陆跟传送的逻辑就完全一样了
+            // GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
+            // gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+            //
+            // Scene scene = gateMapComponent.Scene;
             // ActorMessageSender actorProxy = Game.Scene.GetComponent<ActorMessageSenderComponent>().Get(room.Id);
             // IResponse response = await actorProxy.Call(new Actor_PlayerEnterRoom_Req()
             // {
@@ -150,22 +133,22 @@ namespace ET
             //     SessionID = matcher.GateSessionID
             // });
             // Actor_PlayerEnterRoom_Ack actor_PlayerEnterRoom_Ack = response as Actor_PlayerEnterRoom_Ack;
-            Session session = matcher.session;
+           
             // Session session = self.GetParent<Session>();
-            Player player = null;
-            //测试机器人匹配
-            if (matcher.UserID == 010101)
-            {
-                player = session.DomainScene().GetComponent<PlayerComponent>().Get(matcher.PlayerID);
-            }
-            else
-            {
-                player = session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
-            }
-            
-            player.RoomId = room.InstanceId;
-            await EnterMapHelper.EnterMap(player,session,null,room , matcher.UserID == 010101);
-            room.State = RoomState.Game;
+            // Player player = null;
+            // //测试机器人匹配
+            // if (matcher.UserID == 010101)
+            // {
+            //     player = session.DomainScene().GetComponent<PlayerComponent>().Get(matcher.PlayerID);
+            // }
+            // else
+            // {
+            //     player = session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
+            // }
+            //
+            // player.RoomId = room.InstanceId;
+            // await EnterMapHelper.EnterMap(player,session,null,room , matcher.UserID == 010101);
+            // room.State = RoomState.Game;
 
 
             //

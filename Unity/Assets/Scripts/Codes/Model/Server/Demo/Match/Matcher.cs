@@ -18,7 +18,7 @@ namespace ET
         public long PlayerID { get; set; }
 
         //客户端与网关服务器的SessionID
-        public Session session { get; set; }
+        public long GateSessionID { get; set; }
 
         // public long gateId { get; set; }
    

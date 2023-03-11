@@ -23,7 +23,7 @@ namespace ET
     
     public struct GameFinishEvent
     {
-        // public long instandId;
+        public bool isPlayer;
     }
     
     public struct FrogLanded

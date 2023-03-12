@@ -89,6 +89,9 @@ namespace ET
 		[ProtoMember(6)]
 		public long RoomID { get; set; }
 
+		[ProtoMember(5)]
+		public long OldInstanceId { get; set; }
+
 	}
 
 	[Message(InnerMessage.M2G_PlayerEnterRoomResponse)]

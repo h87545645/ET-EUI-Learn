@@ -46,6 +46,7 @@ message G2M_PlayerEnterRoomRequest // IActorRequest
     long UserID = 4;
     long SessionID = 5;
     long RoomID = 6;
+    long OldInstanceId = 5;
 }
 
 message M2G_PlayerEnterRoomResponse // IResponse
@@ -54,6 +55,7 @@ message M2G_PlayerEnterRoomResponse // IResponse
     int32 Error = 2;
     string Message = 3;
     long GamerID = 4;
+ 
 }
 
 //ResponseType A2R_LoginAccountResponse

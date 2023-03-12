@@ -121,6 +121,9 @@ namespace ET
             
             Unit gamer = UnitFactory.Create(scene,matcher.PlayerID, UnitType.Player);
             await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
+            gamer.AddComponent<MailBoxComponent>();
+            room.Add(gamer);
+           
             // Session session = matcher.GateSessionID;
             //向房间服务器发送玩家进入请求
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainScene().Zone, "FragGameMap");
@@ -130,13 +133,15 @@ namespace ET
                         PlayerID = matcher.PlayerID,
                         UserID = matcher.UserID,
                         SessionID = matcher.session.InstanceId,
-                        RoomID = room.Id
+                        RoomID = room.Id,
+                        OldInstanceId = gamer.InstanceId
                     }) as M2G_PlayerEnterRoomResponse;
             
             
-            gamer.AddComponent<MailBoxComponent>();
-            room.Add(gamer);
+        
             room.State = RoomState.Game;
+            
+            
             
             // 在Gate上动态创建一个Map Scene，把Unit从DB中加载放进来，然后传送到真正的Map中，这样登陆跟传送的逻辑就完全一样了
             // GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();

@@ -16,7 +16,7 @@ namespace ET.Server
             m2CFrogOpera.force = message.force;
             m2CFrogOpera.dir = message.dir;
             Room room = unit.DomainScene().GetComponent<RoomComponent>().Get(unit.RoomID);
-            room.Broadcast(m2CFrogOpera);
+            room.Broadcast(m2CFrogOpera , unit.PlayerId);
             await ETTask.CompletedTask;
         }
     }

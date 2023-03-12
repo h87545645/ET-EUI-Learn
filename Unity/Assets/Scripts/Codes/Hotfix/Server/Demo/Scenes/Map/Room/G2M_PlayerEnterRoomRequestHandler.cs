@@ -185,7 +185,8 @@ namespace ET.Server
                     //
                     // Log.Info($"玩家{message.UserID}重连");
                 }
-
+                // 解锁location，可以接收发给Unit的消息
+                await LocationProxyComponent.Instance.UnLock(message.PlayerID, message.OldInstanceId, gamer.InstanceId);
                 response.GamerID = gamer.InstanceId;
                 await ETTask.CompletedTask;
 

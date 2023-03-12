@@ -155,11 +155,11 @@ namespace ET.Server
         /// 广播消息
         /// </summary>
         /// <param name="message"></param>
-        public static void Broadcast(this Room self, IActorMessage message)
+        public static void Broadcast(this Room self, IActorMessage message, long playerId = 0)
         {
             foreach (Unit unit in self.units)
             {
-                if (unit == null || unit.isOffline || unit.isRobot)
+                if (unit == null || unit.isOffline || unit.isRobot || (playerId != 0 && playerId == unit.PlayerId))
                 {
                     continue;
                 }

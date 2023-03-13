@@ -16,7 +16,7 @@ namespace ET.Client
                 player = UnitHelper.GetMyUnitFromCurrentScene(curScene.DomainScene());
          
                 C2M_FrogGameOver c2MFrogGameOver = new C2M_FrogGameOver();
-                c2MFrogGameOver.PlayerId = player.PlayerId;
+                c2MFrogGameOver.UserId = player.UserID;
                 player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogGameOver);
             }
            

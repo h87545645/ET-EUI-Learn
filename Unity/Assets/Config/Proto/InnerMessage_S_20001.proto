@@ -29,7 +29,7 @@ message G2M_CreateRoomRequest // IActorRequest
 
 }
 
-message M2G_CreateRoomResponse // IResponse
+message M2G_CreateRoomResponse // IActorResponse
 {
     int32 RpcId = 1;
     int32 Error = 2;
@@ -49,7 +49,7 @@ message G2M_PlayerEnterRoomRequest // IActorRequest
     long OldInstanceId = 5;
 }
 
-message M2G_PlayerEnterRoomResponse // IResponse
+message M2G_PlayerEnterRoomResponse // IActorResponse
 {
     int32 RpcId = 1;
     int32 Error = 2;

@@ -13,7 +13,7 @@ namespace ET.Server
             M2C_FrogSyncPosition m2CFrogSyncPosition = new M2C_FrogSyncPosition() {Position = new float3(message.Position.x,message.Position.y,message.Position.z)};
             m2CFrogSyncPosition.Id = unit.Id;
             Room room = unit.DomainScene().GetComponent<RoomComponent>().Get(unit.RoomID);
-            room.Broadcast(m2CFrogSyncPosition);
+            room.Broadcast(m2CFrogSyncPosition ,  unit.PlayerId);
             // MessageHelper.FrogBroadcast(unit, m2CFrogSyncPosition);
             await ETTask.CompletedTask;
         }

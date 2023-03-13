@@ -37,6 +37,7 @@ namespace ET.Client
             set
             {
                 _lastPosition = value;
+
                 EventSystem.Instance.Publish(this.DomainScene(), new EventType.FrogLastPosition() { Position = new float2(value.x , value.y) });
             }
         }

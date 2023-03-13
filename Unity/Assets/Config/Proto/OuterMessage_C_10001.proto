@@ -86,13 +86,15 @@ message M2C_FrogSyncPosition // IActorMessage
 message C2M_FrogGameOver // IActorLocationMessage
 {
 	int32 RpcId = 1;
-	int64 PlayerId = 2;
+	int64 UserId = 2;
 }
 
 message M2C_FrogGameOver // IActorMessage
 {
 	int64 WinPlayerId = 1;
     int64 GameTime = 2;
+    int32 JumpCnt = 3;
+    int64 BestTime = 4;
 }
 
 

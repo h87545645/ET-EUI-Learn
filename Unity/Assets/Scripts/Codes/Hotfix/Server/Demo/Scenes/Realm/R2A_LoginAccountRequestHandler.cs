@@ -59,6 +59,8 @@ namespace ET.Server
                 player.Wins = 0;
                 player.Loses = 0;
                 player.NickName = account.AccountName;
+                player.BestTime = long.MaxValue;
+                player.BestJumpCnt = int.MaxValue;
                 
                 //存到数据库
                 await DBManagerComponent.Instance.GetZoneDB(1).Save<PlayerInfo>(player);

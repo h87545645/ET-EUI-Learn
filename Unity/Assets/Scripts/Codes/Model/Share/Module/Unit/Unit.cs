@@ -19,6 +19,8 @@ namespace ET
         //玩家昵称
         public string PlayerName{ get;  set; }
         
+        public int JumpCnt{ get;  set; }
+        
         //是否离线
         public bool isOffline { get; set; }
         

@@ -32,6 +32,7 @@ namespace ET
         //房间玩家数量
         public int Count { get { return seats.Values.Count; } }
 
-        public float GameTime = 0;
+        public long GameTime = 0;
+        
     }
 }

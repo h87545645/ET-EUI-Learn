@@ -50,7 +50,7 @@ namespace ET
 
 	[Message(InnerMessage.M2G_CreateRoomResponse)]
 	[ProtoContract]
-	public partial class M2G_CreateRoomResponse: ProtoObject, IResponse, IActorResponse
+	public partial class M2G_CreateRoomResponse: ProtoObject, IActorResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
@@ -96,7 +96,7 @@ namespace ET
 
 	[Message(InnerMessage.M2G_PlayerEnterRoomResponse)]
 	[ProtoContract]
-	public partial class M2G_PlayerEnterRoomResponse: ProtoObject, IResponse, IActorResponse
+	public partial class M2G_PlayerEnterRoomResponse: ProtoObject, IActorResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }

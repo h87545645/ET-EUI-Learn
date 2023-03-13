@@ -170,7 +170,7 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[ProtoMember(2)]
-		public long PlayerId { get; set; }
+		public long UserId { get; set; }
 
 	}
 
@@ -183,6 +183,12 @@ namespace ET
 
 		[ProtoMember(2)]
 		public long GameTime { get; set; }
+
+		[ProtoMember(3)]
+		public int JumpCnt { get; set; }
+
+		[ProtoMember(4)]
+		public long BestTime { get; set; }
 
 	}
 

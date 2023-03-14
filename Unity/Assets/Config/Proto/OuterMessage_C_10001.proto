@@ -95,6 +95,7 @@ message M2C_FrogGameOver // IActorMessage
     int64 GameTime = 2;
     int32 JumpCnt = 3;
     int64 BestTime = 4;
+    string PlayerName = 5;
 }
 
 

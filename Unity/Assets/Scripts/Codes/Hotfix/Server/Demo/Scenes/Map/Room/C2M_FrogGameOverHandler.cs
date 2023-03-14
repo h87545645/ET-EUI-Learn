@@ -22,6 +22,7 @@ namespace ET.Server
             m2CFrogGameOver.WinPlayerId = unit.PlayerId;
             m2CFrogGameOver.GameTime = room.GameTime;
             m2CFrogGameOver.JumpCnt = unit.JumpCnt;
+            m2CFrogGameOver.PlayerName = unit.PlayerName;
             m2CFrogGameOver.BestTime = bestTime;
             room.Broadcast(m2CFrogGameOver);
             //记录操作到数据库

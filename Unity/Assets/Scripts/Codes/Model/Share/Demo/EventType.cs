@@ -17,6 +17,15 @@
         public struct AfterCreateCurrentScene
         {
         }
+        
+        public struct GameOverPopRecord
+        {
+            public M2C_FrogGameOver msg;
+        }
+        
+        public struct BackToLobbyScene
+        {
+        }
 
         public struct AppStartInitFinish
         {

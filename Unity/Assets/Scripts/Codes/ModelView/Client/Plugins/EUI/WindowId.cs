@@ -11,6 +11,7 @@ namespace ET.Client
     	WindowID_TipsAlert,
 		WindowID_FragGameMainUI,
 		WindowID_FrogMenu,
-		WindowID_FrogRecord
+		WindowID_FrogRecord,
+		WindowID_FrogGameRecord,
 	}
 }

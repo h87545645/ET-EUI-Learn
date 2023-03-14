@@ -8,6 +8,7 @@ namespace ET.Client
         protected override async ETTask Run(Session session, M2C_FrogGameOver message)
         {
             //游戏结束 弹出结算
+            EventSystem.Instance.Publish(session.ClientScene(), new EventType.GameOverPopRecord(){msg = message});
         }
     }
 }

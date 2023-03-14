@@ -9,7 +9,7 @@ namespace ET.Client
         {
             try
             {
-                clientScene.RemoveComponent<AIComponent>();
+                // clientScene.RemoveComponent<AIComponent>();
                 clientScene.GetComponent<PlayerComponent>().MyId = myId;
                 CurrentScenesComponent currentScenesComponent = clientScene.GetComponent<CurrentScenesComponent>();
                 currentScenesComponent.Scene?.Dispose(); // 删除之前的CurrentScene，创建新的
@@ -34,7 +34,7 @@ namespace ET.Client
                 // Unit unit = UnitFactory.Create(currentScene, m2CCreateMyUnit.Unit);
                 // unitComponent.Add(unit);
             
-                clientScene.RemoveComponent<AIComponent>();
+                // clientScene.RemoveComponent<AIComponent>();
             
                 EventSystem.Instance.Publish(currentScene, new EventType.SceneChangeFinish());
 

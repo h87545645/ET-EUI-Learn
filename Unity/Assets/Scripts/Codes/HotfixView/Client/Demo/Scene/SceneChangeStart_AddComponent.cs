@@ -16,7 +16,7 @@ namespace ET.Client
 
             await SceneManager.LoadSceneAsync(currentScene.Name);
             
-            scene.AddComponent<FrogGameComponent>();
+            currentScene.AddComponent<FrogGameComponent>();
 			
 
             currentScene.AddComponent<FrogGameOperaComponent>();

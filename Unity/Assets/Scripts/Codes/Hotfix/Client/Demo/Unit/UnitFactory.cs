@@ -23,7 +23,7 @@ namespace ET.Client
 	        
 	        unit.Position = unitInfo.Position;
 	        unit.Forward = unitInfo.Forward;
-	        
+	        unit.UserID = unitInfo.UserId;
 	        NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
 
 			foreach (var kv in unitInfo.KV)

@@ -349,6 +349,9 @@ namespace ET
 		[ProtoMember(7)]
 		public MoveInfo MoveInfo { get; set; }
 
+		[ProtoMember(8)]
+		public long UserId { get; set; }
+
 	}
 
 	[Message(OuterMessage.M2C_CreateUnits)]

@@ -44,7 +44,7 @@ namespace ET.Client
             if ( self.Parent.InstanceId == UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene()).InstanceId)
             {
                 // EventSystem.Instance.Publish(Root.Instance.Scene, new FrogEnableCamera() {go = go,enable = true});
-                go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.InstanceId;
+                go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.Id;
                 // go.GetComponent<FrogGameCameraCtrl>();
             }
             self.heroRenderer = self.GameObject.transform.Find("FrogMove").GetComponent<SpriteRenderer>();

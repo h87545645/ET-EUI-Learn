@@ -745,11 +745,17 @@
      <Reference Include="UnityEditor.TestRunner">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Tilemap.Extras">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+     </Reference>
      <Reference Include="HybridCLR.Runtime">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
@@ -798,6 +804,9 @@
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>

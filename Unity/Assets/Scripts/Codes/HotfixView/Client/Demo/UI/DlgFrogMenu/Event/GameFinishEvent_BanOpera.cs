@@ -8,7 +8,8 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, GameFinishEvent args)
         {
-            scene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FragGameMainUI);
+            Scene client = scene.GetComponent<ClientSceneManagerComponent>().Get(1);
+            client.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FragGameMainUI);
             await ETTask.CompletedTask;
         }
     }

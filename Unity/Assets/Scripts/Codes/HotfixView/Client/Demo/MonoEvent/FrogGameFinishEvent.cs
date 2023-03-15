@@ -9,12 +9,12 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, GameFinishEvent args)
         {
             Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
-            if (args.isPlayer)
+        
+            Unit player = null;
+            player = UnitHelper.GetMyUnitFromCurrentScene(curScene.DomainScene());
+            //如果是自己
+            if (args.unitId == player.Id)
             {
-                //如果是自己还需要发给服务器
-                Unit player = null;
-                player = UnitHelper.GetMyUnitFromCurrentScene(curScene.DomainScene());
-         
                 C2M_FrogGameOver c2MFrogGameOver = new C2M_FrogGameOver();
                 c2MFrogGameOver.UserId = player.UserID;
                 player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogGameOver);

@@ -3,7 +3,7 @@ guid: b1db64aeefd311a4d919d373c56d0da8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -4185,10 +4184,10 @@ TextureImporter:
       tile_jungle_plants_objects_135: -2108771067
       tile_jungle_plants_objects_17: -32047353
       tile_jungle_plants_objects_59: 1797717907
-      tile_jungle_plants_objects_157: -1230000749
       tile_jungle_plants_objects_16: -1610289267
       tile_jungle_plants_objects_28: -1167064967
       tile_jungle_plants_objects_105: 322168468
+      tile_jungle_plants_objects_157: -1230000749
       tile_jungle_plants_objects_165: 1263335670
       tile_jungle_plants_objects_10: 163977130
       tile_jungle_plants_objects_66: 1565383392
@@ -4207,14 +4206,14 @@ TextureImporter:
       tile_jungle_plants_objects_95: 1078861359
       tile_jungle_plants_objects_108: 974923826
       tile_jungle_plants_objects_4: 1662172003
+      tile_jungle_plants_objects_12: 128176350
       tile_jungle_plants_objects_185: 1766825217
+      tile_jungle_plants_objects_51: 725347034
       tile_jungle_plants_objects_60: 813469576
       tile_jungle_plants_objects_120: -151461162
-      tile_jungle_plants_objects_12: 128176350
       tile_jungle_plants_objects_156: 2093085567
       tile_jungle_plants_objects_175: 567454874
       tile_jungle_plants_objects_113: 292034137
-      tile_jungle_plants_objects_51: 725347034
       tile_jungle_plants_objects_133: 718996719
       tile_jungle_plants_objects_145: 1917542864
       tile_jungle_plants_objects_104: -825918038
@@ -4266,8 +4265,8 @@ TextureImporter:
       tile_jungle_plants_objects_9: -1142588088
       tile_jungle_plants_objects_90: -62310502
       tile_jungle_plants_objects_80: -2122903596
-      tile_jungle_plants_objects_41: -1617637507
       tile_jungle_plants_objects_2: 925761147
+      tile_jungle_plants_objects_41: -1617637507
       tile_jungle_plants_objects_18: 2042764496
       tile_jungle_plants_objects_64: -956941454
       tile_jungle_plants_objects_70: 8987273

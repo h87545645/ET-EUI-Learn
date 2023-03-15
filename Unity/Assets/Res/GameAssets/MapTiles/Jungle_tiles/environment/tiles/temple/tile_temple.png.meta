@@ -3,7 +3,7 @@ guid: 28aedc02a84f15c468787e2d0485b5e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -2585,11 +2584,11 @@ TextureImporter:
       tile_temple_35: 1990704728
       tile_temple_99: 139555297
       tile_temple_97: 1585121557
-      tile_temple_4: 813532637
+      tile_temple_109: -466914035
       tile_temple_61: -917923083
       tile_temple_9: 672701378
       tile_temple_37: -931545360
-      tile_temple_109: -466914035
+      tile_temple_4: 813532637
       tile_temple_47: 1640174633
       tile_temple_20: 1593825639
       tile_temple_11: 1673422476

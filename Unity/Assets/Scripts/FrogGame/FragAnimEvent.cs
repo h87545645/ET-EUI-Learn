@@ -117,7 +117,8 @@ public class FragAnimEvent : MonoBehaviour
         if (collision.collider.tag == "final")
         {
             // EventCenter.PostEvent(Game_Event.FragGameFinish);
-            EventSystem.Instance.Publish(Root.Instance.Scene, new GameFinishEvent(){isPlayer = true});
+            long unitId = this.gameObject.transform.parent.GetComponent<MonoBridge>().BelongToUnitId;
+            EventSystem.Instance.Publish(Root.Instance.Scene, new GameFinishEvent(){unitId = unitId});
         } 
  
     }

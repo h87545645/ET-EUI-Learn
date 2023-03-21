@@ -10,7 +10,7 @@ namespace ET.Client
         {
             ShowWindowData content = new ShowWindowData();
             content.contextData = new WindowData(){GameOverData = args.msg};
-            scene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogRecord,content);
+            scene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogGameRecord,content);
             await ETTask.CompletedTask;
         }
     }

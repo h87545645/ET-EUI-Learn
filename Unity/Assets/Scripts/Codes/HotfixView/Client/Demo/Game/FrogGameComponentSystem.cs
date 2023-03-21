@@ -103,7 +103,7 @@ namespace ET.Client
             Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
             pelican.GetComponent<DialogCompoent>().Speak(self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^game_completed_speak"));
             await TimerComponent.Instance.WaitAsync(3000); 
-            self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogRecord);
+            self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogGameRecord);
             // StartCoroutine(UnityUtils.DelayFuc(() =>
             // {
             //     completedPanel.OnFadeIn();

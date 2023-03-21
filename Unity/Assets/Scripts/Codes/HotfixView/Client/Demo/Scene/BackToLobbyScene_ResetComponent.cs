@@ -13,11 +13,14 @@ namespace ET.Client
             currentScenesComponent.Scene?.Dispose(); // 删除CurrentScene
             
             // 加载场景资源
-            // await ResourcesComponent.Instance.LoadBundleAsync("Init.unity3d");
+            await ResourcesComponent.Instance.LoadBundleAsync("lobby.unity3d");
             // 切换到map场景
-            await SceneManager.LoadSceneAsync("Init");
+
+            await SceneManager.LoadSceneAsync("lobby");
+           
             
             //弹出大厅弹窗
+            await scene.GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Lobby);
         }
     }
 }

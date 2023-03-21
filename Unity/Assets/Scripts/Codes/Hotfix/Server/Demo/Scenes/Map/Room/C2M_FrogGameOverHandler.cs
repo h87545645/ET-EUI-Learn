@@ -8,7 +8,8 @@ namespace ET.Server
     {
         protected override async ETTask Run(Unit unit, C2M_FrogGameOver message)
         {
-            Room room = unit.DomainScene().GetComponent<RoomComponent>().Get(unit.RoomID);
+            RoomComponent roomComponent = unit.DomainScene().GetComponent<RoomComponent>();
+            Room room = roomComponent.Remove(unit.RoomID);
             if (room.State != RoomState.Game)
             {
                 //已经结束了
@@ -18,14 +19,16 @@ namespace ET.Server
             long bestTime = await FrogSyncRecordHelper.SyncRoomPlayerRecord(room, message.UserId);
             // 广播玩家操作
          
-            M2C_FrogGameOver m2CFrogGameOver = new M2C_FrogGameOver() {};
+            M2C_FrogGameOver m2CFrogGameOver = new M2C_FrogGameOver();
             m2CFrogGameOver.WinPlayerId = unit.PlayerId;
             m2CFrogGameOver.GameTime = room.GameTime;
             m2CFrogGameOver.JumpCnt = unit.JumpCnt;
             m2CFrogGameOver.PlayerName = unit.PlayerName;
             m2CFrogGameOver.BestTime = bestTime;
             room.Broadcast(m2CFrogGameOver);
-            //记录操作到数据库
+            
+            //删除room 
+            room.Dispose();
 
             // await ETTask.CompletedTask;
         }

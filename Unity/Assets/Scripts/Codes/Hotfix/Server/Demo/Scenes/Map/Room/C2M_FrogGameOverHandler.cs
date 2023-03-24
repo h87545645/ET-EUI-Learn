@@ -1,5 +1,7 @@
 ﻿
 
+using System.Collections.Generic;
+
 namespace ET.Server
 {
     [ActorMessageHandler(SceneType.Map)]
@@ -29,6 +31,20 @@ namespace ET.Server
             
             //删除room 
             room.Dispose();
+            
+            //删除unit
+            UnitComponent unitComponent = unit.DomainScene().GetComponent<UnitComponent>();
+            if (unitComponent == null)
+            {
+                return;
+            }
+
+            unitComponent.RemoveAll();
+            // foreach (KeyValuePair<long,Unit> kvp in unitComponent.GetAll())
+            // {
+            //     unitComponent.Remove(kvp.Key);
+            // }
+            
 
             // await ETTask.CompletedTask;
         }

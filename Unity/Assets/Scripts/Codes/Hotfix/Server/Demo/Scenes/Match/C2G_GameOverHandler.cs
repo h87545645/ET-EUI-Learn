@@ -15,8 +15,11 @@ namespace ET.Server
             foreach (var user in units)
             {
                 session.DomainScene().GetComponent<MatchComponent>().Playing.Remove(user.UserID);
+                room.Remove(user.UserID);
                 user.Dispose();
             }
+
+           
             matchRoomComponent.Recycle(room.Id);
             Log.Info($"回收房间{room.Id}");
             await ETTask.CompletedTask;

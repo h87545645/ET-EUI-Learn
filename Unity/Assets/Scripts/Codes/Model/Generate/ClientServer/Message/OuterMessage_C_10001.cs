@@ -361,6 +361,12 @@ namespace ET
 		[ProtoMember(8)]
 		public long UserId { get; set; }
 
+		[ProtoMember(9)]
+		public long RoomId { get; set; }
+
+		[ProtoMember(10)]
+		public long PlayerId { get; set; }
+
 	}
 
 	[Message(OuterMessage.M2C_CreateUnits)]

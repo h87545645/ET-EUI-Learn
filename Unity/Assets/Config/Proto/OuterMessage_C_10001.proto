@@ -186,6 +186,8 @@ message UnitInfo
 	map<int32, int64> KV = 6;
 	MoveInfo MoveInfo = 7;
 	int64 UserId = 8;
+	int64 RoomId = 9;
+	int64 PlayerId = 10;
 }
 
 message M2C_CreateUnits // IActorMessage

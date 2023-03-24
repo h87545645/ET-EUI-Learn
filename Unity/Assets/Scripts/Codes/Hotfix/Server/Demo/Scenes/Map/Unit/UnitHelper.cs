@@ -17,6 +17,8 @@ namespace ET.Server
             unitInfo.Position = unit.Position;
             unitInfo.Forward = unit.Forward;
             unitInfo.UserId = unit.UserID;
+            unitInfo.RoomId = unit.RoomID;
+            unitInfo.PlayerId = unit.PlayerId;
 
             MoveComponent moveComponent = unit.GetComponent<MoveComponent>();
             if (moveComponent != null)

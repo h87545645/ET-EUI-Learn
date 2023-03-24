@@ -47,7 +47,7 @@ namespace ET
         {
             Room room = self.readyRooms[id];
             self.readyRooms.Remove(room.Id);
-            self.idleRooms.Enqueue(room);
+            // self.idleRooms.Enqueue(room);
         }
 
         /// <summary>

@@ -15,12 +15,13 @@ namespace ET.Client
             //如果是自己
             if (args.unitId == player.Id)
             {
-                C2G_GameOverMessage c2GGameOverMessage = new C2G_GameOverMessage(){RoomID = player.RoomID};
-                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2GGameOverMessage);
-                
                 C2M_FrogGameOver c2MFrogGameOver = new C2M_FrogGameOver();
                 c2MFrogGameOver.UserId = player.UserID;
                 player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogGameOver);
+                
+                
+       
+                
             }
            
             

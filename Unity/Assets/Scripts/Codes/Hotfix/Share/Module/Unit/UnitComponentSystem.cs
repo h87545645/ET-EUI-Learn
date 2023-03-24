@@ -46,5 +46,16 @@ namespace ET
 			Unit unit = self.GetChild<Unit>(id);
 			unit?.Dispose();
 		}
+		
+		public static void RemoveAll(this UnitComponent self)
+		{
+			foreach (KeyValuePair<long,Unit> kvp in self.AllUnits)
+			{
+				Unit unit = self.GetChild<Unit>(kvp.Key);
+				unit?.Dispose();
+			}
+			
+			self.AllUnits.Clear();
+		}
 	}
 }

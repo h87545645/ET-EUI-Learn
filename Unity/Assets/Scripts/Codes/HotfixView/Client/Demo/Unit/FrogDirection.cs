@@ -10,7 +10,15 @@ namespace ET.Client
         {
             // Unit unit = args.Unit;
             Unit player = null;
-            // Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+            // unitId for other player
+            if (args.unitId != 0 && args.unitId != null)
+            {
+                player = scene.GetComponent<UnitComponent>().Get(args.unitId);
+            }
+            else
+            {
+                player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+            }
             FrogComponent frogComponent = player.GetComponent<FrogComponent>();
             
             if (frogComponent == null)
@@ -27,14 +35,8 @@ namespace ET.Client
                 return;
             }
             
-            // unitId for other player
-            if (args.unitId != 0 && args.unitId != null)
+            if (args.unitId == 0 || args.unitId == null)
             {
-                player = scene.GetComponent<UnitComponent>().Get(args.unitId);
-            }
-            else
-            {
-                player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
                 //如果是自己还需要发给服务器
                 C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
                 c2MFrogOpera.opera = (int)FrogOpera.Direction;
@@ -42,8 +44,8 @@ namespace ET.Client
                 c2MFrogOpera.dir = (int)args.dir;
                 player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
             }
-           
-        
+
+
             switch (dir)
             {
                 case ET.FrogDirection.None:

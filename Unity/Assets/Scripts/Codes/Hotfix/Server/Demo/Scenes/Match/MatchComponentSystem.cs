@@ -115,12 +115,26 @@ namespace ET
             {
                 player = matcher.session.GetComponent<SessionPlayerComponent>().GetMyPlayer();
             }
-            GateMapComponent gateMapComponent = player.AddComponent<GateMapComponent>();
-            gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+
+            GateMapComponent gateMapComponent = null;
+            if (player.GetComponent<GateMapComponent>() == null)
+            {
+                gateMapComponent = player.AddComponent<GateMapComponent>();
+                gateMapComponent.Scene = await SceneFactory.CreateServerScene(gateMapComponent, player.Id, IdGenerater.Instance.GenerateInstanceId(), gateMapComponent.DomainZone(), "GateMap", SceneType.Map);
+            }
+            else
+            {
+                gateMapComponent = player.GetComponent<GateMapComponent>();
+            }
+          
+           
             Scene scene = gateMapComponent.Scene;
             
             Unit gamer = UnitFactory.Create(scene,matcher.PlayerID, UnitType.Player);
             await LocationProxyComponent.Instance.Lock(gamer.Id, gamer.InstanceId);
+            gamer.UserID = matcher.UserID;
+            gamer.RoomID = room.Id;
+            gamer.PlayerId = matcher.PlayerID;
             gamer.AddComponent<MailBoxComponent>();
             room.Add(gamer);
            

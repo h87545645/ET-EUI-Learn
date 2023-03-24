@@ -19,11 +19,11 @@ namespace ET.Client
         }
         
         [ObjectSystem]
-        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent , GameObject , float3>
+        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent , GameObject , float3 , long>
         {
-            protected override void Awake(FrogComponent self , GameObject go , float3 position)
+            protected override void Awake(FrogComponent self , GameObject go , float3 position , long playerId)
             {
-                self.Awake(go , position);
+                self.Awake(go , position ,playerId);
             }
         }
         
@@ -37,11 +37,11 @@ namespace ET.Client
         }
         
 
-        public static void Awake(this FrogComponent self ,  GameObject go ,float3 position)
+        public static void Awake(this FrogComponent self ,  GameObject go ,float3 position , long playerId)
         {
             self.GameObject = go;
-           
-            if ( self.Parent.InstanceId == UnitHelper.GetMyUnitFromCurrentScene(self.DomainScene()).InstanceId)
+            Scene curr = self.DomainScene();
+            if ( playerId == curr.Parent.GetParent<Scene>().GetComponent<PlayerComponent>().MyId)
             {
                 // EventSystem.Instance.Publish(Root.Instance.Scene, new FrogEnableCamera() {go = go,enable = true});
                 go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.Id;

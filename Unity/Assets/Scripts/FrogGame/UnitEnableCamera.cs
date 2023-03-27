@@ -6,7 +6,7 @@
         protected override async ETTask Run(Scene scene, FrogEnableCamera args)
         {
             // args.go.GetComponent<FragGameCameraCtrl>().enabled = args.enable;
-            args.go.AddComponent<FragGameCameraCtrl>();
+            // args.go.AddComponent<FragGameCameraCtrl>();
         }  
     }
 }

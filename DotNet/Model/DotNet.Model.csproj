@@ -25,6 +25,10 @@
     </PropertyGroup>
     <ItemGroup>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\ClientServer\ConfigPartial\StartSceneConfig.cs">
+          <Link>Generate\ConfigPartial\StartSceneConfig.cs</Link>
+        </Compile>
+
         <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Server\**\*.cs"> 
             <Link>Server\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
@@ -47,5 +51,13 @@
         <ProjectReference Include="..\Core\DotNet.Core.csproj" />
         <ProjectReference Include="..\Loader\DotNet.Loader.csproj" />
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
+    </ItemGroup> 
+    <ItemGroup>
+      <Content Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\ClientServer\ConfigPartial\StartProcessConfig.cs.meta">
+        <Link>Generate\ConfigPartial\StartProcessConfig.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\ClientServer\ConfigPartial\StartSceneConfig.cs.meta">
+        <Link>Generate\ConfigPartial\StartSceneConfig.cs.meta</Link>
+      </Content>
     </ItemGroup>
 </Project>

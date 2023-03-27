@@ -10,6 +10,7 @@ namespace ET.Client
             Unit unit = session.DomainScene().CurrentScene().GetComponent<UnitComponent>().Get(message.Id);
 
             unit.Position = message.Position;
+            await ETTask.CompletedTask;
         }
     }
 }

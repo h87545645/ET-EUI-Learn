@@ -22,6 +22,8 @@ namespace ET.Server
             {
                 Log.Error(e);
             }
+            
+            await ETTask.CompletedTask;
         }
     }
 }

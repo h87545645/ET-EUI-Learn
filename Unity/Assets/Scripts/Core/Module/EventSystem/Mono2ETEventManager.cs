@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 namespace ET
 {
@@ -47,7 +47,7 @@ namespace ET
     
     public struct FrogEnableCamera
     {
-        public GameObject go;
+        // public GameObject go;
 
         public bool enable;
     }

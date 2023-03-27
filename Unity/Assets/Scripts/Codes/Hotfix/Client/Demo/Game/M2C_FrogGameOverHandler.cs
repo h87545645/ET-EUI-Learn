@@ -29,6 +29,7 @@ namespace ET.Client
             // {
             //     unitComponent.Remove(kvp.Key);
             // }
+            await ETTask.CompletedTask;
         }
     }
 }

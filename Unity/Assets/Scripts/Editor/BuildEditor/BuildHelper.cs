@@ -107,6 +107,44 @@ namespace ET
             PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, defines);
             AssetDatabase.SaveAssets();
         }
+        
+#if LOCAL_SERVER
+        [MenuItem("ET/ChangeDefine/Remove LOCAL_SERVER")]
+        public static void RemoveLOCAL_SERVER()
+        {
+            EnableLOCAL_SERVER(false);
+        }
+#else
+        [MenuItem("ET/ChangeDefine/Add LOCAL_SERVER")]
+        public static void AddLOCAL_SERVER()
+        {
+            EnableLOCAL_SERVER(true);
+        }
+#endif
+        private static void EnableLOCAL_SERVER(bool enable)
+        {
+            string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            var ss = defines.Split(';').ToList();
+            if (enable)
+            {
+                if (ss.Contains("LOCAL_SERVER"))
+                {
+                    return;
+                }
+                ss.Add("LOCAL_SERVER");
+            }
+            else
+            {
+                if (!ss.Contains("LOCAL_SERVER"))
+                {
+                    return;
+                }
+                ss.Remove("LOCAL_SERVER");
+            }
+            defines = string.Join(";", ss);
+            PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, defines);
+            AssetDatabase.SaveAssets();
+        }  
 
         public static void Build(PlatformType type, BuildAssetBundleOptions buildAssetBundleOptions, BuildOptions buildOptions, bool isBuildExe, bool isContainAB, bool clearFolder)
         {

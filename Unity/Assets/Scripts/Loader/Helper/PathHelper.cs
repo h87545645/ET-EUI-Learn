@@ -12,6 +12,7 @@ namespace ET
             {
                 string game = Application.productName;
                 string path = AppResPath;
+                // string path = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/StreamingAssets";
                 if (Application.isMobilePlatform)
                 {
                     path = $"{Application.persistentDataPath}/{game}/";

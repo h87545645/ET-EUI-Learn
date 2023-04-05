@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 2924797500
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets_bundles_code.bundle
+      Dependencies: {}
+    Info_1:
+      Name: assets_bundles_ui_common.bundle
+      Dependencies: {}
+    Info_2:
+      Name: assets_bundles_ui_dlg.bundle
+      Dependencies:
+        Dependency_0: unityshaders.bundle
+    Info_3:
+      Name: assets_bundles_ui.bundle
+      Dependencies: {}
+    Info_4:
+      Name: assets_bundles_ui_item.bundle
+      Dependencies: {}
+    Info_5:
+      Name: unityshaders.bundle
+      Dependencies: {}
+    Info_6:
+      Name: share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle
+      Dependencies: {}

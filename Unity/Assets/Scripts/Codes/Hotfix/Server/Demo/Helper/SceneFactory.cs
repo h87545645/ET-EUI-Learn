@@ -1,10 +1,23 @@
+#define LOCAL_SERVER
 using System.Net;
 using System.Net.Sockets;
 
 namespace ET.Server
 {
+ 
     public static class SceneFactory
     {
+        
+        static IPEndPoint GetIPEndPoint(StartSceneConfig startSceneConfig)
+        {
+            Log.Debug($"InnerIPOutPort:{startSceneConfig.InnerIPOutPort} OuterIPPort:{startSceneConfig.OuterIPPort}");
+#if LOCAL_SERVER
+     return startSceneConfig.InnerIPOutPort;       
+#else
+            return new IPEndPoint(IPAddress.Parse("0.0.0.0"), startSceneConfig.OuterIPPort.Port);
+#endif
+        }
+
         public static async ETTask<Scene> CreateServerScene(Entity parent, long id, long instanceId, int zone, string name, SceneType sceneType, StartSceneConfig startSceneConfig = null)
         {
             await ETTask.CompletedTask;
@@ -18,6 +31,9 @@ namespace ET.Server
                     scene.AddComponent<RouterComponent, IPEndPoint, string>(startSceneConfig.OuterIPPort,
                         startSceneConfig.StartProcessConfig.InnerIP
                     );
+                    // scene.AddComponent<RouterComponent, IPEndPoint, string>(GetIPEndPoint(startSceneConfig),
+                    //     startSceneConfig.StartProcessConfig.InnerIP
+                    // );
                     break;
                 case SceneType.RouterManager: // 正式发布请用CDN代替RouterManager
                     // 云服务器在防火墙那里做端口映射
@@ -25,12 +41,15 @@ namespace ET.Server
                     break;
                 case SceneType.Realm:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
+                    // scene.AddComponent<NetServerComponent, IPEndPoint>(GetIPEndPoint(startSceneConfig));
                     break;
                 case SceneType.Account:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
+                    // scene.AddComponent<NetServerComponent, IPEndPoint>(GetIPEndPoint(startSceneConfig));
                     break; 
                 case SceneType.Gate:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
+                    // scene.AddComponent<NetServerComponent, IPEndPoint>(GetIPEndPoint(startSceneConfig));
                     scene.AddComponent<PlayerComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
                     /*

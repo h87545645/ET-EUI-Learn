@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3732719608
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8e6a797c8d9da3fbd06d5ab856b2e1b9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ff414f606ea1972259b080d7bcf51689
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd
+Dependencies: []

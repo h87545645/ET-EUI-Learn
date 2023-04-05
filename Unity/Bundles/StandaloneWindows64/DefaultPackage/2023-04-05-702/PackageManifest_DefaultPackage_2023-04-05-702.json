@@ -1,0 +1,256 @@
+{
+    "FileVersion": "1.4.6",
+    "EnableAddressable": false,
+    "OutputNameStyle": 1,
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2023-04-05-702",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Code.dll.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Code.pdb.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Hotfix.dll.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Hotfix.pdb.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Model.dll.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Code/Model.pdb.bytes",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Common/ESCommonUI.prefab",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Common/ESReuseUI.prefab",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Common/RedDot.prefab",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgFragGameMainUI.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": [
+                5,
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgFrogGameRecord.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": [
+                5,
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgFrogMenu.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": [
+                5,
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgHelper.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgLobby.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": [
+                5,
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgLogin.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgRedDot.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgTipsAlert.prefab",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependIDs": [
+                5,
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/GameADView.prefab",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependIDs": [
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/PopupMask.prefab",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/record.prefab",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependIDs": [
+                6
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Item/Item_serverTest.prefab",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/UI/Item/Item_test.prefab",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_bundles_code.bundle",
+            "FileHash": "317ad5187e7284d4aae8008e7a40ef3f",
+            "FileCRC": "02584c36",
+            "FileSize": 417386,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_ui_common.bundle",
+            "FileHash": "4b60c32ce87fbb84cec296dfafa9a70d",
+            "FileCRC": "70b9b5ad",
+            "FileSize": 13610,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_ui_dlg.bundle",
+            "FileHash": "edc194f6372d53acd5196991356f3102",
+            "FileCRC": "465c41b5",
+            "FileSize": 4919004,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_ui.bundle",
+            "FileHash": "c77bdedafa9f46356beeee646a0aacff",
+            "FileCRC": "5c1e86c2",
+            "FileSize": 12803,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_ui_item.bundle",
+            "FileHash": "7259a81326195ad4dd8c16e5ef217498",
+            "FileCRC": "8fc74bdf",
+            "FileSize": 10214,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "FileHash": "a20674594d6bc271ee9ba042be70486f",
+            "FileCRC": "5fc27aa9",
+            "FileSize": 26493,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": [
+                2
+            ]
+        },
+        {
+            "BundleName": "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle",
+            "FileHash": "1500190113a58f2478a491315c764025",
+            "FileCRC": "2202dc2e",
+            "FileSize": 3855,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        }
+    ]
+}

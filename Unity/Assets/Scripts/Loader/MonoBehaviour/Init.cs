@@ -2,11 +2,20 @@
 using System.Threading;
 using CommandLine;
 using UnityEngine;
+// using YooAsset;
+
 
 namespace ET
 {
 	public class Init: MonoBehaviour
 	{
+		// [LabelText("资源服地址")] public string HotfixResUrl = "http://127.0.0.1:8088";
+		//
+		// [InfoBox("例如v1.0")]
+		// [LabelText("版本标识")] public string Version = "v0.0.1";
+		//
+		// [LabelText("资源模式")]
+		// public YooAssets.EPlayMode PlayMode = YooAssets.EPlayMode.EditorSimulateMode;
 		private void Start()
 		{
 			DontDestroyOnLoad(gameObject);
@@ -35,6 +44,8 @@ namespace ET
 			ETTask.ExceptionHandler += Log.Error;
 
 			Game.AddSingleton<CodeLoader>().Start();
+			
+
 		}
 
 		private void Update()

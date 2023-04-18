@@ -11,7 +11,7 @@
         "Unity.Loader",
         "Unity.TextMeshPro",
         "Unity.RenderPipelines.Universal.Runtime",
-        "I18N",
+        "",
         "MonoBridge"
     ],
     "includePlatforms": [],

@@ -2,7 +2,7 @@
     "name": "Unity.ThirdParty",
     "rootNamespace": "ET",
     "references": [
-        "GUID:8860876b1f99fe04c8e41a2fe504510b"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

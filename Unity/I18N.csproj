@@ -41,25 +41,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18N.cs" />
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18NSprite.cs" />
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18NText.cs" />
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18NAudioSource.cs" />
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18NImage.cs" />
-     <Compile Include="Assets\Honeti\I18N\Scripts\I18NTextMesh.cs" />
-     <Folder Include="Assets\Honeti\I18N\Textures\Sprites" />
-     <Folder Include="Assets\Honeti\I18N\Textures\Sprites\Settings" />
-     <Folder Include="Assets\Honeti\I18N\Textures" />
-     <Folder Include="Assets\Honeti\I18N\Scenes" />
-     <Folder Include="Assets\Honeti\I18N\Sounds" />
-     <None Include="Assets\Honeti\I18N\I18N.asmdef" />
-     <Folder Include="Assets\Honeti\I18N\Data\Fonts" />
-     <Folder Include="Assets\Honeti\I18N\Prefabs" />
-     <Folder Include="Assets\Honeti\I18N\Scripts" />
-     <Folder Include="Assets\Honeti\I18N" />
-     <Folder Include="Assets\Honeti\I18N\Data" />
-     <Folder Include="Assets\Honeti\I18N\Sounds\Click" />
-     <Folder Include="Assets\Honeti\I18N\Textures\Sprites\Play" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18N.cs" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18NSprite.cs" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18NText.cs" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18NAudioSource.cs" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18NImage.cs" />
+     <Compile Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts\I18NTextMesh.cs" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Textures\Sprites" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Textures\Sprites\Settings" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Textures" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scenes" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Sounds" />
+     <None Include="Assets\Scripts\ThirdParty\Honeti\I18N\I18N.asmdef" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Data\Fonts" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Prefabs" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Scripts" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Data" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Sounds\Click" />
+     <Folder Include="Assets\Scripts\ThirdParty\Honeti\I18N\Textures\Sprites\Play" />
      <Reference Include="UnityEngine">
      <HintPath>C:\U3D\U3D_engine\Unity 2021.2.7f1c1\Editor\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1040495836
+CRC: 1615177984
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 10eeb6ef3b5f533cf6fb3f79ae3aee45
+    Hash: 7dd3700cd4ad506f559c75aaf0b2312e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 435672698e6e01af11a5595069eb89b0
@@ -134,4 +134,6 @@ Assets:
 - Assets/Bundles/UI/Dlg/DlgFrogGameRecord.prefab
 - Assets/Bundles/UI/Dlg/DlgLogin.prefab
 Dependencies:
+- C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/share_assets_res_gameassets_maptiles_jungle_tiles_sprites_animals_frog_jump.bundle
+- C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
 - C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/unityshaders.bundle

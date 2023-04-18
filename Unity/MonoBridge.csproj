@@ -41,9 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\FrogGame\MonoBridge\MonoBridge.cs" />
-     <None Include="Assets\Scripts\FrogGame\MonoBridge\MonoBridge.asmdef" />
-     <Folder Include="Assets\Scripts\FrogGame\MonoBridge" />
+     <Compile Include="Assets\Scripts\ThirdParty\MonoBridge\MonoBridge.cs" />
+     <None Include="Assets\Scripts\ThirdParty\MonoBridge\MonoBridge.asmdef" />
+     <Folder Include="Assets\Scripts\ThirdParty\MonoBridge" />
      <Reference Include="UnityEngine">
      <HintPath>C:\U3D\U3D_engine\Unity 2021.2.7f1c1\Editor\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

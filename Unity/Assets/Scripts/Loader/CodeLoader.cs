@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using UnityEngine;
+using YooAsset;
 
 namespace ET
 {
@@ -36,12 +37,23 @@ namespace ET
 			{
 				byte[] assBytes;
 				byte[] pdbBytes;
-				if (!Define.IsEditor)
+				if (Define.IsEditor)
 				{
-					Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
-					assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
-					pdbBytes = ((TextAsset)dictionary["Model.pdb"]).bytes;
-
+					// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
+					// assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
+					// pdbBytes = ((TextAsset)dictionary["Model.pdb"]).bytes;
+					/*
+				    * @Author: Simon
+				    * @Description:
+				    * @Date: 2023年04月10日 星期一 21:04:20
+				    * @Modify:改为yooAssets加载
+				    */
+					var package = YooAssets.GetPackage("DefaultPackage");
+					RawFileOperationHandle assHandle = package.LoadRawFileSync("Model.dll");
+					assBytes = assHandle.GetRawFileData();
+					RawFileOperationHandle pdbHandle = package.LoadRawFileSync("Model.pdb");
+					pdbBytes = pdbHandle.GetRawFileData();
+					
 					if (Define.EnableIL2CPP)
 					{
 						HybridCLRHelper.Load();
@@ -66,11 +78,17 @@ namespace ET
 		{
 			byte[] assBytes;
 			byte[] pdbBytes;
-			if (!Define.IsEditor)
+			if (Define.IsEditor)
 			{
-				Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
-				assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;
-				pdbBytes = ((TextAsset)dictionary["Hotfix.pdb"]).bytes;
+				// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
+				// assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;
+				// pdbBytes = ((TextAsset)dictionary["Hotfix.pdb"]).bytes;
+				
+				var package = YooAssets.GetPackage("DefaultPackage");
+				RawFileOperationHandle assHandle = package.LoadRawFileSync("Hotfix.dll");
+				assBytes = assHandle.GetRawFileData();
+				RawFileOperationHandle pdbHandle = package.LoadRawFileSync("Hotfix.pdb");
+				pdbBytes = pdbHandle.GetRawFileData();
 			}
 			else
 			{

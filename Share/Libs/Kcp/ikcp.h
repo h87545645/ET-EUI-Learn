@@ -351,8 +351,31 @@ extern "C" {
 // create a new kcp control object, 'conv' must equal in two endpoint
 // from the same connection. 'user' will be passed to the output callback
 // output callback can be setup like this: 'kcp->output = my_udp_output'
-	KCPDLL ikcpcb* ikcp_create(IUINT32 conv, void *user);
-
+	//KCPDLL ikcpcb* ikcp_create(IUINT32 conv, void *user);
+ #ifdef DLL_EXPORTS
+ #define KCPDLL _declspec(dllexport)
+ #else
+ #define KCPDLL
+ #endif
+ 
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+ 
+     //---------------------------------------------------------------------
+     // interface
+     //---------------------------------------------------------------------
+ 
+     // create a new kcp control object, 'conv' must equal in two endpoint
+     // from the same connection. 'user' will be passed to the output callback
+     // output callback can be setup like this: 'kcp->output = my_udp_output'
+     KCPDLL ikcpcb* ikcp_create(IUINT32 conv, void *user);
+     //其它导出接口省略
+ 
+ #ifdef __cplusplus
+ }
+ #endif
+ 
 // release kcp control object
 	KCPDLL void ikcp_release(ikcpcb *kcp);
 
@@ -423,5 +446,6 @@ extern "C" {
 #endif
 
 #endif
+
 
 

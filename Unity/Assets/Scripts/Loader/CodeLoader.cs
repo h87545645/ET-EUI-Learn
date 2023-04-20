@@ -37,7 +37,7 @@ namespace ET
 			{
 				byte[] assBytes;
 				byte[] pdbBytes;
-				if (Define.IsEditor)
+				if (!Define.IsEditor)
 				{
 					// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
 					// assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
@@ -78,7 +78,7 @@ namespace ET
 		{
 			byte[] assBytes;
 			byte[] pdbBytes;
-			if (Define.IsEditor)
+			if (!Define.IsEditor)
 			{
 				// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
 				// assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;

@@ -4,8 +4,7 @@
     "references": [
         "Unity.ThirdParty",
         "Unity.Core",
-        "Unity.Mathematics",
-        "I18N"
+        "Unity.Mathematics"
     ],
     "includePlatforms": [],
     "excludePlatforms": [

@@ -10,9 +10,7 @@
         "Unity.Mathematics",
         "Unity.Loader",
         "Unity.TextMeshPro",
-        "Unity.RenderPipelines.Universal.Runtime",
-        "",
-        "MonoBridge"
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [

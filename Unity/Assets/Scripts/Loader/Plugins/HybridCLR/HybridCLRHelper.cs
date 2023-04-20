@@ -12,39 +12,47 @@ namespace ET
     {
         public static void Load()
         {
-            // Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("aotdlls.unity3d");
-            // foreach (var kv in dictionary)
-            // {
-            //     byte[] bytes = (kv.Value as TextAsset).bytes;
-            //     RuntimeApi.LoadMetadataForAOTAssembly(bytes, HomologousImageMode.Consistent);
-            // }
-
-            /*
-            * @Author: Simon
-            * @Description:
-            * @Date: 2023年04月11日 星期二 20:04:15
-            * @Modify:修改为yooAssets 加载
-            */
-            var package = YooAssets.GetPackage("DefaultPackage");
-            string path = "Assets/Bundles/AotDlls";
-            if (Directory.Exists(path))
+            if (!Define.IsEditor)
             {
-                DirectoryInfo direction = new DirectoryInfo(path);
-                FileInfo[] files = direction.GetFiles("*");
-                for (int i = 0; i < files.Length; i++)
+                /*
+          * @Author: Simon
+          * @Description:
+          * @Date: 2023年04月11日 星期二 20:04:15
+          * @Modify:修改为yooAssets 加载
+          */
+                var package = YooAssets.GetPackage("DefaultPackage");
+                string path = "Assets/Bundles/AotDlls";
+                if (Directory.Exists(path))
                 {
-                    //去除Unity内部.meta文件
-                    if (files[i].Name.EndsWith(".meta"))
-                        continue;
-                    if (files[i].Name.EndsWith(".bytes"))
+                    DirectoryInfo direction = new DirectoryInfo(path);
+                    FileInfo[] files = direction.GetFiles("*");
+                    for (int i = 0; i < files.Length; i++)
                     {
-                        string name = files[i].Name.Replace(".bytes", "");
-                        RawFileOperationHandle assHandle = package.LoadRawFileSync(name);
-                        byte[] assBytes = assHandle.GetRawFileData();
-                        RuntimeApi.LoadMetadataForAOTAssembly(assBytes, HomologousImageMode.Consistent);
+                        //去除Unity内部.meta文件
+                        if (files[i].Name.EndsWith(".meta"))
+                            continue;
+                        if (files[i].Name.EndsWith(".bytes"))
+                        {
+                            string name = files[i].Name.Replace(".bytes", "");
+                            RawFileOperationHandle assHandle = package.LoadRawFileSync(name);
+                            byte[] assBytes = assHandle.GetRawFileData();
+                            RuntimeApi.LoadMetadataForAOTAssembly(assBytes, HomologousImageMode.Consistent);
+                        }
                     }
                 }
             }
+            else
+            {
+                Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("aotdlls.unity3d");
+                foreach (var kv in dictionary)
+                {
+                    byte[] bytes = (kv.Value as TextAsset).bytes;
+                    RuntimeApi.LoadMetadataForAOTAssembly(bytes, HomologousImageMode.Consistent);
+                }
+            }
+    
+
+          
    
         
         }

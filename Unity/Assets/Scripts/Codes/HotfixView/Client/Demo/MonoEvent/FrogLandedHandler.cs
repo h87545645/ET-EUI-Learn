@@ -12,9 +12,9 @@ namespace ET.Client
 {
     [Event(SceneType.Process)]
     [FriendOf(typeof(FrogComponent))]
-    public class FrogLandedHandler: AEvent<FrogLanded>
+    public class FrogLandedHandler: AEvent<ET.EventType.FrogLanded>
     {
-        protected override async ETTask Run(Scene scene, FrogLanded args)
+        protected override async ETTask Run(Scene scene, ET.EventType.FrogLanded args)
         {
             Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));
             player.GetComponent<FrogComponent>().direction = ET.FrogDirection.None;

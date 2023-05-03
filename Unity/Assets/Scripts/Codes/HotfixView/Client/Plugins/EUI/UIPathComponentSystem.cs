@@ -20,6 +20,7 @@ namespace ET.Client
         {
             self.WindowPrefabPath.Clear();
             self.WindowTypeIdDict.Clear();
+            self.WindowYooAssetsDict.Clear();
             UIPathComponent.Instance = null;
         }
     }

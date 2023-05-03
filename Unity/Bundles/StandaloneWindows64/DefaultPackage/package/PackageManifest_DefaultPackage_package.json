@@ -225,63 +225,81 @@
         {
             "Address": "CommandLine.dll",
             "AssetPath": "Assets/Bundles/AotDlls/CommandLine.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 15,
             "DependIDs": []
         },
         {
             "Address": "MongoDB.Bson.dll",
             "AssetPath": "Assets/Bundles/AotDlls/MongoDB.Bson.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 16,
             "DependIDs": []
         },
         {
             "Address": "mscorlib.dll",
             "AssetPath": "Assets/Bundles/AotDlls/mscorlib.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 17,
             "DependIDs": []
         },
         {
             "Address": "NLog.dll",
             "AssetPath": "Assets/Bundles/AotDlls/NLog.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 18,
             "DependIDs": []
         },
         {
             "Address": "System.Core.dll",
             "AssetPath": "Assets/Bundles/AotDlls/System.Core.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 19,
             "DependIDs": []
         },
         {
             "Address": "System.dll",
             "AssetPath": "Assets/Bundles/AotDlls/System.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 20,
             "DependIDs": []
         },
         {
             "Address": "Unity.Core.dll",
             "AssetPath": "Assets/Bundles/AotDlls/Unity.Core.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 21,
             "DependIDs": []
         },
         {
             "Address": "Unity.Loader.dll",
             "AssetPath": "Assets/Bundles/AotDlls/Unity.Loader.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 22,
             "DependIDs": []
         },
         {
             "Address": "Unity.ThirdParty.dll",
             "AssetPath": "Assets/Bundles/AotDlls/Unity.ThirdParty.dll.bytes",
-            "AssetTags": [],
+            "AssetTags": [
+                "AotDlls"
+            ],
             "BundleID": 23,
             "DependIDs": []
         }
@@ -289,9 +307,9 @@
     "BundleList": [
         {
             "BundleName": "assets_bundles_unit.bundle",
-            "FileHash": "c8febe1fc92da234689ea5f0d4657dca",
-            "FileCRC": "5c97cb58",
-            "FileSize": 930175,
+            "FileHash": "53769f717698ad68517a200f9ef60772",
+            "FileCRC": "97923104",
+            "FileSize": 930168,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -299,9 +317,9 @@
         },
         {
             "BundleName": "assets_bundles_scene_fraggamemap.bundle",
-            "FileHash": "b3aff50e345c92f40b5226e2f7937c0d",
-            "FileCRC": "30a74a85",
-            "FileSize": 336109,
+            "FileHash": "dc1ff009e65f7ef793732be4687b640f",
+            "FileCRC": "742ec578",
+            "FileSize": 336111,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -329,9 +347,9 @@
         },
         {
             "BundleName": "assets_bundles_ui_dlg.bundle",
-            "FileHash": "49070d0700119386313307a9c6812b84",
-            "FileCRC": "1444312c",
-            "FileSize": 4917647,
+            "FileHash": "b7486d05dbd80582e97d0c6f60c59433",
+            "FileCRC": "c2357857",
+            "FileSize": 4917649,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -339,9 +357,9 @@
         },
         {
             "BundleName": "assets_bundles_ui.bundle",
-            "FileHash": "c77bdedafa9f46356beeee646a0aacff",
-            "FileCRC": "5c1e86c2",
-            "FileSize": 12803,
+            "FileHash": "d89def2af527731fff29df73ccd013d0",
+            "FileCRC": "7c2ca8d4",
+            "FileSize": 12809,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -399,9 +417,9 @@
         },
         {
             "BundleName": "assets_bundles_code_hotfix_dll_bytes.rawfile",
-            "FileHash": "59174b0be7639c08ce62039b19b2fe81",
-            "FileCRC": "a3971e3f",
-            "FileSize": 160256,
+            "FileHash": "c9a35062c48e7de974f8508877ba0cf3",
+            "FileCRC": "ce1edaf3",
+            "FileSize": 160768,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -409,9 +427,9 @@
         },
         {
             "BundleName": "assets_bundles_code_hotfix_pdb_bytes.rawfile",
-            "FileHash": "e4c6f835cc3ee6da87f3798f9b96515d",
-            "FileCRC": "4a5a0f5d",
-            "FileSize": 72796,
+            "FileHash": "b6faee1c8ef8f7924a4d64637ee27089",
+            "FileCRC": "03ea7511",
+            "FileSize": 73336,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -419,9 +437,9 @@
         },
         {
             "BundleName": "assets_bundles_code_model_dll_bytes.rawfile",
-            "FileHash": "480c91402d39277cbdbfc9e5246a96e0",
-            "FileCRC": "27d051b9",
-            "FileSize": 105984,
+            "FileHash": "881bbe8af0f443690782567077232b68",
+            "FileCRC": "b88a0127",
+            "FileSize": 106496,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -429,9 +447,9 @@
         },
         {
             "BundleName": "assets_bundles_code_model_pdb_bytes.rawfile",
-            "FileHash": "5f63faeab101ea15aa1abc22ce4874e8",
-            "FileCRC": "fb7da045",
-            "FileSize": 59976,
+            "FileHash": "f09d5714109b4b18e9acb44a051d8282",
+            "FileCRC": "fa8937a8",
+            "FileSize": 60156,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -444,7 +462,9 @@
             "FileSize": 214528,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
@@ -454,7 +474,9 @@
             "FileSize": 543744,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
@@ -464,7 +486,9 @@
             "FileSize": 4432896,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
@@ -474,7 +498,9 @@
             "FileSize": 818688,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
@@ -484,7 +510,9 @@
             "FileSize": 467456,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
@@ -494,44 +522,52 @@
             "FileSize": 2102784,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_core_dll_bytes.rawfile",
-            "FileHash": "442b2acf9e8aa8193ccbf4c13f3db72a",
-            "FileCRC": "5186e7c0",
-            "FileSize": 138240,
+            "FileHash": "51ff24cbecaadc106206ce11ee42000d",
+            "FileCRC": "fec7f45a",
+            "FileSize": 137216,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_loader_dll_bytes.rawfile",
-            "FileHash": "aa6ad560940e4111c8f327cfcd7139c8",
-            "FileCRC": "d41fff10",
-            "FileSize": 62464,
+            "FileHash": "24f7f9998ead68effaa4e5da1cca5cc4",
+            "FileCRC": "12d2988a",
+            "FileSize": 69120,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_thirdparty_dll_bytes.rawfile",
-            "FileHash": "437499f2947ef8a421fc66f0875dd3cd",
-            "FileCRC": "1111d987",
-            "FileSize": 214016,
+            "FileHash": "90bf4331f1c5e87b4e8cedc51aeb152c",
+            "FileCRC": "15fad597",
+            "FileSize": 223744,
             "IsRawFile": true,
             "LoadMethod": 0,
-            "Tags": [],
+            "Tags": [
+                "AotDlls"
+            ],
             "ReferenceIDs": []
         },
         {
             "BundleName": "unityshaders.bundle",
-            "FileHash": "9b16e834f57522180f49d20f537c3212",
-            "FileCRC": "74faf6c9",
-            "FileSize": 29984,
+            "FileHash": "a76f1bff83a2fae4d5a8a488e9697b93",
+            "FileCRC": "96075229",
+            "FileSize": 30961,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],

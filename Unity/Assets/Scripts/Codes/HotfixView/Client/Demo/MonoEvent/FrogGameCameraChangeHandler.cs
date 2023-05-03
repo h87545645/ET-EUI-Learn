@@ -3,9 +3,9 @@
 namespace ET.Client
 {
     [Event(SceneType.Process)]
-    public class FrogGameCameraChangeHandler: AEvent<FrogGameCameraChange>
+    public class FrogGameCameraChangeHandler: AEvent<ET.EventType.FrogGameCameraChange>
     {
-        protected override async ETTask Run(Scene scene, FrogGameCameraChange args)
+        protected override async ETTask Run(Scene scene, ET.EventType.FrogGameCameraChange args)
         {
             Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
             if (curScene.GetComponent<FrogGameComponent>() != null)

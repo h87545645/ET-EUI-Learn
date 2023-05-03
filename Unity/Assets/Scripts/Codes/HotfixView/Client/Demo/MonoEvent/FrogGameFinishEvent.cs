@@ -4,9 +4,9 @@ namespace ET.Client
 {
     [Event(SceneType.Process)]
     [FriendOf(typeof(FrogGameOperaComponent))]
-    public class FrogGameFinishEvent: AEvent<GameFinishEvent>
+    public class FrogGameFinishEvent: AEvent<ET.EventType.GameFinishEvent>
     {
-        protected override async ETTask Run(Scene scene, GameFinishEvent args)
+        protected override async ETTask Run(Scene scene, ET.EventType.GameFinishEvent args)
         {
             Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
         

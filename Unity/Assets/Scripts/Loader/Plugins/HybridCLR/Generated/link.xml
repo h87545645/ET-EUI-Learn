@@ -5,17 +5,11 @@
     <type fullname="DG.Tweening.Plugins.Options.VectorOptions" preserve="all" />
     <type fullname="DG.Tweening.ShortcutExtensions" preserve="all" />
   </assembly>
-  <assembly fullname="I18N">
-    <type fullname="Honeti.I18N" preserve="all" />
-  </assembly>
   <assembly fullname="MongoDB.Bson">
     <type fullname="MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute" preserve="all" />
     <type fullname="MongoDB.Bson.Serialization.Attributes.BsonElementAttribute" preserve="all" />
     <type fullname="MongoDB.Bson.Serialization.Attributes.BsonIgnoreAttribute" preserve="all" />
     <type fullname="MongoDB.Bson.Serialization.Options.DictionaryRepresentation" preserve="all" />
-  </assembly>
-  <assembly fullname="MonoBridge">
-    <type fullname="ET.MonoBridge" preserve="all" />
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action" preserve="all" />
@@ -71,6 +65,7 @@
     <type fullname="System.Runtime.CompilerServices.IsReadOnlyAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeHelpers" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.TaskAwaiter" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.TaskAwaiter`1" preserve="all" />
     <type fullname="System.RuntimeFieldHandle" preserve="all" />
     <type fullname="System.RuntimeTypeHandle" preserve="all" />
@@ -148,11 +143,7 @@
     <type fullname="ET.EventAttribute" preserve="all" />
     <type fullname="ET.EventSystem" preserve="all" />
     <type fullname="ET.FriendOfAttribute" preserve="all" />
-    <type fullname="ET.FrogCollisionEnter2D" preserve="all" />
-    <type fullname="ET.FrogGameCameraChange" preserve="all" />
-    <type fullname="ET.FrogLanded" preserve="all" />
     <type fullname="ET.Game" preserve="all" />
-    <type fullname="ET.GameFinishEvent" preserve="all" />
     <type fullname="ET.IAwake" preserve="all" />
     <type fullname="ET.IAwake`1" preserve="all" />
     <type fullname="ET.IAwake`2" preserve="all" />
@@ -187,7 +178,6 @@
     <type fullname="ET.Scene" preserve="all" />
     <type fullname="ET.SceneHelper" preserve="all" />
     <type fullname="ET.SceneType" preserve="all" />
-    <type fullname="ET.ScrollRectDirectionEvent" preserve="all" />
     <type fullname="ET.ServiceType" preserve="all" />
     <type fullname="ET.Singleton`1" preserve="all" />
     <type fullname="ET.StaticFieldAttribute" preserve="all" />
@@ -234,7 +224,14 @@
     <type fullname="ET.ETTask`1" preserve="all" />
     <type fullname="ET.ETTaskCompleted" preserve="all" />
     <type fullname="ET.ETTaskHelper" preserve="all" />
+    <type fullname="ET.EventType.FrogCollisionEnter2D" preserve="all" />
+    <type fullname="ET.EventType.FrogGameCameraChange" preserve="all" />
+    <type fullname="ET.EventType.FrogLanded" preserve="all" />
+    <type fullname="ET.EventType.GameFinishEvent" preserve="all" />
+    <type fullname="ET.EventType.ScrollRectDirectionEvent" preserve="all" />
+    <type fullname="ET.MonoBridge" preserve="all" />
     <type fullname="ET.Recast" preserve="all" />
+    <type fullname="Honeti.I18N" preserve="all" />
     <type fullname="ProtoBuf.ProtoAfterDeserializationAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoContractAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoIgnoreAttribute" preserve="all" />
@@ -275,10 +272,9 @@
     <type fullname="UnityEngine.RectTransform" preserve="all" />
     <type fullname="UnityEngine.Resources" preserve="all" />
     <type fullname="UnityEngine.RuntimePlatform" preserve="all" />
-    <type fullname="UnityEngine.SceneManagement.SceneManager" preserve="all" />
+    <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
-    <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.U2D.SpriteAtlas" preserve="all" />
@@ -316,5 +312,13 @@
     <type fullname="UnityEngine.UI.Toggle" preserve="all" />
     <type fullname="UnityEngine.UI.Toggle/ToggleEvent" preserve="all" />
     <type fullname="UnityEngine.UI.ToggleGroup" preserve="all" />
+  </assembly>
+  <assembly fullname="YooAsset">
+    <type fullname="YooAsset.AssetOperationHandle" preserve="all" />
+    <type fullname="YooAsset.OperationHandleBase" preserve="all" />
+    <type fullname="YooAsset.RawFileOperationHandle" preserve="all" />
+    <type fullname="YooAsset.ResourcePackage" preserve="all" />
+    <type fullname="YooAsset.SceneOperationHandle" preserve="all" />
+    <type fullname="YooAsset.YooAssets" preserve="all" />
   </assembly>
 </linker>

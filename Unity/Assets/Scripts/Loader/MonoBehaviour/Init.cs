@@ -37,14 +37,7 @@ namespace ET
 			Game.AddSingleton<CoroutineLockComponent>();
 			
 			ETTask.ExceptionHandler += Log.Error;
-			if (!Define.IsEditor)
-			{
-				StartCoroutine(startHot());
-			}
-			else
-			{
-				Game.AddSingleton<CodeLoader>().Start();
-			}
+			StartCoroutine(startHot());
 			
 		}
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using YooAsset;
 
 namespace ET.Client
 {
@@ -278,7 +279,20 @@ namespace ET.Client
             UIEventComponent.Instance.GetUIEventHandler(id).BeforeUnload(baseWindow);
             if(baseWindow.IsPreLoad)
             {
-                ResourcesComponent.Instance?.UnloadBundle(baseWindow.UIPrefabGameObject.name.StringToAB());
+                /*
+                * @Author: Simon
+                * @Description:
+                * @Date: 2023年04月25日 星期二 21:04:57
+                * @Modify:改为yooassets
+                */
+                // var package = YooAssets.GetPackage("DefaultPackage");
+                if ( UIPathComponent.Instance.WindowYooAssetsDict.TryGetValue((int)baseWindow.WindowID,out AssetOperationHandle value) )
+                {
+                    value.Release();
+                    UIPathComponent.Instance.WindowYooAssetsDict.Remove((int)baseWindow.WindowID);
+                }
+
+                // ResourcesComponent.Instance?.UnloadBundle(baseWindow.UIPrefabGameObject.name.StringToAB());
                 UnityEngine.Object.Destroy( baseWindow.UIPrefabGameObject);
                 baseWindow.UIPrefabGameObject = null;
             }
@@ -482,8 +496,21 @@ namespace ET.Client
                 Log.Error($"{baseWindow.WindowID} uiPath is not Exist!");
                 return;
             }
-            ResourcesComponent.Instance.LoadBundle(value.StringToAB());
-            GameObject go                      = ResourcesComponent.Instance.GetAsset(value.StringToAB(), value ) as GameObject;
+            /*
+            * @Author: Simon
+            * @Description:
+            * @Date: 2023年04月24日 星期一 21:04:23
+            * @Modify:将改为yooassets 加载
+            */
+           
+            var package = YooAssets.GetPackage("DefaultPackage");
+            AssetOperationHandle handle = package.LoadAssetSync<GameObject>(value);
+            GameObject go = handle.InstantiateSync();
+            UIPathComponent.Instance.WindowYooAssetsDict.TryAdd((int)baseWindow.WindowID, handle);
+            
+            
+            // ResourcesComponent.Instance.LoadBundle(value.StringToAB());
+            // GameObject go                      = ResourcesComponent.Instance.GetAsset(value.StringToAB(), value ) as GameObject;
             baseWindow.UIPrefabGameObject      = UnityEngine.Object.Instantiate(go);
             baseWindow.UIPrefabGameObject.name = go.name;
             
@@ -509,8 +536,24 @@ namespace ET.Client
                 Log.Error($"{baseWindow.WindowID} is not Exist!");
                 return;
             }
-            await ResourcesComponent.Instance.LoadBundleAsync(value.StringToAB());
-            GameObject go                      = ResourcesComponent.Instance.GetAsset(value.StringToAB(), value ) as GameObject;
+
+            /*
+            * @Author: Simon
+            * @Description:
+            * @Date: 2023年04月24日 星期一 21:04:23
+            * @Modify:将改为yooassets 加载
+            */
+            var package = YooAssets.GetPackage("DefaultPackage");
+            AssetOperationHandle handle = package.LoadAssetAsync<GameObject>(value);
+            await handle.Task;
+            GameObject go = handle.InstantiateSync();
+            UIPathComponent.Instance.WindowYooAssetsDict.TryAdd((int)baseWindow.WindowID, handle);
+
+            
+            // await ResourcesComponent.Instance.LoadBundleAsync(value.StringToAB());
+            // GameObject go                      = ResourcesComponent.Instance.GetAsset(value.StringToAB(), value ) as GameObject;
+            
+            
             baseWindow.UIPrefabGameObject      = UnityEngine.Object.Instantiate(go);
             baseWindow.UIPrefabGameObject.name = go.name;
             

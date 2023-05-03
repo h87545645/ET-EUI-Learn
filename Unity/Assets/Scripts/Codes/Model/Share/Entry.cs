@@ -43,6 +43,13 @@
             await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent1());
             await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent2());
             await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent3());
+            
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.ScrollRectDirectionEvent(){});
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.GameFinishEvent(){});
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogLanded(){});
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogCollisionEnter2D(){});
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogGameCameraChange(){});
+            // EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogEnableCamera(){});
         }
     }
 }

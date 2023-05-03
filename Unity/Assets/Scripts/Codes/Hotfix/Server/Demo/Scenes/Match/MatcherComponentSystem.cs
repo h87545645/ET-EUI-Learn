@@ -30,7 +30,18 @@ namespace ET
         /// <param name="matcher"></param>
         public static void Add(this MatcherComponent self,Matcher matcher)
         {
+            Log.Info($"玩家{matcher.UserID} 加入匹配");
             self.matchers.Add(matcher.UserID, matcher);
+            // if (self.matchers.Count == 1)
+            // {
+            //    
+            //     Log.Info($"匹配队列等待玩家: {self.matchers.Values.ToArray()[0].UserID}");
+            // }
+            // else
+            // {
+            //     Log.Info($"匹配队列等待玩家: {self.matchers.Values.ToArray()[1].UserID}");
+            // }
+            // Log.Info($"匹配队列长度{self.matchers.Count}");
         }
 
         /// <summary>

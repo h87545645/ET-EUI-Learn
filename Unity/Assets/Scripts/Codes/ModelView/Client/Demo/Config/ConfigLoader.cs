@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using YooAsset;
 
 namespace ET.Client
 {
@@ -13,7 +14,7 @@ namespace ET.Client
             Dictionary<Type, byte[]> output = new Dictionary<Type, byte[]>();
             HashSet<Type> configTypes = EventSystem.Instance.GetTypes(typeof (ConfigAttribute));
             
-            if (Define.IsEditor)
+            if (!Define.IsEditor)
             {
                 string ct = "cs";
                 GlobalConfig globalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
@@ -57,14 +58,32 @@ namespace ET.Client
             {
                 using (Root.Instance.Scene.AddComponent<ResourcesComponent>())
                 {
-                    const string configBundleName = "config.unity3d";
-                    ResourcesComponent.Instance.LoadBundle(configBundleName);
+                    /*
+                    * @Author: Simon
+                    * @Description:
+                    * @Date: 2023年04月25日 星期二 21:04:44
+                    * @Modify:修改yooassets加载
+                    */
+                    var package = YooAssets.GetPackage("DefaultPackage");
+                    // AssetInfo[] assetInfos = package.GetAssetInfos("clientConfig");
+                    // foreach (var assetInfo in assetInfos)
+                    // {
+                    //     Debug.Log(assetInfo.AssetPath);
+                    // }
+                    
+                    // const string configBundleName = "config.unity3d";
+                    // ResourcesComponent.Instance.LoadBundle(configBundleName);
                     
                     foreach (Type configType in configTypes)
                     {
-                        TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
-                        output[configType] = v.bytes;
+                        // TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
+                        
+                        RawFileOperationHandle assHandle = package.LoadRawFileSync(configType.Name);
+                        output[configType] = assHandle.GetRawFileData();
                     }
+                    
+                    
+                    
                 }
             }
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using YooAsset;
 
 namespace ET.Client
 {
@@ -10,5 +11,8 @@ namespace ET.Client
         public  Dictionary<int, string> WindowPrefabPath = new Dictionary<int, string>();
         
         public  Dictionary<string,int> WindowTypeIdDict = new Dictionary<string, int>();
+        
+        //增加yooassets handle字典，方便资源释放
+        public  Dictionary<int, AssetOperationHandle> WindowYooAssetsDict = new Dictionary<int,  AssetOperationHandle>();
     }
 }

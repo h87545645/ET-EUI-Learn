@@ -2,8 +2,14 @@ namespace ET
 {
     public static class ConstValue
     {
-        // public const string RouterHttpHost = "127.0.0.1";
+#if LOCAL_SERVER
+        public const string RouterHttpHost = "127.0.0.1";       
+#else
         public const string RouterHttpHost = "43.136.240.126";
+#endif
+
+        // public const string RouterHttpHost = "127.0.0.1";
+        // public const string RouterHttpHost = "43.136.240.126";
         public const int RouterHttpPort = 30300;
         public const int SessionTimeoutTime = 30 * 1000;
     }

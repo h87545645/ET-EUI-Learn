@@ -96,5 +96,5 @@ MonoBehaviour:
         AddressRuleName: AddressByFileName
         PackRuleName: PackRawFile
         FilterRuleName: CollectAll
-        AssetTags: 
+        AssetTags: AotDlls
         UserData: 

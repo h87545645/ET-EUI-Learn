@@ -1,5 +1,6 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
+using YooAsset;
 
 namespace ET.Client
 {
@@ -11,7 +12,20 @@ namespace ET.Client
             Unit unit = args.Unit;
             // Unit View层
             // 这里可以改成异步加载，demo就不搞了
-            GameObject bundleGameObject = (GameObject)ResourcesComponent.Instance.GetAsset("Unit.unity3d", "Unit");
+            
+            
+            /*
+            * @Author: Simon
+            * @Description:
+            * @Date: 2023年04月25日 星期二 21:04:53
+            * @Modify:改为yooassets
+            */
+            var package = YooAssets.GetPackage("DefaultPackage");
+            AssetOperationHandle handle = package.LoadAssetSync<GameObject>("Unit");
+            GameObject bundleGameObject = handle.InstantiateSync();
+            
+            
+            // GameObject bundleGameObject = (GameObject)ResourcesComponent.Instance.GetAsset("Unit.unity3d", "Unit");
      
             GameObject prefab = bundleGameObject.Get<GameObject>("Frog");
 	        

@@ -7,9 +7,9 @@
 namespace ET.Client
 {
     [Event(SceneType.Process)]
-    public class ScrollRectDirHandler: AEvent<ScrollRectDirectionEvent>
+    public class ScrollRectDirHandler: AEvent<EventType.ScrollRectDirectionEvent>
     {
-        protected override async ETTask Run(Scene scene, ScrollRectDirectionEvent args)
+        protected override async ETTask Run(Scene scene, EventType.ScrollRectDirectionEvent args)
         {
             EventSystem.Instance.Publish(scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene(), new EventType.FrogDirection() { force = false, dir = (ET.FrogDirection)args.dir});
         }

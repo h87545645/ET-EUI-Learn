@@ -6,9 +6,9 @@ namespace ET.Client
 {
     [Event(SceneType.Process)]
     [FriendOf(typeof(FrogComponent))]
-    public class FrogCollisionEnter2DHandler: AEvent<FrogCollisionEnter2D>
+    public class FrogCollisionEnter2DHandler: AEvent<ET.EventType.FrogCollisionEnter2D>
     {
-        protected override async ETTask Run(Scene scene, FrogCollisionEnter2D args)
+        protected override async ETTask Run(Scene scene, ET.EventType.FrogCollisionEnter2D args)
         {
             
             Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));

@@ -49,50 +49,26 @@ public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G
             long roomId = matchComponent.Playing[player.UserID];
             Room room = matchRoomComponent.Get(roomId);
             Unit unit = room.Get(player.UserID);
+            unit.isOffline = false;
+            await  EnterMapHelper.EnterMap(player , session.InstanceId, roomId , unit.InstanceId);
+            room.State = RoomState.Game;
         
-            //重置GateActorID
-            // unit.PlayerID = player.Id;
             
-            //进入房间
-            await EnterMapHelper.EnterMap(player , session ,unit);
-        
-                
-            //重连房间
-            // ActorMessageSender actorProxy = actorProxyComponent.Get(roomId);
-            // await actorProxy.Call(new Actor_PlayerEnterRoom_Req()
-            // {
-            //     PlayerID = message.PlayerID,
-            //     UserID = message.UserID,
-            //     SessionID = message.SessionID
-            // });
-            //
-            // //向玩家发送匹配成功消息
-            // ActorMessageSender gamerActorProxy = actorProxyComponent.Get(gamer.PlayerID);
-            // gamerActorProxy.Send(new Actor_MatchSucess_Ntt() { GamerID = gamer.Id });
-            //     
-            // MessageHelper.SendToClient(unit, new M2C_Stop()
-            // {
-            //     Error = error,
-            //     Id = unit.Id, 
-            //     X = unit.Position.x,
-            //     Y = unit.Position.y,
-            //     Z = unit.Position.z,
-						      //
-            //     A = unit.Rotation.x,
-            //     B = unit.Rotation.y,
-            //     C = unit.Rotation.z,
-            //     W = unit.Rotation.w,
-            // });
-                
-                
-            // 向gate请求一个key,客户端可以拿着这个key连接gate
-            // G2R_GetLoginKey g2RGetLoginKey = (G2R_GetLoginKey) await ActorMessageSenderComponent.Instance.Call(
-            //     config.InstanceId, new R2G_GetLoginKey() {Account = request.Account});
         }
         else
         {
             //创建匹配玩家
+            //删除原来的
+            if (session.DomainScene().GetComponent<MatcherComponent>().GetChild<Matcher>(player.UserID) != null)
+            {
+                session.DomainScene().GetComponent<MatcherComponent>().RemoveChild(player.UserID);
+            }
 
+            if ( session.DomainScene().GetComponent<MatcherComponent>().Get(player.UserID) != null)
+            {
+                session.DomainScene().GetComponent<MatcherComponent>().Remove(player.UserID);
+            }
+            
             //加入匹配队列
             Matcher matcher = session.DomainScene().GetComponent<MatcherComponent>().AddChild<Matcher, long>(player.UserID);
             matcher.PlayerID = player.Id;
@@ -104,7 +80,7 @@ public class C2G_StartMatchRequestHandler: AMRpcHandler<C2G_StartMatchRequest, G
         
         player.IsMatching = true;
         
-        
+        await ETTask.CompletedTask;
         
         
     }

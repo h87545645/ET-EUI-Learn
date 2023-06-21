@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3431794884
+CRC: 1532920016
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7dd3700cd4ad506f559c75aaf0b2312e
+    Hash: 0f0f9868bd28f452a1d0dcc50f85f619
   TypeTreeHash:
     serializedVersion: 2
     Hash: b06e88dea888639c52bc8df1570888b5
@@ -125,9 +125,10 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Bundles/UI/Dlg/DlgRedDot.prefab
+- Assets/Bundles/UI/Dlg/DlgMatching.prefab
 - Assets/Bundles/UI/Dlg/DlgHelper.prefab
 - Assets/Bundles/UI/Dlg/DlgFrogMenu.prefab
+- Assets/Bundles/UI/Dlg/DlgRedDot.prefab
 - Assets/Bundles/UI/Dlg/DlgLobby.prefab
 - Assets/Bundles/UI/Dlg/DlgFragGameMainUI.prefab
 - Assets/Bundles/UI/Dlg/DlgTipsAlert.prefab

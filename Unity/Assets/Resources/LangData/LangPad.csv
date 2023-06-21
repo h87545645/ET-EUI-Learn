@@ -5,11 +5,11 @@
 ^exit	Exit	退出游戏
 ^lang	中文	En
 
-^setting_title	菜单	Menu
-^setting_back	返回主页	Back
-^setting_exit	退出游戏	Exit
+^setting_title	Menu	菜单
+^setting_back	Back Lobby	返回主页	
+^setting_exit	Exit Game		退出游戏
 
-^player_record	BEST RECORD\nTIME: {0}\nJUMPS: {1}\nHEIGHT: {2} 	最好记录\n时长: {0}\n跳跃次数: {1}\n高度: {2}
+^player_record	TIME: {0}\nJUMPS: {1}\nWIN TIMES: {2} 	完成时间: {0}\n跳跃次数: {1}\n获胜次数: {2}
 ^game_completed	COMPLETED ON ATTEMPT!	到达世界最高层！
 ^game_continue	CONTINUE	继续
 
@@ -27,3 +27,9 @@
 ^game_random6	radom6	随机6
 
 ^game_completed_speak	you really achived!	你真的上来了
+
+^ui_match_cancel	match cancel	取消匹配
+^ui_matching	matching...	正在匹配...
+^game_over	Game Over	游戏结束
+^ui_norecord	No Record	暂无记录
+	

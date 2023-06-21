@@ -13,7 +13,7 @@ namespace ET.Client
 		public static void RegisterUIEvent(this DlgFrogMenu self)
 		{
 			 self.View.E_CloseButtonButton.AddListener(self.OnCloseClickHandler);
-			 self.View.E_BackButtonButton.AddListener(self.OnBackLobbyClickHandler);
+			 self.View.E_BackButtonButton.AddListenerAsync(self.OnBackLobbyClickHandler);
 			 self.View.E_ExitButtonButton.AddListener(self.OnExitClickHandler);
 		}
 
@@ -26,15 +26,24 @@ namespace ET.Client
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FrogMenu);
 		}
 		
-		public static void OnBackLobbyClickHandler(this DlgFrogMenu self)
+		public static async ETTask OnBackLobbyClickHandler(this DlgFrogMenu self)
 		{
-			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FrogMenu);
-			// SceneMgr.GetInstance().LoadScene("FragMenuScene",null);
-			// 加载场景资源
-			// ResourcesComponent.Instance.LoadBundle($"{currentScene.Name}.unity3d");
-			// 切换到map场景
-
-			// await SceneManager.LoadSceneAsync(currentScene.Name);
+			try
+			{
+				//通知gate 回收房间
+				Unit player =  UnitHelper.GetMyUnitFromClientScene(self.ClientScene());
+				self.ClientScene().GetComponent<SessionComponent>().Session.Send(new C2G_PlayerExitRoomMessage(){UserID = player.UserID});
+				//通知map 回收房间
+				self.ClientScene().GetComponent<SessionComponent>().Session.Send(new C2M_PlayerExitRoom());
+				
+				self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FrogMenu);
+				EventSystem.Instance.Publish(self.ClientScene(), new EventType.BackToLobbyScene());
+				await ETTask.CompletedTask;
+			}
+			catch (Exception e)
+			{
+				Log.Error(e);
+			}
 		}
 		
 		public static void OnExitClickHandler(this DlgFrogMenu self)

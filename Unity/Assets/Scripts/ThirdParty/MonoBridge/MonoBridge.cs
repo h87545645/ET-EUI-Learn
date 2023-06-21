@@ -20,6 +20,12 @@ namespace ET
         /// 归属UnitId
         /// </summary>
         public long BelongToUnitId;
+        
+        
+        /// <summary>
+        /// 是否为玩家自己
+        /// </summary>
+        public bool IsMyPlayer = false;
 
         private void OnCollisionEnter2D(Collision2D other)
         {

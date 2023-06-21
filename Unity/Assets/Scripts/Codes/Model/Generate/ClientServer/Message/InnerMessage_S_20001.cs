@@ -89,8 +89,11 @@ namespace ET
 		[ProtoMember(6)]
 		public long RoomID { get; set; }
 
-		[ProtoMember(5)]
+		[ProtoMember(7)]
 		public long OldInstanceId { get; set; }
+
+		[ProtoMember(8)]
+		public string PlayerName { get; set; }
 
 	}
 
@@ -143,6 +146,9 @@ namespace ET
 
 		[ProtoMember(4)]
 		public long AccountId { get; set; }
+
+		[ProtoMember(5)]
+		public GamePlayerInfo PlayerInfo { get; set; }
 
 	}
 

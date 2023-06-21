@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2840524765753855541}
   - component: {fileID: 2133076652673482518}
   - component: {fileID: 6999145619708474543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrogMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2840524766415603421}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2840524766572863046}
   - component: {fileID: 3690464309968534353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 2840524767253319868}
   - component: {fileID: 2840524767253320514}
   - component: {fileID: 2840524767253320515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: frog_guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2840524766612056616}
   - component: {fileID: 7155659736513734114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Frog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomTag: Frog
   BelongToUnitId: 0
+  IsMyPlayer: 0
 --- !u!1 &4346152471802196905
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +511,7 @@ GameObject:
   - component: {fileID: 9152566734510648459}
   - component: {fileID: 7139905442748178031}
   - component: {fileID: 4691028268466132247}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}

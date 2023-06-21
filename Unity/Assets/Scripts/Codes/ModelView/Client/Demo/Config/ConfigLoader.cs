@@ -14,7 +14,7 @@ namespace ET.Client
             Dictionary<Type, byte[]> output = new Dictionary<Type, byte[]>();
             HashSet<Type> configTypes = EventSystem.Instance.GetTypes(typeof (ConfigAttribute));
             
-            if (!Define.IsEditor)
+            if (Define.IsEditor)
             {
                 string ct = "cs";
                 GlobalConfig globalConfig = Resources.Load<GlobalConfig>("GlobalConfig");

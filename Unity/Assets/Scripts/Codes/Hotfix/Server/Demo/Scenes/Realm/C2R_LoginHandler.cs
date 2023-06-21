@@ -52,7 +52,8 @@ namespace ET.Server
 			response.Address = config.InnerIPOutPort.ToString();
 			response.Key = g2RGetLoginKey.Key;
 			response.GateId = g2RGetLoginKey.GateId;
-			
+			response.PlayerInfo = A2RLoginAccountResponse.PlayerInfo;
+
 		}
 	}
 }

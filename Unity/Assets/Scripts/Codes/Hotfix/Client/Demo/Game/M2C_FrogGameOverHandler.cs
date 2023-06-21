@@ -12,10 +12,7 @@ namespace ET.Client
             //游戏结束 弹出结算
             EventSystem.Instance.Publish(session.ClientScene(), new EventType.GameOverPopRecord(){msg = message});
             
-            //通知gate 回收房间
-            Unit player =  UnitHelper.GetMyUnitFromClientScene(session.DomainScene());
-            C2G_GameOverMessage c2GGameOverMessage = new C2G_GameOverMessage(){RoomID = player.RoomID};
-            player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2GGameOverMessage);
+   
             
             //删除unit
        

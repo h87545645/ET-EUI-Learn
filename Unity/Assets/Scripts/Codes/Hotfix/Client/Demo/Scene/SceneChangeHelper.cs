@@ -37,6 +37,7 @@ namespace ET.Client
                 // clientScene.RemoveComponent<AIComponent>();
             
                 EventSystem.Instance.Publish(currentScene, new EventType.SceneChangeFinish());
+                EventSystem.Instance.Publish(clientScene, new EventType.LobbyHideMatching());
 
                 // 通知等待场景切换的协程
                 clientScene.GetComponent<ObjectWait>().Notify(new Wait_SceneChangeFinish());

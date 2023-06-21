@@ -35,11 +35,12 @@ namespace ET
     
         public struct FrogLanded
         {
-
+            public long unitId;
         }
     
         public struct FrogCollisionEnter2D
         {
+            public long unitId;
             public bool isUp;
             public bool isLeft;
         }

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using Honeti;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ET.Client
 {
 	[FriendOf(typeof(DlgLobby))]
+	[FriendOf((typeof(I18NComponent)))]
 	public static  class DlgLobbySystem
 	{
 
@@ -26,6 +28,8 @@ namespace ET.Client
 			{
 				self.OnRobotStartMatch().Coroutine();
 			}));
+			
+			self.View.E_LangButtonButton.AddListener(self.OnTranslation);
 		}
 
 		public static void ShowWindow(this DlgLobby self, Entity contextData = null)
@@ -43,10 +47,7 @@ namespace ET.Client
 			await MatchHelper.StartMatchAsync(self.ClientScene());
 		}
 		
-		public static async ETTask OnExitMatch(this DlgLobby self)
-		{
-			await MatchHelper.ExitMatchAsync(self.ClientScene());
-		}
+
 		
 		public static async ETTask OnRobotStartMatch(this DlgLobby self)
 		{
@@ -55,6 +56,12 @@ namespace ET.Client
 			{
 				RobotMatch = true
 			}) as G2C_StartMatchResponse;
+		}
+
+		public static void OnTranslation(this DlgLobby self)
+		{
+			LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
+			Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
 		}
 
 	}

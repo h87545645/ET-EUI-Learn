@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using Honeti;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace ET.Client
 {
 	[FriendOf(typeof(DlgFrogGameRecord))]
 	[FriendOf(typeof(WindowData))]
+	[FriendOf((typeof(I18NComponent)))]
 	public static  class DlgFrogGameRecordSystem
 	{
 
@@ -18,11 +20,21 @@ namespace ET.Client
 
 		public static void ShowWindow(this DlgFrogGameRecord self, Entity contextData = null)
 		{
+			// self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^ui_norecord")
 			M2C_FrogGameOver data = (contextData as WindowData).GameOverData;
 			self.View.EText_nameTextMeshProUGUI.SetText(data.PlayerName);
-			self.View.EText_jumpCntTextMeshProUGUI.SetText(data.JumpCnt.ToString());
-			self.View.EText_timeTextMeshProUGUI.SetText(UnityUtils.TimeToStringHMS(data.BestTime));
-			
+			string bestTime =  UnityUtils.TimeToStringHMS( (float)(data.GameTime * 0.001));
+			string bestJump = data.JumpCnt.ToString();
+			string winTimes = data.WinCnt.ToString();
+			string[] record = new string[]
+			{
+				bestTime,
+				bestJump,
+				winTimes
+			};
+			I18NTextMesh playerRecordText = self.View.EText_recordTextMeshProUGUI.GetComponent<I18NTextMesh>();
+			playerRecordText._params = record;
+			playerRecordText.updateTranslation();
 		}
 
 		public static void OnBackLobbyClickHandler(this DlgFrogGameRecord self)

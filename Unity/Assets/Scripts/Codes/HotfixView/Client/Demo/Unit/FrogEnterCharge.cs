@@ -10,6 +10,7 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, EventType.FrogEnterCharge args)
         {
             Unit player = null;
+            bool sendToServer = false;
             // unitId of other player
             if (args.unitId != 0 && args.unitId != null)
             {
@@ -18,13 +19,7 @@ namespace ET.Client
             else
             {
                 player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
-                //如果是自己还需要发给服务器
-                C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
-                c2MFrogOpera.opera = (int)FrogOpera.Charge;
-                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
-                
-                // C2M_PathfindingResult msg = new C2M_PathfindingResult() { Position = new float3(0,0,0) };
-                // player.ClientScene().GetComponent<SessionComponent>().Session.Send(msg);
+                sendToServer = true;
             }
             FrogComponent frogComponent = player.GetComponent<FrogComponent>();
             if (frogComponent == null)
@@ -34,6 +29,13 @@ namespace ET.Client
             if (!frogComponent.IsReady)
             {
                 return;
+            }
+            if (sendToServer)
+            {
+                //如果是自己还需要发给服务器
+                C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
+                c2MFrogOpera.opera = (int)FrogOpera.Charge;
+                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
             }
             frogComponent.SetHeroineState(new ChargeState(frogComponent));
             await ETTask.CompletedTask;

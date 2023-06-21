@@ -40,7 +40,7 @@ public class FragGameCameraCtrl : MonoBehaviour
             return;
         }
 
-        if (Bridge.BelongToUnitId == null || Bridge.BelongToUnitId == 0)
+        if (!Bridge.IsMyPlayer)
         {
             enable = false;
             return;

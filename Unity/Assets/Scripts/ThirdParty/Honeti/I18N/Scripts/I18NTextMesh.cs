@@ -22,7 +22,7 @@ namespace Honeti
         [SerializeField]
         public string[] _params;
 
-        void OnEnable()
+        void Start()
         {
             if (!_initialized)
                 _init();
@@ -56,7 +56,10 @@ namespace Honeti
                     }
                 }
 
-                _text.text = I18N.instance.getValue(_key, _params);
+                if (true)
+                {
+                    _text.text = I18N.instance.getValue(_key, _params);
+                }
             }
         }
 

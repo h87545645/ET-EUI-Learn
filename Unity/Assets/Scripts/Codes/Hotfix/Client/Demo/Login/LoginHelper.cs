@@ -106,15 +106,16 @@ namespace ET.Client
                 // {
                 //     a2cAccount = (A2C_LoginAccountResponse) await acountSession.Call(new C2A_LoginAccountRequest() { Account = account, Password = password });
                 // }
+                clientScene.GetComponent<PlayerComponent>().MyInfo =  new PlayerInfo(r2CLogin.PlayerInfo);
 
                 // 创建一个gate Session,并且保存到SessionComponent中
                 Session gateSession = await RouterHelper.CreateRouterSession(clientScene, NetworkHelper.ToIPEndPoint(r2CLogin.Address));
                 clientScene.AddComponent<SessionComponent>().Session = gateSession;
 				
                 G2C_LoginGate g2CLoginGate = (G2C_LoginGate)await gateSession.Call(
-                    new C2G_LoginGate() { Key = r2CLogin.Key, GateId = r2CLogin.GateId});
+                    new C2G_LoginGate() { Key = r2CLogin.Key, GateId = r2CLogin.GateId , PlayerInfo = r2CLogin.PlayerInfo});
 
-                Log.Debug("登陆gate成功!");
+                Log.Debug("登陆gate成功!!");
 
                 await EventSystem.Instance.PublishAsync(clientScene, new EventType.LoginFinish());
             }

@@ -41,6 +41,9 @@ public class JumpingState : IBaseState
         {
             _fragHore.fragAnim.speed = 1.3f;
         }
+ 
+        frag.GetParent<Unit>().JumpCnt++;
+
         //_fragHore.heroRigidbody2D.AddForce(frag.direction == Game_Direction.Left ? Vector2.left * chargeVaule :  Vector2.right * chargeVaule);
         //_fragHore.heroRigidbody2D.velocity = force;
         Debug.Log("------------------------Heroine in JumpingState~!(������Ծ״̬��)");
@@ -61,11 +64,11 @@ public class JumpingState : IBaseState
                 // Debug.Log("jump-down bool ");
             
                 // _fragHore.SetHeroineState(new FallingState(_fragHore));
-                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { Unit = _fragHore.unit , state = FrogState.Falling});
+                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { unitId = _fragHore.unitId , state = FrogState.Falling});
             }else if (_fragHore.isGround)
             {
                 // _fragHore.SetHeroineState(new FallingState(_fragHore));
-                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { Unit = _fragHore.unit , state = FrogState.Falling});
+                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { unitId = _fragHore.unitId , state = FrogState.Falling});
             }
         }
        

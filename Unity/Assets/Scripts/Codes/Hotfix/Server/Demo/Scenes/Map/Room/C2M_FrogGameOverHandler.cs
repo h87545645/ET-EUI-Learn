@@ -17,35 +17,31 @@ namespace ET.Server
                 //已经结束了
                 return;
             }
+            PlayerInfo winInfo = await FrogSyncRecordHelper.SyncRoomPlayerRecord(room, message.UserId);
+   
             room.State = RoomState.Idle;
-            long bestTime = await FrogSyncRecordHelper.SyncRoomPlayerRecord(room, message.UserId);
+           
             // 广播玩家操作
          
             M2C_FrogGameOver m2CFrogGameOver = new M2C_FrogGameOver();
             m2CFrogGameOver.WinPlayerId = unit.PlayerId;
             m2CFrogGameOver.GameTime = room.GameTime;
-            m2CFrogGameOver.JumpCnt = unit.JumpCnt;
+            m2CFrogGameOver.JumpCnt = message.JumpCnt;
             m2CFrogGameOver.PlayerName = unit.PlayerName;
-            m2CFrogGameOver.BestTime = bestTime;
+            m2CFrogGameOver.WinCnt = winInfo.Wins;
+            m2CFrogGameOver.BestTime = winInfo.BestTime;
             room.Broadcast(m2CFrogGameOver);
             
+            UnitComponent unitComponent = unit.DomainScene().GetComponent<UnitComponent>();
+            Unit[] units = room.GetAll();
+            foreach (Unit user in units)
+            {
+                unitComponent?.Remove(user.Id);
+                room.Remove(user.UserID);
+                user.Dispose();
+            }
             //删除room 
             room.Dispose();
-            
-            //删除unit
-            UnitComponent unitComponent = unit.DomainScene().GetComponent<UnitComponent>();
-            if (unitComponent == null)
-            {
-                return;
-            }
-
-            unitComponent.RemoveAll();
-            // foreach (KeyValuePair<long,Unit> kvp in unitComponent.GetAll())
-            // {
-            //     unitComponent.Remove(kvp.Key);
-            // }
-            
-
             // await ETTask.CompletedTask;
         }
     }

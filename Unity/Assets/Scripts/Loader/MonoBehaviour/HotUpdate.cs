@@ -10,6 +10,10 @@ namespace ET
     public class HotUpdate : MonoBehaviour
     {
         public EPlayMode PlayMod = EPlayMode.EditorSimulateMode;
+
+        public DlgHotUpdateUI hotUI;
+        
+        private string platform = string.Empty;
         
         public IEnumerator StartHot()
         {
@@ -21,7 +25,24 @@ namespace ET
 
             // 设置该资源包为默认的资源包，可以使用YooAssets相关加载接口加载该资源包内容。
             YooAssets.SetDefaultPackage(package);
-
+            
+#if UNITY_ANDROID
+            platform = "Android";
+#elif UNITY_IOS
+			platform = "IOS";
+#elif UNITY_STANDALONE_WIN
+			platform = "Windows";
+#elif UNITY_STANDALONE_OSX
+			platform = "MacOS";
+#elif UNITY_STANDALONE_LINUX
+			platform = "Linux";
+#else
+			activePlatform = string.Empty;
+#endif
+            //显示hotupdate UI
+            // scene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Matching);
+            this.hotUI.gameObject.SetActive(true);
+            
             if (this.PlayMod == EPlayMode.EditorSimulateMode)
             {
                 var initParameters = new EditorSimulateModeParameters();
@@ -29,10 +50,12 @@ namespace ET
                 yield return package.InitializeAsync(initParameters);
             }else if (this.PlayMod == EPlayMode.HostPlayMode)
             {
+                
+                
                 var initParameters = new HostPlayModeParameters();
                 initParameters.QueryServices = new QueryStreamingAssetsFileServices();
-                initParameters.DefaultHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/package";
-                initParameters.FallbackHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/package";
+                initParameters.DefaultHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/"+ platform +"/package";
+                initParameters.FallbackHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/"+ platform +"/package";
                 yield return package.InitializeAsync(initParameters);
             }else if (this.PlayMod == EPlayMode.OfflinePlayMode)
             {
@@ -66,6 +89,8 @@ namespace ET
             //下载补丁包
             yield return this.Download();
             //TODO 判断是否下载成功
+            
+            this.hotUI.gameObject.SetActive(false);
         }
         
         IEnumerator Download()
@@ -115,7 +140,9 @@ namespace ET
         /// <exception cref="NotImplementedException"></exception>
         private void OnStartDownloadFileFunction(string filename, long sizebytes)
         {
-            Debug.Log(string.Format("start donwload file : {0}, size : {1} ", filename,sizebytes));
+            string info = string.Format("start donwload file : {0}, size : {1} ", filename, sizebytes);
+            Debug.Log(info);
+            this.hotUI.dowoLoadInfoText.SetText(info);
         }
 
         /// <summary>
@@ -125,18 +152,27 @@ namespace ET
         /// <exception cref="NotImplementedException"></exception>
         private void OnDownloadOverFunction(bool issucceed)
         {
-            Debug.Log(string.Format("DownloadOver " + (issucceed ? "succeed" : "fail")));
+            string info = string.Format("DownloadOver " + (issucceed? "succeed" : "fail"));
+            Debug.Log(info);
+            this.hotUI.dowoLoadInfoText.SetText(info);
         }
 
         private void OnDownloadProgressUpdateFunction(int totaldownloadcount, int currentdownloadcount, long totaldownloadbytes, long currentdownloadbytes)
         {
-            Debug.Log(string.Format("Download totaldownloadcount : {0}, currentdownloadcount : {1} , totaldownloadbytes : {2} , currentdownloadbytes : {3} ", 
-                totaldownloadcount, currentdownloadcount,totaldownloadbytes,currentdownloadbytes));
+            string info = string.Format("Download totaldownloadcount : {0}, currentdownloadcount : {1} , totaldownloadbytes : {2} , currentdownloadbytes : {3} ", 
+                totaldownloadcount, currentdownloadcount,totaldownloadbytes,currentdownloadbytes);
+            Debug.Log(info);
+            this.hotUI.dowoLoadInfoText.SetText(info);
+            this.hotUI.progress.value = currentdownloadcount / totaldownloadcount;
+            string per = ((float)(currentdownloadcount / totaldownloadcount)).ToString("F1");
+            this.hotUI.percent.SetText( string.Format("{0}%" , per));
         }
 
         private void OnDownloadErrorFunction(string filename, string error)
         {
-            Debug.Log(string.Format("DownloadError!"));
+            string info = string.Format("DownloadError!");
+            Debug.Log(info);
+            this.hotUI.dowoLoadInfoText.SetText(info);
         }
     } 
     

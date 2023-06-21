@@ -30,7 +30,7 @@ namespace ET.Client
                 Debug.Log("------------------------falling to landing!!!!");
                 _fragHore.fragAnim.SetBool("jump-down",false);
                 // _fragHore.SetHeroineState(new LandingState(_fragHore));
-                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { Unit = _fragHore.unit , state = FrogState.Landing});
+                EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { unitId = _fragHore.unitId , state = FrogState.Landing});
 
             }
         

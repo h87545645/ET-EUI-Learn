@@ -19,11 +19,11 @@ namespace ET.Client
         }
         
         [ObjectSystem]
-        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent , GameObject , float3 , long>
+        public class FrogComponentAwakeSystem : AwakeSystem<FrogComponent , GameObject ,Unit>
         {
-            protected override void Awake(FrogComponent self , GameObject go , float3 position , long playerId)
+            protected override void Awake(FrogComponent self , GameObject go , Unit unit)
             {
-                self.Awake(go , position ,playerId);
+                self.Awake(go , unit);
             }
         }
         
@@ -37,16 +37,21 @@ namespace ET.Client
         }
         
 
-        public static void Awake(this FrogComponent self ,  GameObject go ,float3 position , long playerId)
+        public static void Awake(this FrogComponent self ,  GameObject go ,Unit unit)
         {
             self.GameObject = go;
             Scene curr = self.DomainScene();
+            long playerId = unit.PlayerId;
+            long unitId = unit.Id;
+            float3 position = unit.Position;
+            self.unitId = unitId;
             if ( playerId == curr.Parent.GetParent<Scene>().GetComponent<PlayerComponent>().MyId)
             {
-                // EventSystem.Instance.Publish(Root.Instance.Scene, new FrogEnableCamera() {go = go,enable = true});
-                go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.Id;
-                // go.GetComponent<FrogGameCameraCtrl>();
+                self.IsMyPlayer = true;
+                go.GetComponent<MonoBridge>().IsMyPlayer = true;
             }
+            go.GetComponent<MonoBridge>().BelongToUnitId = self.Parent.Id;
+            self.playerName = self.GameObject.transform.Find("FrogMove").Find("PlayerName").GetComponent<TextMesh>();
             self.heroRenderer = self.GameObject.transform.Find("FrogMove").GetComponent<SpriteRenderer>();
             self.heroRigidbody2D = self.GameObject.GetComponentInChildren<Rigidbody2D>();
             self.heroRigidbody2D.transform.position = new Vector3(x: position.x, y: position.y, z: position.z);
@@ -57,10 +62,12 @@ namespace ET.Client
             self.grond = LayerMask.GetMask("platfrom");
             self.guideAnim = self.GameObject.transform.Find("frog_guide").GetComponent<Animator>();
             self.fragAnim = self.GameObject.transform.Find("FrogMove").GetComponent<Animator>();
-            
-            
+
+
+            self.playerName.text = unit.PlayerName;
             self._state = new StandingState(self);
             self.IsReady = true;
+            
             //get frag last position record
             // self.LastPosition = FragGameRecord.GetInstance().reocrd.playerPosition;
         }

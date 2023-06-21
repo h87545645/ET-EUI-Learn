@@ -13,6 +13,8 @@ namespace ET.Client
             
             Root.Instance.Scene.AddComponent<GlobalComponent>();
 
+            Root.Instance.Scene.AddComponent<I18NComponent>();
+
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");

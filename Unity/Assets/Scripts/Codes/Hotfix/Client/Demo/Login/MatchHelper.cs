@@ -8,14 +8,10 @@ namespace ET.Client
         {
             try
             {
+                EventSystem.Instance.Publish(zoneScene, new EventType.LobbyStartMatching());
                 G2C_StartMatchResponse g2CStartMatch = await zoneScene.GetComponent<SessionComponent>().Session.Call(new C2G_StartMatchRequest()) as G2C_StartMatchResponse;
+                EventSystem.Instance.Publish(zoneScene, new EventType.LobbyShowMatchingCancelBtn());
                 await ETTask.CompletedTask;
-                // zoneScene.GetComponent<PlayerComponent>().MyId = g2CEnterMap.MyId;
-
-                // 等待场景切换完成
-                // await zoneScene.GetComponent<ObjectWait>().Wait<WaitType.Wait_SceneChangeFinish>();
-                //
-                // Game.EventSystem.Publish(new EventType.EnterMapFinish() {ZoneScene = zoneScene});
             }
             catch (Exception e)
             {
@@ -29,6 +25,7 @@ namespace ET.Client
             {
                 G2C_PlayerExitMatchResponse g2CPlayerExitMatch = await zoneScene.GetComponent<SessionComponent>().
                         Session.Call(new C2G_PlayerExitMatchRequest()) as G2C_PlayerExitMatchResponse;
+                EventSystem.Instance.Publish(zoneScene, new EventType.LobbyHideMatching());
                 await ETTask.CompletedTask;
 
             }

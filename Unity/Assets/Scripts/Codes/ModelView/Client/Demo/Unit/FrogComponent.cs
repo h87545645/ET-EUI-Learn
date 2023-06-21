@@ -5,13 +5,15 @@ using UnityEngine.Rendering.Universal;
 namespace ET.Client
 {
     [ComponentOf(typeof(Unit))]
-    public class FrogComponent: Entity, IAwake<GameObject , float3 , long>, IDestroy , IUpdate
+    public class FrogComponent: Entity, IAwake<GameObject , Unit>, IDestroy , IUpdate
     {
-        public Unit unit;
+        public long unitId;
+        public bool IsMyPlayer;
         public GameObject GameObject { get; set; }
+        public BoxCollider2D collider2D;
         public SpriteRenderer heroRenderer;
         public Rigidbody2D heroRigidbody2D;
-        public BoxCollider2D collider2D;
+        public TextMesh playerName;
         public Light2D light;
         public Transform groundCheck;
         public LayerMask grond;
@@ -37,8 +39,11 @@ namespace ET.Client
             set
             {
                 _lastPosition = value;
-
-                EventSystem.Instance.Publish(this.DomainScene(), new EventType.FrogLastPosition() { Position = new float2(value.x , value.y) });
+                if (this.IsMyPlayer)
+                {
+                    EventSystem.Instance.Publish(this.DomainScene(), new EventType.FrogLastPosition() { Position = new float2(value.x , value.y) });
+                }
+               
             }
         }
         

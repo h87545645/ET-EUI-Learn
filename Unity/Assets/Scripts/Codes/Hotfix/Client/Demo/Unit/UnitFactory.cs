@@ -26,6 +26,7 @@ namespace ET.Client
 	        unit.UserID = unitInfo.UserId;
 	        unit.RoomID = unitInfo.RoomId;
 	        unit.PlayerId = unitInfo.PlayerId;
+	        unit.PlayerName = unitInfo.PlayerName;
 	        NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
 
 			foreach (var kv in unitInfo.KV)

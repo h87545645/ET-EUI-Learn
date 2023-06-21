@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 3754602917
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5c12301ea3f3e69dab47e6af1a4377ff
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Res/GameAssets/MapTiles/Jungle_tiles/sprites/animals/frog/jump/frog_jump_complete_anim_005.png
+Dependencies: []

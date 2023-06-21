@@ -45,9 +45,20 @@ message G2C_PlayerExitMatchResponse // IResponse
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
-    int64 ActorId = 4;
-    int64 UserID = 5;
+    int64 UserID = 4;
 }
+
+message C2G_PlayerExitRoomMessage // IMessage
+{
+	long RoomID = 1;
+	long UserID = 2;
+}
+
+message C2M_PlayerExitRoom // IActorLocationMessage
+{
+	int32 RpcId = 1;
+}
+
 
 
 
@@ -55,7 +66,7 @@ message C2M_FrogOpera // IActorLocationMessage
 {
 	int32 RpcId = 1;
 	int32 opera = 2;
-	int32 chargeTime = 3;
+	float chargeTime = 3;
 	bool force = 4;
     int32 dir = 5;
 }
@@ -64,7 +75,7 @@ message M2C_FrogOpera // IActorMessage
 {
 	int64 Id = 1;
 	int32 opera = 2;
-    int32 chargeTime = 3;
+    float chargeTime = 3;
     bool force = 4;
     int32 dir = 5;
 }
@@ -75,6 +86,7 @@ message C2M_FrogSyncPosition // IActorLocationMessage
 {
 	int32 RpcId = 1;
 	Unity.Mathematics.float3 Position = 2;
+	int64 UserId = 3;
 }
 
 message M2C_FrogSyncPosition // IActorMessage
@@ -87,6 +99,7 @@ message C2M_FrogGameOver // IActorLocationMessage
 {
 	int32 RpcId = 1;
 	int64 UserId = 2;
+	int32 JumpCnt = 3;
 }
 
 message M2C_FrogGameOver // IActorMessage
@@ -96,6 +109,7 @@ message M2C_FrogGameOver // IActorMessage
     int32 JumpCnt = 3;
     int64 BestTime = 4;
     string PlayerName = 5;
+    int32 WinCnt = 6;
 }
 
 message C2G_GameOverMessage // IMessage
@@ -188,6 +202,18 @@ message UnitInfo
 	int64 UserId = 8;
 	int64 RoomId = 9;
 	int64 PlayerId = 10;
+	string PlayerName = 11;
+}
+
+message GamePlayerInfo
+{
+	int64 AccountId = 1;
+	string NickName = 2;
+	int32 Wins = 3;
+	int32 Loses = 4;
+	int64 Coin = 5;
+	int64 BestTime = 6;
+	int64 BestJumpCnt = 7;
 }
 
 message M2C_CreateUnits // IActorMessage
@@ -272,6 +298,8 @@ message M2C_Reload // IResponse
 	string Message = 3;
 }
 
+
+
 //ResponseType R2C_Login
 message C2R_Login // IRequest
 {
@@ -288,6 +316,7 @@ message R2C_Login // IResponse
 	string Address = 4;
 	int64 Key = 5;
 	int64 GateId = 6;
+    GamePlayerInfo PlayerInfo = 7;
 }
 
 //ResponseType G2C_LoginGate
@@ -296,6 +325,7 @@ message C2G_LoginGate // IRequest
 	int32 RpcId = 1;
 	int64 Key = 2;  // 帐号
 	int64 GateId = 3;
+	GamePlayerInfo PlayerInfo = 4;
 }
 
 message G2C_LoginGate // IResponse

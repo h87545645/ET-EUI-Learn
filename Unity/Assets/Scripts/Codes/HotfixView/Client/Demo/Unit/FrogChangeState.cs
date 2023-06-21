@@ -7,7 +7,8 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, EventType.ChangeFrogState args)
         {
-            Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+            Unit player = scene.GetComponent<UnitComponent>().Get(args.unitId);
+            // Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
             FrogComponent frogComponent = player.GetComponent<FrogComponent>();
             if (frogComponent == null)
             {

@@ -46,16 +46,10 @@ namespace ET
         
         public struct ChangeFrogState
         {
-            public Unit Unit;
+            public long unitId;
 
             public FrogState state;
             
-        }
-        
-        public struct FrogEnterStanding
-        {
-            public Unit Unit;
-
         }
         
         public struct FrogGuideSpeakEnd

@@ -24,7 +24,7 @@ namespace ET.Client
      		}
      	}
 
-		public TMPro.TextMeshProUGUI EText_timeTextMeshProUGUI
+		public TMPro.TextMeshProUGUI EText_recordTextMeshProUGUI
      	{
      		get
      		{
@@ -33,28 +33,11 @@ namespace ET.Client
      				Log.Error("uiTransform is null.");
      				return null;
      			}
-     			if( this.m_EText_timeTextMeshProUGUI == null )
+     			if( this.m_EText_recordTextMeshProUGUI == null )
      			{
-		    		this.m_EText_timeTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EText_time");
+		    		this.m_EText_recordTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EText_record");
      			}
-     			return this.m_EText_timeTextMeshProUGUI;
-     		}
-     	}
-
-		public TMPro.TextMeshProUGUI EText_jumpCntTextMeshProUGUI
-     	{
-     		get
-     		{
-     			if (this.uiTransform == null)
-     			{
-     				Log.Error("uiTransform is null.");
-     				return null;
-     			}
-     			if( this.m_EText_jumpCntTextMeshProUGUI == null )
-     			{
-		    		this.m_EText_jumpCntTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EText_jumpCnt");
-     			}
-     			return this.m_EText_jumpCntTextMeshProUGUI;
+     			return this.m_EText_recordTextMeshProUGUI;
      		}
      	}
 
@@ -78,15 +61,13 @@ namespace ET.Client
 		public void DestroyWidget()
 		{
 			this.m_EText_nameTextMeshProUGUI = null;
-			this.m_EText_timeTextMeshProUGUI = null;
-			this.m_EText_jumpCntTextMeshProUGUI = null;
+			this.m_EText_recordTextMeshProUGUI = null;
 			this.m_EButton_backButton = null;
 			this.uiTransform = null;
 		}
 
 		private TMPro.TextMeshProUGUI m_EText_nameTextMeshProUGUI = null;
-		private TMPro.TextMeshProUGUI m_EText_timeTextMeshProUGUI = null;
-		private TMPro.TextMeshProUGUI m_EText_jumpCntTextMeshProUGUI = null;
+		private TMPro.TextMeshProUGUI m_EText_recordTextMeshProUGUI = null;
 		private UnityEngine.UI.Button m_EButton_backButton = null;
 		public Transform uiTransform = null;
 	}

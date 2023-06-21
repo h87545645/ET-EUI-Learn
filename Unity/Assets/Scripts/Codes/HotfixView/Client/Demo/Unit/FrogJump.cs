@@ -10,6 +10,7 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, EventType.FrogJump args)
         {
             Unit player = null;
+            bool sendToServer = false;
             // unitId for other player
             if (args.unitId != 0 && args.unitId != null)
             {
@@ -18,16 +19,10 @@ namespace ET.Client
             else
             {
                 player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
-                //如果是自己还需要发给服务器
-                C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
-                c2MFrogOpera.opera = (int)FrogOpera.Jump;
-                c2MFrogOpera.chargeTime = (int)args.chargeTime;
-                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
-                
-                // C2M_PathfindingResult msg = new C2M_PathfindingResult() { Position = new float3(0,0,0) };
-                // player.ClientScene().GetComponent<SessionComponent>().Session.Send(msg);
+                sendToServer = true;
+
             }
-            // Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene.DomainScene());
+ 
             FrogComponent frogComponent = player.GetComponent<FrogComponent>();
             if (frogComponent == null)
             {
@@ -41,10 +36,19 @@ namespace ET.Client
                 return;
             }
 
+            if (sendToServer)
+            {
+                //如果是自己还需要发给服务器
+                C2M_FrogOpera c2MFrogOpera = new C2M_FrogOpera();
+                c2MFrogOpera.opera = (int)FrogOpera.Jump;
+                c2MFrogOpera.chargeTime = args.chargeTime;
+                player.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogOpera);
+            }
+            
+            Debug.Log("FrogJump");
             frogComponent.IsReady = false;
             frogComponent.chargeTime = chargeTime;
-            // frogComponent.unit.GetComponent<NumericComponent>().Set(NumericType.jumpChargeTime ,chargeTime);
-            // frogComponent.chargeTime = chargeTime;
+            
             frogComponent.fragAnim.SetBool("walk", false);
             frogComponent.SetHeroineState(new JumpingState(frogComponent, chargeTime));
             await ETTask.CompletedTask;

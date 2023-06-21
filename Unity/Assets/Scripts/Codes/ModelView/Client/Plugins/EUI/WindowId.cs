@@ -12,5 +12,6 @@ namespace ET.Client
 		WindowID_FragGameMainUI,
 		WindowID_FrogMenu,
 		WindowID_FrogGameRecord,
+		WindowID_Matching, //匹配界面
 	}
 }

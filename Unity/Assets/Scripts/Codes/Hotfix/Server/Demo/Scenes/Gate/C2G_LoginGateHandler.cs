@@ -22,7 +22,9 @@ namespace ET.Server
 			PlayerComponent playerComponent = scene.GetComponent<PlayerComponent>();
 			Player player = playerComponent.AddChild<Player, string , long>(account.Item2,account.Item1);
 			playerComponent.Add(player);
+			player.PlayerInfo = new PlayerInfo(request.PlayerInfo);
 			session.AddComponent<SessionPlayerComponent>().PlayerId = player.Id;
+			session.GetComponent<SessionPlayerComponent>().UserId = player.UserID;
 			session.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);
 
 			response.PlayerId = player.Id;

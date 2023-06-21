@@ -6,11 +6,11 @@ namespace ET.Server
     [FriendOf(typeof(Room))]
     public static class FrogSyncRecordHelper
     {
-        public static async ETTask<long> SyncRoomPlayerRecord(Room room , long winUserId)
+        public static async ETTask<PlayerInfo> SyncRoomPlayerRecord(Room room , long winUserId)
         {
             try
             {
-                long bestTime = long.MaxValue;
+                PlayerInfo winPlayer = null;
                 Unit[] units = room.GetAll();
                 for (int i = 0; i < units.Length; i++)
                 {
@@ -21,13 +21,13 @@ namespace ET.Server
                     {
                         continue;
                     }
-                    var player = players[0];
+                    PlayerInfo player = players[0];
                     if (units[i].UserID == winUserId)
                     {
                         player.Wins++;
-                        player.BestTime = Math.Min(player.BestTime, room.GameTime);
-                        player.BestJumpCnt = Math.Min(player.BestJumpCnt, units[i].JumpCnt);
-                        bestTime = player.BestTime;
+                        player.BestTime = player.BestTime <= 0 ? room.GameTime : Math.Min(player.BestTime, room.GameTime);
+                        player.BestJumpCnt = player.BestJumpCnt <= 0 ? units[i].JumpCnt : Math.Min(player.BestJumpCnt, units[i].JumpCnt);
+                        winPlayer = player;
                     }
                     else
                     {
@@ -37,7 +37,7 @@ namespace ET.Server
                     DBManagerComponent.Instance.GetZoneDB(1).Save<PlayerInfo>(player).Coroutine();
                 
                 }
-                return bestTime;
+                return winPlayer;
             }
             catch (Exception e)
             {

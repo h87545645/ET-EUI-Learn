@@ -61,7 +61,16 @@
         
         public struct FrogPelicanFlyToPlayer
         {
+        }
         
+        public struct LobbyStartMatching
+        {
+        }
+        public struct LobbyShowMatchingCancelBtn
+        {
+        }
+        public struct LobbyHideMatching
+        {
         }
     }
 }

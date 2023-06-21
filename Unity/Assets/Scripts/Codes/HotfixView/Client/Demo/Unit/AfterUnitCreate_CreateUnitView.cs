@@ -47,8 +47,7 @@ namespace ET.Client
             }
             else
             {
-                unit.AddComponent<FrogComponent,GameObject , float3 , long>(go , unit.Position , unit.PlayerId);
-      
+                unit.AddComponent<FrogComponent,GameObject , Unit >(go , unit );
             }
             await ETTask.CompletedTask;
         }

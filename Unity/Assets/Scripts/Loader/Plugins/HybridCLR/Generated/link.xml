@@ -122,7 +122,6 @@
     <type fullname="ET.AwakeSystem`1" preserve="all" />
     <type fullname="ET.AwakeSystem`2" preserve="all" />
     <type fullname="ET.AwakeSystem`3" preserve="all" />
-    <type fullname="ET.AwakeSystem`4" preserve="all" />
     <type fullname="ET.BaseAttribute" preserve="all" />
     <type fullname="ET.ByteHelper" preserve="all" />
     <type fullname="ET.ChildOfAttribute" preserve="all" />
@@ -147,7 +146,6 @@
     <type fullname="ET.IAwake" preserve="all" />
     <type fullname="ET.IAwake`1" preserve="all" />
     <type fullname="ET.IAwake`2" preserve="all" />
-    <type fullname="ET.IAwake`3" preserve="all" />
     <type fullname="ET.IConfig" preserve="all" />
     <type fullname="ET.IDestroy" preserve="all" />
     <type fullname="ET.IdGenerater" preserve="all" />
@@ -232,6 +230,8 @@
     <type fullname="ET.MonoBridge" preserve="all" />
     <type fullname="ET.Recast" preserve="all" />
     <type fullname="Honeti.I18N" preserve="all" />
+    <type fullname="Honeti.I18NTextMesh" preserve="all" />
+    <type fullname="Honeti.LanguageCode" preserve="all" />
     <type fullname="ProtoBuf.ProtoAfterDeserializationAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoContractAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoIgnoreAttribute" preserve="all" />
@@ -295,6 +295,9 @@
   <assembly fullname="UnityEngine.PhysicsModule">
     <type fullname="UnityEngine.Physics" preserve="all" />
     <type fullname="UnityEngine.RaycastHit" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule">
+    <type fullname="UnityEngine.TextMesh" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.UI">
     <type fullname="UnityEngine.EventSystems.BaseEventData" preserve="all" />

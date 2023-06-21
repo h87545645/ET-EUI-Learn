@@ -1,0 +1,74 @@
+ManifestFileVersion: 0
+CRC: 2153126912
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5d5bfd6bb1238e637ba969f70ec03f17
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fa7baea10a836755aa1dbf5dedce166f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 62
+  Script: {instanceID: 0}
+- Class: 70
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 102
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 054811c19b70f9f4e8fe010367b8b055, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f7950eedc52bfc47a4302cb446c2b4a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0d98e2b2d3c0875439fca342d40f5597, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.Loader
+  ClassName: ReferenceCollectorData
+- AssemblyName: Unity.RenderPipelines.Universal.Runtime
+  ClassName: UnityEngine.Rendering.Universal.LightUtility/LightMeshVertex
+Assets:
+- Assets/Bundles/Unit/Unit.prefab
+Dependencies:
+- C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/Android/DefaultPackage/OutputCache/share_assets_res_gameassets_maptiles_jungle_tiles_sprites_animals_frog_jump.bundle
+- C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/Android/DefaultPackage/OutputCache/share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
+- C:/U3D/U3D_proj/ET-EUI-Learn/Unity/Bundles/Android/DefaultPackage/OutputCache/unityshaders.bundle

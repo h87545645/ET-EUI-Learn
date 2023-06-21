@@ -16,13 +16,12 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, ET.EventType.FrogLanded args)
         {
-            Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));
+            Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
+            Unit player = curScene.GetComponent<UnitComponent>().Get(args.unitId);
+            // Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));
             player.GetComponent<FrogComponent>().direction = ET.FrogDirection.None;
             // fragHero.direction = Game_Direction.None;
-            await TimerComponent.Instance.WaitAsync(50);
-            Log.Debug("frag ready");
-
-            player.GetComponent<FrogComponent>().IsReady = true;
+            await TimerComponent.Instance.WaitAsync(100);
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 ET.FrogDirection direction = Input.GetKey(KeyCode.LeftArrow) ? ET.FrogDirection.Left :  ET.FrogDirection.Right;
@@ -38,6 +37,10 @@ namespace ET.Client
                 // fragHero.fragAnim.SetBool("jump-down",true);
                 player.GetComponent<FrogComponent>().SetHeroineState(new StandingState(player.GetComponent<FrogComponent>()));
             }
+            await TimerComponent.Instance.WaitAsync(50);
+            Log.Debug("frag ready");
+
+            player.GetComponent<FrogComponent>().IsReady = true;
         }
         
     }

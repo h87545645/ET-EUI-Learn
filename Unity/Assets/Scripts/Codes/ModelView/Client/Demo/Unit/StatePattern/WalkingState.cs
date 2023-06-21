@@ -34,7 +34,7 @@ namespace ET.Client
                 Vector2 force = new Vector2((float)_fragHero.direction * 100 , 0);
                 _fragHero.heroRigidbody2D.AddForce(force);
                 _fragHero.IsReady = false;
-                EventSystem.Instance.Publish(_fragHero.DomainScene(), new EventType.ChangeFrogState() { Unit = _fragHero.unit , state = FrogState.Falling});
+                EventSystem.Instance.Publish(_fragHero.DomainScene(), new EventType.ChangeFrogState() { unitId = _fragHero.unitId , state = FrogState.Falling});
                 // _fragHero.SetHeroineState(new FallingState(_fragHero));
                 return;
             }

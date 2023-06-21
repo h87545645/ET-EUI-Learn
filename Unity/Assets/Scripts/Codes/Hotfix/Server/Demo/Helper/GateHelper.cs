@@ -1,5 +1,6 @@
 ﻿namespace ET.Server
 {
+    [FriendOf(typeof(MatchComponent))]
     public static class GateHelper
     {
         /// <summary>
@@ -16,6 +17,41 @@
             }
 
             return true;
+        }
+        
+        
+        public static void PlayerExitRoom(Scene scene , long userId)
+        {
+            MatchRoomComponent matchRoomComponent = scene.GetComponent<MatchRoomComponent>();
+            MatchComponent matchComponent = scene.GetComponent<MatchComponent>();
+            long roomId = matchComponent.Playing[userId];
+            Room room = matchRoomComponent.Get(roomId);
+            Unit[] units = room.GetAll();
+            bool isEmptyRoom = true;
+            foreach (var user in units)
+            {
+                if (user.UserID == userId)
+                {
+                    user.isOffline = true;
+                }
+
+                if (!user.isOffline)
+                {
+                    isEmptyRoom = false;
+                }
+            }
+
+            if (isEmptyRoom)
+            {
+                foreach (var user in units)
+                {
+                    matchComponent.Playing.Remove(user.UserID);
+                    room.Remove(user.UserID);
+                    user.Dispose();
+                }
+                matchRoomComponent.Recycle(room.Id);
+                Log.Info($"回收房间{room.Id}");
+            }
         }
     }
 }

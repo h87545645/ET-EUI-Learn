@@ -11,7 +11,9 @@ public class FragAnimEvent : MonoBehaviour
     private bool _hasTurn = false;
     public async void OnLandingFinish()
     {
-        EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogLanded(){});
+        // Debug.Log("FragAnimEvent OnLandingFinish");
+        // long unitId = this.gameObject.transform.parent.GetComponent<MonoBridge>().BelongToUnitId;
+        // EventSystem.Instance.PublishAsync(Root.Instance.Scene, new ET.EventType.FrogLanded(){unitId = unitId});
         // StartCoroutine(UnityUtils.DelayFuc(() =>
         // {
         //     Debug.Log("frag ready");
@@ -91,8 +93,8 @@ public class FragAnimEvent : MonoBehaviour
             _hasTurn = true;
             if (!isDown)
             {
-                
-                EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogCollisionEnter2D(){isUp = isUp , isLeft = isLeft});
+                long unitId = this.gameObject.transform.parent.GetComponent<MonoBridge>().BelongToUnitId;
+                EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogCollisionEnter2D(){isUp = isUp , isLeft = isLeft,unitId = unitId });
                 // if (isUp)
                 // {
                 //     // var direction = transform.InverseTransformPoint(collision.contacts[0].point);

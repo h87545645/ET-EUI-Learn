@@ -2,8 +2,8 @@
     "Summary": {
         "YooVersion": "1.4.9",
         "UnityVersion": "2021.3.16f1c1",
-        "BuildDate": "2023/5/3 12:27:44",
-        "BuildSeconds": 20,
+        "BuildDate": "2023/6/14 23:37:28",
+        "BuildSeconds": 14,
         "BuildTarget": 19,
         "BuildPipeline": 0,
         "BuildMode": 0,
@@ -16,14 +16,14 @@
         "CompressOption": 2,
         "DisableWriteTypeTree": false,
         "IgnoreTypeTreeChanges": true,
-        "AssetFileTotalCount": 289,
-        "MainAssetTotalCount": 36,
+        "AssetFileTotalCount": 290,
+        "MainAssetTotalCount": 37,
         "AllBundleTotalCount": 28,
-        "AllBundleTotalSize": 16152365,
+        "AllBundleTotalSize": 16164810,
         "EncryptedBundleTotalCount": 0,
         "EncryptedBundleTotalSize": 0,
         "RawBundleTotalCount": 17,
-        "RawBundleTotalSize": 9775241
+        "RawBundleTotalSize": 9788889
     },
     "AssetInfos": [
         {
@@ -32,7 +32,7 @@
             "AssetGUID": "cfaf4529ce2243c4c85126e9d008897b",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_unit.bundle",
-            "MainBundleSize": 930168,
+            "MainBundleSize": 930222,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_assets_res_gameassets_maptiles_jungle_tiles_sprites_animals_frog_jump.bundle",
@@ -342,7 +342,7 @@
             "AssetGUID": "1c0198f1d720a234494c1d42fe97bc82",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle",
@@ -368,12 +368,14 @@
             "AssetGUID": "285f9dab4e4d2ae4fb790af7437a9625",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle"
             ],
             "DependAssets": [
+                "Assets/Bundles/Font/TMPChineseFont.asset",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Large Set.png",
                 "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
                 "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
@@ -391,7 +393,7 @@
             "AssetGUID": "ee5775ebfef749440bded082b2581b34",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle"
@@ -415,7 +417,7 @@
             "AssetGUID": "835fb089b4f38a642b92cc2c9c81538f",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -425,7 +427,7 @@
             "AssetGUID": "ea771c0703e9d9b47bf65443f77093bb",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle"
@@ -435,13 +437,9 @@
                 "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
                 "Assets/Res/GameAssets/Texture/2D Casual UI/Sprite/GUI.png",
                 "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
-                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
                 "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
-                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
-                "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium_Pressed.png",
-                "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium.png",
-                "Assets/TextMesh Pro/Fonts/LiberationSans.ttf"
+                "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium.png"
             ]
         },
         {
@@ -450,9 +448,29 @@
             "AssetGUID": "a87e203f6599b18489cb615ec32b682d",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [],
             "DependAssets": []
+        },
+        {
+            "Address": "DlgMatching",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgMatching.prefab",
+            "AssetGUID": "198713794f808ca48afc8fd050a1f6a8",
+            "AssetTags": [],
+            "MainBundleName": "assets_bundles_ui_dlg.bundle",
+            "MainBundleSize": 4916392,
+            "DependBundles": [
+                "unityshaders.bundle",
+                "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle"
+            ],
+            "DependAssets": [
+                "Assets/Bundles/Font/TMPChineseFont.asset",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium_Pressed.png",
+                "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium.png"
+            ]
         },
         {
             "Address": "DlgRedDot",
@@ -460,7 +478,7 @@
             "AssetGUID": "619d0e2eeb2dc6b44a73c32c2bafe17f",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -470,7 +488,7 @@
             "AssetGUID": "0a5a37e09f77b414f9f220cbc9dece89",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_ui_dlg.bundle",
-            "MainBundleSize": 4917649,
+            "MainBundleSize": 4916392,
             "DependBundles": [
                 "unityshaders.bundle",
                 "share_packages_com_unity_textmeshpro_editor resources_gizmos.bundle"
@@ -588,7 +606,7 @@
             "AssetGUID": "d2ec3bdb7c19b6746a81f6ae2f2eae91",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_code_hotfix_dll_bytes.rawfile",
-            "MainBundleSize": 160768,
+            "MainBundleSize": 166400,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -598,7 +616,7 @@
             "AssetGUID": "f25f2579802d87c478593b46e9545e77",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_code_hotfix_pdb_bytes.rawfile",
-            "MainBundleSize": 73336,
+            "MainBundleSize": 75380,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -608,7 +626,7 @@
             "AssetGUID": "a864858f6947c67448450f355ecc9e5c",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_code_model_dll_bytes.rawfile",
-            "MainBundleSize": 106496,
+            "MainBundleSize": 110080,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -618,7 +636,7 @@
             "AssetGUID": "c364a7856fac1a34cae27bc742bf1641",
             "AssetTags": [],
             "MainBundleName": "assets_bundles_code_model_pdb_bytes.rawfile",
-            "MainBundleSize": 60156,
+            "MainBundleSize": 62032,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -714,7 +732,7 @@
                 "AotDlls"
             ],
             "MainBundleName": "assets_bundles_aotdlls_unity_loader_dll_bytes.rawfile",
-            "MainBundleSize": 69120,
+            "MainBundleSize": 69632,
             "DependBundles": [],
             "DependAssets": []
         },
@@ -734,10 +752,10 @@
     "BundleInfos": [
         {
             "BundleName": "assets_bundles_unit.bundle",
-            "FileName": "53769f717698ad68517a200f9ef60772.bundle",
-            "FileHash": "53769f717698ad68517a200f9ef60772",
-            "FileCRC": "97923104",
-            "FileSize": 930168,
+            "FileName": "5c8432d2c353b3ff8d3bde16b74f9972.bundle",
+            "FileHash": "5c8432d2c353b3ff8d3bde16b74f9972",
+            "FileCRC": "71dd3593",
+            "FileSize": 930222,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -1027,10 +1045,10 @@
         },
         {
             "BundleName": "assets_bundles_ui_dlg.bundle",
-            "FileName": "b7486d05dbd80582e97d0c6f60c59433.bundle",
-            "FileHash": "b7486d05dbd80582e97d0c6f60c59433",
-            "FileCRC": "c2357857",
-            "FileSize": 4917649,
+            "FileName": "bc1f8d8cdcd09ea7fc4f8b97156e6175.bundle",
+            "FileHash": "bc1f8d8cdcd09ea7fc4f8b97156e6175",
+            "FileCRC": "71a2978c",
+            "FileSize": 4916392,
             "IsRawFile": false,
             "LoadMethod": 0,
             "Tags": [],
@@ -1042,6 +1060,7 @@
                 "Assets/Bundles/UI/Dlg/DlgHelper.prefab",
                 "Assets/Bundles/UI/Dlg/DlgLobby.prefab",
                 "Assets/Bundles/UI/Dlg/DlgLogin.prefab",
+                "Assets/Bundles/UI/Dlg/DlgMatching.prefab",
                 "Assets/Bundles/UI/Dlg/DlgRedDot.prefab",
                 "Assets/Bundles/UI/Dlg/DlgTipsAlert.prefab",
                 "Assets/Res/GameAssets/Texture/2D Casual UI/Sprite/GUI.png",
@@ -1049,11 +1068,11 @@
                 "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
                 "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
                 "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+                "Assets/Bundles/Font/TMPChineseFont.asset",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Large Set.png",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/IRONY TITLE  Large.png",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium.png",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/Close Button.png",
-                "Assets/Bundles/Font/TMPChineseFont.asset",
                 "Assets/Res/GameAssets/Texture/Fantasy Wooden GUI  Free/normal_ui_set A/TextBTN_Medium_Pressed.png"
             ]
         },
@@ -1146,10 +1165,10 @@
         },
         {
             "BundleName": "assets_bundles_code_hotfix_dll_bytes.rawfile",
-            "FileName": "c9a35062c48e7de974f8508877ba0cf3.rawfile",
-            "FileHash": "c9a35062c48e7de974f8508877ba0cf3",
-            "FileCRC": "ce1edaf3",
-            "FileSize": 160768,
+            "FileName": "54cac0de8b9fed07d291b247a5bb5d6a.rawfile",
+            "FileHash": "54cac0de8b9fed07d291b247a5bb5d6a",
+            "FileCRC": "1316085f",
+            "FileSize": 166400,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -1160,10 +1179,10 @@
         },
         {
             "BundleName": "assets_bundles_code_hotfix_pdb_bytes.rawfile",
-            "FileName": "b6faee1c8ef8f7924a4d64637ee27089.rawfile",
-            "FileHash": "b6faee1c8ef8f7924a4d64637ee27089",
-            "FileCRC": "03ea7511",
-            "FileSize": 73336,
+            "FileName": "bf3707616e4fa4ad43c8265d1ae01159.rawfile",
+            "FileHash": "bf3707616e4fa4ad43c8265d1ae01159",
+            "FileCRC": "03dbe7fc",
+            "FileSize": 75380,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -1174,10 +1193,10 @@
         },
         {
             "BundleName": "assets_bundles_code_model_dll_bytes.rawfile",
-            "FileName": "881bbe8af0f443690782567077232b68.rawfile",
-            "FileHash": "881bbe8af0f443690782567077232b68",
-            "FileCRC": "b88a0127",
-            "FileSize": 106496,
+            "FileName": "c202a70ee35b9c2bd18435a5f277f4d8.rawfile",
+            "FileHash": "c202a70ee35b9c2bd18435a5f277f4d8",
+            "FileCRC": "61a0c6a9",
+            "FileSize": 110080,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -1188,10 +1207,10 @@
         },
         {
             "BundleName": "assets_bundles_code_model_pdb_bytes.rawfile",
-            "FileName": "f09d5714109b4b18e9acb44a051d8282.rawfile",
-            "FileHash": "f09d5714109b4b18e9acb44a051d8282",
-            "FileCRC": "fa8937a8",
-            "FileSize": 60156,
+            "FileName": "42e51da1c787da16ea974350a795e99b.rawfile",
+            "FileHash": "42e51da1c787da16ea974350a795e99b",
+            "FileCRC": "9c130c1a",
+            "FileSize": 62032,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [],
@@ -1298,9 +1317,9 @@
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_core_dll_bytes.rawfile",
-            "FileName": "51ff24cbecaadc106206ce11ee42000d.rawfile",
-            "FileHash": "51ff24cbecaadc106206ce11ee42000d",
-            "FileCRC": "fec7f45a",
+            "FileName": "cce7509b1a864f708bd37c2f6340ebde.rawfile",
+            "FileHash": "cce7509b1a864f708bd37c2f6340ebde",
+            "FileCRC": "9214befa",
             "FileSize": 137216,
             "IsRawFile": true,
             "LoadMethod": 0,
@@ -1314,10 +1333,10 @@
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_loader_dll_bytes.rawfile",
-            "FileName": "24f7f9998ead68effaa4e5da1cca5cc4.rawfile",
-            "FileHash": "24f7f9998ead68effaa4e5da1cca5cc4",
-            "FileCRC": "12d2988a",
-            "FileSize": 69120,
+            "FileName": "3eabfd07cc8bcd0ed28b82f668d0ec61.rawfile",
+            "FileHash": "3eabfd07cc8bcd0ed28b82f668d0ec61",
+            "FileCRC": "6c81f01c",
+            "FileSize": 69632,
             "IsRawFile": true,
             "LoadMethod": 0,
             "Tags": [
@@ -1330,9 +1349,9 @@
         },
         {
             "BundleName": "assets_bundles_aotdlls_unity_thirdparty_dll_bytes.rawfile",
-            "FileName": "90bf4331f1c5e87b4e8cedc51aeb152c.rawfile",
-            "FileHash": "90bf4331f1c5e87b4e8cedc51aeb152c",
-            "FileCRC": "15fad597",
+            "FileName": "0db74291e00040aa37b25b5fd46189f1.rawfile",
+            "FileHash": "0db74291e00040aa37b25b5fd46189f1",
+            "FileCRC": "2e257678",
             "FileSize": 223744,
             "IsRawFile": true,
             "LoadMethod": 0,

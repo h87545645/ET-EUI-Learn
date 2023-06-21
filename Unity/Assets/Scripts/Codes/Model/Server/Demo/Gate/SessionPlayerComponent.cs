@@ -4,5 +4,7 @@
 	public class SessionPlayerComponent : Entity, IAwake, IDestroy
 	{
 		public long PlayerId { get; set; }
+		
+		public long UserId { get; set; } //userid 即 account id
 	}
 }

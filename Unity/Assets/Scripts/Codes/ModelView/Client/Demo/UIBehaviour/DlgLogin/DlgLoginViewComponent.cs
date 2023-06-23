@@ -109,6 +109,24 @@ namespace ET.Client
      		}
      	}
 
+		public ESLangButton ESLangButton
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_eslangbutton == null )
+     			{
+		    	   Transform subTrans = UIFindHelper.FindDeepChild<Transform>(this.uiTransform.gameObject,"Sprite_BackGround/ESLangButton");
+		    	   this.m_eslangbutton = this.AddChild<ESLangButton,Transform>(subTrans);
+     			}
+     			return this.m_eslangbutton;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_E_LoginButton = null;
@@ -117,6 +135,8 @@ namespace ET.Client
 			this.m_E_AccountImage = null;
 			this.m_E_PasswordInputField = null;
 			this.m_E_PasswordImage = null;
+			this.m_eslangbutton?.Dispose();
+			this.m_eslangbutton = null;
 			this.uiTransform = null;
 		}
 
@@ -126,6 +146,7 @@ namespace ET.Client
 		private UnityEngine.UI.Image m_E_AccountImage = null;
 		private UnityEngine.UI.InputField m_E_PasswordInputField = null;
 		private UnityEngine.UI.Image m_E_PasswordImage = null;
+		private ESLangButton m_eslangbutton = null;
 		public Transform uiTransform = null;
 	}
 }

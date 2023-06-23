@@ -32,4 +32,6 @@
 ^ui_matching	matching...	正在匹配...
 ^game_over	Game Over	游戏结束
 ^ui_norecord	No Record	暂无记录
+
+^ui_login_btn	Sign in/Sign up	登录/注册
 	

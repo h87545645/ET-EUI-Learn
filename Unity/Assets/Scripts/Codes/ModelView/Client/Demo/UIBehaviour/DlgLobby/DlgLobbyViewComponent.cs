@@ -177,7 +177,7 @@ namespace ET.Client
      		}
      	}
 
-		public UnityEngine.UI.Button E_LangButtonButton
+		public ESLangButton ESLangButton
      	{
      		get
      		{
@@ -186,11 +186,12 @@ namespace ET.Client
      				Log.Error("uiTransform is null.");
      				return null;
      			}
-     			if( this.m_E_LangButtonButton == null )
+     			if( this.m_eslangbutton == null )
      			{
-		    		this.m_E_LangButtonButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"EGBackGround/E_LangButton");
+		    	   Transform subTrans = UIFindHelper.FindDeepChild<Transform>(this.uiTransform.gameObject,"EGBackGround/ESLangButton");
+		    	   this.m_eslangbutton = this.AddChild<ESLangButton,Transform>(subTrans);
      			}
-     			return this.m_E_LangButtonButton;
+     			return this.m_eslangbutton;
      		}
      	}
 
@@ -206,7 +207,8 @@ namespace ET.Client
 			this.m_E_RecordRankButtonButton = null;
 			this.m_E_ExitButtonButton = null;
 			this.m_E_ExitButtonImage = null;
-			this.m_E_LangButtonButton = null;
+			this.m_eslangbutton?.Dispose();
+			this.m_eslangbutton = null;
 			this.uiTransform = null;
 		}
 
@@ -220,7 +222,7 @@ namespace ET.Client
 		private UnityEngine.UI.Button m_E_RecordRankButtonButton = null;
 		private UnityEngine.UI.Button m_E_ExitButtonButton = null;
 		private UnityEngine.UI.Image m_E_ExitButtonImage = null;
-		private UnityEngine.UI.Button m_E_LangButtonButton = null;
+		private ESLangButton m_eslangbutton = null;
 		public Transform uiTransform = null;
 	}
 }

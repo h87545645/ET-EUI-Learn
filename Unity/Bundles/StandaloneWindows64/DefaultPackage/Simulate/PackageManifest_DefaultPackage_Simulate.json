@@ -34,6 +34,13 @@
             "DependIDs": []
         },
         {
+            "Address": "ESLangButton",
+            "AssetPath": "Assets/Bundles/UI/Common/ESLangButton.prefab",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependIDs": []
+        },
+        {
             "Address": "ESReuseUI",
             "AssetPath": "Assets/Bundles/UI/Common/ESReuseUI.prefab",
             "AssetTags": [],
@@ -120,13 +127,6 @@
         {
             "Address": "PopupMask",
             "AssetPath": "Assets/Bundles/UI/PopupMask.prefab",
-            "AssetTags": [],
-            "BundleID": 5,
-            "DependIDs": []
-        },
-        {
-            "Address": "record",
-            "AssetPath": "Assets/Bundles/UI/record.prefab",
             "AssetTags": [],
             "BundleID": 5,
             "DependIDs": []

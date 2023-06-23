@@ -29,7 +29,7 @@ namespace ET.Client
 				self.OnRobotStartMatch().Coroutine();
 			}));
 			
-			self.View.E_LangButtonButton.AddListener(self.OnTranslation);
+			self.View.ESLangButton.RegisterUIEvent();
 		}
 
 		public static void ShowWindow(this DlgLobby self, Entity contextData = null)
@@ -58,11 +58,11 @@ namespace ET.Client
 			}) as G2C_StartMatchResponse;
 		}
 
-		public static void OnTranslation(this DlgLobby self)
-		{
-			LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
-			Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
-		}
+		// public static void OnTranslation(this DlgLobby self)
+		// {
+		// 	LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
+		// 	Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
+		// }
 
 	}
 }

@@ -34,4 +34,11 @@
 ^ui_norecord	No Record	暂无记录
 
 ^ui_login_btn	Sign in/Sign up	登录/注册
-	
+^ui_rank_title	Hall of Fame	排行榜
+^ui_rank_name	Player	玩家
+^ui_rank_rank	Rank	排名
+^ui_rank_win	Win	获胜
+^ui_rank_time	Best Time	最佳时间
+^ui_rank_jump	Best Jumps	最佳跳跃
+
+^ui_ad_text	watch a video back to last position?	是否观看广告回到上一步的位置？

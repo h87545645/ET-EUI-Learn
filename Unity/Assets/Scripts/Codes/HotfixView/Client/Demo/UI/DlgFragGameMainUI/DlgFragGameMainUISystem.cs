@@ -18,10 +18,7 @@ namespace ET.Client
 			self.View.E_JumpButtonEventTrigger.RegisterEvent(EventTriggerType.PointerUp,self.OnJumpPointerUpHandler);
 			
 			self.View.E_MenuButtonButton.AddListener(self.OnMenuClickHandler);
-			
-
-			// Mono2ETEventManager.scrollDir += self.OnDirDragHandler;
-
+			self.View.E_Back2LastPosButtonButton.AddListener(self.OnBack2LastPosClickHandler);
 		}
 
 		public static void ShowWindow(this DlgFragGameMainUI self, Entity contextData = null)
@@ -92,10 +89,10 @@ namespace ET.Client
 			self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogMenu);
 		}
 		
-		// public static void OnDirDragHandler(this DlgFragGameMainUI self , int dir)
-		// {
-		// 	EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogDirection() { Unit = null , force = false, dir = (ET.FrogDirection)dir});
-		// }
+		public static void OnBack2LastPosClickHandler(this DlgFragGameMainUI self)
+		{
+			self.ClientScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_WatchAd);
+		}
 		
 
 	}

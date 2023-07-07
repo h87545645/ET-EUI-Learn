@@ -62,6 +62,8 @@ namespace ET.Client
             self.grond = LayerMask.GetMask("platfrom");
             self.guideAnim = self.GameObject.transform.Find("frog_guide").GetComponent<Animator>();
             self.fragAnim = self.GameObject.transform.Find("FrogMove").GetComponent<Animator>();
+            self.Arrow = self.GameObject.transform.Find("arrow");
+            self.Arrow.gameObject.SetActive(false);
 
 
             self.playerName.text = unit.PlayerName;
@@ -104,6 +106,32 @@ namespace ET.Client
             self._state.HandleInput();
             // AnimatorClipInfo[] info = fragAnim.GetCurrentAnimatorClipInfo(0);
             // Debug.Log("walk state anim "+ info[0].clip.name);
+        }
+
+        public static void UpdateArrow(this FrogComponent self , bool isShow , Quaternion rotate = new Quaternion())
+        {
+            if (isShow)
+            {
+                self.Arrow.gameObject.SetActive(true);
+                self.Arrow.rotation = rotate;
+            }
+            else
+            {
+                self.Arrow.gameObject.SetActive(false);
+            }
+        }
+        
+        public static void UpdateArrow(this FrogComponent self , bool isShow , Transform other)
+        {
+            if (isShow)
+            {
+                self.Arrow.gameObject.SetActive(true);
+                self.Arrow.LookAt(other);
+            }
+            else
+            {
+                self.Arrow.gameObject.SetActive(false);
+            }
         }
         
         

@@ -24,6 +24,10 @@
         {
             MatchRoomComponent matchRoomComponent = scene.GetComponent<MatchRoomComponent>();
             MatchComponent matchComponent = scene.GetComponent<MatchComponent>();
+            if (!matchComponent.Playing.ContainsKey(userId))
+            {
+                return;
+            }
             long roomId = matchComponent.Playing[userId];
             Room room = matchRoomComponent.Get(roomId);
             Unit[] units = room.GetAll();

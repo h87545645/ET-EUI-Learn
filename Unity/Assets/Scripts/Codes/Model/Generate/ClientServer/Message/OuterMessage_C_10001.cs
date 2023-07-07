@@ -65,6 +65,65 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(G2C_GetRankInfoResponse))]
+	[Message(OuterMessage.C2G_GetRankInfoRequest)]
+	[ProtoContract]
+	public partial class C2G_GetRankInfoRequest: ProtoObject, IRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_GetRankInfoResponse)]
+	[ProtoContract]
+	public partial class G2C_GetRankInfoResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int Error { get; set; }
+
+		[ProtoMember(3)]
+		public string Message { get; set; }
+
+		[ProtoMember(4)]
+		public List<GamePlayerInfo> Ranks { get; set; }
+
+	}
+
+	[ResponseType(nameof(G2C_GetRankInfoResponse))]
+	[Message(OuterMessage.C2G_PlayerEditInfoRequest)]
+	[ProtoContract]
+	public partial class C2G_PlayerEditInfoRequest: ProtoObject, IRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public string Name { get; set; }
+
+		[ProtoMember(3)]
+		public long AccountId { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_PlayerEditInfoResponse)]
+	[ProtoContract]
+	public partial class G2C_PlayerEditInfoResponse: ProtoObject, IResponse
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int Error { get; set; }
+
+		[ProtoMember(3)]
+		public string Message { get; set; }
+
+	}
+
 	[ResponseType(nameof(G2C_PlayerExitMatchResponse))]
 	[Message(OuterMessage.C2G_PlayerExitMatchRequest)]
 	[ProtoContract]
@@ -763,51 +822,55 @@ namespace ET
 		 public const ushort A2C_LoginAccountResponse = 10003;
 		 public const ushort C2G_StartMatchRequest = 10004;
 		 public const ushort G2C_StartMatchResponse = 10005;
-		 public const ushort C2G_PlayerExitMatchRequest = 10006;
-		 public const ushort G2C_PlayerExitMatchResponse = 10007;
-		 public const ushort C2G_PlayerExitRoomMessage = 10008;
-		 public const ushort C2M_PlayerExitRoom = 10009;
-		 public const ushort C2M_FrogOpera = 10010;
-		 public const ushort M2C_FrogOpera = 10011;
-		 public const ushort C2M_FrogSyncPosition = 10012;
-		 public const ushort M2C_FrogSyncPosition = 10013;
-		 public const ushort C2M_FrogGameOver = 10014;
-		 public const ushort M2C_FrogGameOver = 10015;
-		 public const ushort C2G_GameOverMessage = 10016;
-		 public const ushort HttpGetRouterResponse = 10017;
-		 public const ushort RouterSync = 10018;
-		 public const ushort C2M_TestRequest = 10019;
-		 public const ushort M2C_TestResponse = 10020;
-		 public const ushort Actor_TransferRequest = 10021;
-		 public const ushort Actor_TransferResponse = 10022;
-		 public const ushort C2G_EnterMap = 10023;
-		 public const ushort G2C_EnterMap = 10024;
-		 public const ushort MoveInfo = 10025;
-		 public const ushort UnitInfo = 10026;
-		 public const ushort GamePlayerInfo = 10027;
-		 public const ushort M2C_CreateUnits = 10028;
-		 public const ushort M2C_CreateMyUnit = 10029;
-		 public const ushort M2C_StartSceneChange = 10030;
-		 public const ushort M2C_RemoveUnits = 10031;
-		 public const ushort C2M_PathfindingResult = 10032;
-		 public const ushort C2M_Stop = 10033;
-		 public const ushort M2C_PathfindingResult = 10034;
-		 public const ushort M2C_Stop = 10035;
-		 public const ushort C2G_Ping = 10036;
-		 public const ushort G2C_Ping = 10037;
-		 public const ushort G2C_Test = 10038;
-		 public const ushort C2M_Reload = 10039;
-		 public const ushort M2C_Reload = 10040;
-		 public const ushort C2R_Login = 10041;
-		 public const ushort R2C_Login = 10042;
-		 public const ushort C2G_LoginGate = 10043;
-		 public const ushort G2C_LoginGate = 10044;
-		 public const ushort G2C_TestHotfixMessage = 10045;
-		 public const ushort C2M_TestRobotCase = 10046;
-		 public const ushort M2C_TestRobotCase = 10047;
-		 public const ushort C2M_TransferMap = 10048;
-		 public const ushort M2C_TransferMap = 10049;
-		 public const ushort C2G_Benchmark = 10050;
-		 public const ushort G2C_Benchmark = 10051;
+		 public const ushort C2G_GetRankInfoRequest = 10006;
+		 public const ushort G2C_GetRankInfoResponse = 10007;
+		 public const ushort C2G_PlayerEditInfoRequest = 10008;
+		 public const ushort G2C_PlayerEditInfoResponse = 10009;
+		 public const ushort C2G_PlayerExitMatchRequest = 10010;
+		 public const ushort G2C_PlayerExitMatchResponse = 10011;
+		 public const ushort C2G_PlayerExitRoomMessage = 10012;
+		 public const ushort C2M_PlayerExitRoom = 10013;
+		 public const ushort C2M_FrogOpera = 10014;
+		 public const ushort M2C_FrogOpera = 10015;
+		 public const ushort C2M_FrogSyncPosition = 10016;
+		 public const ushort M2C_FrogSyncPosition = 10017;
+		 public const ushort C2M_FrogGameOver = 10018;
+		 public const ushort M2C_FrogGameOver = 10019;
+		 public const ushort C2G_GameOverMessage = 10020;
+		 public const ushort HttpGetRouterResponse = 10021;
+		 public const ushort RouterSync = 10022;
+		 public const ushort C2M_TestRequest = 10023;
+		 public const ushort M2C_TestResponse = 10024;
+		 public const ushort Actor_TransferRequest = 10025;
+		 public const ushort Actor_TransferResponse = 10026;
+		 public const ushort C2G_EnterMap = 10027;
+		 public const ushort G2C_EnterMap = 10028;
+		 public const ushort MoveInfo = 10029;
+		 public const ushort UnitInfo = 10030;
+		 public const ushort GamePlayerInfo = 10031;
+		 public const ushort M2C_CreateUnits = 10032;
+		 public const ushort M2C_CreateMyUnit = 10033;
+		 public const ushort M2C_StartSceneChange = 10034;
+		 public const ushort M2C_RemoveUnits = 10035;
+		 public const ushort C2M_PathfindingResult = 10036;
+		 public const ushort C2M_Stop = 10037;
+		 public const ushort M2C_PathfindingResult = 10038;
+		 public const ushort M2C_Stop = 10039;
+		 public const ushort C2G_Ping = 10040;
+		 public const ushort G2C_Ping = 10041;
+		 public const ushort G2C_Test = 10042;
+		 public const ushort C2M_Reload = 10043;
+		 public const ushort M2C_Reload = 10044;
+		 public const ushort C2R_Login = 10045;
+		 public const ushort R2C_Login = 10046;
+		 public const ushort C2G_LoginGate = 10047;
+		 public const ushort G2C_LoginGate = 10048;
+		 public const ushort G2C_TestHotfixMessage = 10049;
+		 public const ushort C2M_TestRobotCase = 10050;
+		 public const ushort M2C_TestRobotCase = 10051;
+		 public const ushort C2M_TransferMap = 10052;
+		 public const ushort M2C_TransferMap = 10053;
+		 public const ushort C2G_Benchmark = 10054;
+		 public const ushort G2C_Benchmark = 10055;
 	}
 }

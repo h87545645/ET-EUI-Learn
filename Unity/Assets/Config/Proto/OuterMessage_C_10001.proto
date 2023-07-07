@@ -34,6 +34,39 @@ message G2C_StartMatchResponse // IResponse
 
 }
 
+
+//ResponseType G2C_GetRankInfoResponse
+message C2G_GetRankInfoRequest // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message G2C_GetRankInfoResponse // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+    repeated GamePlayerInfo Ranks = 4;
+}
+
+//ResponseType G2C_GetRankInfoResponse
+message C2G_PlayerEditInfoRequest // IRequest
+{
+	int32 RpcId = 1;
+	string Name = 2;
+	int64 AccountId = 3;
+}
+
+message G2C_PlayerEditInfoResponse // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+
+
+
 //ResponseType G2C_PlayerExitMatchResponse
 message C2G_PlayerExitMatchRequest // IRequest
 {

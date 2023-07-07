@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -10,16 +12,65 @@ namespace ET.Client
         {
             Unit unit = args.Unit;
             FrogComponent frog = unit.GetComponent<FrogComponent>();
-            
-            
-            // GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
             if (frog == null)
             {
                 return;
             }
             Transform transform = frog.heroRenderer.transform;
             transform.position = unit.Position;
+
+
+
+            //找到其他玩家
+            Dictionary<long,Unit> units = scene.DomainScene().CurrentScene().GetComponent<UnitComponent>().GetAll();
+            UpdateFrogArrow(units);
             await ETTask.CompletedTask;
+        }
+
+
+        private void UpdateFrogArrow(Dictionary<long,Unit> units)
+        {
+            FrogComponent frog1 = null, frog2 = null;
+            foreach (Unit u in units.Values)
+            {
+                if (u.Type == UnitType.Player)
+                {
+                    if (frog1 == null)
+                    {
+                        frog1 = u.GetComponent<FrogComponent>();
+                    }else if (frog2 == null)
+                    {
+                        frog2 = u.GetComponent<FrogComponent>();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            if (frog1.currentCameraIndex != frog2.currentCameraIndex)
+            {
+                // float dot1 = Vector3.Dot(frog1.heroRenderer.transform.forward, frog2.heroRenderer.transform.forward);
+                // float angle1 = Mathf.Acos(dot1) * Mathf.Rad2Deg;
+                // frog1.UpdateArrow(true,new Quaternion(0,0,angle1,0));
+                // float dot2 = Vector3.Dot(frog2.heroRenderer.transform.forward, frog1.heroRenderer.transform.forward);
+                // float angle2 = Mathf.Acos(dot2) * Mathf.Rad2Deg;
+                // frog2.UpdateArrow(true,new Quaternion(0,0,angle2,0));
+                
+                
+                // Vector3 dir = frog1.heroRenderer.transform.position - frog2.heroRenderer.transform.position;
+                // Quaternion quaternion = Quaternion.LookRotation(Vector3.forward,dir);
+                // frog2.UpdateArrow(true,quaternion);
+                
+                frog1.UpdateArrow(true,frog2.heroRenderer.transform);
+                frog2.UpdateArrow(true,frog1.heroRenderer.transform);
+            }
+            else
+            {
+                frog1.UpdateArrow(false);
+                frog2.UpdateArrow(false);
+            }
         }
     }
 }

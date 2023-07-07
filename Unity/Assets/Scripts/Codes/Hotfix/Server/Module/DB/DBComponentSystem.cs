@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
 namespace ET.Server
@@ -104,6 +106,35 @@ namespace ET.Server
 			    IAsyncCursor<T> cursor = await self.GetCollection<T>(collection).FindAsync(filterDefinition);
 			    return await cursor.ToListAsync();
 		    }
+	    }
+	    
+	    /// <summary>
+	    /// 根据json查询条件查询
+	    /// </summary>
+	    /// <param name="self"></param>
+	    /// <param name="json"></param>
+	    /// <typeparam name="T"></typeparam>
+	    /// <returns></returns>
+	    public static async ETTask<List<T>> SortQuery<T>(this DBComponent self, Expression<Func<T, bool>> queryExp, Expression<Func<T, bool>> sortExp, int count ,string collection = null) where T : Entity
+	    {
+		    string queryJson = ExpressionConversionJson(queryExp);
+		    string sortJson = ExpressionConversionJson(sortExp);
+		    string[] strs = new string[3];
+		    strs[0] = typeof(T).Name;
+		    strs[1] = queryJson;
+		    strs[2] = sortJson;
+		    FilterDefinition<T> filterDefinition = new JsonFilterDefinition<T>(queryJson);
+		    SortDefinition<T> sortDefinition = new JsonSortDefinition<T>(sortJson);
+		    IFindFluent<T , T> ifindiluent = self.GetCollection<T>(collection).Find(filterDefinition).Sort(sortDefinition).Limit(count);
+		    return await ifindiluent.ToCursor().ToListAsync();
+	    }
+	    
+	    private static string ExpressionConversionJson<T>(Expression<Func<T, bool>> exp)
+	    {
+		    ExpressionFilterDefinition<T> filter = new ExpressionFilterDefinition<T>(exp);
+		    IBsonSerializerRegistry serializerRegistry = BsonSerializer.SerializerRegistry;
+		    IBsonSerializer<T> documentSerializer = serializerRegistry.GetSerializer<T>();
+		    return filter.Render(documentSerializer, serializerRegistry).ToJson();
 	    }
 
 	    #endregion

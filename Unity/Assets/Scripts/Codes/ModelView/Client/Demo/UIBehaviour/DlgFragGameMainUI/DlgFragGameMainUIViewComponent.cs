@@ -58,7 +58,22 @@ namespace ET.Client
      		}
      	}
 
-	
+		public ET.ScrollRocker E_DirectButtonScrollRocker
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_DirectButtonScrollRocker == null )
+     			{
+		    		this.m_E_DirectButtonScrollRocker = UIFindHelper.FindDeepChild<ET.ScrollRocker>(this.uiTransform.gameObject,"Root/E_DirectButton");
+     			}
+     			return this.m_E_DirectButtonScrollRocker;
+     		}
+     	}
 
 		public UnityEngine.UI.Image E_DirectButtonImage
      	{
@@ -94,21 +109,42 @@ namespace ET.Client
      		}
      	}
 
+		public UnityEngine.UI.Button E_Back2LastPosButtonButton
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_Back2LastPosButtonButton == null )
+     			{
+		    		this.m_E_Back2LastPosButtonButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"Root/E_Back2LastPosButton");
+     			}
+     			return this.m_E_Back2LastPosButtonButton;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_E_JumpButtonButton = null;
 			this.m_E_JumpButtonImage = null;
 			this.m_E_JumpButtonEventTrigger = null;
+			this.m_E_DirectButtonScrollRocker = null;
 			this.m_E_DirectButtonImage = null;
 			this.m_E_MenuButtonButton = null;
+			this.m_E_Back2LastPosButtonButton = null;
 			this.uiTransform = null;
 		}
 
 		private UnityEngine.UI.Button m_E_JumpButtonButton = null;
 		private UnityEngine.UI.Image m_E_JumpButtonImage = null;
 		private UnityEngine.EventSystems.EventTrigger m_E_JumpButtonEventTrigger = null;
+		private ET.ScrollRocker m_E_DirectButtonScrollRocker = null;
 		private UnityEngine.UI.Image m_E_DirectButtonImage = null;
 		private UnityEngine.UI.Button m_E_MenuButtonButton = null;
+		private UnityEngine.UI.Button m_E_Back2LastPosButtonButton = null;
 		public Transform uiTransform = null;
 	}
 }

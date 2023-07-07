@@ -104,6 +104,13 @@
             "DependIDs": []
         },
         {
+            "Address": "DlgRank",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgRank.prefab",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependIDs": []
+        },
+        {
             "Address": "DlgRedDot",
             "AssetPath": "Assets/Bundles/UI/Dlg/DlgRedDot.prefab",
             "AssetTags": [],
@@ -113,6 +120,13 @@
         {
             "Address": "DlgTipsAlert",
             "AssetPath": "Assets/Bundles/UI/Dlg/DlgTipsAlert.prefab",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependIDs": []
+        },
+        {
+            "Address": "DlgWatchAd",
+            "AssetPath": "Assets/Bundles/UI/Dlg/DlgWatchAd.prefab",
             "AssetTags": [],
             "BundleID": 4,
             "DependIDs": []
@@ -129,6 +143,13 @@
             "AssetPath": "Assets/Bundles/UI/PopupMask.prefab",
             "AssetTags": [],
             "BundleID": 5,
+            "DependIDs": []
+        },
+        {
+            "Address": "Item_Rank",
+            "AssetPath": "Assets/Bundles/UI/Item/Item_Rank.prefab",
+            "AssetTags": [],
+            "BundleID": 6,
             "DependIDs": []
         },
         {

@@ -154,6 +154,8 @@ namespace ET
         {
             string info = string.Format("DownloadOver " + (issucceed? "succeed" : "fail"));
             Debug.Log(info);
+            this.hotUI.percent.SetText( string.Format("{0}%" , 100));
+            this.hotUI.progress.value = 1;
             this.hotUI.dowoLoadInfoText.SetText(info);
         }
 

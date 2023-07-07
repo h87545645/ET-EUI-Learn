@@ -58,6 +58,11 @@ namespace ET
 
             public bool enable;
         }
+        
+        public struct PlayerEditName
+        {
+            public string Name;
+        }
     }
 
     

@@ -17,11 +17,12 @@ namespace ET.Client
         public Light2D light;
         public Transform groundCheck;
         public LayerMask grond;
+        public Transform Arrow;
         
         public Animator guideAnim;
         public Animator fragAnim;
         public float chargeTime = 0;
-        
+        public int currentCameraIndex = 0;
         
         
         //frog direction

@@ -195,6 +195,57 @@ namespace ET.Client
      		}
      	}
 
+		public UnityEngine.UI.Image E_NameInputImage
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_NameInputImage == null )
+     			{
+		    		this.m_E_NameInputImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"EGBackGround/UserInfo/E_NameInput");
+     			}
+     			return this.m_E_NameInputImage;
+     		}
+     	}
+
+		public TMPro.TextMeshProUGUI E_CoinTextTextMeshProUGUI
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_CoinTextTextMeshProUGUI == null )
+     			{
+		    		this.m_E_CoinTextTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EGBackGround/UserInfo/E_CoinText");
+     			}
+     			return this.m_E_CoinTextTextMeshProUGUI;
+     		}
+     	}
+
+		public TMPro.TextMeshProUGUI E_WinTextTextMeshProUGUI
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_WinTextTextMeshProUGUI == null )
+     			{
+		    		this.m_E_WinTextTextMeshProUGUI = UIFindHelper.FindDeepChild<TMPro.TextMeshProUGUI>(this.uiTransform.gameObject,"EGBackGround/UserInfo/E_WinText");
+     			}
+     			return this.m_E_WinTextTextMeshProUGUI;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_EGBackGroundRectTransform = null;
@@ -209,6 +260,9 @@ namespace ET.Client
 			this.m_E_ExitButtonImage = null;
 			this.m_eslangbutton?.Dispose();
 			this.m_eslangbutton = null;
+			this.m_E_NameInputImage = null;
+			this.m_E_CoinTextTextMeshProUGUI = null;
+			this.m_E_WinTextTextMeshProUGUI = null;
 			this.uiTransform = null;
 		}
 
@@ -223,6 +277,9 @@ namespace ET.Client
 		private UnityEngine.UI.Button m_E_ExitButtonButton = null;
 		private UnityEngine.UI.Image m_E_ExitButtonImage = null;
 		private ESLangButton m_eslangbutton = null;
+		private UnityEngine.UI.Image m_E_NameInputImage = null;
+		private TMPro.TextMeshProUGUI m_E_CoinTextTextMeshProUGUI = null;
+		private TMPro.TextMeshProUGUI m_E_WinTextTextMeshProUGUI = null;
 		public Transform uiTransform = null;
 	}
 }

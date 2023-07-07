@@ -13,5 +13,7 @@ namespace ET.Client
 		WindowID_FrogMenu,
 		WindowID_FrogGameRecord,
 		WindowID_Matching, //匹配界面
+		WindowID_Rank, //排行榜
+		WindowID_WatchAd,
 	}
 }

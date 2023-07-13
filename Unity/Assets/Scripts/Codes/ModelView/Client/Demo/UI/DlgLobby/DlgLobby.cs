@@ -11,5 +11,7 @@ namespace ET.Client
 
 		public TMP_InputField PlayNameInput;
 
+		public string CurrentPlayerName;
+
 	}
 }

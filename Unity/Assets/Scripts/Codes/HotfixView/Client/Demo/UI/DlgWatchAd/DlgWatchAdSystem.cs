@@ -23,6 +23,10 @@ namespace ET.Client
 		public static async ETTask OnWatchAdClickHandler(this DlgWatchAd self)
 		{
 			
+			Unit player = UnitHelper.GetMyUnitFromClientScene(self.DomainScene());
+			FrogComponent frogComponent = player.GetComponent<FrogComponent>();
+			frogComponent.Back2LastPos();
+			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_WatchAd);
 		}
 
 		public static void OnCloseClickHandler(this DlgWatchAd self)

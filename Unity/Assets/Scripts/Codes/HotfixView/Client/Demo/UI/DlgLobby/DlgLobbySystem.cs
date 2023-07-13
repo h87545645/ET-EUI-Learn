@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
 using Honeti;
 using TMPro;
 using UnityEngine;
@@ -39,7 +40,10 @@ namespace ET.Client
 			self.View.ESLangButton.RegisterUIEvent();
 			
 			self.PlayNameInput = self.View.E_NameInputImage.gameObject.GetComponent<TMP_InputField>();
-			
+			self.PlayNameInput.onEndEdit.AddListener((string text) =>
+			{
+				self.OnNameEditEnd(text).Coroutine();
+			});
 		}
 
 		public static void ShowWindow(this DlgLobby self, Entity contextData = null)
@@ -51,6 +55,7 @@ namespace ET.Client
 		{
 			PlayerComponent playerComponent = self.ClientScene().GetComponent<PlayerComponent>();
 			PlayerInfo info = playerComponent.MyInfo;
+			self.CurrentPlayerName = info.NickName;
 			self.PlayNameInput.text = info.NickName;
 			self.View.E_CoinTextTextMeshProUGUI.SetText(info.Coin.ToString());
 			self.View.E_WinTextTextMeshProUGUI.SetText(info.Wins.ToString());
@@ -96,7 +101,19 @@ namespace ET.Client
 				Log.Error(e);
 			}
 		}
-		
+
+
+		public static async ETTask OnNameEditEnd(this DlgLobby self , string text)
+		{
+			if (text == self.CurrentPlayerName)
+			{
+				return;
+			}
+			PlayerComponent playerComponent = self.ClientScene().GetComponent<PlayerComponent>();
+			G2C_PlayerEditInfoResponse g2cPlayerEditInfoResponse = await self.ClientScene().GetComponent<SessionComponent>().Session.Call
+					(new C2G_PlayerEditInfoRequest(){Name = text , AccountId = playerComponent.MyInfo.AccountId}) as G2C_PlayerEditInfoResponse;
+			self.CurrentPlayerName = text;
+		}
 
 		// public static void OnTranslation(this DlgLobby self)
 		// {

@@ -1,4 +1,4 @@
-#define LOCAL_SERVER
+// #define LOCAL_SERVER
 using System.Net;
 using System.Net.Sockets;
 

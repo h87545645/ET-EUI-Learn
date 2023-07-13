@@ -22,7 +22,7 @@ namespace ET.Client
 
 
             //找到其他玩家
-            Dictionary<long,Unit> units = scene.DomainScene().CurrentScene().GetComponent<UnitComponent>().GetAll();
+            Dictionary<long,Unit> units = scene.GetComponent<UnitComponent>().GetAll();
             UpdateFrogArrow(units);
             await ETTask.CompletedTask;
         }
@@ -63,8 +63,15 @@ namespace ET.Client
                 // Quaternion quaternion = Quaternion.LookRotation(Vector3.forward,dir);
                 // frog2.UpdateArrow(true,quaternion);
                 
-                frog1.UpdateArrow(true,frog2.heroRenderer.transform);
-                frog2.UpdateArrow(true,frog1.heroRenderer.transform);
+                Vector2 direction = frog1.heroRenderer.transform.position - frog2.heroRenderer.transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                
+                Vector2 direction2 = frog2.heroRenderer.transform.position - frog1.heroRenderer.transform.position;
+                float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                
+                frog1.UpdateArrow(true,angle2);
+                frog2.UpdateArrow(true,angle);
             }
             else
             {

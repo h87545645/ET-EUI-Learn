@@ -194,12 +194,15 @@
     <type fullname="ET.CodeMode" preserve="all" />
     <type fullname="ET.CoroutineHelper" preserve="all" />
     <type fullname="ET.Define" preserve="all" />
+    <type fullname="ET.GetSpriteFrame" preserve="all" />
     <type fullname="ET.GlobalConfig" preserve="all" />
     <type fullname="ET.PathHelper" preserve="all" />
+    <type fullname="ET.ScrollRocker" preserve="all" />
     <type fullname="RedDotMonoView" preserve="all" />
     <type fullname="ReferenceCollector" preserve="all" />
     <type fullname="UnityEngine.UI.LoopScrollRect" preserve="all" />
     <type fullname="UnityEngine.UI.LoopScrollRectBase" preserve="all" />
+    <type fullname="UnityEngine.UI.LoopVerticalScrollRect" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Mathematics">
     <type fullname="Unity.Mathematics.float2" preserve="all" />
@@ -212,6 +215,8 @@
   </assembly>
   <assembly fullname="Unity.TextMeshPro">
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_InputField" preserve="all" />
+    <type fullname="TMPro.TMP_InputField/SubmitEvent" preserve="all" />
     <type fullname="TMPro.TMP_Text" preserve="all" />
   </assembly>
   <assembly fullname="Unity.ThirdParty">
@@ -226,6 +231,7 @@
     <type fullname="ET.EventType.FrogGameCameraChange" preserve="all" />
     <type fullname="ET.EventType.FrogLanded" preserve="all" />
     <type fullname="ET.EventType.GameFinishEvent" preserve="all" />
+    <type fullname="ET.EventType.PlayerEditName" preserve="all" />
     <type fullname="ET.EventType.ScrollRectDirectionEvent" preserve="all" />
     <type fullname="ET.MonoBridge" preserve="all" />
     <type fullname="ET.Recast" preserve="all" />
@@ -253,6 +259,7 @@
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Application" preserve="all" />
     <type fullname="UnityEngine.AsyncOperation" preserve="all" />
+    <type fullname="UnityEngine.Behaviour" preserve="all" />
     <type fullname="UnityEngine.Camera" preserve="all" />
     <type fullname="UnityEngine.Color" preserve="all" />
     <type fullname="UnityEngine.Component" preserve="all" />

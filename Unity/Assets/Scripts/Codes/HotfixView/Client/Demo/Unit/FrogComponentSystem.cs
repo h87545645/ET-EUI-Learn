@@ -62,7 +62,7 @@ namespace ET.Client
             self.grond = LayerMask.GetMask("platfrom");
             self.guideAnim = self.GameObject.transform.Find("frog_guide").GetComponent<Animator>();
             self.fragAnim = self.GameObject.transform.Find("FrogMove").GetComponent<Animator>();
-            self.Arrow = self.GameObject.transform.Find("arrow");
+            self.Arrow = self.GameObject.transform.Find("FrogMove/arrow");
             self.Arrow.gameObject.SetActive(false);
 
 
@@ -108,12 +108,12 @@ namespace ET.Client
             // Debug.Log("walk state anim "+ info[0].clip.name);
         }
 
-        public static void UpdateArrow(this FrogComponent self , bool isShow , Quaternion rotate = new Quaternion())
+        public static void UpdateArrow(this FrogComponent self , bool isShow , float angle = 0)
         {
             if (isShow)
             {
                 self.Arrow.gameObject.SetActive(true);
-                self.Arrow.rotation = rotate;
+                self.Arrow.rotation = Quaternion.AngleAxis(angle, Vector3.forward);;
             }
             else
             {
@@ -121,17 +121,22 @@ namespace ET.Client
             }
         }
         
-        public static void UpdateArrow(this FrogComponent self , bool isShow , Transform other)
+        // public static void UpdateArrow(this FrogComponent self , bool isShow , Transform other)
+        // {
+        //     if (isShow)
+        //     {
+        //         self.Arrow.gameObject.SetActive(true);
+        //         self.Arrow.LookAt(other);
+        //     }
+        //     else
+        //     {
+        //         self.Arrow.gameObject.SetActive(false);
+        //     }
+        // }
+        
+        public static void Back2LastPos(this FrogComponent self)
         {
-            if (isShow)
-            {
-                self.Arrow.gameObject.SetActive(true);
-                self.Arrow.LookAt(other);
-            }
-            else
-            {
-                self.Arrow.gameObject.SetActive(false);
-            }
+            self.heroRenderer.transform.position = new Vector3(self.LastPosition.x, self.LastPosition.y + 1, self.heroRenderer.transform.position.z);
         }
         
         

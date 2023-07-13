@@ -54,8 +54,8 @@ namespace ET
                 
                 var initParameters = new HostPlayModeParameters();
                 initParameters.QueryServices = new QueryStreamingAssetsFileServices();
-                initParameters.DefaultHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/"+ platform +"/package";
-                initParameters.FallbackHostServer = "https://7072-prod-3g0ae65ka89836f7-1252078347.tcb.qcloud.la/"+ platform +"/package";
+                initParameters.DefaultHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/"+ platform +"/package";
+                initParameters.FallbackHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/"+ platform +"/package";
                 yield return package.InitializeAsync(initParameters);
             }else if (this.PlayMod == EPlayMode.OfflinePlayMode)
             {
@@ -104,6 +104,8 @@ namespace ET
             //没有需要下载的资源
             if (downloader.TotalDownloadCount == 0)
             {        
+                this.hotUI.percent.SetText( string.Format("{0}%" , 100));
+                this.hotUI.progress.value = 1;
                 yield break;
             }
 

@@ -12,6 +12,10 @@ namespace ET.Client
         {
             // Player player = 
             Unit player = UnitHelper.GetMyUnitFromCurrentScene(scene);
+            if (player == null || player.isSinglePlay)
+            {
+                return;
+            }
             float3 pos = new float3(args.Position.x, args.Position.y, 0);
             player.Position = pos;
             //同步落地位置给其他玩家

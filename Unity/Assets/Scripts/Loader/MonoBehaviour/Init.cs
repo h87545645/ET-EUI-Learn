@@ -3,6 +3,8 @@ using System.Threading;
 using CommandLine;
 using UnityEngine;
 using System.Collections;
+using AnyThinkAds.Api;
+
 // using YooAsset;
 
 
@@ -34,11 +36,28 @@ namespace ET
 			Game.AddSingleton<IdGenerater>();
 			Game.AddSingleton<EventSystem>();
 			Game.AddSingleton<TimerComponent>();
+	
 			Game.AddSingleton<CoroutineLockComponent>();
-			
+		
 			ETTask.ExceptionHandler += Log.Error;
 			StartCoroutine(startHot());
+			this.InitAnyThinkAds();
 			
+		}
+
+		private async ETTask InitAnyThinkAds()
+		{
+			//广告初始化
+			Game.AddSingleton<AnyThinkAdHelper>();
+			ATSDKAPI.initSDK("a64b54aca97f87", "23498cc3f3876487a682a6407e1959ce");
+			ATSDKAPI.setLogDebug(true);
+			ATSDKAPI.setChannel("unity3d_taptap_channel");
+			AnyThinkAdHelper.Instance.addAutoLoadAdPlacementID();
+			// await TimerComponent.Instance.WaitAsync(2000);
+			// AnyThinkAdHelper.Instance.ShowActiveAd( (bool suc) =>
+			// {
+			// 	Debug.Log("------------------------ShowActiveAd cb");
+			// });
 		}
 
 		private IEnumerator startHot()

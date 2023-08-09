@@ -305,7 +305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OK
+  m_text: ^ui_ad_btn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9226201a0acac7a43b4c9a6cb0ee3dba, type: 2}
   m_sharedMaterial: {fileID: -5459410016884986833, guid: 9226201a0acac7a43b4c9a6cb0ee3dba,

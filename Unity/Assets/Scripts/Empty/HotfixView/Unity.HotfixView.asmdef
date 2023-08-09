@@ -11,8 +11,7 @@
         "Unity.Loader",
         "Unity.TextMeshPro",
         "Unity.RenderPipelines.Universal.Runtime",
-        "YooAsset",
-        "Unity.Frog"
+        "YooAsset"
     ],
     "includePlatforms": [],
     "excludePlatforms": [

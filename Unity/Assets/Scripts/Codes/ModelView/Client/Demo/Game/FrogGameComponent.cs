@@ -3,6 +3,12 @@ using UnityEngine.Rendering.Universal;
 
 namespace ET.Client
 {
+    // public enum FrogGameType
+    // {
+    //     Single,
+    //     Multiplayer,
+    // }
+    
     [ComponentOf(typeof(Scene))]
     public class FrogGameComponent: Entity, IAwake , IUpdate
     {
@@ -28,6 +34,8 @@ namespace ET.Client
         // private bool _isAlreadyGuide = true;
 
         public bool _isCompleted = false;
+
+        // public bool isSinglePlay = false;
     }
 }
 

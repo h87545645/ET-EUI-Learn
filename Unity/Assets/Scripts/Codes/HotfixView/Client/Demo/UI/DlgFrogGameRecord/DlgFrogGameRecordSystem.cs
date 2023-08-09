@@ -23,9 +23,9 @@ namespace ET.Client
 			// self.DomainScene().GetComponent<I18NComponent>().langMgr.getValue("^ui_norecord")
 			M2C_FrogGameOver data = (contextData as WindowData).GameOverData;
 			self.View.EText_nameTextMeshProUGUI.SetText(data.PlayerName);
-			string bestTime =  UnityUtils.TimeToStringHMS( (float)(data.GameTime * 0.001));
+			string bestTime =  data.GameTime > 0 ? UnityUtils.TimeToStringHMS( (float)(data.GameTime * 0.001)) : "--";
 			string bestJump = data.JumpCnt.ToString();
-			string winTimes = data.WinCnt.ToString();
+			string winTimes = data.WinCnt > 0 ? data.WinCnt.ToString() : "--";
 			string[] record = new string[]
 			{
 				bestTime,

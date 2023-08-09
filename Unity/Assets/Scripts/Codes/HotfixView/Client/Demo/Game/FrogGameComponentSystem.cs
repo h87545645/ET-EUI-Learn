@@ -13,7 +13,7 @@ namespace ET.Client
     public static class FrogGameComponentSystem
     {
         [ObjectSystem]
-        public class PelicanComponentAwakeSystem : AwakeSystem<FrogGameComponent>
+        public class FrogGameComponentAwakeSystem : AwakeSystem<FrogGameComponent>
         {
             protected override void Awake(FrogGameComponent self)
             {
@@ -75,8 +75,9 @@ namespace ET.Client
             await TimerComponent.Instance.WaitAsync(5000); 
             UnitComponent unitcomp =  self.DomainScene().GetComponent<UnitComponent>();
             Unit pelican = unitcomp.Get(unitcomp.PelicanUnitId);
+
             
-            if (pelican != null && !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
+            if (pelican != null && pelican.GetComponent<PelicanComponent>() != null && !pelican.GetComponent<PelicanComponent>().isVisible && !self._isCompleted)
             {
                 pelican.GetComponent<PelicanComponent>().FlyToPlayer(player.GetComponent<FrogComponent>().heroRigidbody2D.transform);
             }

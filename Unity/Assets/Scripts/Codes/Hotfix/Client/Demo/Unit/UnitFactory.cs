@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using System.Collections.Generic;
+using Unity.Mathematics;
 
 namespace ET.Client
 {
@@ -28,11 +29,21 @@ namespace ET.Client
 	        unit.PlayerId = unitInfo.PlayerId;
 	        unit.PlayerName = unitInfo.PlayerName;
 	        NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
-
-			foreach (var kv in unitInfo.KV)
-			{
-				numericComponent.Set(kv.Key, kv.Value);
-			}
+	        if (unitInfo.KV == null)
+	        {
+		        numericComponent.Set(NumericType.jumpVaryX, 1200); // frog jump x
+		        numericComponent.Set(NumericType.jumpStaticX, 1200); //frog jump min x
+		        numericComponent.Set(NumericType.jumpVaryY, 3000);
+		        numericComponent.Set(NumericType.jumpStaticY, 200);
+	        }
+	        else
+	        {
+		        foreach (var kv in unitInfo.KV)
+		        {
+			        numericComponent.Set(kv.Key, kv.Value);
+		        }
+	        }
+			
 	        
 	        unit.AddComponent<MoveComponent>();
 	        if (unitInfo.MoveInfo != null)

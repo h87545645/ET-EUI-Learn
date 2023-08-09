@@ -1,4 +1,5 @@
 ﻿using Honeti;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -13,6 +14,11 @@ namespace ET.Client
         {
             LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
             Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
+            
+            // AnyThinkAdHelper.Instance.ShowActiveAd( (bool suc) =>
+            // {
+            //     Debug.Log("------------------------ShowActiveAd cb");
+            // });
         }
     }  
 }

@@ -21,6 +21,9 @@ namespace ET
         
         public int JumpCnt{ get;  set; }
         
+        
+        public bool isSinglePlay { get; set; }
+        
         //是否离线
         public bool isOffline { get; set; }
         

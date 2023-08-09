@@ -5,16 +5,13 @@ using UnityEngine.UI;
 
 namespace ET
 {
-    public class ScrollRocker : ScrollRect 
+    public class ScrollRocker : ScrollRect , IPointerDownHandler 
     {
         
         // public EventTrigger eventTrigger;
         protected float mRadius = 0f;
         private int _lastDir = 0;
-
-        // public delegate void ScrollRectDir(int dir);
-        //
-        // public static event ScrollRectDir onDir;
+        private Vector2 inputVector = Vector2.zero;
 
         
         
@@ -22,7 +19,7 @@ namespace ET
         protected override void Start()
         {
             base.Start();
-            mRadius = (transform as RectTransform).sizeDelta.x * 0.2f;
+            mRadius = (transform as RectTransform).sizeDelta.x * 0.15f;
             // EventManger
         }
 
@@ -62,6 +59,27 @@ namespace ET
         {
             _lastDir = 0;
         }
+
+
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+
+            return;
+            Vector2 pos;
+            RectTransform background = this.content.parent.GetComponent<RectTransform>();
+            if(RectTransformUtility.ScreenPointToLocalPointInRectangle(background, eventData.position, eventData.pressEventCamera, out pos))
+            {
+                pos.x = pos.x / background.sizeDelta.x;
+                pos.y = pos.y / background.sizeDelta.y;
+                inputVector = new Vector2(pos.x * 2 , pos.y * 2 );
+                inputVector = (inputVector.magnitude > 1.0f) ? inputVector.normalized : inputVector;
+                this.content.anchoredPosition = new Vector2(inputVector.x * mRadius, inputVector.y * mRadius);
+            }
+            print(inputVector);
+        }
+
+
     }
 }
 

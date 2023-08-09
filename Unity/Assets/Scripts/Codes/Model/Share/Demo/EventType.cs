@@ -44,6 +44,11 @@
             public Unit Unit;
         }
         
+        public struct SingleSceneMark
+        {
+           
+        }
+        
         public struct AlertError
         {
             public string Info;

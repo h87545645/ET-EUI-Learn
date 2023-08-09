@@ -14,7 +14,7 @@ namespace ET.Client
             _fragHore = frag;
             _fragHore.fragAnim.SetBool("standing", true);
             _fragHore.fragAnim.speed = 1f;
-            _fragHore.LastPosition = _fragHore.heroRenderer.transform.position;
+            _fragHore.CurrentPosition = _fragHore.heroRenderer.transform.position;
             // EventCenter.PostEvent(Game_Event.FragStanding);
             // EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.FrogEnterStanding() { unitId = _fragHore.unitId });
             // EventSystem.Instance.Publish(_fragHore.DomainScene(), new EventType.ChangeFrogState() { unitId = _fragHore.unitId , state = FrogState.Standing});

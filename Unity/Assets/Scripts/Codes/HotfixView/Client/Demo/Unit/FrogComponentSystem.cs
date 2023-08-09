@@ -142,7 +142,7 @@ namespace ET.Client
         
         public static void OnGuide(this FrogComponent self)
         {
-            self.LastPosition = new Vector2(-0.84f, -4.61f);
+            self.CurrentPosition = new Vector2(-0.84f, -4.61f);
             self.heroRigidbody2D.gameObject.SetActive(false);
             self.guideAnim.gameObject.SetActive(true);
             self.guideAnim.SetTrigger("guide");
@@ -150,7 +150,7 @@ namespace ET.Client
         
         public static void SetRecordPos(this FrogComponent self)
         {
-            self.heroRenderer.transform.position = self.LastPosition;
+            self.heroRenderer.transform.position = self.CurrentPosition;
         }
 
         public static void OnLight(this FrogComponent self,bool on)

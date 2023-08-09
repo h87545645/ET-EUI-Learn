@@ -25,6 +25,11 @@ namespace ET.Client
 			{
 				self.OnStartMatch().Coroutine();
 			}));
+			
+			self.View.E_SingleButtonButton.AddListener((() =>
+			{
+				self.OnSinglePlay().Coroutine();
+			}));
 		  
 			//机器人测试
 			self.View.E_MatchTestButton.AddListener((() =>
@@ -66,6 +71,12 @@ namespace ET.Client
 			await EnterMapHelper.EnterMapAsync(self.ClientScene());
 			self.ClientScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Lobby);
 		}
+		
+		public static async ETTask OnSinglePlay(this DlgLobby self)
+		{
+			await SceneChangeHelper.SinglePlaySceneChangeTo(self.ClientScene(),"FragGameMap",IdGenerater.Instance.GenerateInstanceId());
+		}
+
 		
 		public static async ETTask OnStartMatch(this DlgLobby self)
 		{

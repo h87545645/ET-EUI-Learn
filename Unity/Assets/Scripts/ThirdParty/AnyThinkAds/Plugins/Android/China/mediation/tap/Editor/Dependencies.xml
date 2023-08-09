@@ -1,0 +1,8 @@
+<dependencies>
+    <androidPackages>
+        <androidPackage spec="io.reactivex.rxjava2:rxjava:2.0.1"/>
+        <androidPackage spec="io.reactivex.rxjava2:rxandroid:2.0.1"/>
+        <androidPackage spec="com.squareup.okhttp3:okhttp:3.12.1"/>
+        <androidPackage spec="com.github.bumptech.glide:glide:4.9.0"/>
+    </androidPackages>
+</dependencies>

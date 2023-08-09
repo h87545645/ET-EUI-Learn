@@ -1,6 +1,6 @@
 ﻿Lang Code	EN	SCN
-^new_game	New Game	新游戏
-^continue_game	Continue	继续游戏
+^multiple_game	Multiplayer	多人游戏
+^single_game	Single Game	单人游戏
 ^rank	Rank	好友排行
 ^exit	Exit	退出游戏
 ^lang	中文	En
@@ -42,3 +42,4 @@
 ^ui_rank_jump	Best Jumps	最佳跳跃
 
 ^ui_ad_text	watch a video back to last position?	是否观看广告回到上一步的位置？
+^ui_ad_btn	watch	观看

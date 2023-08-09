@@ -12,6 +12,30 @@ namespace ET.Client
         
             Unit player = null;
             player = UnitHelper.GetMyUnitFromCurrentScene(curScene.DomainScene());
+            if (player.isSinglePlay)
+            {
+                curScene.GetComponent<FrogGameOperaComponent>().inputEnable = false;
+                await curScene.GetComponent<FrogGameComponent>().OnPlayerCompleted();
+                //游戏结束 弹出结算
+                M2C_FrogGameOver data = new M2C_FrogGameOver()
+                {
+                    BestTime = -1,
+                    GameTime = -1,
+                    JumpCnt = player.JumpCnt,
+                    PlayerName = player.PlayerName,
+                    WinCnt = -1,
+                    WinPlayerId = player.Id
+                };
+                EventSystem.Instance.Publish(scene.GetComponent<ClientSceneManagerComponent>().Get(1), new EventType.GameOverPopRecord(){msg = data});
+                //删除unit
+                UnitComponent unitComponent = curScene?.GetComponent<UnitComponent>();
+                if (unitComponent == null)
+                {
+                    return;
+                }
+                unitComponent.RemoveAll();
+                return;
+            }
             //如果是自己
             if (args.unitId == player.Id)
             {

@@ -5,12 +5,22 @@ using UnityEngine;
 namespace ET.Client
 {
     [Event(SceneType.Current)]
+    [FriendOf(typeof(FrogGameComponent))]
     [FriendOf(typeof(FrogComponent))]
     public class ChangePosition_SyncGameObjectPos: AEvent<EventType.ChangePosition>
     {
         protected override async ETTask Run(Scene scene, EventType.ChangePosition args)
         {
+            // if (scene.GetComponent<FrogGameComponent>() == null || scene.GetComponent<FrogGameComponent>().isSinglePlay)
+            // {
+            //     return;
+            // }
+            
             Unit unit = args.Unit;
+            if (unit.isSinglePlay)
+            {
+                return;
+            }
             FrogComponent frog = unit.GetComponent<FrogComponent>();
             if (frog == null)
             {
@@ -23,6 +33,10 @@ namespace ET.Client
 
             //找到其他玩家
             Dictionary<long,Unit> units = scene.GetComponent<UnitComponent>().GetAll();
+            if (units.Count < 2)
+            {
+                return;
+            }
             UpdateFrogArrow(units);
             await ETTask.CompletedTask;
         }

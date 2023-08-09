@@ -22,11 +22,21 @@ namespace ET.Client
 		
 		public static async ETTask OnWatchAdClickHandler(this DlgWatchAd self)
 		{
-			
-			Unit player = UnitHelper.GetMyUnitFromClientScene(self.DomainScene());
-			FrogComponent frogComponent = player.GetComponent<FrogComponent>();
-			frogComponent.Back2LastPos();
-			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_WatchAd);
+			AnyThinkAdHelper.Instance.ShowActiveAd( (bool suc) =>
+			{
+				Debug.Log("------------------------ShowActiveAd cb suc ? : " + suc);
+				if (suc)
+				{
+					UnityMainThreadDispatcher.Instance().Enqueue(() =>
+					{
+						Unit player = UnitHelper.GetMyUnitFromClientScene(self.DomainScene());
+						FrogComponent frogComponent = player.GetComponent<FrogComponent>();
+						frogComponent.Back2LastPos();
+						self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_WatchAd);
+					});
+				
+				}
+			});
 		}
 
 		public static void OnCloseClickHandler(this DlgWatchAd self)

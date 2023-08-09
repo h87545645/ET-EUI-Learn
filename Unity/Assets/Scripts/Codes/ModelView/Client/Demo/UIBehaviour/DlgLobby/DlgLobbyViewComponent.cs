@@ -109,7 +109,7 @@ namespace ET.Client
      		}
      	}
 
-		public UnityEngine.UI.Button E_ContinueButtonButton
+		public UnityEngine.UI.Button E_SingleButtonButton
      	{
      		get
      		{
@@ -118,11 +118,11 @@ namespace ET.Client
      				Log.Error("uiTransform is null.");
      				return null;
      			}
-     			if( this.m_E_ContinueButtonButton == null )
+     			if( this.m_E_SingleButtonButton == null )
      			{
-		    		this.m_E_ContinueButtonButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"EGBackGround/middleButtons/E_ContinueButton");
+		    		this.m_E_SingleButtonButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"EGBackGround/middleButtons/E_SingleButton");
      			}
-     			return this.m_E_ContinueButtonButton;
+     			return this.m_E_SingleButtonButton;
      		}
      	}
 
@@ -254,7 +254,7 @@ namespace ET.Client
 			this.m_E_MatchTestButton = null;
 			this.m_E_MatchTestImage = null;
 			this.m_E_FastMatchButtonButton = null;
-			this.m_E_ContinueButtonButton = null;
+			this.m_E_SingleButtonButton = null;
 			this.m_E_RecordRankButtonButton = null;
 			this.m_E_ExitButtonButton = null;
 			this.m_E_ExitButtonImage = null;
@@ -272,7 +272,7 @@ namespace ET.Client
 		private UnityEngine.UI.Button m_E_MatchTestButton = null;
 		private UnityEngine.UI.Image m_E_MatchTestImage = null;
 		private UnityEngine.UI.Button m_E_FastMatchButtonButton = null;
-		private UnityEngine.UI.Button m_E_ContinueButtonButton = null;
+		private UnityEngine.UI.Button m_E_SingleButtonButton = null;
 		private UnityEngine.UI.Button m_E_RecordRankButtonButton = null;
 		private UnityEngine.UI.Button m_E_ExitButtonButton = null;
 		private UnityEngine.UI.Image m_E_ExitButtonImage = null;

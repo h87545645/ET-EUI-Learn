@@ -129,8 +129,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	//System.ValueTuple`2<System.UInt32,System.UInt32>
 	//System.ValueTuple`2<System.UInt32,System.Object>
 	//System.ValueTuple`2<System.Int32,System.Object>
-	//UnityEngine.Events.UnityAction`1<System.Byte>
 	//UnityEngine.Events.UnityAction`1<System.Object>
+	//UnityEngine.Events.UnityAction`1<System.Byte>
 	//UnityEngine.Events.UnityAction`1<System.Int32>
 	//UnityEngine.Events.UnityEvent`1<System.Byte>
 	//UnityEngine.Events.UnityEvent`1<System.Object>

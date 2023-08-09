@@ -10,7 +10,7 @@ namespace ET.Client
         {
             scene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Lobby);
             Scene currentScene = scene.CurrentScene();
-            
+           
             
             /*
             * @Author: Simon
@@ -32,8 +32,8 @@ namespace ET.Client
 
             // await SceneManager.LoadSceneAsync(currentScene.Name);
             
+           
             currentScene.AddComponent<FrogGameComponent>();
-			
 
             currentScene.AddComponent<FrogGameOperaComponent>();
         }

@@ -37,9 +37,17 @@ namespace ET.Client
         public Vector2 LastPosition
         {
             get { return _lastPosition; }
+        }
+        
+        private Vector2 _currentPosition = Vector2.zero;
+        
+        public Vector2 CurrentPosition
+        {
+            get { return _currentPosition; }
             set
             {
-                _lastPosition = value;
+                _lastPosition = this._currentPosition;
+                _currentPosition = value;
                 if (this.IsMyPlayer)
                 {
                     EventSystem.Instance.Publish(this.DomainScene(), new EventType.FrogLastPosition() { Position = new float2(value.x , value.y) });

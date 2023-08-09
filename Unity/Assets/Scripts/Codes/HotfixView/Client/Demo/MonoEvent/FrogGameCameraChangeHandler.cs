@@ -11,6 +11,10 @@ namespace ET.Client
         {
             Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
             Unit player = curScene.GetComponent<UnitComponent>().Get(args.UnitId);
+            if (player == null)
+            {
+                return;
+            }
             player.GetComponent<FrogComponent>().currentCameraIndex = args.Index;
             if (curScene.GetComponent<FrogGameComponent>() != null)
             {

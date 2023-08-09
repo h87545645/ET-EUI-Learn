@@ -189,6 +189,7 @@
     <type fullname="ET.WinPeriod" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Loader">
+    <type fullname="ET.AnyThinkAdHelper" preserve="all" />
     <type fullname="ET.Client.GameObjectPoolHelper" preserve="all" />
     <type fullname="ET.CodeLoader" preserve="all" />
     <type fullname="ET.CodeMode" preserve="all" />

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 
 namespace ET.Client
 {
@@ -10,5 +11,7 @@ namespace ET.Client
 
 		public Dictionary<int, Scroll_Item_serverTest> ScrollItemServerTests;
 
+		public TMP_InputField accountInput;
+		public TMP_InputField passwordInput;
 	}
 }

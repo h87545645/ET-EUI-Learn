@@ -34,6 +34,9 @@
 ^ui_norecord	No Record	暂无记录
 
 ^ui_login_btn	Sign in/Sign up	登录/注册
+^ui_login_account	ACCOUNT	账号
+^ui_login_password	PASSWORD	密码
+
 ^ui_rank_title	Hall of Fame	排行榜
 ^ui_rank_name	Player	玩家
 ^ui_rank_rank	Rank	排名

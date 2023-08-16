@@ -50,7 +50,7 @@ namespace ET
 			//广告初始化
 			Game.AddSingleton<AnyThinkAdHelper>();
 			ATSDKAPI.initSDK("a64b54aca97f87", "23498cc3f3876487a682a6407e1959ce");
-			ATSDKAPI.setLogDebug(true);
+			// ATSDKAPI.setLogDebug(true);
 			ATSDKAPI.setChannel("unity3d_taptap_channel");
 			AnyThinkAdHelper.Instance.addAutoLoadAdPlacementID();
 			// await TimerComponent.Instance.WaitAsync(2000);

@@ -42,10 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\UniSingleton.cs" />
-     <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\SingletonInstance.cs" />
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\UniSingletonDriver.cs" />
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\ISingleton.cs" />
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\UniLogger.cs" />
+     <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\SingletonInstance.cs" />
      <None Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime\UniSingleton.asmdef" />
      <Folder Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\UniFramework\UniSingleton\Runtime" />
      <Reference Include="UnityEngine">
@@ -303,6 +303,9 @@
      <Reference Include="SharpCompress">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
      </Reference>
+     <Reference Include="log4netPlastic">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
      <Reference Include="NLog">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\NLog.dll</HintPath>
      </Reference>
@@ -321,8 +324,20 @@
      <Reference Include="MongoDB.Driver.Core">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Plastic.Newtonsoft.Json">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.TextureAssets">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+     </Reference>
      <Reference Include="Google.IOSResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.IOSResolver.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Google.JarResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.JarResolver.dll</HintPath>
@@ -342,17 +357,23 @@
      <Reference Include="LZ4">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.focus-creative-games.hybridclr_unity@00cedc166f\Plugins\LZ4.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.IonicZip">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+     </Reference>
      <Reference Include="CommandLine">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\CommandLine.dll</HintPath>
-     </Reference>
-     <Reference Include="MongoDB.Driver">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Pdb">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
      </Reference>
+     <Reference Include="MongoDB.Driver">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+     </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Google.PackageManagerResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.PackageManagerResolver.dll</HintPath>
@@ -360,44 +381,23 @@
      <Reference Include="Google.VersionHandler">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.YamlDotNet">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+     </Reference>
      <Reference Include="DOTweenEditor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
      </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-     </Reference>
-     <Reference Include="log4netPlastic">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.TextureAssets">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.IonicZip">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.YamlDotNet">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-     </Reference>
-     <Reference Include="unityplastic">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\U3D\U3D_engine\Unity 2021.2.7f1c1\Editor\2021.3.16f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

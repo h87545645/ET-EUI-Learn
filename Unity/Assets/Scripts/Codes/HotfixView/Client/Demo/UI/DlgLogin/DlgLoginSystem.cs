@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using Honeti;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,9 @@ namespace ET.Client
 		   self.View.E_LoginButton.onClick.AddListener(self.OnLoginClickHandler);
 		   // self.View.E_LangButtonButton.AddListener(self.OnTranslation);
 		   self.View.ESLangButton.RegisterUIEvent();
+		   
+		   self.accountInput = self.View.E_AccountImage.gameObject.GetComponent<TMP_InputField>();
+		   self.passwordInput = self.View.E_PasswordImage.gameObject.GetComponent<TMP_InputField>();
 		}
 
 		public static void ShowWindow(this DlgLogin self, Entity contextData = null)
@@ -27,14 +31,9 @@ namespace ET.Client
 
 		public static void OnLoginClickHandler(this DlgLogin self)
 		{
-			LoginHelper.Login(self.ClientScene(), self.View.E_AccountInputField.text, self.View.E_PasswordInputField.text).Coroutine();
+			LoginHelper.Login(self.ClientScene(), self.accountInput.text, self.passwordInput.text).Coroutine();
 		}
 		
-		// public static void OnTranslation(this DlgLogin self)
-		// {
-		// 	LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
-		// 	Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
-		// }
 		
 	}
 }

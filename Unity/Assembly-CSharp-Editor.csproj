@@ -42,8 +42,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\ThirdParty\StreamingAssetsHelper\Editor\StreamingAssetsHelperEditor.cs" />
-     <Compile Include="Assets\Res\GameAssets\Chain\ChainPack\Chain2D\Editor\ChainEditor.cs" />
      <Compile Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\GameScript\Editor\Encryption.cs" />
+     <Compile Include="Assets\Res\GameAssets\Chain\ChainPack\Chain2D\Editor\ChainEditor.cs" />
      <Folder Include="Assets\Samples\YooAsset\1.4.9\Space Shooter\GameScript\Editor" />
      <Folder Include="Assets\ExternalDependencyManager\Editor" />
      <Folder Include="Assets\Res\GameAssets\Chain\ChainPack\Chain2D\Editor" />
@@ -320,6 +320,9 @@
      <Reference Include="SharpCompress">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
      </Reference>
+     <Reference Include="log4netPlastic">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
      <Reference Include="NLog">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\NLog.dll</HintPath>
      </Reference>
@@ -338,8 +341,20 @@
      <Reference Include="MongoDB.Driver.Core">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Plastic.Newtonsoft.Json">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.TextureAssets">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+     </Reference>
      <Reference Include="Google.IOSResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.IOSResolver.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Google.JarResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.JarResolver.dll</HintPath>
@@ -359,17 +374,23 @@
      <Reference Include="LZ4">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.focus-creative-games.hybridclr_unity@00cedc166f\Plugins\LZ4.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.IonicZip">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+     </Reference>
      <Reference Include="CommandLine">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\CommandLine.dll</HintPath>
-     </Reference>
-     <Reference Include="MongoDB.Driver">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Pdb">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
      </Reference>
+     <Reference Include="MongoDB.Driver">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+     </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Google.PackageManagerResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.PackageManagerResolver.dll</HintPath>
@@ -377,44 +398,23 @@
      <Reference Include="Google.VersionHandler">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.YamlDotNet">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+     </Reference>
      <Reference Include="DOTweenEditor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
      </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-     </Reference>
-     <Reference Include="log4netPlastic">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.TextureAssets">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.IonicZip">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.YamlDotNet">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-     </Reference>
-     <Reference Include="unityplastic">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -806,14 +806,11 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:\U3D\U3D_engine\Unity 2021.2.7f1c1\Editor\2021.3.16f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.TestRunner">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.TestRunner">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.2D.Tilemap.Extras">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+     <Reference Include="UnityEngine.TestRunner">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
      </Reference>
      <Reference Include="HybridCLR.Runtime">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
@@ -824,14 +821,8 @@
      <Reference Include="YooAsset.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.2D.Tilemap.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.CacheServer">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
@@ -839,11 +830,65 @@
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.State.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Searcher.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InputSystem">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ShaderGraph.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="YooAsset">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\YooAsset.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Extras">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Core.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -851,38 +896,35 @@
      <Reference Include="Unity.Burst.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Searcher.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEditor.UI">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="HybridCLR.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.UI">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Tilemap.Extras.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="HybridCLR.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Core">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     <Reference Include="Unity.Services.Core.Analytics">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
@@ -890,8 +932,11 @@
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     <Reference Include="Unity.VisualScripting.Shared.Editor">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Environments">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -899,14 +944,8 @@
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
-     </Reference>
-     <Reference Include="YooAsset">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\YooAsset.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
@@ -914,44 +953,8 @@
      <Reference Include="Unity.RenderPipelines.Core.Editor">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InputSystem">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Services.Core">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -963,10 +966,6 @@
       <Project>{03938ccd-4b40-8dfb-6b9b-21988d5cac0a}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="UniMachine.csproj">
-      <Project>{ceea8fca-7360-d2c6-8418-6a4970621cf4}</Project>
-      <Name>UniMachine</Name>
-    </ProjectReference>
     <ProjectReference Include="UniSingleton.csproj">
       <Project>{99a74f9c-21ab-3156-3e7a-c41e268ff81e}</Project>
       <Name>UniSingleton</Name>
@@ -974,6 +973,22 @@
     <ProjectReference Include="UniEvent.csproj">
       <Project>{3a0728c5-c737-99e9-92ec-d8f4fdf769c9}</Project>
       <Name>UniEvent</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.HotfixView.csproj">
+      <Project>{de4513d3-889b-5c52-8e9c-744c99ae7509}</Project>
+      <Name>Unity.HotfixView</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniWindow.csproj">
+      <Project>{ba6f6392-e2c2-c08c-8f19-cebeeb105805}</Project>
+      <Name>UniWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniMachine.csproj">
+      <Project>{ceea8fca-7360-d2c6-8418-6a4970621cf4}</Project>
+      <Name>UniMachine</Name>
     </ProjectReference>
     <ProjectReference Include="UniPooling.csproj">
       <Project>{ab94e2ff-d0b7-44ff-d8c5-adfc4f78cb58}</Project>
@@ -990,14 +1005,6 @@
     <ProjectReference Include="AnyThinkPlugin.Script.IntegrationManager.Editor.csproj">
       <Project>{e1306e17-fba6-ce11-83de-4a476d5633c4}</Project>
       <Name>AnyThinkPlugin.Script.IntegrationManager.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.HotfixView.csproj">
-      <Project>{de4513d3-889b-5c52-8e9c-744c99ae7509}</Project>
-      <Name>Unity.HotfixView</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniWindow.csproj">
-      <Project>{ba6f6392-e2c2-c08c-8f19-cebeeb105805}</Project>
-      <Name>UniWindow</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Model.csproj">
       <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
@@ -1022,10 +1029,6 @@
     <ProjectReference Include="Unity.Core.csproj">
       <Project>{770e9beb-b313-3761-faa2-76daf4b34ada}</Project>
       <Name>Unity.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

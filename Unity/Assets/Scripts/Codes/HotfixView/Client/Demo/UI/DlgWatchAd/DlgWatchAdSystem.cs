@@ -22,6 +22,7 @@ namespace ET.Client
 		
 		public static async ETTask OnWatchAdClickHandler(this DlgWatchAd self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			AnyThinkAdHelper.Instance.ShowActiveAd( (bool suc) =>
 			{
 				Debug.Log("------------------------ShowActiveAd cb suc ? : " + suc);
@@ -41,6 +42,7 @@ namespace ET.Client
 
 		public static void OnCloseClickHandler(this DlgWatchAd self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_WatchAd);
 		}
 		

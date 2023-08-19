@@ -18,7 +18,7 @@ namespace ET.Client
             protected override void Awake(FrogGameComponent self)
             {
                 self.globalLight = GameObject.FindWithTag("FrogLight").GetComponent<Light2D>();
-                
+                AudioPlayManager.instance.PlayBgm("game_bgm_jungle");
             }
             
         }

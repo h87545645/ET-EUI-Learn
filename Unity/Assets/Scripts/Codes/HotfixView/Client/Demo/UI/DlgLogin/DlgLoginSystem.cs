@@ -31,6 +31,7 @@ namespace ET.Client
 
 		public static void OnLoginClickHandler(this DlgLogin self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			LoginHelper.Login(self.ClientScene(), self.accountInput.text, self.passwordInput.text).Coroutine();
 		}
 		

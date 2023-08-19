@@ -98,3 +98,16 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: AotDlls
         UserData: 
+    - GroupName: audio
+      GroupDesc: "\u97F3\u6548"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Audio
+        CollectorGUID: 48d731f9358dc8d48be9f138fd9107f7
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

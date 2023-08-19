@@ -186,6 +186,7 @@ namespace ET.Client
         {
             WindowID windowsId = self.GetWindowIdByGeneric<T>();
             self.ShowWindow(windowsId,showData);
+            AudioPlayManager.instance.PlayOnceAudio("dlg_pop");
         }
         
         /// <summary>
@@ -203,6 +204,7 @@ namespace ET.Client
                 if (null != baseWindow)
                 {
                     self.RealShowWindow(baseWindow, id, showData);
+                    AudioPlayManager.instance.PlayOnceAudio("dlg_pop");
                 }
             }
             catch (Exception e)

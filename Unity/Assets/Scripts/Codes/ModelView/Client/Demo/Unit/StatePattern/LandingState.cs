@@ -18,6 +18,7 @@ public class LandingState : IBaseState
         _fragHore.heroRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         EventSystem.Instance.PublishAsync(Root.Instance.Scene, new ET.EventType.FrogLanded(){unitId = frag.unitId});
         Debug.Log("------------------------FragHore in LandingState~!");
+        AudioPlayManager.instance.PlayOnceAudio("frog_land");
     }
 
     public void Update()

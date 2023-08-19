@@ -43,10 +43,18 @@ public class JumpingState : IBaseState
         }
  
         frag.GetParent<Unit>().JumpCnt++;
-
+   
         //_fragHore.heroRigidbody2D.AddForce(frag.direction == Game_Direction.Left ? Vector2.left * chargeVaule :  Vector2.right * chargeVaule);
         //_fragHore.heroRigidbody2D.velocity = force;
         Debug.Log("------------------------Heroine in JumpingState~!(������Ծ״̬��)");
+        this.PlayAudio();
+    }
+
+    private async ETTask PlayAudio()
+    {
+        AudioPlayManager.instance.PlayOnceAudio("frog_jump");
+        await TimerComponent.Instance.WaitAsync(100);
+        AudioPlayManager.instance.PlayOnceAudio("frog_jump2");
     }
 
     public void Update()

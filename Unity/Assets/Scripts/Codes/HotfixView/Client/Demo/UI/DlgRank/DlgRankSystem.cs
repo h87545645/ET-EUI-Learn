@@ -69,6 +69,7 @@ namespace ET.Client
 		
 		public static void OnCloseClickHandler(this DlgRank self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Rank);
 		}
 	}

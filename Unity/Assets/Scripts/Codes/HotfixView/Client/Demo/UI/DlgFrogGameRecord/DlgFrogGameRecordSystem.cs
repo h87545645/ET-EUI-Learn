@@ -39,6 +39,7 @@ namespace ET.Client
 
 		public static void OnBackLobbyClickHandler(this DlgFrogGameRecord self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FrogGameRecord);
 			EventSystem.Instance.Publish(self.ClientScene(), new EventType.BackToLobbyScene());
 		}

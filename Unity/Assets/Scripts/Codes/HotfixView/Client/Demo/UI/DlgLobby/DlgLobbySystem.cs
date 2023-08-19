@@ -17,7 +17,7 @@ namespace ET.Client
 
 		public static void RegisterUIEvent(this DlgLobby self)
 		{
-			self.View.E_EnterMapButton.AddListenerAsync(self.EnterMap);
+			// self.View.E_EnterMapButton.AddListenerAsync(self.EnterMap);
 			
 
 		  
@@ -31,11 +31,11 @@ namespace ET.Client
 				self.OnSinglePlay().Coroutine();
 			}));
 		  
-			//机器人测试
-			self.View.E_MatchTestButton.AddListener((() =>
-			{
-				self.OnRobotStartMatch().Coroutine();
-			}));
+			// //机器人测试
+			// self.View.E_MatchTestButton.AddListener((() =>
+			// {
+			// 	self.OnRobotStartMatch().Coroutine();
+			// }));
 			
 			self.View.E_RecordRankButtonButton.AddListener(() =>
 			{
@@ -54,6 +54,7 @@ namespace ET.Client
 		public static void ShowWindow(this DlgLobby self, Entity contextData = null)
 		{
 			self.RefreshPlayerInfo();
+			AudioPlayManager.instance.PlayBgm("lobby_bgm");
 		}
 
 		private static void RefreshPlayerInfo(this DlgLobby self)
@@ -80,6 +81,7 @@ namespace ET.Client
 		
 		public static async ETTask OnStartMatch(this DlgLobby self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			await MatchHelper.StartMatchAsync(self.ClientScene());
 		}
 		
@@ -88,6 +90,7 @@ namespace ET.Client
 		public static async ETTask OnRobotStartMatch(this DlgLobby self)
 		{
 			// await MatchHelper.StartMatchAsync(self.ZoneScene());
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			G2C_StartMatchResponse g2CStartMatch = await self.ClientScene().GetComponent<SessionComponent>().Session.Call(new C2G_StartMatchRequest()
 			{
 				RobotMatch = true
@@ -98,6 +101,7 @@ namespace ET.Client
 		{
 			try
 			{
+				AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 				self.View.E_RecordRankButtonButton.enabled = false;
 				G2C_GetRankInfoResponse g2cGetRankInfoResponse = await self.ClientScene().GetComponent<SessionComponent>().Session.Call
 						(new C2G_GetRankInfoRequest()) as G2C_GetRankInfoResponse;
@@ -116,6 +120,7 @@ namespace ET.Client
 
 		public static async ETTask OnNameEditEnd(this DlgLobby self , string text)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			if (text == self.CurrentPlayerName)
 			{
 				return;

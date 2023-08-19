@@ -23,6 +23,7 @@ namespace ET.Client
 
 		public static void OnCloseClickHandler(this DlgFrogMenu self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_FrogMenu);
 		}
 		
@@ -30,6 +31,7 @@ namespace ET.Client
 		{
 			try
 			{
+				AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 				//通知gate 回收房间
 				Unit player =  UnitHelper.GetMyUnitFromClientScene(self.ClientScene());
 				self.ClientScene().GetComponent<SessionComponent>().Session.Send(new C2G_PlayerExitRoomMessage(){UserID = player.UserID});

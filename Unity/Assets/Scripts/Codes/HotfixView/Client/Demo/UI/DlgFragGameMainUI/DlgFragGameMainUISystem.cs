@@ -47,7 +47,7 @@ namespace ET.Client
 			{
 				return;
 			}
-
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self._onPointerDownStart = true;
 			// EventCenter.PostEvent(Game_Event.FragGameCharge);
 			EventSystem.Instance.Publish(self.DomainScene(), new EventType.FrogEnterCharge() { });
@@ -81,16 +81,14 @@ namespace ET.Client
 		
 		public static void OnMenuClickHandler(this DlgFragGameMainUI self)
 		{
-			// if (!inputEnable)
-			// {
-			// 	return;
-			// }
-			// UIManager.GetInstance().ShowPanel<FragSettingPanel>("FragSettingPanel", E_UI_Layer.Tip);
+
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_FrogMenu);
 		}
 		
 		public static void OnBack2LastPosClickHandler(this DlgFragGameMainUI self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.ClientScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_WatchAd);
 		}
 		

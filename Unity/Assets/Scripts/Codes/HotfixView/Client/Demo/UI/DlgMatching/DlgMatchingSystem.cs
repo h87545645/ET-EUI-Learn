@@ -25,6 +25,7 @@ namespace ET.Client
 
 		public static async ETTask OnExitMatch(this DlgMatching self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			await MatchHelper.ExitMatchAsync(self.ClientScene());
 		}
 

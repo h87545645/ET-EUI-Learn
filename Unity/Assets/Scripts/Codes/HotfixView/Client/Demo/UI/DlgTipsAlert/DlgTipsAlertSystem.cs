@@ -26,6 +26,7 @@ namespace ET.Client
 		 
 		public static void OnConfirmClickHandler(this DlgTipsAlert self)
 		{
+			AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
 			self.DomainScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_TipsAlert);
 			// args.ZoneScene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
 		}

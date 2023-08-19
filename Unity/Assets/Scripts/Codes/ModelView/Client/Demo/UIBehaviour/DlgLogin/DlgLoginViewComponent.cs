@@ -18,7 +18,7 @@ namespace ET.Client
      			}
      			if( this.m_E_AccountImage == null )
      			{
-		    		this.m_E_AccountImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/loginView/E_Account");
+		    		this.m_E_AccountImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/UI/login/E_Account");
      			}
      			return this.m_E_AccountImage;
      		}
@@ -35,7 +35,7 @@ namespace ET.Client
      			}
      			if( this.m_E_PasswordImage == null )
      			{
-		    		this.m_E_PasswordImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/loginView/E_Password");
+		    		this.m_E_PasswordImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/UI/login/E_Password");
      			}
      			return this.m_E_PasswordImage;
      		}
@@ -52,7 +52,7 @@ namespace ET.Client
      			}
      			if( this.m_E_LoginButton == null )
      			{
-		    		this.m_E_LoginButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"Sprite_BackGround/loginView/E_Login");
+		    		this.m_E_LoginButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"Sprite_BackGround/UI/login/E_Login");
      			}
      			return this.m_E_LoginButton;
      		}
@@ -69,7 +69,7 @@ namespace ET.Client
      			}
      			if( this.m_E_LoginImage == null )
      			{
-		    		this.m_E_LoginImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/loginView/E_Login");
+		    		this.m_E_LoginImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"Sprite_BackGround/UI/login/E_Login");
      			}
      			return this.m_E_LoginImage;
      		}
@@ -86,7 +86,7 @@ namespace ET.Client
      			}
      			if( this.m_eslangbutton == null )
      			{
-		    	   Transform subTrans = UIFindHelper.FindDeepChild<Transform>(this.uiTransform.gameObject,"Sprite_BackGround/ESLangButton");
+		    	   Transform subTrans = UIFindHelper.FindDeepChild<Transform>(this.uiTransform.gameObject,"Sprite_BackGround/UI/ESLangButton");
 		    	   this.m_eslangbutton = this.AddChild<ESLangButton,Transform>(subTrans);
      			}
      			return this.m_eslangbutton;

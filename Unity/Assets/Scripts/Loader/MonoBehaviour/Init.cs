@@ -41,8 +41,7 @@ namespace ET
 		
 			ETTask.ExceptionHandler += Log.Error;
 			StartCoroutine(startHot());
-			this.InitAnyThinkAds();
-			
+	
 		}
 
 		private void InitAnyThinkAds()
@@ -64,6 +63,8 @@ namespace ET
 		{
 			yield return StartCoroutine(Hot.StartHot());
 			Game.AddSingleton<CodeLoader>().Start();
+			this.InitAnyThinkAds();
+			AudioPlayManager.instance.Init();
 		}
 
 		private void Update()

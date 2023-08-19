@@ -96,6 +96,7 @@ public class FragAnimEvent : MonoBehaviour
             _hasTurn = true;
             if (!isDown)
             {
+                AudioPlayManager.instance.PlayOnceAudio("frog_collider");
                 long unitId = this.gameObject.transform.parent.GetComponent<MonoBridge>().BelongToUnitId;
                 EventSystem.Instance.Publish(Root.Instance.Scene, new ET.EventType.FrogCollisionEnter2D(){isUp = isUp , isLeft = isLeft,unitId = unitId });
                 // if (isUp)

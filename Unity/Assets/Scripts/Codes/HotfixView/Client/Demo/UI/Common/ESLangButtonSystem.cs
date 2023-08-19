@@ -12,6 +12,7 @@ namespace ET.Client
         }
         public static void OnLangBtnClick(this ESLangButton self)
         {
+            AudioPlayManager.instance.PlayOnceAudio("buttoun_click");
             LanguageCode curr = Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.gameLang == LanguageCode.EN ? LanguageCode.SCN : LanguageCode.EN;
             Root.Instance.Scene.GetComponent<I18NComponent>().langMgr.setLanguage(curr);
             

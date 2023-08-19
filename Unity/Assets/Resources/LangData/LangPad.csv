@@ -46,3 +46,5 @@
 
 ^ui_ad_text	watch a video back to last position?	是否观看广告回到上一步的位置？
 ^ui_ad_btn	watch	观看
+
+^ui_ok_btn	ok	确定

@@ -533,6 +533,8 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 struct VolumeStack_t5DE94743BDB63D97EF5587DBDAE46468233F36E8;
 // UnityEngine.Rendering.Universal.XRPass
 struct XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24;
+// UnityEngine.Rendering.Universal.XRSystem
+struct XRSystem_tD2ADF9BFB353873D69355C806F4BB79CB26DC2BB;
 // UnityEngine.Rendering.Universal.XRSystemData
 struct XRSystemData_t89A064914358326F98105E94D5F082C186133DE6;
 // UnityEngine.Camera/CameraCallback
@@ -2753,36 +2755,38 @@ struct CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E
 	bool ___requiresOpaqueTexture_20;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::postProcessingRequiresDepthTexture
 	bool ___postProcessingRequiresDepthTexture_21;
+	// System.Boolean UnityEngine.Rendering.Universal.CameraData::xrRendering
+	bool ___xrRendering_22;
 	// UnityEngine.Rendering.SortingCriteria UnityEngine.Rendering.Universal.CameraData::defaultOpaqueSortFlags
-	int32_t ___defaultOpaqueSortFlags_22;
+	int32_t ___defaultOpaqueSortFlags_23;
 	// UnityEngine.Rendering.Universal.XRPass UnityEngine.Rendering.Universal.CameraData::xr
-	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_23;
+	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_24;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::isStereoEnabled
-	bool ___isStereoEnabled_24;
+	bool ___isStereoEnabled_25;
 	// System.Single UnityEngine.Rendering.Universal.CameraData::maxShadowDistance
-	float ___maxShadowDistance_25;
+	float ___maxShadowDistance_26;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::postProcessEnabled
-	bool ___postProcessEnabled_26;
+	bool ___postProcessEnabled_27;
 	// System.Collections.Generic.IEnumerator`1<System.Action`2<UnityEngine.Rendering.RenderTargetIdentifier,UnityEngine.Rendering.CommandBuffer>> UnityEngine.Rendering.Universal.CameraData::captureActions
-	RuntimeObject* ___captureActions_27;
+	RuntimeObject* ___captureActions_28;
 	// UnityEngine.LayerMask UnityEngine.Rendering.Universal.CameraData::volumeLayerMask
-	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_28;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_29;
 	// UnityEngine.Transform UnityEngine.Rendering.Universal.CameraData::volumeTrigger
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_29;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_30;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::isStopNaNEnabled
-	bool ___isStopNaNEnabled_30;
+	bool ___isStopNaNEnabled_31;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::isDitheringEnabled
-	bool ___isDitheringEnabled_31;
+	bool ___isDitheringEnabled_32;
 	// UnityEngine.Rendering.Universal.AntialiasingMode UnityEngine.Rendering.Universal.CameraData::antialiasing
-	int32_t ___antialiasing_32;
+	int32_t ___antialiasing_33;
 	// UnityEngine.Rendering.Universal.AntialiasingQuality UnityEngine.Rendering.Universal.CameraData::antialiasingQuality
-	int32_t ___antialiasingQuality_33;
+	int32_t ___antialiasingQuality_34;
 	// UnityEngine.Rendering.Universal.ScriptableRenderer UnityEngine.Rendering.Universal.CameraData::renderer
-	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_34;
+	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_35;
 	// System.Boolean UnityEngine.Rendering.Universal.CameraData::resolveFinalTarget
-	bool ___resolveFinalTarget_35;
+	bool ___resolveFinalTarget_36;
 	// UnityEngine.Vector3 UnityEngine.Rendering.Universal.CameraData::worldSpaceCameraPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_36;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_37;
 };
 // Native definition for P/Invoke marshalling of UnityEngine.Rendering.Universal.CameraData
 struct CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E_marshaled_pinvoke
@@ -2809,21 +2813,22 @@ struct CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E_marshaled_pinvoke
 	int32_t ___requiresDepthTexture_19;
 	int32_t ___requiresOpaqueTexture_20;
 	int32_t ___postProcessingRequiresDepthTexture_21;
-	int32_t ___defaultOpaqueSortFlags_22;
-	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_23;
-	int32_t ___isStereoEnabled_24;
-	float ___maxShadowDistance_25;
-	int32_t ___postProcessEnabled_26;
-	RuntimeObject* ___captureActions_27;
-	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_28;
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_29;
-	int32_t ___isStopNaNEnabled_30;
-	int32_t ___isDitheringEnabled_31;
-	int32_t ___antialiasing_32;
-	int32_t ___antialiasingQuality_33;
-	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_34;
-	int32_t ___resolveFinalTarget_35;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_36;
+	int32_t ___xrRendering_22;
+	int32_t ___defaultOpaqueSortFlags_23;
+	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_24;
+	int32_t ___isStereoEnabled_25;
+	float ___maxShadowDistance_26;
+	int32_t ___postProcessEnabled_27;
+	RuntimeObject* ___captureActions_28;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_29;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_30;
+	int32_t ___isStopNaNEnabled_31;
+	int32_t ___isDitheringEnabled_32;
+	int32_t ___antialiasing_33;
+	int32_t ___antialiasingQuality_34;
+	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_35;
+	int32_t ___resolveFinalTarget_36;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_37;
 };
 // Native definition for COM marshalling of UnityEngine.Rendering.Universal.CameraData
 struct CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E_marshaled_com
@@ -2850,21 +2855,22 @@ struct CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E_marshaled_com
 	int32_t ___requiresDepthTexture_19;
 	int32_t ___requiresOpaqueTexture_20;
 	int32_t ___postProcessingRequiresDepthTexture_21;
-	int32_t ___defaultOpaqueSortFlags_22;
-	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_23;
-	int32_t ___isStereoEnabled_24;
-	float ___maxShadowDistance_25;
-	int32_t ___postProcessEnabled_26;
-	RuntimeObject* ___captureActions_27;
-	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_28;
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_29;
-	int32_t ___isStopNaNEnabled_30;
-	int32_t ___isDitheringEnabled_31;
-	int32_t ___antialiasing_32;
-	int32_t ___antialiasingQuality_33;
-	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_34;
-	int32_t ___resolveFinalTarget_35;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_36;
+	int32_t ___xrRendering_22;
+	int32_t ___defaultOpaqueSortFlags_23;
+	XRPass_t0A618D61DBC9E3F8BC970B7C9D2679375C6C8A24* ___xr_24;
+	int32_t ___isStereoEnabled_25;
+	float ___maxShadowDistance_26;
+	int32_t ___postProcessEnabled_27;
+	RuntimeObject* ___captureActions_28;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___volumeLayerMask_29;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___volumeTrigger_30;
+	int32_t ___isStopNaNEnabled_31;
+	int32_t ___isDitheringEnabled_32;
+	int32_t ___antialiasing_33;
+	int32_t ___antialiasingQuality_34;
+	ScriptableRenderer_tF15B95BB85F26BE4B4719901D909831B89DC8892* ___renderer_35;
+	int32_t ___resolveFinalTarget_36;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___worldSpaceCameraPos_37;
 };
 
 // UnityEngine.Rendering.CameraProperties
@@ -3479,13 +3485,13 @@ struct Tess_t7B8FDFE79A7142C788094216BAC1EB689299880C  : public RuntimeObject
 struct UniversalRenderPipeline_t54B4737DC500C08628C5BE283D8C583C14DED98F  : public RenderPipeline_t3AF1E2046D27ABCEBA2279770AADA9F531073E69
 {
 	// UnityEngine.Rendering.Universal.DebugDisplaySettingsUI UnityEngine.Rendering.Universal.UniversalRenderPipeline::m_DebugDisplaySettingsUI
-	DebugDisplaySettingsUI_t16FBAC93CDA078181AFB20CDCD38F13196BB9BD6* ___m_DebugDisplaySettingsUI_6;
+	DebugDisplaySettingsUI_t16FBAC93CDA078181AFB20CDCD38F13196BB9BD6* ___m_DebugDisplaySettingsUI_7;
 	// UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings UnityEngine.Rendering.Universal.UniversalRenderPipeline::m_GlobalSettings
-	UniversalRenderPipelineGlobalSettings_t895E975CCCA62A6DE4F820C0109953EF6D83B9F0* ___m_GlobalSettings_7;
+	UniversalRenderPipelineGlobalSettings_t895E975CCCA62A6DE4F820C0109953EF6D83B9F0* ___m_GlobalSettings_8;
 	// UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset UnityEngine.Rendering.Universal.UniversalRenderPipeline::pipelineAsset
-	UniversalRenderPipelineAsset_tE8A9AA6F030CC3B558CEA2EB54FFF4FC58CA6232* ___pipelineAsset_8;
+	UniversalRenderPipelineAsset_tE8A9AA6F030CC3B558CEA2EB54FFF4FC58CA6232* ___pipelineAsset_9;
 	// System.Comparison`1<UnityEngine.Camera> UnityEngine.Rendering.Universal.UniversalRenderPipeline::cameraComparison
-	Comparison_1_t49BE56523BDD8BC22EF3396960546FE16DE7B11A* ___cameraComparison_16;
+	Comparison_1_t49BE56523BDD8BC22EF3396960546FE16DE7B11A* ___cameraComparison_17;
 };
 
 // UnityEngine.Rendering.Universal.DebugDisplaySettingsLighting/Strings
@@ -6046,22 +6052,24 @@ struct ScriptableRenderContext_t5AB09B3602BEB456E0DC3D53926D3A3BDAF08E36_StaticF
 // UnityEngine.Rendering.Universal.UniversalRenderPipeline
 struct UniversalRenderPipeline_t54B4737DC500C08628C5BE283D8C583C14DED98F_StaticFields
 {
+	// UnityEngine.Rendering.Universal.XRSystem UnityEngine.Rendering.Universal.UniversalRenderPipeline::m_XRSystem
+	XRSystem_tD2ADF9BFB353873D69355C806F4BB79CB26DC2BB* ___m_XRSystem_2;
 	// UnityEngine.Vector4 UnityEngine.Rendering.Universal.UniversalRenderPipeline::k_DefaultLightPosition
-	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightPosition_9;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightPosition_10;
 	// UnityEngine.Vector4 UnityEngine.Rendering.Universal.UniversalRenderPipeline::k_DefaultLightColor
-	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightColor_10;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightColor_11;
 	// UnityEngine.Vector4 UnityEngine.Rendering.Universal.UniversalRenderPipeline::k_DefaultLightAttenuation
-	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightAttenuation_11;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightAttenuation_12;
 	// UnityEngine.Vector4 UnityEngine.Rendering.Universal.UniversalRenderPipeline::k_DefaultLightSpotDirection
-	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightSpotDirection_12;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightSpotDirection_13;
 	// UnityEngine.Vector4 UnityEngine.Rendering.Universal.UniversalRenderPipeline::k_DefaultLightsProbeChannel
-	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightsProbeChannel_13;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___k_DefaultLightsProbeChannel_14;
 	// System.Collections.Generic.List`1<UnityEngine.Vector4> UnityEngine.Rendering.Universal.UniversalRenderPipeline::m_ShadowBiasData
-	List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___m_ShadowBiasData_14;
+	List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___m_ShadowBiasData_15;
 	// System.Collections.Generic.List`1<System.Int32> UnityEngine.Rendering.Universal.UniversalRenderPipeline::m_ShadowResolutionData
-	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___m_ShadowResolutionData_15;
+	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___m_ShadowResolutionData_16;
 	// UnityEngine.Experimental.GlobalIllumination.Lightmapping/RequestLightsDelegate UnityEngine.Rendering.Universal.UniversalRenderPipeline::lightsDelegate
-	RequestLightsDelegate_t585505A75681754DA53BE119D8611B605F0243BB* ___lightsDelegate_17;
+	RequestLightsDelegate_t585505A75681754DA53BE119D8611B605F0243BB* ___lightsDelegate_18;
 };
 
 // UnityEngine.Rendering.Universal.UniversalRenderPipeline
@@ -9554,7 +9562,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer2D_CreateRenderTextures_mEB69456
 	}
 	{
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_6 = ___0_cameraData;
-		bool L_7 = L_6->___postProcessEnabled_26;
+		bool L_7 = L_6->___postProcessEnabled_27;
 		G_B3_0 = G_B2_0;
 		if (L_7)
 		{
@@ -9606,7 +9614,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer2D_CreateRenderTextures_mEB69456
 	}
 	{
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_16 = ___0_cameraData;
-		bool L_17 = L_16->___resolveFinalTarget_35;
+		bool L_17 = L_16->___resolveFinalTarget_36;
 		G_B8_0 = G_B7_0;
 		if (!L_17)
 		{
@@ -9648,7 +9656,7 @@ IL_0070:
 		G_B11_1->___m_CreateColorTexture_48 = (bool)G_B11_0;
 		// m_CreateDepthTexture = !cameraData.resolveFinalTarget && m_UseDepthStencilBuffer;
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_23 = ___0_cameraData;
-		bool L_24 = L_23->___resolveFinalTarget_35;
+		bool L_24 = L_23->___resolveFinalTarget_36;
 		G_B12_0 = __this;
 		if (L_24)
 		{
@@ -9967,7 +9975,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer2D_Setup_m60E33D5C5DC46EE239ADB9
 		V_2 = L_5;
 		// bool lastCameraInStack = cameraData.resolveFinalTarget;
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_6 = V_0;
-		bool L_7 = L_6->___resolveFinalTarget_35;
+		bool L_7 = L_6->___resolveFinalTarget_36;
 		V_3 = L_7;
 		// var colorTextureFilterMode = FilterMode.Bilinear;
 		V_4 = 1;
@@ -10387,7 +10395,7 @@ IL_0276:
 	}
 	{
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_97 = V_0;
-		int32_t L_98 = L_97->___antialiasing_32;
+		int32_t L_98 = L_97->___antialiasing_33;
 		G_B37_0 = ((((int32_t)L_98) == ((int32_t)1))? 1 : 0);
 		goto IL_0286;
 	}
@@ -30546,7 +30554,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugHandler_UpdateShaderGlobalPropertie
 	}
 	{
 		CameraData_tC27AE109CD20677486A4AC19C0CF014AE0F50C3E* L_1 = ___1_cameraData;
-		bool L_2 = L_1->___resolveFinalTarget_35;
+		bool L_2 = L_1->___resolveFinalTarget_36;
 		G_B3_0 = ((int32_t)(L_2));
 		goto IL_000d;
 	}

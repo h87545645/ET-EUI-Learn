@@ -8109,8 +8109,32 @@ inline void Dictionary_2__ctor_mCA698A0BABE3E4F16FE55D7F66B93DC799B2BB45 (Dictio
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enum_TryParse_m181C95C283BAB5BAC27224F59FEB52F13F9D2A70 (Type_t* ___0_enumType, String_t* ___1_value, RuntimeObject** ___2_result, const RuntimeMethod* method) ;
 // System.String[] System.Enum::GetNames(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Enum_GetNames_m382A68AE28D7B6035331EC0685315144F15957C3 (Type_t* ___0_enumType, const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.Rendering.XRGraphics::get_enabled()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA (const RuntimeMethod* method) ;
+// System.Single UnityEngine.XR.XRSettings::get_eyeTextureResolutionScale()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float XRSettings_get_eyeTextureResolutionScale_m335B9DB51528FCA7534FCD6828796395D63ADA90 (const RuntimeMethod* method) ;
+// System.Void UnityEngine.XR.XRSettings::set_eyeTextureResolutionScale(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRSettings_set_eyeTextureResolutionScale_m92F1029D68F387D9B0C2DB35DFAB2FD82C64A30B (float ___0_value, const RuntimeMethod* method) ;
+// System.Single UnityEngine.XR.XRSettings::get_renderViewportScale()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float XRSettings_get_renderViewportScale_mB35A32F5FE6B2EEE0CEF95ADFC04F171B6E5F5D1 (const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.XR.XRSettings::get_enabled()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRSettings_get_enabled_mC22ABF5BF7D835DAB861A1FA384DBB8904D15E70 (const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.XR.XRSettings::get_isDeviceActive()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRSettings_get_isDeviceActive_m0C8A5F7EC76EF392020137915E4DD8E75EBDD6B8 (const RuntimeMethod* method) ;
+// System.String UnityEngine.XR.XRSettings::get_loadedDeviceName()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XRSettings_get_loadedDeviceName_mAEB3908916B98A9E8CF2FD8754B5AAB096245243 (const RuntimeMethod* method) ;
+// System.String[] UnityEngine.XR.XRSettings::get_supportedDevices()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* XRSettings_get_supportedDevices_m9ABC69D1044484DF7ED2B236AFCCD8BF107BB74C (const RuntimeMethod* method) ;
+// UnityEngine.XR.XRSettings/StereoRenderingMode UnityEngine.XR.XRSettings::get_stereoRenderingMode()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRSettings_get_stereoRenderingMode_mD66918C11E2216B1F8FA76934F79D5F85BC303FC (const RuntimeMethod* method) ;
+// UnityEngine.RenderTextureDescriptor UnityEngine.XR.XRSettings::get_eyeTextureDesc()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 XRSettings_get_eyeTextureDesc_mFBE8F6D5D5A23E4DE1BCCD994ADFAB4FB11D7A19 (const RuntimeMethod* method) ;
 // System.Void UnityEngine.RenderTextureDescriptor::.ctor(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RenderTextureDescriptor__ctor_m0D1C84B1D245FA247C36A59D816BBB179E0670D1 (RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46* __this, int32_t ___0_width, int32_t ___1_height, const RuntimeMethod* method) ;
+// System.Int32 UnityEngine.XR.XRSettings::get_eyeTextureWidth()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRSettings_get_eyeTextureWidth_m3B18AF3F3382398E2A818B2B01AA1FE90FEB3AAF (const RuntimeMethod* method) ;
+// System.Int32 UnityEngine.XR.XRSettings::get_eyeTextureHeight()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRSettings_get_eyeTextureHeight_mCF4B2EC6851A8B8A8C4E6FC085A621B3166DB67A (const RuntimeMethod* method) ;
 // System.Void UnityEngine.Rendering.DebugActionDesc::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugActionDesc__ctor_m850B5BC98DC18B58B0F5C7549CF58BF020418010 (DebugActionDesc_tCBBFB7C8CD7C507877731604B0BAC556225822EC* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.String[]>::Add(T)
@@ -26592,24 +26616,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializableEnum__ctor_m0EC8862E7D14F1C0
 // System.Single UnityEngine.Rendering.XRGraphics::get_eyeTextureResolutionScale()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float XRGraphics_get_eyeTextureResolutionScale_mE5D36A97C071BA1B80A23D2DF5CA27FBA76242AA (const RuntimeMethod* method) 
 {
-	float V_0 = 0.0f;
+	bool V_0 = false;
+	float V_1 = 0.0f;
 	{
-		// return 1.0f;
-		V_0 = (1.0f);
-		goto IL_0009;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.eyeTextureResolutionScale;
+		float L_2;
+		L_2 = XRSettings_get_eyeTextureResolutionScale_m335B9DB51528FCA7534FCD6828796395D63ADA90(NULL);
+		V_1 = L_2;
+		goto IL_001a;
 	}
 
-IL_0009:
+IL_0012:
+	{
+		// return 1.0f;
+		V_1 = (1.0f);
+		goto IL_001a;
+	}
+
+IL_001a:
 	{
 		// }
-		float L_0 = V_0;
-		return L_0;
+		float L_3 = V_1;
+		return L_3;
 	}
 }
 // System.Void UnityEngine.Rendering.XRGraphics::set_eyeTextureResolutionScale(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRGraphics_set_eyeTextureResolutionScale_mD244B5FFF24B0F009F1532CB7ABA4531A75C940D (float ___0_value, const RuntimeMethod* method) 
 {
 	{
+		// XRSettings.eyeTextureResolutionScale = value;
+		float L_0 = ___0_value;
+		XRSettings_set_eyeTextureResolutionScale_m92F1029D68F387D9B0C2DB35DFAB2FD82C64A30B(L_0, NULL);
 		// }
 		return;
 	}
@@ -26617,18 +26665,39 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRGraphics_set_eyeTextureResolutionScale
 // System.Single UnityEngine.Rendering.XRGraphics::get_renderViewportScale()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float XRGraphics_get_renderViewportScale_m442D79B1093C4DCB4CF6F279B392B74BE06D9F28 (const RuntimeMethod* method) 
 {
-	float V_0 = 0.0f;
+	bool V_0 = false;
+	float V_1 = 0.0f;
 	{
-		// return 1.0f;
-		V_0 = (1.0f);
-		goto IL_0009;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.renderViewportScale;
+		float L_2;
+		L_2 = XRSettings_get_renderViewportScale_mB35A32F5FE6B2EEE0CEF95ADFC04F171B6E5F5D1(NULL);
+		V_1 = L_2;
+		goto IL_001a;
 	}
 
-IL_0009:
+IL_0012:
+	{
+		// return 1.0f;
+		V_1 = (1.0f);
+		goto IL_001a;
+	}
+
+IL_001a:
 	{
 		// }
-		float L_0 = V_0;
-		return L_0;
+		float L_3 = V_1;
+		return L_3;
 	}
 }
 // System.Boolean UnityEngine.Rendering.XRGraphics::get_enabled()
@@ -26636,33 +26705,56 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRGraphics_get_enabled_mD92F6EF93750E303
 {
 	bool V_0 = false;
 	{
-		// return false;
-		V_0 = (bool)0;
-		goto IL_0005;
+		// return XRSettings.enabled;
+		bool L_0;
+		L_0 = XRSettings_get_enabled_mC22ABF5BF7D835DAB861A1FA384DBB8904D15E70(NULL);
+		V_0 = L_0;
+		goto IL_0009;
 	}
 
-IL_0005:
+IL_0009:
 	{
 		// }
-		bool L_0 = V_0;
-		return L_0;
+		bool L_1 = V_0;
+		return L_1;
 	}
 }
 // System.Boolean UnityEngine.Rendering.XRGraphics::get_isDeviceActive()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRGraphics_get_isDeviceActive_m1287F4C0D530F0A75D0DB7143BAB28350C2F59F3 (const RuntimeMethod* method) 
 {
 	bool V_0 = false;
+	bool V_1 = false;
 	{
-		// return false;
-		V_0 = (bool)0;
-		goto IL_0005;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.isDeviceActive;
+		bool L_2;
+		L_2 = XRSettings_get_isDeviceActive_m0C8A5F7EC76EF392020137915E4DD8E75EBDD6B8(NULL);
+		V_1 = L_2;
+		goto IL_0016;
 	}
 
-IL_0005:
+IL_0012:
+	{
+		// return false;
+		V_1 = (bool)0;
+		goto IL_0016;
+	}
+
+IL_0016:
 	{
 		// }
-		bool L_0 = V_0;
-		return L_0;
+		bool L_3 = V_1;
+		return L_3;
 	}
 }
 // System.String UnityEngine.Rendering.XRGraphics::get_loadedDeviceName()
@@ -26674,18 +26766,39 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XRGraphics_get_loadedDeviceName_mC3
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCAC6B499BBC0805897FE83B04E8D4DEB8DD2DB44);
 		s_Il2CppMethodInitialized = true;
 	}
-	String_t* V_0 = NULL;
+	bool V_0 = false;
+	String_t* V_1 = NULL;
 	{
-		// return "No XR device loaded";
-		V_0 = _stringLiteralCAC6B499BBC0805897FE83B04E8D4DEB8DD2DB44;
-		goto IL_0009;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.loadedDeviceName;
+		String_t* L_2;
+		L_2 = XRSettings_get_loadedDeviceName_mAEB3908916B98A9E8CF2FD8754B5AAB096245243(NULL);
+		V_1 = L_2;
+		goto IL_001a;
 	}
 
-IL_0009:
+IL_0012:
+	{
+		// return "No XR device loaded";
+		V_1 = _stringLiteralCAC6B499BBC0805897FE83B04E8D4DEB8DD2DB44;
+		goto IL_001a;
+	}
+
+IL_001a:
 	{
 		// }
-		String_t* L_0 = V_0;
-		return L_0;
+		String_t* L_3 = V_1;
+		return L_3;
 	}
 }
 // System.String[] UnityEngine.Rendering.XRGraphics::get_supportedDevices()
@@ -26697,91 +26810,196 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
+	bool V_0 = false;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
 	{
-		// return new string[1];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)1);
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
 		V_0 = L_0;
-		goto IL_000a;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.supportedDevices;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_2;
+		L_2 = XRSettings_get_supportedDevices_m9ABC69D1044484DF7ED2B236AFCCD8BF107BB74C(NULL);
+		V_1 = L_2;
+		goto IL_001b;
 	}
 
-IL_000a:
+IL_0012:
+	{
+		// return new string[1];
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_3 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)1);
+		V_1 = L_3;
+		goto IL_001b;
+	}
+
+IL_001b:
 	{
 		// }
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_1 = V_0;
-		return L_1;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4 = V_1;
+		return L_4;
 	}
 }
 // UnityEngine.Rendering.XRGraphics/StereoRenderingMode UnityEngine.Rendering.XRGraphics::get_stereoRenderingMode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRGraphics_get_stereoRenderingMode_m7A176990C2FA63ECC6B17ED19A5F733B2556C8BD (const RuntimeMethod* method) 
 {
-	int32_t V_0 = 0;
+	bool V_0 = false;
+	int32_t V_1 = 0;
 	{
-		// return StereoRenderingMode.SinglePass;
-		V_0 = 1;
-		goto IL_0005;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return (StereoRenderingMode)XRSettings.stereoRenderingMode;
+		int32_t L_2;
+		L_2 = XRSettings_get_stereoRenderingMode_mD66918C11E2216B1F8FA76934F79D5F85BC303FC(NULL);
+		V_1 = L_2;
+		goto IL_0016;
 	}
 
-IL_0005:
+IL_0012:
+	{
+		// return StereoRenderingMode.SinglePass;
+		V_1 = 1;
+		goto IL_0016;
+	}
+
+IL_0016:
 	{
 		// }
-		int32_t L_0 = V_0;
-		return L_0;
+		int32_t L_3 = V_1;
+		return L_3;
 	}
 }
 // UnityEngine.RenderTextureDescriptor UnityEngine.Rendering.XRGraphics::get_eyeTextureDesc()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 XRGraphics_get_eyeTextureDesc_m3D5A0E9820451C96BE9C943B6143D2C195F55AC4 (const RuntimeMethod* method) 
 {
-	RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	bool V_0 = false;
+	RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 V_1;
+	memset((&V_1), 0, sizeof(V_1));
 	{
-		// return new RenderTextureDescriptor(0, 0);
-		RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 L_0;
-		memset((&L_0), 0, sizeof(L_0));
-		RenderTextureDescriptor__ctor_m0D1C84B1D245FA247C36A59D816BBB179E0670D1((&L_0), 0, 0, /*hidden argument*/NULL);
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
 		V_0 = L_0;
-		goto IL_000b;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.eyeTextureDesc;
+		RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 L_2;
+		L_2 = XRSettings_get_eyeTextureDesc_mFBE8F6D5D5A23E4DE1BCCD994ADFAB4FB11D7A19(NULL);
+		V_1 = L_2;
+		goto IL_001c;
 	}
 
-IL_000b:
+IL_0012:
+	{
+		// return new RenderTextureDescriptor(0, 0);
+		RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 L_3;
+		memset((&L_3), 0, sizeof(L_3));
+		RenderTextureDescriptor__ctor_m0D1C84B1D245FA247C36A59D816BBB179E0670D1((&L_3), 0, 0, /*hidden argument*/NULL);
+		V_1 = L_3;
+		goto IL_001c;
+	}
+
+IL_001c:
 	{
 		// }
-		RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 L_1 = V_0;
-		return L_1;
+		RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 L_4 = V_1;
+		return L_4;
 	}
 }
 // System.Int32 UnityEngine.Rendering.XRGraphics::get_eyeTextureWidth()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRGraphics_get_eyeTextureWidth_mA641FB52B42BA674FA1F4F06EC11A7B98875715C (const RuntimeMethod* method) 
 {
-	int32_t V_0 = 0;
+	bool V_0 = false;
+	int32_t V_1 = 0;
 	{
-		// return 0;
-		V_0 = 0;
-		goto IL_0005;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.eyeTextureWidth;
+		int32_t L_2;
+		L_2 = XRSettings_get_eyeTextureWidth_m3B18AF3F3382398E2A818B2B01AA1FE90FEB3AAF(NULL);
+		V_1 = L_2;
+		goto IL_0016;
 	}
 
-IL_0005:
+IL_0012:
+	{
+		// return 0;
+		V_1 = 0;
+		goto IL_0016;
+	}
+
+IL_0016:
 	{
 		// }
-		int32_t L_0 = V_0;
-		return L_0;
+		int32_t L_3 = V_1;
+		return L_3;
 	}
 }
 // System.Int32 UnityEngine.Rendering.XRGraphics::get_eyeTextureHeight()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XRGraphics_get_eyeTextureHeight_mC7C1A0B8849FAE0DCF2F6936CB2D1F565A3921A2 (const RuntimeMethod* method) 
 {
-	int32_t V_0 = 0;
+	bool V_0 = false;
+	int32_t V_1 = 0;
 	{
-		// return 0;
-		V_0 = 0;
-		goto IL_0005;
+		// if (enabled)
+		bool L_0;
+		L_0 = XRGraphics_get_enabled_mD92F6EF93750E3034023EEDF5BF519A8AA5624AA(NULL);
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		// return XRSettings.eyeTextureHeight;
+		int32_t L_2;
+		L_2 = XRSettings_get_eyeTextureHeight_mCF4B2EC6851A8B8A8C4E6FC085A621B3166DB67A(NULL);
+		V_1 = L_2;
+		goto IL_0016;
 	}
 
-IL_0005:
+IL_0012:
+	{
+		// return 0;
+		V_1 = 0;
+		goto IL_0016;
+	}
+
+IL_0016:
 	{
 		// }
-		int32_t L_0 = V_0;
-		return L_0;
+		int32_t L_3 = V_1;
+		return L_3;
 	}
 }
 // System.Void UnityEngine.Rendering.XRGraphics::.ctor()

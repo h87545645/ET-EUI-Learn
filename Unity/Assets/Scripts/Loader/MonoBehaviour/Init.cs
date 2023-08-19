@@ -45,7 +45,7 @@ namespace ET
 			
 		}
 
-		private async ETTask InitAnyThinkAds()
+		private void InitAnyThinkAds()
 		{
 			//广告初始化
 			Game.AddSingleton<AnyThinkAdHelper>();

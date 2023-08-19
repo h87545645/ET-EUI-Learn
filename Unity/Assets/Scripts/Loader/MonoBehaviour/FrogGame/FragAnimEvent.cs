@@ -11,6 +11,7 @@ public class FragAnimEvent : MonoBehaviour
     private bool _hasTurn = false;
     public async void OnLandingFinish()
     {
+       
         // Debug.Log("FragAnimEvent OnLandingFinish");
         // long unitId = this.gameObject.transform.parent.GetComponent<MonoBridge>().BelongToUnitId;
         // EventSystem.Instance.PublishAsync(Root.Instance.Scene, new ET.EventType.FrogLanded(){unitId = unitId});
@@ -33,6 +34,8 @@ public class FragAnimEvent : MonoBehaviour
         //         fragHero.SetHeroineState(new StandingState(fragHero));
         //     }
         // },0.05f));
+        
+        await ETTask.CompletedTask;
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

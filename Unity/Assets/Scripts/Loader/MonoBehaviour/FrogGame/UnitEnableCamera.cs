@@ -7,6 +7,7 @@
         {
             // args.go.GetComponent<FragGameCameraCtrl>().enabled = args.enable;
             // args.go.AddComponent<FragGameCameraCtrl>();
+            await ETTask.CompletedTask;
         }  
     }
 }

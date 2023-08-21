@@ -129,6 +129,7 @@ namespace ET.Client
 			G2C_PlayerEditInfoResponse g2cPlayerEditInfoResponse = await self.ClientScene().GetComponent<SessionComponent>().Session.Call
 					(new C2G_PlayerEditInfoRequest(){Name = text , AccountId = playerComponent.MyInfo.AccountId}) as G2C_PlayerEditInfoResponse;
 			self.CurrentPlayerName = text;
+			playerComponent.MyInfo.NickName = text;
 		}
 
 		// public static void OnTranslation(this DlgLobby self)

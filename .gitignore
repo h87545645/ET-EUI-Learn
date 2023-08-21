@@ -92,3 +92,6 @@ Publish/
 Unity/Bundles
 Unity/frogtest.apk
 Unity/Assets/AudioSources
+Unity/frogtest_BackUpThisFolder_ButDontShipItWithYourGame
+Unity/Sandbox
+Unity/frogtest_BurstDebugInformation_DoNotShip

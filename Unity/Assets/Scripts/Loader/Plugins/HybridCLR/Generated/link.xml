@@ -191,6 +191,7 @@
   </assembly>
   <assembly fullname="Unity.Loader">
     <type fullname="ET.AnyThinkAdHelper" preserve="all" />
+    <type fullname="ET.AudioPlayManager" preserve="all" />
     <type fullname="ET.Client.GameObjectPoolHelper" preserve="all" />
     <type fullname="ET.CodeLoader" preserve="all" />
     <type fullname="ET.CodeMode" preserve="all" />
@@ -200,6 +201,7 @@
     <type fullname="ET.GlobalConfig" preserve="all" />
     <type fullname="ET.PathHelper" preserve="all" />
     <type fullname="ET.ScrollRocker" preserve="all" />
+    <type fullname="ET.SingleAudioClip" preserve="all" />
     <type fullname="RedDotMonoView" preserve="all" />
     <type fullname="ReferenceCollector" preserve="all" />
     <type fullname="UnityEngine.UI.LoopScrollRect" preserve="all" />

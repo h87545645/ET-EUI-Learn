@@ -19,6 +19,19 @@ namespace ET.Server
             player.NickName = request.Name;
             //存到数据库
             DBManagerComponent.Instance.GetZoneDB(1).Save<PlayerInfo>(player).Coroutine();
+            
+            
+            
+            PlayerComponent playerComponent = session.DomainScene().GetComponent<PlayerComponent>();
+            Player[] playerArray = playerComponent.GetAll();
+            for (int i = 0; i < playerArray.Length; i++)
+            {
+                if (playerArray[i].UserID == request.AccountId)
+                {
+                    playerArray[i].PlayerInfo.NickName = request.Name;
+                    break;
+                }
+            }
             await ETTask.CompletedTask;
         }
     }

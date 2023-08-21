@@ -38,7 +38,6 @@ namespace ET
 			Game.AddSingleton<TimerComponent>();
 	
 			Game.AddSingleton<CoroutineLockComponent>();
-		
 			ETTask.ExceptionHandler += Log.Error;
 			StartCoroutine(startHot());
 	

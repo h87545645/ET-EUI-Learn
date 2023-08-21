@@ -6,8 +6,9 @@
 ^lang	中文	En
 
 ^setting_title	Menu	菜单
-^setting_back	Back Lobby	返回主页	
-^setting_exit	Exit Game		退出游戏
+^setting_back	Back Lobby	返回主页
+^setting_exit_game	Exit Game	退出游戏
+
 
 ^player_record	TIME: {0}\nJUMPS: {1}\nWIN TIMES: {2} 	完成时间: {0}\n跳跃次数: {1}\n获胜次数: {2}
 ^game_completed	COMPLETED ON ATTEMPT!	到达世界最高层！

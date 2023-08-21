@@ -163,13 +163,15 @@ namespace ET
 
         private void OnDownloadProgressUpdateFunction(int totaldownloadcount, int currentdownloadcount, long totaldownloadbytes, long currentdownloadbytes)
         {
-            this.hotUI.progress.value = currentdownloadcount / totaldownloadcount;
-            string per = ((float)(currentdownloadcount / totaldownloadcount)).ToString("F1");
+            float per = (float)(currentdownloadcount) / (float)(totaldownloadcount);
+            string perStr = (per*100).ToString("F2");
+            this.hotUI.progress.value = per;
+            this.hotUI.percent.SetText( string.Format("{0}%" , perStr));
             string info = string.Format("Download totaldownloadcount : {0}, currentdownloadcount : {1} , totaldownloadbytes : {2} , currentdownloadbytes : {3} , percent : {4}", 
                 totaldownloadcount, currentdownloadcount,totaldownloadbytes,currentdownloadbytes , per);
             this.hotUI.dowoLoadInfoText.SetText(info);
             Debug.Log(info);
-            this.hotUI.percent.SetText( string.Format("{0}%" , per));
+            
         }
 
         private void OnDownloadErrorFunction(string filename, string error)

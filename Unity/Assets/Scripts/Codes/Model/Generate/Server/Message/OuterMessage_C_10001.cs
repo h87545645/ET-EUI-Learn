@@ -228,6 +228,9 @@ namespace ET
 		[ProtoMember(3)]
 		public long UserId { get; set; }
 
+		[ProtoMember(4)]
+		public int CameraIndex { get; set; }
+
 	}
 
 	[Message(OuterMessage.M2C_FrogSyncPosition)]
@@ -239,6 +242,9 @@ namespace ET
 
 		[ProtoMember(2)]
 		public Unity.Mathematics.float3 Position { get; set; }
+
+		[ProtoMember(3)]
+		public int CameraIndex { get; set; }
 
 	}
 

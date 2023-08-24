@@ -12,6 +12,7 @@ namespace ET.Server
             // 广播玩家位置
             M2C_FrogSyncPosition m2CFrogSyncPosition = new M2C_FrogSyncPosition() {Position = new float3(message.Position.x,message.Position.y,message.Position.z)};
             m2CFrogSyncPosition.Id = unit.Id;
+            m2CFrogSyncPosition.CameraIndex = message.CameraIndex;
             Room room = unit.DomainScene().GetComponent<RoomComponent>().Get(unit.RoomID);
             Unit sUnit = room.Get(message.UserId);
             sUnit.Position = message.Position;

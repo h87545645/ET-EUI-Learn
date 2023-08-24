@@ -58,6 +58,17 @@ namespace ET
 
         }
         
+        public struct FrogSyncPositionUpdateUnit
+        {
+
+        }
+        
+        public struct FrogSyncPositionUpdateCameraIndex
+        {
+            public Unit unit;
+            public int CameraIndex;
+        }
+
         
         
         

@@ -22,6 +22,7 @@ namespace ET.Client
             C2M_FrogSyncPosition c2MFrogSyncPosition = new C2M_FrogSyncPosition();
             c2MFrogSyncPosition.Position = pos;
             c2MFrogSyncPosition.UserId = player.UserID;
+            c2MFrogSyncPosition.CameraIndex = player.GetComponent<FrogComponent>().currentCameraIndex;
             scene.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MFrogSyncPosition);
         }
     }

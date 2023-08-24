@@ -120,12 +120,14 @@ message C2M_FrogSyncPosition // IActorLocationMessage
 	int32 RpcId = 1;
 	Unity.Mathematics.float3 Position = 2;
 	int64 UserId = 3;
+	int32 CameraIndex = 4;
 }
 
 message M2C_FrogSyncPosition // IActorMessage
 {
 	int64 Id = 1;
     Unity.Mathematics.float3 Position = 2;
+    int32 CameraIndex = 3; 
 }
 
 message C2M_FrogGameOver // IActorLocationMessage

@@ -19,6 +19,10 @@ namespace ET.Client
             Scene curScene = scene.GetComponent<ClientSceneManagerComponent>().Get(1).CurrentScene();
             Unit player = curScene.GetComponent<UnitComponent>().Get(args.unitId);
             // Unit player = UnitHelper.GetMyUnitFromClientScene(scene.GetComponent<ClientSceneManagerComponent>().Get(1));
+            if (player.GetComponent<FrogComponent>() == null)
+            {
+                return;
+            }
             player.GetComponent<FrogComponent>().direction = ET.FrogDirection.None;
             // fragHero.direction = Game_Direction.None;
             await TimerComponent.Instance.WaitAsync(100);

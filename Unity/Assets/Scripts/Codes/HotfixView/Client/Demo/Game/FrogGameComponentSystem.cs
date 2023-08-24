@@ -96,6 +96,7 @@ namespace ET.Client
                 // self.fragHero.RemoveListener();
                 // self.pelican.FlyToPlayer(self.fragHero.heroRigidbody2D.transform);
             }
+            await ETTask.CompletedTask;
         }
 
         public static async ETTask OnPelicanFlyToPlayer(this FrogGameComponent self)

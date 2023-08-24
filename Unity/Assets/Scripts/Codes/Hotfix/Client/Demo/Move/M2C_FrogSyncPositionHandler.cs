@@ -3,16 +3,15 @@
 namespace ET.Client
 {
     [MessageHandler(SceneType.Client)]
-  
     public class M2C_FrogSyncPositionHandler : AMHandler<M2C_FrogSyncPosition>
     {
         protected override async ETTask Run(Session session, M2C_FrogSyncPosition message)
         {
             Unit unit = session.DomainScene().CurrentScene().GetComponent<UnitComponent>().Get(message.Id);
-    
-            // unit.GetComponent<FrogComponent>().heroRenderer.transform.position = message.Position;
             unit.Position = message.Position;
-
+            
+            EventSystem.Instance.Publish(session.DomainScene(), new EventType.FrogSyncPositionUpdateCameraIndex() {unit = unit , CameraIndex = message.CameraIndex});
+            EventSystem.Instance.Publish(session.DomainScene(), new EventType.FrogSyncPositionUpdateUnit() {});
             await ETTask.CompletedTask;
         }
     }

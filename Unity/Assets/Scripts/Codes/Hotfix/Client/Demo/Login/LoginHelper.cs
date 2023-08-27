@@ -7,7 +7,7 @@ namespace ET.Client
 {
     public static class LoginHelper
     {
-        public static async ETTask Login(Scene clientScene, string account, string password)
+        public static async ETTask<string[]> Login(Scene clientScene, string account, string password)
         {
             try
             {
@@ -26,12 +26,10 @@ namespace ET.Client
                 // 创建一个ETModel层的Session
                 
                 IPEndPoint realmAddress = routerAddressComponent.GetRealmAddress(account);
-                
-                
-                
-                
-                
-                
+
+
+
+
                 //2023.2.4 modify 修改登录流程，先与账号服务器通信，账号服务器将和数据库交互，对信息进行验证或注册，获取账户唯一标识AccountId
                 //TODO 考虑加入账号中心服务器，处理顶号，创建删除角色等逻辑。
              
@@ -70,19 +68,12 @@ namespace ET.Client
                  //     // zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
                  //     return;
                  // }
-                 
-               
-                
-                
-                
-                
-                
-                
-                
-                
-            
-                
-                R2C_Login r2CLogin;
+
+
+
+
+
+                 R2C_Login r2CLogin;
                 using (Session session = await RouterHelper.CreateRouterSession(clientScene, realmAddress))
                 {
                     r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
@@ -94,7 +85,7 @@ namespace ET.Client
                     //弹出错误弹窗
                     EventSystem.Instance.Publish(clientScene, new EventType.AlertError() { Info = r2CLogin.Message });
   
-                    return;
+                    return null;
                 }
                 
                 // StartSceneConfig accountConfig = ET.StartSceneConfigCategory.Instance.Account;
@@ -117,12 +108,15 @@ namespace ET.Client
                     new C2G_LoginGate() { Key = r2CLogin.Key, GateId = r2CLogin.GateId , PlayerInfo = r2CLogin.PlayerInfo});
 
                 Log.Debug("登陆gate成功!!");
-
+                
+                
                 await EventSystem.Instance.PublishAsync(clientScene, new EventType.LoginFinish());
+                return new []{account,password};
             }
             catch (Exception e)
             {
                 Log.Error(e);
+                return null;
             }
         } 
     }

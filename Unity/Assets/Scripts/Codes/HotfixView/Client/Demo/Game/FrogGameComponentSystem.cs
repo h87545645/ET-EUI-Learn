@@ -57,16 +57,25 @@ namespace ET.Client
                 }
                 case 7:
                 {
-                    self.globalLight.intensity = 0f;
+                    player.GetComponent<FrogComponent>().OnLight(true);
+                    self.globalLight.intensity = 0.02f;
                     break;
                 }
                 case 8:
                 {
-                    self.globalLight.intensity = 0.5f;
+                    player.GetComponent<FrogComponent>().OnLight(true);
+                    self.globalLight.intensity = 0.01f;
+                    break;
+                }
+                case 9:
+                {
+                    player.GetComponent<FrogComponent>().OnLight(true);
+                    self.globalLight.intensity = 0.8f;
                     break;
                 }
                 default:
                 {
+                    self.globalLight.intensity = 1f;
                     player.GetComponent<FrogComponent>().OnLight(false);
                     break;
                 }

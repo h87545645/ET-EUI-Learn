@@ -36,6 +36,7 @@ namespace ET
 			Game.AddSingleton<IdGenerater>();
 			Game.AddSingleton<EventSystem>();
 			Game.AddSingleton<TimerComponent>();
+			Game.AddSingleton<GameRecord>();
 	
 			Game.AddSingleton<CoroutineLockComponent>();
 			ETTask.ExceptionHandler += Log.Error;

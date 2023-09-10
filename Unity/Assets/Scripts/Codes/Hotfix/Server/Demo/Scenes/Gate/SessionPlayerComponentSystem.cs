@@ -9,6 +9,9 @@ namespace ET.Server
 		{
 			protected override void Destroy(SessionPlayerComponent self)
 			{
+				//像客户端发送断线重登
+				self.Session.Send(new G2C_Reconnect());
+						
 				// 通知MAP断线消息
 				ActorLocationSenderComponent.Instance?.Send(self.PlayerId, new G2M_SessionDisconnect());
 				self.DomainScene().GetComponent<PlayerComponent>()?.Remove(self.PlayerId);
@@ -19,7 +22,6 @@ namespace ET.Server
 
 				
 				GateHelper.PlayerExitRoom(self.DomainScene()  , self.UserId);
-				
 			}
 		}
 

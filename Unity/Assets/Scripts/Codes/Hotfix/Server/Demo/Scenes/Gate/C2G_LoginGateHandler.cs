@@ -18,6 +18,7 @@ namespace ET.Server
 			}
 			
 			session.RemoveComponent<SessionAcceptTimeoutComponent>();
+	
 
 			PlayerComponent playerComponent = scene.GetComponent<PlayerComponent>();
 			Player player = playerComponent.AddChild<Player, string , long>(account.Item2,account.Item1);
@@ -25,6 +26,8 @@ namespace ET.Server
 			player.PlayerInfo = new PlayerInfo(request.PlayerInfo);
 			session.AddComponent<SessionPlayerComponent>().PlayerId = player.Id;
 			session.GetComponent<SessionPlayerComponent>().UserId = player.UserID;
+			session.GetComponent<SessionPlayerComponent>().Session = session;
+			session.GetComponent<SessionPlayerComponent>().Session.Send(new G2C_Reconnect());
 			session.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);
 
 			response.PlayerId = player.Id;

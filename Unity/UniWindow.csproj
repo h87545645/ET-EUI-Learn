@@ -310,11 +310,11 @@
      <Reference Include="NLog">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\NLog.dll</HintPath>
      </Reference>
-     <Reference Include="dnlib">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.focus-creative-games.hybridclr_unity@00cedc166f\Plugins\dnlib.dll</HintPath>
-     </Reference>
      <Reference Include="DOTween">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="dnlib">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.focus-creative-games.hybridclr_unity@00cedc166f\Plugins\dnlib.dll</HintPath>
      </Reference>
      <Reference Include="DnsClient">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
@@ -349,11 +349,11 @@
      <Reference Include="System.Runtime.CompilerServices.Unsafe">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
      </Reference>
-     <Reference Include="MongoDB.Libmongocrypt">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
-     </Reference>
      <Reference Include="System.Text.Encoding.CodePages">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Libmongocrypt">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
      </Reference>
      <Reference Include="LZ4">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.focus-creative-games.hybridclr_unity@00cedc166f\Plugins\LZ4.dll</HintPath>
@@ -367,20 +367,17 @@
      <Reference Include="Unity.Burst.Cecil.Pdb">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
      </Reference>
-     <Reference Include="MongoDB.Driver">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
-     </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Driver">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Google.PackageManagerResolver">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\1.2.171\Google.PackageManagerResolver.dll</HintPath>
-     </Reference>
-     <Reference Include="Google.VersionHandler">
-     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.YamlDotNet">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
@@ -393,6 +390,9 @@
      </Reference>
      <Reference Include="unityplastic">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Google.VersionHandler">
+     <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>C:\U3D\U3D_proj\ET-EUI-Learn\Unity\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>

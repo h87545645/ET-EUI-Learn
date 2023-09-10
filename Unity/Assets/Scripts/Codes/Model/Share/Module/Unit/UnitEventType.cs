@@ -68,6 +68,11 @@ namespace ET
             public Unit unit;
             public int CameraIndex;
         }
+        
+        public struct RestartGame
+        {
+
+        }
 
         
         

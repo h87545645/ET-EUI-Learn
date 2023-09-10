@@ -45,9 +45,10 @@ namespace ET.Client
 			self.SetRank(index , scrollItemRank);
 			scrollItemRank.ELabel_nameTextMeshProUGUI.SetText(self.Ranks[index].NickName);
 			scrollItemRank.ELabel_winTextMeshProUGUI.SetText(self.Ranks[index].Wins.ToString());
-			string bestTime =  UnityUtils.TimeToStringHMS( (float)(self.Ranks[index].BestTime * 0.001));
+			string bestTime =  self.Ranks[index].BestTime > 0 ? UnityUtils.TimeToStringHMS( (float)(self.Ranks[index].BestTime * 0.001)) : "--";
 			scrollItemRank.ELabel_timeTextMeshProUGUI.SetText(bestTime);
-			scrollItemRank.ELabel_jumpsTextMeshProUGUI.SetText(self.Ranks[index].BestJumpCnt.ToString());
+			string bestJump = self.Ranks[index].BestJumpCnt > 0? self.Ranks[index].BestJumpCnt.ToString() : "--";
+			scrollItemRank.ELabel_jumpsTextMeshProUGUI.SetText(bestJump);
 		}
 
 		private static void SetRank(this DlgRank self ,int rank , Scroll_Item_Rank item)

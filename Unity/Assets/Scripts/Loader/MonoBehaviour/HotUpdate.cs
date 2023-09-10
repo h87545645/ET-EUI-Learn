@@ -54,8 +54,8 @@ namespace ET
                 
                 var initParameters = new HostPlayModeParameters();
                 initParameters.QueryServices = new QueryStreamingAssetsFileServices();
-                initParameters.DefaultHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/"+ platform +"/package";
-                initParameters.FallbackHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/"+ platform +"/package";
+                initParameters.DefaultHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/taptap/"+ platform;
+                initParameters.FallbackHostServer = "https://forg-game-1316228094.cos.ap-chengdu.myqcloud.com/taptap/"+ platform;
                 yield return package.InitializeAsync(initParameters);
             }else if (this.PlayMod == EPlayMode.OfflinePlayMode)
             {

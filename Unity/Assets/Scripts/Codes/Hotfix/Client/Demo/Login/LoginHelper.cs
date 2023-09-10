@@ -14,6 +14,7 @@ namespace ET.Client
                 
                 clientScene.RemoveComponent<RouterAddressComponent>();
                 clientScene.RemoveComponent<NetClientComponent>();
+                clientScene.RemoveComponent<SessionComponent>();
                 // 获取路由跟realmDispatcher地址
                 RouterAddressComponent routerAddressComponent = clientScene.GetComponent<RouterAddressComponent>();
                 if (routerAddressComponent == null)

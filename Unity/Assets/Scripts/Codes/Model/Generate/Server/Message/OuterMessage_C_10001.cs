@@ -621,6 +621,12 @@ namespace ET
 	{
 	}
 
+	[Message(OuterMessage.G2C_Reconnect)]
+	[ProtoContract]
+	public partial class G2C_Reconnect: ProtoObject, IMessage
+	{
+	}
+
 	[ResponseType(nameof(M2C_Reload))]
 	[Message(OuterMessage.C2M_Reload)]
 	[ProtoContract]
@@ -865,18 +871,19 @@ namespace ET
 		 public const ushort C2G_Ping = 10040;
 		 public const ushort G2C_Ping = 10041;
 		 public const ushort G2C_Test = 10042;
-		 public const ushort C2M_Reload = 10043;
-		 public const ushort M2C_Reload = 10044;
-		 public const ushort C2R_Login = 10045;
-		 public const ushort R2C_Login = 10046;
-		 public const ushort C2G_LoginGate = 10047;
-		 public const ushort G2C_LoginGate = 10048;
-		 public const ushort G2C_TestHotfixMessage = 10049;
-		 public const ushort C2M_TestRobotCase = 10050;
-		 public const ushort M2C_TestRobotCase = 10051;
-		 public const ushort C2M_TransferMap = 10052;
-		 public const ushort M2C_TransferMap = 10053;
-		 public const ushort C2G_Benchmark = 10054;
-		 public const ushort G2C_Benchmark = 10055;
+		 public const ushort G2C_Reconnect = 10043;
+		 public const ushort C2M_Reload = 10044;
+		 public const ushort M2C_Reload = 10045;
+		 public const ushort C2R_Login = 10046;
+		 public const ushort R2C_Login = 10047;
+		 public const ushort C2G_LoginGate = 10048;
+		 public const ushort G2C_LoginGate = 10049;
+		 public const ushort G2C_TestHotfixMessage = 10050;
+		 public const ushort C2M_TestRobotCase = 10051;
+		 public const ushort M2C_TestRobotCase = 10052;
+		 public const ushort C2M_TransferMap = 10053;
+		 public const ushort M2C_TransferMap = 10054;
+		 public const ushort C2G_Benchmark = 10055;
+		 public const ushort G2C_Benchmark = 10056;
 	}
 }

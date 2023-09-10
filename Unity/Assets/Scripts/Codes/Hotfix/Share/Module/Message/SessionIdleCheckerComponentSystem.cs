@@ -1,5 +1,6 @@
 using System;
 
+
 namespace ET
 {
     [Invoke(TimerInvokeType.SessionIdleChecker)]
@@ -52,6 +53,8 @@ namespace ET
 
             Log.Info($"session timeout: {session.Id} {timeNow} {session.LastRecvTime} {session.LastSendTime} {timeNow - session.LastRecvTime} {timeNow - session.LastSendTime}");
             session.Error = ErrorCore.ERR_SessionSendOrRecvTimeout;
+            EventSystem.Instance.Publish(session.DomainScene(), new EventType.RestartGame() {});
+            
 
             session.Dispose();
         }

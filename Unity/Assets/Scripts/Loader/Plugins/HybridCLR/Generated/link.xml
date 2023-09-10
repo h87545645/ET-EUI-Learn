@@ -197,6 +197,8 @@
     <type fullname="ET.CodeMode" preserve="all" />
     <type fullname="ET.CoroutineHelper" preserve="all" />
     <type fullname="ET.Define" preserve="all" />
+    <type fullname="ET.GameRecord" preserve="all" />
+    <type fullname="ET.GameRecord/LoginRecord" preserve="all" />
     <type fullname="ET.GetSpriteFrame" preserve="all" />
     <type fullname="ET.GlobalConfig" preserve="all" />
     <type fullname="ET.PathHelper" preserve="all" />
@@ -285,6 +287,8 @@
     <type fullname="UnityEngine.Resources" preserve="all" />
     <type fullname="UnityEngine.RuntimePlatform" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
+    <type fullname="UnityEngine.SceneManagement.Scene" preserve="all" />
+    <type fullname="UnityEngine.SceneManagement.SceneManager" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />

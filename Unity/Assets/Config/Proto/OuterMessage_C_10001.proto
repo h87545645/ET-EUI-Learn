@@ -318,6 +318,11 @@ message G2C_Test // IMessage
 {
 }
 
+message G2C_Reconnect // IMessage
+{
+
+}
+
 //ResponseType M2C_Reload
 message C2M_Reload // IRequest
 {

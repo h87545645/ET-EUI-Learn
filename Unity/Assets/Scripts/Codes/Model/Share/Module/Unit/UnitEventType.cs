@@ -69,7 +69,7 @@ namespace ET
             public int CameraIndex;
         }
         
-        public struct RestartGame
+        public struct ReConnect
         {
 
         }

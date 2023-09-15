@@ -41,7 +41,7 @@ namespace ET
 			Game.AddSingleton<CoroutineLockComponent>();
 			ETTask.ExceptionHandler += Log.Error;
 			
-			//会导致崩溃 原因位置
+			//会导致崩溃 原因未知
 			// Screen.sleepTimeout = SleepTimeout.NeverSleep;
 			
 			StartCoroutine(startHot());

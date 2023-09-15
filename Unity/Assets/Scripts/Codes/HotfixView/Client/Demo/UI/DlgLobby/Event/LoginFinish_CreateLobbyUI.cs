@@ -8,6 +8,12 @@ namespace ET.Client
 	{
 		protected override async ETTask Run(Scene scene, EventType.LoginFinish args)
 		{
+			
+			UnityEngine.SceneManagement.Scene currScene = SceneManager.GetActiveScene();
+			if (!currScene.name.Equals("Init"))
+			{
+				return;
+			}
 			scene.GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
 			
 			

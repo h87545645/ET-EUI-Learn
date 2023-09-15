@@ -103,10 +103,10 @@ public class RecordUtil
         {
             recordDirty.Add(key);
         }
-
-#if (UNITY_EDITOR || UNITY_STANDALONE)
         Save();
-#endif
+// #if (UNITY_EDITOR || UNITY_STANDALONE)
+//         Save();
+// #endif
     }
 
     public static string Get(string key)
